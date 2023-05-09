@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrameBarras</class>
+ <widget class="QFrame" name="FrameBarras">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <widget class="QPushButton" name="btnAvancar">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>670</y>
+     <width>90</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>Avançar  </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnVoltar">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>670</y>
+     <width>90</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>  Voltar</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabLinhas">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>24</y>
+     <width>750</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Barras</string>
+    </attribute>
+    <widget class="QTableWidget" name="tableBarras">
+     <property name="geometry">
+      <rect>
+       <x>-4</x>
+       <y>0</y>
+       <width>750</width>
+       <height>591</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Linhas</string>
+    </attribute>
+    <widget class="QTableWidget" name="tableLinhas">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>751</width>
+       <height>601</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
