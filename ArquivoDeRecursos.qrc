@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/spash">
+        <file>imgs/spash/spash.jpg</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>imgs/icons/engrenagem.png</file>
+        <file>imgs/icons/pesquisa.png</file>
+        <file>imgs/icons/proximo.png</file>
+        <file>imgs/icons/lixeira.png</file>
+        <file>imgs/icons/anterior.png</file>
+        <file>imgs/icons/checked.png</file>
+        <file>imgs/icons/salve-.png</file>
+    </qresource>
+</RCC>
