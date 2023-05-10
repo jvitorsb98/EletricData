@@ -102,7 +102,7 @@ void MainWindow::insereQssBtnAvancar(){
     ui->btnAvancar->setStyleSheet(style.cssBtnTransition);
     ui->btnAvancar->setIcon(QIcon(":/icons/imgs/icons/proximo.png"));
     ui->btnAvancar->setLayoutDirection(Qt::RightToLeft);
-    //ui->btnAvancar->setEnabled(false); // Esse botão inicia desabilitado
+    ui->btnAvancar->setEnabled(false); // Esse botão inicia desabilitado
 }
 void MainWindow::insereQssBtnLixeira(){
 

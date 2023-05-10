@@ -58,7 +58,7 @@
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -69,7 +69,7 @@
       <rect>
        <x>-4</x>
        <y>0</y>
-       <width>750</width>
+       <width>751</width>
        <height>591</height>
       </rect>
      </property>
@@ -82,16 +82,40 @@
     <widget class="QTableWidget" name="tableLinhas">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-4</x>
        <y>0</y>
        <width>751</width>
-       <height>601</height>
+       <height>591</height>
       </rect>
      </property>
     </widget>
    </widget>
   </widget>
+  <widget class="QPushButton" name="btnFiltrar">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>670</y>
+     <width>90</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string> Filtrar</string>
+   </property>
+  </widget>
  </widget>
+ <tabstops>
+  <tabstop>tabLinhas</tabstop>
+  <tabstop>tableBarras</tabstop>
+  <tabstop>tableLinhas</tabstop>
+  <tabstop>btnFiltrar</tabstop>
+  <tabstop>btnVoltar</tabstop>
+  <tabstop>btnAvancar</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

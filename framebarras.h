@@ -8,6 +8,10 @@
 #include "frametensoes.h"
 #include "Barra.h"
 #include "Linha.h"
+#include "filtrosbarra.h"
+#include "ui_filtrosbarra.h"
+#include "filtrolinha.h"
+#include "ui_filtrolinha.h"
 
 namespace Ui {
 class FrameBarras;
@@ -23,6 +27,7 @@ public:
     int buscaIndiceHarmMax();
     inline int buscaQtdHarm(int );
     int quantidadeDeBarras();
+    static int indexTab;
     QStringList cabecalhoBarras(int);
     QStringList cabecalhoLinhas(int);
     QList<Barra> preencheBarra(QList<Barra> ,int, int );
@@ -39,6 +44,7 @@ public:
     void preencheTabela(QList<Barra> , int , int );
     void preencheTabela(QList<Linha>, int , int );
     void preencheLimites();
+    void insereQSSBtnFiltrar();
     QList<Linha> preencheLinha(QList<Linha>, int , int );
     QList<Linha> inicializaLinha(QList<Linha>, int );
     std::map<int , std::map<int , double >> getLimitesDti(){
@@ -49,9 +55,15 @@ public:
         limitesDti[nivelTensao][harmonica] = limite;
     }
     void insereBackgroundNasPoluidoras(int , int  , QList<Barra> );
+    void atualizarRowBarras();
+    void atualizarColumnBarras();
 
 private slots:
 
+
+    void on_btnFiltrar_clicked();
+
+    void on_tabLinhas_currentChanged(int index);
 
 private:
     Ui::FrameBarras *ui;

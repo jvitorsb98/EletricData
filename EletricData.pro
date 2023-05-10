@@ -9,6 +9,8 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    filtrolinha.cpp \
+    filtrosbarra.cpp \
     framebarras.cpp \
     frametensoes.cpp \
     main.cpp \
@@ -17,12 +19,16 @@ SOURCES += \
 HEADERS += \
     Barra.h \
     Linha.h \
+    filtrolinha.h \
+    filtrosbarra.h \
     framebarras.h \
     frametensoes.h \
     mainwindow.h \
     style.h
 
 FORMS += \
+    filtrolinha.ui \
+    filtrosbarra.ui \
     framebarras.ui \
     frametensoes.ui \
     mainwindow.ui

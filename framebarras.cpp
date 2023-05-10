@@ -7,6 +7,9 @@
 #include<QtMath>
 #include "Barra.h"
 
+int FrameBarras::indexTab = 0 ;
+int numeroDeBarras;
+int indiceharmonicoMax;
 std::map<int , std::map<int , double >> limitesDti;
 FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft) :
     QFrame(parent),
@@ -15,9 +18,10 @@ FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft
     ui->setupUi(this);
     QList<Barra> barras;
     QList<Linha> linhas;
-    int indiceharmonicoMax = buscaIndiceHarmMax() ;
+    indiceharmonicoMax = buscaIndiceHarmMax() ;
     int quantidadeDeComponentesHarm = buscaQtdHarm(indiceharmonicoMax);
-    int numeroDeBarras = quantidadeDeBarras();
+    numeroDeBarras = quantidadeDeBarras();
+    FiltrosBarra* dialogFiltros = new FiltrosBarra();
 
     preencheLimites();
 
@@ -48,7 +52,7 @@ void FrameBarras::preencheTabela(QList<Linha> linhas, int numeroDeLinhas, int in
         ui->tableLinhas->setItem(1,i,dht);
         int pos =2;
         for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
-            QTableWidgetItem* dtiAbsolut = new QTableWidgetItem(QString::number(linhas[i].getDti().find(j)->second.first,'g',5));
+            QTableWidgetItem* dtiAbsolut = new QTableWidgetItem(QString::number(linhas[i].getDti().find(j)->second.first,'e',5));
             ui->tableLinhas->setItem(pos,i,dtiAbsolut);
             pos++;
         }
@@ -77,17 +81,17 @@ void FrameBarras::preencheTabela(QList<Linha> linhas, int numeroDeLinhas, int in
     }
 }
 QStringList FrameBarras::cabecalhoLinhas(int quantidadeDeComponentesHarm){
-    QStringList cabecalhos={"Corrente na Linha[pu]","THT[%]"};
+    QStringList cabecalhos={"Corrente na Linha[pu]","DHT[%]"};
                                for(int i = 0 , j = 3; i < quantidadeDeComponentesHarm ; i++ , j+=2){
-                                                                                                    QString item = "DIT"+QString::number(j);
+                                                                                                    QString item = "DHI"+QString::number(j);
     cabecalhos.push_back(item);
 }
 for(int i = 0 , j = 3; i < quantidadeDeComponentesHarm ; i++ , j+=2){
-    QString item = "DIT"+QString::number(j)+"[%]";
+    QString item = "DHI"+QString::number(j)+"[%]";
     cabecalhos.push_back(item);
 }
 cabecalhos.push_back("Corrente Eficaz[pu]");
-cabecalhos.push_back("Resistencia[ohm");
+cabecalhos.push_back("Resistencia[ohm]");
 cabecalhos.push_back("Perdas[pu]");
 cabecalhos.push_back("Perdas eficaz[pu]");
 
@@ -257,12 +261,12 @@ void FrameBarras::preencheTabela(QList<Barra> barras, int numeroDeBarras, int in
         ui->tableBarras->setItem(2,i,thdv);
         int pos =3;
         for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
-            QTableWidgetItem* dtiAbsolut = new QTableWidgetItem(QString::number(barras[i].getDti().find(j)->second.first.first,'g',5));
+            QTableWidgetItem* dtiAbsolut = new QTableWidgetItem(QString::number(barras[i].getDti().find(j)->second.first.first,'e',5));
             ui->tableBarras->setItem(pos,i,dtiAbsolut);
             pos++;
         }
         for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
-            QTableWidgetItem* dtiRelative = new QTableWidgetItem(QString::number(barras[i].getDti().find(j)->second.first.second,'g',5));
+            QTableWidgetItem* dtiRelative = new QTableWidgetItem(QString::number(barras[i].getDti().find(j)->second.first.second,'f',5));
             ui->tableBarras->setItem(pos,i,dtiRelative);
             pos++;
         }
@@ -276,6 +280,7 @@ void FrameBarras::insereQssFrameBarras(int numeroDeBarras , int quantidadeDeComp
     insereQssBtnVoltar();
     insereQssTabWidget();
     insereQssTableBarras(numeroDeBarras,quantidadeDeComponentesHarm);
+    insereQSSBtnFiltrar();
 }
 void FrameBarras::insereQssBtnAvancar(){
     Style style;
@@ -287,6 +292,11 @@ void FrameBarras::insereQssBtnVoltar(){
     Style style;
     ui->btnVoltar->setStyleSheet(style.cssBtn);
     ui->btnVoltar->setIcon(QIcon(":/icons/imgs/icons/anterior.png"));
+}
+void FrameBarras::insereQSSBtnFiltrar(){
+    Style style;
+    ui->btnFiltrar->setStyleSheet(style.cssBtn);
+    ui->btnFiltrar->setIcon(QIcon(":/icons/imgs/icons/filtro.png"));
 }
 void FrameBarras::insereQssTabWidget(){
     Style style;
@@ -621,5 +631,31 @@ void FrameBarras::insereBackgroundNasPoluidoras(int numeroDeBarras, int indiceha
             pos++;
         }
     }
+
+}
+void FrameBarras::on_btnFiltrar_clicked()
+{
+    if(indexTab == 0){
+        //Declara e instancia o frame da nova janela
+        FiltrosBarra *filtrosBarra = new FiltrosBarra(this,ui,indiceharmonicoMax,numeroDeBarras);
+        filtrosBarra->show();
+
+
+    }else{
+        FiltroLinha *filtrosLinha = new FiltroLinha(this,ui);
+        filtrosLinha->show();
+    }
+
+}
+void FrameBarras::on_tabLinhas_currentChanged(int index)
+{
+    indexTab = index;
+}
+
+void FrameBarras::atualizarRowBarras(){
+    qDebug() << "aqui";
+}
+
+void FrameBarras::atualizarColumnBarras(){
 
 }

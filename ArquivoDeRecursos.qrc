@@ -10,5 +10,6 @@
         <file>imgs/icons/anterior.png</file>
         <file>imgs/icons/checked.png</file>
         <file>imgs/icons/salve-.png</file>
+        <file>imgs/icons/filtro.png</file>
     </qresource>
 </RCC>
