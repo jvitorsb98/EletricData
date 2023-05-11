@@ -6,8 +6,7 @@
 #include<QFile>
 #include<ui_mainwindow.h>
 #include "style.h"
-#include "Barra.h"
-#include "Linha.h"
+
 
 
 QT_BEGIN_NAMESPACE

@@ -1,16 +1,18 @@
 #include "frametensoes.h"
 #include "framebarras.h"
-#include "style.h"
 #include<QFile>
 #include<QFileDialog>
 #include<QMessageBox>
 #include<QScrollBar>
 #include<QDebug>
 #include<QTextStream>
+#include "style.h"
+
 
 QFile* MainWindow::arquivoTensoes  = new QFile();
 QList<double> FrameTensoes::tensoesNominais;
 Ui::MainWindow *frameMain;
+int FrameTensoes::numeroDeBarras;
 
 FrameTensoes::FrameTensoes(QWidget *parent,Ui::MainWindow *mw) :
     QFrame(parent),
@@ -19,26 +21,27 @@ FrameTensoes::FrameTensoes(QWidget *parent,Ui::MainWindow *mw) :
 {
     ui->setupUi(this);
     Style style;
-    int numeroDeBarras=quantidadeDeBarras();
+    numeroDeBarras=quantidadeDeBarras();
     frameMain = mw; // define um ponteiro que aponte para onde ficam as informações do frame anterior
-    insereQssFrameTensoes(numeroDeBarras);
+    insereQssFrameTensoes();
 }
 
 FrameTensoes::~FrameTensoes()
 {
     delete ui;
 }
-
-void FrameTensoes::insereQssFrameTensoes(int numeroDeBarras){
+//Função mãe de inserir QSS neste frame
+void FrameTensoes::insereQssFrameTensoes(){
     insereQssBotaoAvancar();
     insereQssImportar();
     insereQssBtnVoltar();
     insereQssBtnLixeira();
     insereQssBtnSalvar();
     insereQssFrame();
-    insereTableTensoes(numeroDeBarras);
+    insereTableTensoes();
 
 }
+//Funções auxiliares de inserir QSS
 void FrameTensoes::insereQssBotaoAvancar(){
     Style style;
     ui->btnAvancar->setStyleSheet(style.cssBtn);
@@ -74,7 +77,8 @@ inline void FrameTensoes::insereQssFrame(){
     Style style;
     this->setStyleSheet(style.cssFrameArq); //Nova frame
 };
-void FrameTensoes::insereTableTensoes(int numeroDeBarras){
+//função que monta o table Tensões
+void FrameTensoes::insereTableTensoes(){
     Style style;
     //Tabela de tensões
     ui->tableTensoes->setColumnCount(2);
@@ -83,11 +87,8 @@ void FrameTensoes::insereTableTensoes(int numeroDeBarras){
     ui->tableTensoes->setHorizontalHeaderLabels(cabecalhos);
     ui->tableTensoes->setColumnWidth(0,100);
     //configura o width da segunda coluna para um determinado numero de barras, devido ao espaço disponibilizado apara oa scrool bar
-    if(numeroDeBarras <= 17){
-        ui->tableTensoes->setColumnWidth(1,358);
-    }else{
-        ui->tableTensoes->setColumnWidth(1,346);
-    }
+    (numeroDeBarras <=17 ) ?  ui->tableTensoes->setColumnWidth(1,358) : ui->tableTensoes->setColumnWidth(1,346);
+
     ui->tableTensoes->verticalHeader()->setVisible(false);
     ui->tableTensoes->verticalScrollBar()->setVisible(true);//torna visivel a scrool bar, mesmo que possa ficar pequena com poucas barras devido ao QSS
     ui->tableTensoes->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -186,6 +187,7 @@ void FrameTensoes::on_btnLixeira_clicked()
          return;
      }
 }
+//Botão para salvar a tabela em um arquivo externo
 void FrameTensoes::on_btnSalvarTabela_clicked()
 {
      //Configura-se um filtro para pesquisa do diretorio
@@ -209,6 +211,7 @@ void FrameTensoes::on_btnSalvarTabela_clicked()
      MainWindow::arquivoTensoes->close();
 
 }
+//Botão responsável por avançar para o proximo frame
 void FrameTensoes::on_btnAvancar_clicked()
 {
      if(verificaAvanco()){
@@ -227,7 +230,6 @@ void FrameTensoes::on_btnAvancar_clicked()
                     return;
                 }
                 QTextStream saida(MainWindow::arquivoTensoes);
-                int numeroDeBarras = quantidadeDeBarras();
                 for(int i=0 ; i< numeroDeBarras ; i++){
                     saida << ui->tableTensoes->item(i,0)->text()+","+ ((ui->tableTensoes->item(i,1))==nullptr ? " " : ui->tableTensoes->item(i,1)->text()) << Qt::endl;
                 }
@@ -251,11 +253,11 @@ void FrameTensoes::on_btnAvancar_clicked()
          frameBarras->setGeometry(224,0,800,720);
          frameBarras->show();
      }
-
      else{
          QMessageBox::warning(this,"Erro ao Avançar","Verifique o preenchimento de todos os campos de tensões");
      }
 }
+//função que verifica um possivel avanço
 bool FrameTensoes::verificaAvanco(){
     int numeroDeBarras = quantidadeDeBarras();
     for(int i = 0 ; i < numeroDeBarras ; i++){

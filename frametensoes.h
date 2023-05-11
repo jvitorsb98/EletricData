@@ -8,6 +8,7 @@
 #include<QObject>
 #include<utility>
 
+
 namespace Ui {
 class FrameTensoes;
 class MainWindow;
@@ -29,8 +30,9 @@ public:
     void insereQssBtnLixeira();
     void insereQssBtnSalvar();
     inline void insereQssFrame();
-    void insereTableTensoes(int );
-    void insereQssFrameTensoes(int );
+    void insereTableTensoes();
+    void insereQssFrameTensoes();
+    static int numeroDeBarras;
 
 private slots:
 

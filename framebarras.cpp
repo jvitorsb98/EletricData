@@ -5,6 +5,8 @@
 #include<QDebug>
 #include<QCoreApplication>
 #include<QtMath>
+#include "frameexportar.h"
+
 
 int FrameBarras::indexTab = 0 ;
 int numeroDeBarras;

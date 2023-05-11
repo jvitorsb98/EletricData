@@ -11,6 +11,8 @@
 #include "filtrolinha.h"
 #include "ui_filtrolinha.h"
 #include "frameexportar.h"
+#include "Barra.h"
+#include "Linha.h"
 
 namespace Ui {
 class FrameBarras;

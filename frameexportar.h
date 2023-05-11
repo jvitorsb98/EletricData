@@ -5,6 +5,7 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include "ui_framebarras.h"
+#include "framebarras.h"
 
 
 namespace Ui {

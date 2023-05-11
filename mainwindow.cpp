@@ -31,6 +31,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+//Função mãe de inserir QSS neste frames
 void MainWindow::insereCssMainWindow(){
 
     insereIcon();
@@ -44,6 +45,7 @@ void MainWindow::insereCssMainWindow(){
     insereQssLblVerifica();
 
 }
+//Funções auxiliares de inserir QSS
 void MainWindow::insereIcon(){
     //Propriedades da Janela( inserindo icone e titulo)
     setWindowIcon(QIcon(":/icons/imgs/icons/engrenagem.png"));
@@ -136,40 +138,7 @@ void MainWindow::insereQssLblVerifica(){
     ui->lblVerifica3->hide();
     ui->lblVerifica4->hide();
 }
-//verificar se os arquivos estão inseridos para permitir avanço
-void MainWindow::verificarAvanco(){
-
-    for (int i= 0; i < 5; i++) {
-        if(!this->getStatusDePreenchimento(i)){
-            return;
-        }
-    }
-    ui->btnAvancar->setEnabled(true);
-}
-//Função Responsável pelo evento do botão Avançar
-void MainWindow::on_btnAvancar_clicked()
-{
-    //abre uma QMessageBox confirmando se os dados estão certos para poder avançar
-    QMessageBox::StandardButton escolha;
-    escolha = QMessageBox::question(this,"Inserir Arquivos","Os arquivos inseridos estão corretos?",QMessageBox::Yes|QMessageBox::No);
-     if(escolha==QMessageBox::Yes){
-        //seta nas variaveis estáticas o endereço de cada arquivo selecionado
-        setaFileNameNosArq();
-        //Declara e instancia o frame da nova janela
-        FrameTensoes *frame = new FrameTensoes(this,ui);
-        ui->frameArquivos->hide(); // esconde a janela anterior
-        //configura a atual janela
-        frame->setParent(this);
-        frame->setGeometry(224,0,800,720);
-        frameAtual++; // atualiza o indice de status
-        MainWindow::atualizarStatus(ui); // atualiza a barra de status
-        frame->show(); // mostra a nova janela
-    }
-     else{
-        return;
-     }
-
-}
+//Função para inserir os fieNameNos aquivos
 void MainWindow::setaFileNameNosArq(){
      arquivoIsoln->setFileName(ui->lineEditIsoln->text());
      arquivoVsoln->setFileName(ui->lineEditVsoln->text());
@@ -382,4 +351,37 @@ void MainWindow::on_btnLixeiraLdat_clicked()
      else{
          return;
      }
+}
+//Função Responsável pelo evento do botão Avançar
+void MainWindow::on_btnAvancar_clicked()
+{
+     //abre uma QMessageBox confirmando se os dados estão certos para poder avançar
+     QMessageBox::StandardButton escolha;
+     escolha = QMessageBox::question(this,"Inserir Arquivos","Os arquivos inseridos estão corretos?",QMessageBox::Yes|QMessageBox::No);
+         if(escolha==QMessageBox::Yes){
+         //seta nas variaveis estáticas o endereço de cada arquivo selecionado
+         setaFileNameNosArq();
+         //Declara e instancia o frame da nova janela
+         FrameTensoes *frame = new FrameTensoes(this,ui);
+         ui->frameArquivos->hide(); // esconde a janela anterior
+         //configura a atual janela
+         frame->setParent(this);
+         frame->setGeometry(224,0,800,720);
+         frameAtual++; // atualiza o indice de status
+         MainWindow::atualizarStatus(ui); // atualiza a barra de status
+         frame->show(); // mostra a nova janela
+     }
+     else{
+         return;
+     }
+}
+//verificar se os arquivos estão inseridos para permitir avanço
+void MainWindow::verificarAvanco(){
+
+     for (int i = 0 ; i < 5; i++ ) {
+         if(!this->getStatusDePreenchimento(i)){
+            return;
+         }
+     }
+     ui->btnAvancar->setEnabled(true);
 }
