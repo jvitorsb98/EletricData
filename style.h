@@ -260,6 +260,15 @@ class Style{
                           "font-weight:bold;"
                           "color:"+corPrimaria+";}";
 
+    QString cssRadioButton = "QRadioButton {"
+                             "font-size:20px;"
+                             "font-family: 'Roboto';"
+                             "font-weight:bold;"
+                             "color:"+corPrimaria+";}";
+
+    QString cssImgExportar = "border-radius:30px;";
+
+
 
 
 

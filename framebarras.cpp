@@ -5,7 +5,6 @@
 #include<QDebug>
 #include<QCoreApplication>
 #include<QtMath>
-#include "Barra.h"
 
 int FrameBarras::indexTab = 0 ;
 int numeroDeBarras;
@@ -13,6 +12,8 @@ int indiceharmonicoMax;
 Ui::FrameTensoes *frameT;
 Ui::MainWindow *frameM;
 QWidget *p;
+QList<Barra> barra;
+QList<Linha> linha;
 
 
 std::map<int , std::map<int , double >> limitesDti;
@@ -23,6 +24,8 @@ FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft
     ui->setupUi(this);
     QList<Barra> barras;
     QList<Linha> linhas;
+    barra = barras;
+    linha = linhas;
     indiceharmonicoMax = buscaIndiceHarmMax() ;
     int quantidadeDeComponentesHarm = buscaQtdHarm(indiceharmonicoMax);
     numeroDeBarras = quantidadeDeBarras();
@@ -670,6 +673,20 @@ void FrameBarras::on_btnVoltar_clicked()
 
     p->show(); // mostra o Frame Anterior
     this->close(); //Fecha o frame atual
+
+}
+
+
+void FrameBarras::on_btnAvancar_clicked()
+{
+    MainWindow::frameAtual++;
+    MainWindow::atualizarStatus(frameM);
+    this->hide();
+
+    FrameExportar *frameExportar = new FrameExportar(this,frameM, numeroDeBarras, linhasDoSistema().size(),indiceharmonicoMax, barra,linha,ui);
+    frameExportar->setParent(this->parentWidget());
+    frameExportar->setGeometry(224,0,800,720);
+    frameExportar->show();
 
 }
 

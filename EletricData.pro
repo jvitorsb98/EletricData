@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,6 +12,7 @@ SOURCES += \
     filtrolinha.cpp \
     filtrosbarra.cpp \
     framebarras.cpp \
+    frameexportar.cpp \
     frametensoes.cpp \
     main.cpp \
     mainwindow.cpp
@@ -22,6 +23,7 @@ HEADERS += \
     filtrolinha.h \
     filtrosbarra.h \
     framebarras.h \
+    frameexportar.h \
     frametensoes.h \
     mainwindow.h \
     style.h
@@ -30,6 +32,7 @@ FORMS += \
     filtrolinha.ui \
     filtrosbarra.ui \
     framebarras.ui \
+    frameexportar.ui \
     frametensoes.ui \
     mainwindow.ui
 

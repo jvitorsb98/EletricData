@@ -12,6 +12,7 @@ int  FiltrosBarra::indexComboBox = 0;
 Ui::FrameBarras *frameBarras;
 int harmMax;
 int quantidadeDeBarras;
+QStringList FiltrosBarra::indiceBarrasEscolhidas;
 
 QList<Barra> barras;
 FiltrosBarra::FiltrosBarra(QWidget *parent ,  Ui::FrameBarras *fb,int indiceharmonicoMax , int numeroDeBarras) :
@@ -21,7 +22,7 @@ FiltrosBarra::FiltrosBarra(QWidget *parent ,  Ui::FrameBarras *fb,int indiceharm
     ui->setupUi(this);
     Style style;
     setParent(parent);
-    indexComboBox = 0;
+    ui->comboBoxFBarra->setCurrentIndex(indexComboBox);
     frameBarras = fb;
     harmMax = indiceharmonicoMax;
     quantidadeDeBarras = numeroDeBarras;
@@ -149,6 +150,8 @@ void FiltrosBarra::on_btnAplicar_clicked()
                 frameBarras->tableBarras->setColumnHidden(i,false);
             }
         }
+        indiceBarrasEscolhidas = indices;
+
     }
     else if(indexComboBox ==0){
         QStringList  indices = ui->lineEditFBarra->text().split("-");
@@ -161,6 +164,8 @@ void FiltrosBarra::on_btnAplicar_clicked()
                 frameBarras->tableBarras->setColumnHidden(i,true);
             }
         }
+        indiceBarrasEscolhidas = indices;
+
     }else{
         for(int i = 0 ; i < quantidadeDeBarras ; i++){
             if(frameBarras->tableBarras->item(2,i)->background() == QColor(255, 128, 128) ){
@@ -179,7 +184,6 @@ void FiltrosBarra::on_btnAplicar_clicked()
             }
         }
     }
-
 
     close();
 

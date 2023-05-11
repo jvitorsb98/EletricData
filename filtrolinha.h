@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include "ui_filtrolinha.h"
-#include "framebarras.h"
 #include "ui_framebarras.h"
-
+#include "mainwindow.h"
 namespace Ui {
 class FiltroLinha;
 }

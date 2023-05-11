@@ -27,8 +27,10 @@ FiltroLinha::FiltroLinha(QWidget *parent,  Ui::FrameBarras *fb, int numeroDeLinh
     quantidadeDeLinhas = numeroDeLinhas;
     frameBarras2 = fb;
     indiceHarmMax = harmMax;
-    indexComboBoxOrigem = 0;
-    indexComboBoxDestino = 0;
+    ui->comboBoxOrigem->setCurrentIndex(indexComboBoxOrigem);
+    ui->comboBoxDestino->setCurrentIndex(indexComboBoxDestino);
+
+
     ui->checkBoxCorrente->setChecked(correntePu);
     ui->checkBoxDht->setChecked(dht);
     ui->checkboxDit->setChecked(dit);

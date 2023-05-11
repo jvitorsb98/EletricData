@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include "ui_filtrosbarra.h"
-#include "framebarras.h"
 #include "ui_framebarras.h"
-#
+#include "mainwindow.h"
 
 namespace Ui {
 class FiltrosBarra;
@@ -28,6 +27,7 @@ public:
     static bool ditPercent;
     static bool tensaoEficaz;
     static int indexComboBox;
+    static QStringList indiceBarrasEscolhidas;
 
 private slots:
     void on_comboBoxFBarra_currentIndexChanged(int index);
