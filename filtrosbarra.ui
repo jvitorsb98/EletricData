@@ -134,6 +134,9 @@
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
     <item>
      <property name="text">
       <string>Intervalo</string>
@@ -142,6 +145,11 @@
     <item>
      <property name="text">
       <string>Componentes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Poluidoras</string>
      </property>
     </item>
    </widget>

@@ -10,6 +10,11 @@
 int FrameBarras::indexTab = 0 ;
 int numeroDeBarras;
 int indiceharmonicoMax;
+Ui::FrameTensoes *frameT;
+Ui::MainWindow *frameM;
+QWidget *p;
+
+
 std::map<int , std::map<int , double >> limitesDti;
 FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft) :
     QFrame(parent),
@@ -22,7 +27,9 @@ FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft
     int quantidadeDeComponentesHarm = buscaQtdHarm(indiceharmonicoMax);
     numeroDeBarras = quantidadeDeBarras();
     FiltrosBarra* dialogFiltros = new FiltrosBarra();
-
+    frameT = ft;
+    frameM = mw;
+    p = parent;
     preencheLimites();
 
     barras = inicializaBarra(barras,numeroDeBarras);
@@ -639,10 +646,8 @@ void FrameBarras::on_btnFiltrar_clicked()
         //Declara e instancia o frame da nova janela
         FiltrosBarra *filtrosBarra = new FiltrosBarra(this,ui,indiceharmonicoMax,numeroDeBarras);
         filtrosBarra->show();
-
-
-    }else{
-        FiltroLinha *filtrosLinha = new FiltroLinha(this,ui);
+    }else if( indexTab == 1){
+        FiltroLinha *filtrosLinha = new FiltroLinha(this,ui, linhasDoSistema().size() , indiceharmonicoMax);
         filtrosLinha->show();
     }
 
@@ -651,11 +656,20 @@ void FrameBarras::on_tabLinhas_currentChanged(int index)
 {
     indexTab = index;
 }
-
 void FrameBarras::atualizarRowBarras(){
     qDebug() << "aqui";
 }
-
 void FrameBarras::atualizarColumnBarras(){
 
 }
+
+void FrameBarras::on_btnVoltar_clicked()
+{
+    MainWindow::frameAtual--; //subtrai de 1 a variavel que conta em qua frame o usuario está
+    MainWindow::atualizarStatus(frameM); //atualiza a Barra de Status
+
+    p->show(); // mostra o Frame Anterior
+    this->close(); //Fecha o frame atual
+
+}
+

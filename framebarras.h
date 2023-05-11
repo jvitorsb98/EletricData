@@ -65,6 +65,8 @@ private slots:
 
     void on_tabLinhas_currentChanged(int index);
 
+    void on_btnVoltar_clicked();
+
 private:
     Ui::FrameBarras *ui;
     std::map<int , std::map<int , double >> limitesDti;

@@ -13,7 +13,7 @@ Ui::FrameBarras *frameBarras;
 int harmMax;
 int quantidadeDeBarras;
 
-
+QList<Barra> barras;
 FiltrosBarra::FiltrosBarra(QWidget *parent ,  Ui::FrameBarras *fb,int indiceharmonicoMax , int numeroDeBarras) :
     QDialog(parent),
     ui(new Ui::FiltrosBarra)
@@ -21,11 +21,10 @@ FiltrosBarra::FiltrosBarra(QWidget *parent ,  Ui::FrameBarras *fb,int indiceharm
     ui->setupUi(this);
     Style style;
     setParent(parent);
-
+    indexComboBox = 0;
     frameBarras = fb;
     harmMax = indiceharmonicoMax;
     quantidadeDeBarras = numeroDeBarras;
-
 
     ui->checkBoxTensaoBarra->setChecked(tensaoPu);
     ui->checkBoxTensaoNominal->setChecked(tensaoNominal);
@@ -67,8 +66,13 @@ void FiltrosBarra::on_comboBoxFBarra_currentIndexChanged(int index)
 {
     if(index == 0){
         ui->lineEditFBarra->setPlaceholderText("1-5");
-    }else{
+        ui->lineEditFBarra->setEnabled(true);
+    }else if (index==1){
         ui->lineEditFBarra->setPlaceholderText("1,2,3,4,5");
+        ui->lineEditFBarra->setEnabled(true);
+    }else{
+        ui->lineEditFBarra->setPlaceholderText("Todas as Barras Poluidoras");
+        ui->lineEditFBarra->setEnabled(false);
     }
 
     indexComboBox = index;
@@ -146,7 +150,7 @@ void FiltrosBarra::on_btnAplicar_clicked()
             }
         }
     }
-    else{
+    else if(indexComboBox ==0){
         QStringList  indices = ui->lineEditFBarra->text().split("-");
         int inicio = indices.at(0).toInt()-1;
         int fim = indices.at(1).toInt()-1;
@@ -157,7 +161,25 @@ void FiltrosBarra::on_btnAplicar_clicked()
                 frameBarras->tableBarras->setColumnHidden(i,true);
             }
         }
+    }else{
+        for(int i = 0 ; i < quantidadeDeBarras ; i++){
+            if(frameBarras->tableBarras->item(2,i)->background() == QColor(255, 128, 128) ){
+                frameBarras->tableBarras->setColumnHidden(i,false);
+            }else{
+                int pos =3;
+                for(int j = 3 ; j <= harmMax ; j+=2){
+                    if(frameBarras->tableBarras->item(pos,i)->background() == QColor(255, 128, 128) ){
+                        frameBarras->tableBarras->setColumnHidden(i,false);
+                        break;
+                    }else{
+                        frameBarras->tableBarras->setColumnHidden(i,true);
+                    }
+                    pos++;
+                }
+            }
+        }
     }
+
 
     close();
 

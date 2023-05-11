@@ -5,6 +5,7 @@
 #include "ui_filtrosbarra.h"
 #include "framebarras.h"
 #include "ui_framebarras.h"
+#
 
 namespace Ui {
 class FiltrosBarra;
