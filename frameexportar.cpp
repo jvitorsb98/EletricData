@@ -14,48 +14,60 @@
 Ui::MainWindow *frameMa;
 Ui::FrameBarras *frameB;
 QWidget *pa;
-int numDeBarras;
-int numDeLinhas;
-int HarmMax;
-QList<Barra> b;
-QList<Linha> l;
 
 
-FrameExportar::FrameExportar(QWidget *parent, Ui::MainWindow *mw, int numeroDeBarras , int quantidadeDeLinhas , int indiceHarmonicoMax , QList<Barra> barra , QList<Linha> linha,  Ui::FrameBarras *fb) :
+
+FrameExportar::FrameExportar(QWidget *parent, Ui::MainWindow *mw, Ui::FrameBarras *fb) :
     QFrame(parent),
     ui(new Ui::FrameExportar)
 {
     ui->setupUi(this);
 
-    Style style;
     frameMa = mw;
     pa = parent;
-    numDeBarras = numeroDeBarras;
-    numDeLinhas = quantidadeDeLinhas;
-    HarmMax = indiceHarmonicoMax;
-    b = barra;
-    l = linha;
     frameB = fb;
 
-    ui->btnExportar->setStyleSheet(style.cssBtn);
+    inicializaFrame();
+
+
+}
+
+void FrameExportar::inicializaFrame(){
+    inserirQssFrame();
+}
+
+void FrameExportar::inserirQssFrame(){
+    inserirQssImg();
+    inserirQssRadioButton();
+    inserirQssBtn();
+}
+
+void FrameExportar::inserirQssImg(){
+    Style style;
     ui->img->setPixmap(QPixmap(":/imgExportar/imgs/descritiva/relatorio.png"));
     ui->img->setStyleSheet(style.cssImgExportar);
+}
+
+void FrameExportar::inserirQssRadioButton(){
+    Style style;
     ui->radioButtonCsv->setStyleSheet(style.cssRadioButton);
     ui->radioButtonExcel->setStyleSheet(style.cssRadioButton);
     ui->radioButtonPDF->setStyleSheet(style.cssRadioButton);
-    ui->btnVoltar->setStyleSheet(style.cssBtn);
-    ui->btnVoltar->setIcon(QIcon(":/icons/imgs/icons/anterior.png"));
+}
+
+void FrameExportar::inserirQssBtn(){
+    Style style;
+    ui->btnExportar->setStyleSheet(style.cssBtn);
     ui->btnExportar->setIcon(QIcon(":/icons/imgs/icons/exportar.png"));
     ui->btnExportar->setLayoutDirection(Qt::RightToLeft);
-
-
+    ui->btnVoltar->setStyleSheet(style.cssBtn);
+    ui->btnVoltar->setIcon(QIcon(":/icons/imgs/icons/anterior.png"));
 }
 
 FrameExportar::~FrameExportar()
 {
     delete ui;
 }
-
 void FrameExportar::on_btnVoltar_clicked()
 {
     MainWindow::frameAtual = 2; //subtrai de 1 a variavel que conta em qua frame o usuario está
@@ -65,8 +77,6 @@ void FrameExportar::on_btnVoltar_clicked()
     this->close(); //Fecha o frame atual
 
 }
-
-
 void FrameExportar::on_btnExportar_clicked()
 {
 
@@ -91,43 +101,40 @@ void FrameExportar::on_btnExportar_clicked()
                 painter.drawText(coluna,linha,"Barra "+QString::number(i+1));
                 linha +=20;
                 if(FiltrosBarra::tensaoPu){
-                    painter.drawText(coluna+40,linha,"Tensão na Barra [pu] : "+frameB->tableBarras->item(0,i)->text());
+                    painter.drawText(coluna+40,linha,"Tensão na Barra [pu] : "+QString::number(FrameBarras::barras[i].getTensaoPu()));
                     linha +=20;
                 }
                 if(FiltrosBarra::tensaoNominal){
-                    painter.drawText(coluna+40,linha,"Tensão Nominal [kV] : "+frameB->tableBarras->item(1,i)->text());
+                    painter.drawText(coluna+40,linha,"Tensão Nominal [kV] : "+QString::number(FrameBarras::barras[i].getTensaoNominalKv()));
                     linha +=20;
                 }
                 if(FiltrosBarra::thdv){
-                    painter.drawText(coluna+40,linha,"THDV [%] : "+frameB->tableBarras->item(2,i)->text());
+                    painter.drawText(coluna+40,linha,"THDV[%] : "+QString::number(FrameBarras::barras[i].getThdvPercent()));
                     linha +=20;
                 }
-                int cont=3;
-                for(int j = 3 ; j <= HarmMax ; j+=2 ){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
                     if(FiltrosBarra::dit){
-                        painter.drawText(coluna+40,linha,"DIT"+QString::number(j)+" : "+frameB->tableBarras->item(cont,i)->text());
+                        painter.drawText(coluna+40,linha,"DIT"+QString::number(j)+" : "+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first));
                         linha +=20;
                     }
-                    cont++;
                 }
-                for(int j = 3 ; j <= HarmMax ; j+=2 ){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
                     if(FiltrosBarra::ditPercent){
-                        painter.drawText(coluna+40,linha,"DIT"+QString::number(j)+"[%] : "+frameB->tableBarras->item(cont,i)->text());
+                        painter.drawText(coluna+40,linha,"DIT"+QString::number(j)+"[%] : "+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second));
                         linha +=20;
                     }
-                    cont++;
                 }
                 if(FiltrosBarra::tensaoEficaz){
-                    painter.drawText(coluna+40,linha,"Tensao Eficaz : "+frameB->tableBarras->item(cont,i)->text());
+                    painter.drawText(coluna+40,linha,"Tensao Eficaz : "+QString::number(FrameBarras::barras[i].getTensaoEficaz()));
                 }
                 linha+=20;
                 painter.drawText(coluna+40,linha,"Observações : ");
                 linha+=20;
-                if(frameB->tableBarras->item(2,i)->background() == QColor(255, 128, 128)){
-                    if(frameB->tableBarras->item(1,i)->text().toDouble() < 2.3){
+                if(FrameBarras::barras[i].getBarraInfectadaThdv()){
+                    if(FrameBarras::barras[i].getTensaoNominalKv() < 2.3){
                         painter.drawText(coluna+120,linha,"THDV[%] acima do limite regulamentado pelo Prodist , limite máximo de 10% para este nível de tensão ");
                         linha+=20;
-                    }else if(frameB->tableBarras->item(1,i)->text().toDouble() >= 2.3 && frameB->tableBarras->item(1,i)->text().toDouble() < 69){
+                    }else if(FrameBarras::barras[i].getTensaoNominalKv() >= 2.3 && FrameBarras::barras[i].getTensaoNominalKv() < 69){
                         painter.drawText(coluna+120,linha,"THDV[%] acima do limite regulamentado pelo Prodist , limite máximo de 8% para este nível de tensão ");
                         linha+=20;
                     }else{
@@ -137,31 +144,16 @@ void FrameExportar::on_btnExportar_clicked()
                     painter.drawText(coluna+120,linha,"THDV[%] dentro dos limites regulamentados pelo Prodist");
                     linha+=20;
                 }
-                cont = 3 ;
-                for(int j = 3 ; j <= HarmMax ; j+=2 ){
-                    cont++;
+                if(FiltrosBarra::ditPercent || FiltrosBarra::dit){
+                    for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2 ){
+                        if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                            painter.drawText(coluna+120,linha,"TDI"+QString::number(j)+"[%] acima do limite regulamentado pelo Prodist , limite máximo de "+QString::number(FrameBarras::getLimitesDti()[FrameBarras::barras[i].getClasseTensaoThdv()][j])+"% para este nível de tensão ");
+                        }else{
+                            painter.drawText(coluna+120,linha,"TDI"+QString::number(j)+"[%] dentro dos limites regulamentados pelo Prodist");
+                    }
+                    linha +=20;
+                    }
                 }
-//                if(FiltrosBarra::ditPercent || FiltrosBarra::dit){
-//                    int nivelDeTensao;
-//                    for(int j = 3 ; j <= HarmMax ; j+=2 ){
-//                        if(frameB->tableBarras->item(1,i)->text().toDouble() <= 1){
-//                            nivelDeTensao=1;
-//                        }else if(frameB->tableBarras->item(1,i)->text().toDouble() > 1 && frameB->tableBarras->item(1,i)->text().toDouble() <= 13.8){
-//                            nivelDeTensao =2;
-//                        }else if(frameB->tableBarras->item(1,i)->text().toDouble() > 13.8 && frameB->tableBarras->item(1,i)->text().toDouble() <= 69){
-//                            nivelDeTensao = 3;
-//                        }else{
-//                            nivelDeTensao = 4;
-//                        }
-//                        if(frameB->tableBarras->item(cont,i)->text().toDouble() > FrameBarras::limitesDti){
-//                            painter.drawText(coluna+120,linha,"TDI"+QString::number(j)+"[%] acima do limite regulamentado pelo Prodist , limite máximo de "+QString::number(FrameBarras::getLimitesDti().find(j)->second.find(nivelDeTensao)->second)+"% para este nível de tensão ");
-//                        }else{
-//                            painter.drawText(coluna+120,linha,"TDI"+QString::number(j)+"[%] dentro dos limites regulamentados pelo Prodist");
-//                        }
-//                        linha +=20;
-//                        cont++;
-//                    }
-//                }
 
             }
         }

@@ -15,7 +15,7 @@ class FiltrosBarra : public QDialog
     Q_OBJECT
 
 public:
-    explicit FiltrosBarra(QWidget *parent = nullptr , Ui::FrameBarras *fb=nullptr,int indiceharmonicoMax =0 , int numeroDeBarras=0);
+    explicit FiltrosBarra(QWidget *parent = nullptr , Ui::FrameBarras *fb=nullptr);
     ~FiltrosBarra();
     Ui::FiltrosBarra* getUi(){
         return ui;
@@ -28,6 +28,14 @@ public:
     static bool tensaoEficaz;
     static int indexComboBox;
     static QStringList indiceBarrasEscolhidas;
+    void inserindoQssFiltrosBarra();
+    void inserindoQssCheckBox();
+    void inserindoQssLineEdit();
+    void inserindoQssBtnAplicar();
+    void inserindoQssComboBox();
+    void inserindoQssGroupBox();
+    void inserindoQssJanela();
+    void inicializandoFrame();
 
 private slots:
     void on_comboBoxFBarra_currentIndexChanged(int index);

@@ -8,57 +8,34 @@
 #include "frameexportar.h"
 #include "frametensoes.h"
 #include "Barra.h"
+#include "mainwindow.h"
 
 
 int FrameBarras::indexTab = 0 ;
 int FrameBarras::numeroDeLinhas;
 int FrameBarras::indiceHarmMax;
 int FrameBarras::quantidadeDeComponentesHarm;
-QList<Barra> FrameBarras::barras;
-QList<Linha> FrameBarras::linhas;
+QList<Barra> FrameBarras::barras = QList<Barra>();
+QList<Linha> FrameBarras::linhas =  QList<Linha>();
+std::map<int , std::map<int , double >> FrameBarras::limitesDti = std::map<int , std::map<int , double >>() ;
 
 
 
-int numeroDeBarras; // variavel para tirar
-int indiceHarmMax; // variavel para retirar
 Ui::FrameTensoes *frameT;
 Ui::MainWindow *frameM;
 QWidget *p;
-QList<Barra> barra;
-QList<Linha> linha;
-std::map<int , std::map<int , double >> limitesDti;
+
 
 FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft) :
     QFrame(parent),
     ui(new Ui::FrameBarras)
 {
     ui->setupUi(this);
-    QList<Barra> barras;
-    QList<Linha> linhas;
-    barra = barras;
-    linha = linhas;
-    indiceHarmMax = buscaIndiceHarmMax() ;
-    quantidadeDeComponentesHarm = buscaQtdHarm(indiceHarmMax);
-    numeroDeLinhas = linhasDoSistema().size();
-    numeroDeBarras = quantidadeDeBarras();
-    FiltrosBarra* dialogFiltros = new FiltrosBarra();
+
     frameT = ft;
     frameM = mw;
     p = parent;
-    preencheLimites();
-
-    barras = inicializaBarra(barras);
-    barras = preencheBarra(barras);
-
-    insereQssFrameBarras();
-    preencheTabela(barras);
-
-    linhas = inicializaLinha(linhas);
-    linhas = preencheLinha(linhas);
-
-    preencheTabela(linhas);
-
-    insereBackgroundNasPoluidoras(barras);
+    inicializaFrame();
 
 
 }
@@ -69,7 +46,31 @@ FrameBarras::~FrameBarras()
     delete ui;
 }
 
-void FrameBarras::preencheTabela(QList<Linha> linhas){
+void FrameBarras::inicializaFrame(){
+    inicializaVariaveisStatic();
+    preencheLimites();
+    preencheFrameBarras();
+}
+void FrameBarras::inicializaVariaveisStatic(){
+    indiceHarmMax = buscaIndiceHarmMax() ;
+    quantidadeDeComponentesHarm = buscaQtdHarm(indiceHarmMax);
+    numeroDeLinhas = linhasDoSistema().size();
+}
+void FrameBarras::preencheFrameBarras(){
+    insereQssFrameBarras();
+    inicializaBarra();
+    preencheBarra();
+
+    preencheTabelaBarra();
+
+    inicializaLinha();
+    preencheLinha();
+
+    preencheTabelaLinha();
+
+    insereBackgroundNasPoluidoras();
+}
+void FrameBarras::preencheTabelaLinha(){
     for(int i = 0 ; i < numeroDeLinhas ; i++){
         QTableWidgetItem* correntePu = new QTableWidgetItem(QString::number(linhas[i].getCorrente(),'f',5));
         QTableWidgetItem* dht = new QTableWidgetItem(QString::number(linhas[i].getDhtPercent(),'f',5));
@@ -122,13 +123,13 @@ cabecalhos.push_back("Perdas eficaz[pu]");
 
     return cabecalhos;
 }
-QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas){
+void FrameBarras::preencheLinha(){
     if(!MainWindow::arquivoThdi->open(QFile::ReadOnly|QFile::Text)){
     if(MainWindow::arquivoThdi->error() == QFile::OpenError){
-        return linhas ;
+        return  ;
     }
     QMessageBox::warning(this,"Erro","Erro ao abrir arquivo");
-    return linhas ;
+    return  ;
     }
 
     for(int i = 0 ; i < 2 ; i++){
@@ -161,10 +162,10 @@ QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas){
 
     if(!MainWindow::arquivoIsoln->open(QFile::ReadOnly|QFile::Text)){
         if(MainWindow::arquivoIsoln->error() == QFile::OpenError){
-            return linhas ;
+            return  ;
         }
         QMessageBox::warning(this,"Erro","Erro ao abrir arquivo");
-        return linhas ;
+        return  ;
     }
 
     for(int i = 0 ; i < 4 ; i++){
@@ -190,7 +191,6 @@ QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas){
             percentHarm = 100 * (magHarm / linhas[j].getCorrente());
             if (numHarm != 1 && origem < destino && origem !=0 && destino!=0) {
                 linhas[j].setDti(numHarm, magHarm, percentHarm);
-                qDebug() << "\nnum Harm: " << linhas[j].getDti().find(numHarm)->first << "\nOrigem: " << origem << "\nDestino: " << destino << "\nMagHarm: " << linhas[j].getDti().find(numHarm)->second.first << "percentHarm: " << linhas[j].getDti().find(numHarm)->second.second;
                 j++;
             }
         }
@@ -201,10 +201,10 @@ QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas){
 
     if(!MainWindow::arquivoLdat->open(QFile::ReadOnly|QFile::Text)){
         if(MainWindow::arquivoLdat->error() == QFile::OpenError){
-            return linhas ;
+            return  ;
         }
         QMessageBox::warning(this,"Erro","Erro ao abrir arquivo");
-        return linhas ;
+        return  ;
     }
 
     for(int i = 0 ; i < 9 ; i++){
@@ -242,7 +242,7 @@ QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas){
 
     MainWindow::arquivoLdat->close();
 
-    return linhas;
+    return ;
 }
 QStringList FrameBarras::linhasDoSistema(){
     int origem;
@@ -275,7 +275,7 @@ QStringList FrameBarras::linhasDoSistema(){
 
 
 }
-void FrameBarras::preencheTabela(QList<Barra> barras){
+void FrameBarras::preencheTabelaBarra(){
     for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
         QTableWidgetItem* tensaoPu = new QTableWidgetItem(QString::number(barras[i].getTensaoPu(),'f',5));
         QTableWidgetItem* tensaoNominal = new QTableWidgetItem(QString::number(barras[i].getTensaoNominalKv(),'f',5));
@@ -366,30 +366,28 @@ void FrameBarras::insereQssTableLinhas(){
 
 
 }
-QList<Linha> FrameBarras::inicializaLinha(QList<Linha>linhas){
+void FrameBarras::inicializaLinha(){
     for(int i = 0 ; i < numeroDeLinhas ; i++){
         Linha linha;
         linhas.push_back(linha);
     }
-    return linhas;
 }
-QList<Barra> FrameBarras::inicializaBarra(QList<Barra>barras){
+void FrameBarras::inicializaBarra(){
     for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
         Barra barra;
         barras.push_back(barra);
     }
-    return barras;
 }
-QList<Barra> FrameBarras::preencheBarra(QList<Barra> barras ){
+void FrameBarras::preencheBarra( ){
 
     //O arquivo thdv possui uma linha de informa~ção para cada barra -- por isso foi selecionado
     //realiza o procedimento de abertura do arquivo e alerta caso aconteça algum erro -- Conforme explicado no mainwindow.cpp
     if(!MainWindow::arquivoThdv->open(QFile::ReadOnly|QFile::Text)){
         if(MainWindow::arquivoThdv->error() == QFile::OpenError){
-            return barras ;
+            return ;
         }
         QMessageBox::warning(this,"Erro","Erro ao abrir arquivo");
-        return barras ;
+        return ;
     }
 
     for(int i = 0 ; i < 2 ; i++){
@@ -449,10 +447,10 @@ QList<Barra> FrameBarras::preencheBarra(QList<Barra> barras ){
 
     if(!MainWindow::arquivoVsoln->open(QFile::ReadOnly|QFile::Text)){
             if(MainWindow::arquivoVsoln->error() == QFile::OpenError){
-            return barras ;
+            return  ;
             }
             QMessageBox::warning(this,"Erro","Erro ao abrir arquivo");
-            return barras ;
+            return  ;
     }
 
     for(int i = 0 ; i < 4 ; i++){
@@ -510,7 +508,6 @@ QList<Barra> FrameBarras::preencheBarra(QList<Barra> barras ){
     }
 
     MainWindow::arquivoVsoln->close();
-    return barras;
 }
 inline double FrameBarras::potencia(double base , int expoente){
     return (expoente==0) ? 1 : (expoente == 1) ? base : base*potencia(base,expoente-1);
@@ -640,7 +637,7 @@ void FrameBarras::preencheLimites(){
     limitesDti[4][997] = 0.5; // impar nao multplica de 3 maior q 25
     limitesDti[4][998] = 0.5; // impar multipla de 3 maior q 21
 }
-void FrameBarras::insereBackgroundNasPoluidoras(QList<Barra> barras){
+void FrameBarras::insereBackgroundNasPoluidoras(){
     for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
         if(barras[i].getBarraInfectadaThdv()){
             ui->tableBarras->item(2,i)->setBackground( QColor(255, 128, 128));
@@ -665,10 +662,10 @@ void FrameBarras::on_btnFiltrar_clicked()
 {
     if(indexTab == 0){
         //Declara e instancia o frame da nova janela
-        FiltrosBarra *filtrosBarra = new FiltrosBarra(this,ui,indiceHarmMax,numeroDeBarras);
+        FiltrosBarra *filtrosBarra = new FiltrosBarra(this,ui);
         filtrosBarra->show();
     }else if( indexTab == 1){
-        FiltroLinha *filtrosLinha = new FiltroLinha(this,ui, linhasDoSistema().size() , indiceHarmMax);
+        FiltroLinha *filtrosLinha = new FiltroLinha(this,ui);
         filtrosLinha->show();
     }
 
@@ -678,7 +675,6 @@ void FrameBarras::on_tabLinhas_currentChanged(int index)
     indexTab = index;
 }
 void FrameBarras::atualizarRowBarras(){
-    qDebug() << "aqui";
 }
 void FrameBarras::atualizarColumnBarras(){
 
@@ -698,7 +694,7 @@ void FrameBarras::on_btnAvancar_clicked()
     MainWindow::atualizarStatus(frameM);
     this->hide();
 
-    FrameExportar *frameExportar = new FrameExportar(this,frameM, numeroDeBarras, linhasDoSistema().size(),indiceHarmMax, barra,linha,ui);
+    FrameExportar *frameExportar = new FrameExportar(this,frameM,ui);
     frameExportar->setParent(this->parentWidget());
     frameExportar->setGeometry(224,0,800,720);
     frameExportar->show();

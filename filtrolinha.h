@@ -14,7 +14,7 @@ class FiltroLinha : public QDialog
     Q_OBJECT
 
 public:
-    explicit FiltroLinha(QWidget *parent = nullptr, Ui::FrameBarras *fb=nullptr , int numeroDeLinhas = 0 , int indiceHarmMax = 0);
+    explicit FiltroLinha(QWidget *parent = nullptr, Ui::FrameBarras *fb=nullptr);
     ~FiltroLinha();
     static bool correntePu;
     static bool dht;
@@ -26,6 +26,16 @@ public:
     static bool perdasEficaz;
     static int indexComboBoxOrigem;
     static int indexComboBoxDestino;
+
+    void inserindoQssFiltrosLinha();
+    void inserindoQssCheckBox();
+    void inserindoQssLineEdit();
+    void inserindoQssBtnAplicar();
+    void inserindoQssComboBox();
+    void inserindoQssGroupBox();
+    void inserindoQssJanela();
+    void inicializandoFrame();
+
 
 private slots:
 

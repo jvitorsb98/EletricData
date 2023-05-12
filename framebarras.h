@@ -31,11 +31,13 @@ public:
     static int indiceHarmMax;
     static int numeroDeLinhas;
     static int quantidadeDeComponentesHarm;
-
+    void preencheFrameBarras();
+    void inicializaVariaveisStatic();
+    void inicializaFrame();
     QStringList cabecalhoBarras();
     QStringList cabecalhoLinhas();
-    QList<Barra> preencheBarra(QList<Barra>);
-    QList<Barra> inicializaBarra(QList<Barra> );
+    void preencheBarra();
+    void inicializaBarra();
     QStringList linhasDoSistema();
     inline double potencia(double , int );
     void insereQssBtnAvancar();
@@ -44,23 +46,24 @@ public:
     void insereQssTableBarras();
     void insereQssTableLinhas();
     void insereQssFrameBarras();
-    void preencheTabela(QList<Barra>);
-    void preencheTabela(QList<Linha>);
+    void preencheTabelaBarra();
+    void preencheTabelaLinha();
     void preencheLimites();
     static QList<Barra> barras;
     static QList<Linha> linhas;
     void insereQSSBtnFiltrar();
-    QList<Linha> preencheLinha(QList<Linha>);
-    QList<Linha> inicializaLinha(QList<Linha>);
-     std::map<int , std::map<int , double >> getLimitesDti(){
+    void preencheLinha();
+    void inicializaLinha();
+    static std::map<int , std::map<int , double >> getLimitesDti(){
         return limitesDti;
     }
 
-     void setLimitesDti(int nivelTensao , int harmonica , double limite){
+    static void setLimitesDti(int nivelTensao , int harmonica , double limite){
         limitesDti[nivelTensao][harmonica] = limite;
     }
 
-    void insereBackgroundNasPoluidoras(QList<Barra> );
+
+    void insereBackgroundNasPoluidoras();
     void atualizarRowBarras();
     void atualizarColumnBarras();
 
@@ -77,7 +80,7 @@ private slots:
 
 private:
     Ui::FrameBarras *ui;
-    std::map<int , std::map<int , double >> limitesDti;
+    static std::map<int , std::map<int , double >> limitesDti;
 
 };
 

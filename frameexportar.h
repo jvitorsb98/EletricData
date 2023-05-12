@@ -17,8 +17,15 @@ class FrameExportar : public QFrame
     Q_OBJECT
 
 public:
-    explicit FrameExportar(QWidget *parent = nullptr, Ui::MainWindow *mw=nullptr, int numeroDeBarras=0 , int quantidadeDeLinhas = 0 , int indiceHarmonicoMax = 0  , QList<Barra> barras =  QList<Barra>() , QList<Linha> linhas= QList<Linha>() ,  Ui::FrameBarras *fb=nullptr);
+    explicit FrameExportar(QWidget *parent = nullptr, Ui::MainWindow *mw=nullptr,  Ui::FrameBarras *fb=nullptr);
     ~FrameExportar();
+
+    void inserirQssFrame();
+    void inserirQssImg();
+    void inserirQssRadioButton();
+    void inserirQssBtn();
+    void inicializaFrame();
+
 
 private slots:
     void on_btnVoltar_clicked();

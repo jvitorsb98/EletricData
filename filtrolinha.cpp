@@ -13,24 +13,75 @@ bool FiltroLinha::perdas = true;
 bool FiltroLinha::perdasEficaz = true;
 int  FiltroLinha::indexComboBoxOrigem = 0;
 int FiltroLinha::indexComboBoxDestino = 0;
-int quantidadeDeLinhas;
 Ui::FrameBarras *frameBarras2;
 
 
-FiltroLinha::FiltroLinha(QWidget *parent,  Ui::FrameBarras *fb, int numeroDeLinhas, int harmMax) :
+FiltroLinha::FiltroLinha(QWidget *parent,  Ui::FrameBarras *fb) :
     QDialog(parent),
     ui(new Ui::FiltroLinha)
 {
     ui->setupUi(this);
     Style style;
     setParent(parent);
-    quantidadeDeLinhas = numeroDeLinhas;
     frameBarras2 = fb;
-    FrameBarras::indiceHarmMax = harmMax;
+
+    inicializandoFrame();
+
+}
+
+
+FiltroLinha::~FiltroLinha()
+{
+    delete ui;
+}
+
+void FiltroLinha::inicializandoFrame(){
+    inserindoQssFiltrosLinha();
+}
+void FiltroLinha::inserindoQssComboBox(){
+    Style style;
     ui->comboBoxOrigem->setCurrentIndex(indexComboBoxOrigem);
     ui->comboBoxDestino->setCurrentIndex(indexComboBoxDestino);
 
+}
+void FiltroLinha::inserindoQssFiltrosLinha(){
+    inserindoQssCheckBox();
+    inserindoQssLineEdit();
+    inserindoQssBtnAplicar();
+    inserindoQssComboBox();
+    inserindoQssGroupBox();
+    inserindoQssJanela();
+}
+void FiltroLinha::inserindoQssGroupBox(){
+    Style style;
+    ui->groupBoxAtributos->setStyleSheet(style.cssGroupBox);
+    ui->groupBoxLinhas->setStyleSheet(style.cssGroupBox);
+}
+void FiltroLinha::inserindoQssJanela(){
 
+    setWindowTitle("Filtros");
+    setWindowIcon(QIcon(":/icons/imgs/icons/engrenagem.png"));
+
+}
+void FiltroLinha::inserindoQssBtnAplicar(){
+    Style style;
+    ui->btnAplicar->setStyleSheet(style.cssBtn);
+
+}
+void FiltroLinha::inserindoQssLineEdit(){
+    Style style;
+    ui->lineEditFLinha->setPlaceholderText("Todas");
+    ui->lineEditFLinha2->setPlaceholderText("Todas");
+
+
+    ui->lineEditFLinha->setStyleSheet(style.cssLineEdit);
+    ui->lineEditFLinha2->setStyleSheet(style.cssLineEdit);
+
+    ui->lineEditFLinha->setEnabled(false);
+    ui->lineEditFLinha2->setEnabled(false);
+}
+void FiltroLinha::inserindoQssCheckBox(){
+    Style style;
     ui->checkBoxCorrente->setChecked(correntePu);
     ui->checkBoxDht->setChecked(dht);
     ui->checkboxDit->setChecked(dit);
@@ -39,15 +90,6 @@ FiltroLinha::FiltroLinha(QWidget *parent,  Ui::FrameBarras *fb, int numeroDeLinh
     ui->checkBoxResistencia->setChecked(resistencia);
     ui->checkBoxPerdas->setChecked(perdas);
     ui->checkBoxPerdasEficaz->setChecked(perdasEficaz);
-    ui->lineEditFLinha->setPlaceholderText("Todas");
-    ui->lineEditFLinha2->setPlaceholderText("Todas");
-
-
-    ui->lineEditFLinha->setStyleSheet(style.cssLineEdit);
-    ui->lineEditFLinha2->setStyleSheet(style.cssLineEdit);
-    ui->btnAplicar->setStyleSheet(style.cssBtn);
-    ui->groupBoxAtributos->setStyleSheet(style.cssGroupBox);
-    ui->groupBoxLinhas->setStyleSheet(style.cssGroupBox);
 
     ui->checkBoxCorrente->setStyleSheet(style.cssCheckbox);
     ui->checkBoxDht->setStyleSheet(style.cssCheckbox);
@@ -59,19 +101,7 @@ FiltroLinha::FiltroLinha(QWidget *parent,  Ui::FrameBarras *fb, int numeroDeLinh
     ui->checkBoxPerdasEficaz->setStyleSheet(style.cssCheckbox);
 
 
-    ui->lineEditFLinha->setEnabled(false);
-    ui->lineEditFLinha2->setEnabled(false);
-
-    setWindowTitle("Filtros");
-    setWindowIcon(QIcon(":/icons/imgs/icons/engrenagem.png"));
 }
-
-
-FiltroLinha::~FiltroLinha()
-{
-    delete ui;
-}
-
 void FiltroLinha::on_comboBoxOrigem_currentIndexChanged(int index)
 {
     if(index == 0){
@@ -84,8 +114,6 @@ void FiltroLinha::on_comboBoxOrigem_currentIndexChanged(int index)
 
     indexComboBoxOrigem = index;
 }
-
-
 void FiltroLinha::on_comboBoxDestino_currentIndexChanged(int index)
 {
     if(index == 0){
@@ -98,8 +126,6 @@ void FiltroLinha::on_comboBoxDestino_currentIndexChanged(int index)
 
     indexComboBoxDestino = index;
 }
-
-
 void FiltroLinha::on_btnAplicar_clicked()
 {
 
@@ -177,14 +203,14 @@ void FiltroLinha::on_btnAplicar_clicked()
 
     //filtra as colunas da tabela
     if(indexComboBoxOrigem==0 && indexComboBoxDestino==0){
-        for(int i = 0 ; i < quantidadeDeLinhas ; i++){
+        for(int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             frameBarras2->tableLinhas->setColumnHidden(i,false);
         }
     }else if(indexComboBoxOrigem==0 && indexComboBoxDestino==1){
-        for(int i = 0 ; i < quantidadeDeLinhas ; i++){
+        for(int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             frameBarras2->tableLinhas->setColumnHidden(i,false);
         }
-        for( int i = 0 ; i < quantidadeDeLinhas ; i++){
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = frameBarras2->tableLinhas->horizontalHeaderItem(i)->text().split("->").at(1).toInt();
             QStringList Selecionadas = ui->lineEditFLinha2->text().split(",");
             for( int j = 0 ; j < Selecionadas.size() ; j++){
@@ -198,10 +224,10 @@ void FiltroLinha::on_btnAplicar_clicked()
             }
         }
     }else if(indexComboBoxOrigem==1 && indexComboBoxDestino==0){
-        for(int i = 0 ; i < quantidadeDeLinhas ; i++){
+        for(int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             frameBarras2->tableLinhas->setColumnHidden(i,false);
         }
-        for( int i = 0 ; i < quantidadeDeLinhas ; i++){
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeOrigem = frameBarras2->tableLinhas->horizontalHeaderItem(i)->text().split("->").at(0).toInt();
             QStringList Selecionadas = ui->lineEditFLinha->text().split(",");
             for( int j = 0 ; j < Selecionadas.size() ; j++){
@@ -215,10 +241,10 @@ void FiltroLinha::on_btnAplicar_clicked()
             }
         }
     }else{
-        for(int i = 0 ; i < quantidadeDeLinhas ; i++){
+        for(int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             frameBarras2->tableLinhas->setColumnHidden(i,false);
         }
-        for( int i = 0 ; i < quantidadeDeLinhas ; i++){
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = frameBarras2->tableLinhas->horizontalHeaderItem(i)->text().split("->").at(1).toInt();
             int barraDeOrigem = frameBarras2->tableLinhas->horizontalHeaderItem(i)->text().split("->").at(0).toInt();
             QStringList SelecionadasOrigem = ui->lineEditFLinha->text().split(",");
