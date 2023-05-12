@@ -1,6 +1,7 @@
 #include "filtrosbarra.h"
 #include "ui_filtrosbarra.h"
 #include "style.h"
+#include "framebarras.h"
 
 bool FiltrosBarra::tensaoPu = true;
 bool FiltrosBarra::tensaoNominal = true;
@@ -14,7 +15,6 @@ int harmMax;
 int quantidadeDeBarras;
 QStringList FiltrosBarra::indiceBarrasEscolhidas;
 
-QList<Barra> barras;
 FiltrosBarra::FiltrosBarra(QWidget *parent ,  Ui::FrameBarras *fb,int indiceharmonicoMax , int numeroDeBarras) :
     QDialog(parent),
     ui(new Ui::FiltrosBarra)

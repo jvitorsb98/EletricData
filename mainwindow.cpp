@@ -150,7 +150,7 @@ void MainWindow::setaFileNameNosArq(){
 void MainWindow::on_btnVsoln_clicked()
 {
     //Configura-se um filtro para pesquisa do arquivo
-    QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
+    QString filtro="Arquivos separados por virgula (*.csv)";
     QString abrirArquivo=QFileDialog::getOpenFileName(this,"Abrir Arquivo","C:://",filtro); //inicia a procura do arquivo C::
     arquivoVsoln->setFileName(abrirArquivo); //busca grava o endereço para abertura
     //realiza abertura do arquivo
@@ -173,7 +173,7 @@ void MainWindow::on_btnVsoln_clicked()
 //Permite a busca e inserção do arquivo Thdv -- Os comentarios sao os mesmos do MainWindow::on_btnVsoln_clicked()
 void MainWindow::on_btnThdv_clicked()
 {
-    QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
+    QString filtro="Arquivos separados por virgula (*.csv)";
     QString abrirArquivo=QFileDialog::getOpenFileName(this,"Abrir Arquivo","C:://",filtro);
     arquivoThdv->setFileName(abrirArquivo);
     if(!arquivoThdv->open(QFile::ReadOnly|QFile::Text)){
@@ -195,7 +195,7 @@ void MainWindow::on_btnThdv_clicked()
 //Permite a busca e inserção do arquivo Thdi -- Os comentarios sao os mesmos do MainWindow::on_btnVsoln_clicked()
 void MainWindow::on_btnThdi_clicked()
 {
-    QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
+    QString filtro="Arquivos separados por virgula (*.csv)";
     QString abrirArquivo=QFileDialog::getOpenFileName(this,"Abrir Arquivo","C:://",filtro);
     arquivoThdi->setFileName(abrirArquivo);
     if(!arquivoThdi->open(QFile::ReadOnly|QFile::Text)){
@@ -218,7 +218,7 @@ void MainWindow::on_btnThdi_clicked()
 //Permite a busca e inserção do arquivo Isoln -- Os comentarios sao os mesmos do MainWindow::on_btnVsoln_clicked()
 void MainWindow::on_btnIsoln_clicked()
 {
-    QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
+    QString filtro="Arquivos separados por virgula (*.csv)";
     QString abrirArquivo=QFileDialog::getOpenFileName(this,"Abrir Arquivo","C:://",filtro);
     arquivoIsoln->setFileName(abrirArquivo);
     if(!arquivoIsoln->open(QFile::ReadOnly|QFile::Text)){
@@ -241,7 +241,7 @@ void MainWindow::on_btnIsoln_clicked()
 //Permite a busca e inserção do arquivo Ldat -- Os comentarios sao os mesmos do MainWindow::on_btnVsoln_clicked()
 void MainWindow::on_btnLdat_clicked()
 {
-    QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
+    QString filtro="Arquivos separados por virgula (*.csv)";
     QString abrirArquivo=QFileDialog::getOpenFileName(this,"Abrir Arquivo","C:://",filtro);
     arquivoLdat->setFileName(abrirArquivo);
     if(!arquivoLdat->open(QFile::ReadOnly|QFile::Text)){

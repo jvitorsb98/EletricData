@@ -10,7 +10,6 @@
 #include "ui_filtrosbarra.h"
 #include "filtrolinha.h"
 #include "ui_filtrolinha.h"
-#include "frameexportar.h"
 #include "Barra.h"
 #include "Linha.h"
 
@@ -29,26 +28,30 @@ public:
     inline int buscaQtdHarm(int );
     int quantidadeDeBarras();
     static int indexTab;
+    static int indiceHarmMax;
+    static int numeroDeLinhas;
+    static int quantidadeDeComponentesHarm;
 
-    QStringList cabecalhoBarras(int);
-    QStringList cabecalhoLinhas(int);
-    QList<Barra> preencheBarra(QList<Barra> ,int, int );
-    QList<Barra> inicializaBarra(QList<Barra>,int );
+    QStringList cabecalhoBarras();
+    QStringList cabecalhoLinhas();
+    QList<Barra> preencheBarra(QList<Barra>);
+    QList<Barra> inicializaBarra(QList<Barra> );
     QStringList linhasDoSistema();
     inline double potencia(double , int );
     void insereQssBtnAvancar();
     void insereQssBtnVoltar();
     void insereQssTabWidget();
     void insereQssTableBarras();
-    void insereQssTableLinhas(int ,int );
-    void insereQssTableBarras(int, int);
-    void insereQssFrameBarras(int , int);
-    void preencheTabela(QList<Barra> , int , int );
-    void preencheTabela(QList<Linha>, int , int );
+    void insereQssTableLinhas();
+    void insereQssFrameBarras();
+    void preencheTabela(QList<Barra>);
+    void preencheTabela(QList<Linha>);
     void preencheLimites();
+    static QList<Barra> barras;
+    static QList<Linha> linhas;
     void insereQSSBtnFiltrar();
-    QList<Linha> preencheLinha(QList<Linha>, int , int );
-    QList<Linha> inicializaLinha(QList<Linha>, int );
+    QList<Linha> preencheLinha(QList<Linha>);
+    QList<Linha> inicializaLinha(QList<Linha>);
      std::map<int , std::map<int , double >> getLimitesDti(){
         return limitesDti;
     }
@@ -57,7 +60,7 @@ public:
         limitesDti[nivelTensao][harmonica] = limite;
     }
 
-    void insereBackgroundNasPoluidoras(int , int  , QList<Barra> );
+    void insereBackgroundNasPoluidoras(QList<Barra> );
     void atualizarRowBarras();
     void atualizarColumnBarras();
 

@@ -6,19 +6,28 @@
 #include<QCoreApplication>
 #include<QtMath>
 #include "frameexportar.h"
+#include "frametensoes.h"
+#include "Barra.h"
 
 
 int FrameBarras::indexTab = 0 ;
-int numeroDeBarras;
-int indiceharmonicoMax;
+int FrameBarras::numeroDeLinhas;
+int FrameBarras::indiceHarmMax;
+int FrameBarras::quantidadeDeComponentesHarm;
+QList<Barra> FrameBarras::barras;
+QList<Linha> FrameBarras::linhas;
+
+
+
+int numeroDeBarras; // variavel para tirar
+int indiceHarmMax; // variavel para retirar
 Ui::FrameTensoes *frameT;
 Ui::MainWindow *frameM;
 QWidget *p;
 QList<Barra> barra;
 QList<Linha> linha;
-
-
 std::map<int , std::map<int , double >> limitesDti;
+
 FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft) :
     QFrame(parent),
     ui(new Ui::FrameBarras)
@@ -28,8 +37,9 @@ FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft
     QList<Linha> linhas;
     barra = barras;
     linha = linhas;
-    indiceharmonicoMax = buscaIndiceHarmMax() ;
-    int quantidadeDeComponentesHarm = buscaQtdHarm(indiceharmonicoMax);
+    indiceHarmMax = buscaIndiceHarmMax() ;
+    quantidadeDeComponentesHarm = buscaQtdHarm(indiceHarmMax);
+    numeroDeLinhas = linhasDoSistema().size();
     numeroDeBarras = quantidadeDeBarras();
     FiltrosBarra* dialogFiltros = new FiltrosBarra();
     frameT = ft;
@@ -37,16 +47,19 @@ FrameBarras::FrameBarras(QWidget *parent,Ui::MainWindow *mw,Ui::FrameTensoes *ft
     p = parent;
     preencheLimites();
 
-    barras = inicializaBarra(barras,numeroDeBarras);
-    barras = preencheBarra(barras,numeroDeBarras,quantidadeDeComponentesHarm);
-    insereQssFrameBarras( numeroDeBarras ,  quantidadeDeComponentesHarm);
-    preencheTabela(barras, numeroDeBarras, indiceharmonicoMax);
-    insereBackgroundNasPoluidoras(numeroDeBarras,indiceharmonicoMax,barras);
-    insereQssTableLinhas(linhasDoSistema().size(),quantidadeDeComponentesHarm);
-    ui->tableLinhas->setHorizontalHeaderLabels(linhasDoSistema());
-    linhas = inicializaLinha(linhas,linhasDoSistema().size());
-    linhas = preencheLinha(linhas, linhasDoSistema().size(),quantidadeDeComponentesHarm);
-    preencheTabela(linhas,linhasDoSistema().size(),indiceharmonicoMax);
+    barras = inicializaBarra(barras);
+    barras = preencheBarra(barras);
+
+    insereQssFrameBarras();
+    preencheTabela(barras);
+
+    linhas = inicializaLinha(linhas);
+    linhas = preencheLinha(linhas);
+
+    preencheTabela(linhas);
+
+    insereBackgroundNasPoluidoras(barras);
+
 
 }
 
@@ -56,19 +69,19 @@ FrameBarras::~FrameBarras()
     delete ui;
 }
 
-void FrameBarras::preencheTabela(QList<Linha> linhas, int numeroDeLinhas, int indiceharmonicoMax){
+void FrameBarras::preencheTabela(QList<Linha> linhas){
     for(int i = 0 ; i < numeroDeLinhas ; i++){
         QTableWidgetItem* correntePu = new QTableWidgetItem(QString::number(linhas[i].getCorrente(),'f',5));
         QTableWidgetItem* dht = new QTableWidgetItem(QString::number(linhas[i].getDhtPercent(),'f',5));
         ui->tableLinhas->setItem(0,i,correntePu);
         ui->tableLinhas->setItem(1,i,dht);
         int pos =2;
-        for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
+        for(int j = 3 ; j <= indiceHarmMax ; j+=2){
             QTableWidgetItem* dtiAbsolut = new QTableWidgetItem(QString::number(linhas[i].getDti().find(j)->second.first,'e',5));
             ui->tableLinhas->setItem(pos,i,dtiAbsolut);
             pos++;
         }
-        for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
+        for(int j = 3 ; j <= indiceHarmMax ; j+=2){
             QTableWidgetItem* dtiRelative = new QTableWidgetItem(QString::number(linhas[i].getDti().find(j)->second.second,'f',5));
             ui->tableLinhas->setItem(pos,i,dtiRelative);
             pos++;
@@ -92,12 +105,12 @@ void FrameBarras::preencheTabela(QList<Linha> linhas, int numeroDeLinhas, int in
 
     }
 }
-QStringList FrameBarras::cabecalhoLinhas(int quantidadeDeComponentesHarm){
+QStringList FrameBarras::cabecalhoLinhas(){
     QStringList cabecalhos={"Corrente na Linha[pu]","DHT[%]"};
-                               for(int i = 0 , j = 3; i < quantidadeDeComponentesHarm ; i++ , j+=2){
-                                                                                                    QString item = "DHI"+QString::number(j);
-    cabecalhos.push_back(item);
-}
+    for(int i = 0 , j = 3; i < quantidadeDeComponentesHarm ; i++ , j+=2){
+        QString item = "DHI"+QString::number(j);
+        cabecalhos.push_back(item);
+    }
 for(int i = 0 , j = 3; i < quantidadeDeComponentesHarm ; i++ , j+=2){
     QString item = "DHI"+QString::number(j)+"[%]";
     cabecalhos.push_back(item);
@@ -109,7 +122,7 @@ cabecalhos.push_back("Perdas eficaz[pu]");
 
     return cabecalhos;
 }
-QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas , int quantidadeDeLinhas, int quantidadeDeComponentesHarm){
+QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas){
     if(!MainWindow::arquivoThdi->open(QFile::ReadOnly|QFile::Text)){
     if(MainWindow::arquivoThdi->error() == QFile::OpenError){
         return linhas ;
@@ -162,10 +175,9 @@ QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas , int quantidadeDeLi
     double magHarm;
     double percentHarm;
     cont = 1;
-    qDebug() << quantidadeDeComponentesHarm << "\n" << quantidadeDeLinhas << "\n";
 
     for(int i = 0 ; i < quantidadeDeComponentesHarm ; i++){
-        for(int j = 0 ; j < quantidadeDeLinhas ; ){
+        for(int j = 0 ; j < numeroDeLinhas ; ){
             QString line = MainWindow::arquivoIsoln->readLine();
             if (line.trimmed().isEmpty()) { // verificar se é uma linha vazia
                 break;
@@ -201,7 +213,7 @@ QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas , int quantidadeDeLi
     double resistencia;
     double perdas;
     double perdasEficaz;
-    for(int i = 0 ; i < quantidadeDeLinhas ; i++){
+    for(int i = 0 ; i < numeroDeLinhas ; i++){
         QString line = MainWindow::arquivoLdat->readLine();
         if (line.trimmed().isEmpty()) { // verificar se é uma linha vazia
             break;
@@ -216,7 +228,7 @@ QList<Linha> FrameBarras::preencheLinha(QList<Linha> linhas , int quantidadeDeLi
         }
         resistencia = indice.at(3).trimmed().toDouble();
 
-        for(int j = 0 ; j < quantidadeDeLinhas ; j++){
+        for(int j = 0 ; j < numeroDeLinhas ; j++){
             if(linhas[j].getOrigem() == origem && linhas[j].getDestino() == destino){
                 linhas[j].setResistencia(resistencia);
                 perdas = linhas[j].getCorrente()*resistencia;
@@ -263,8 +275,8 @@ QStringList FrameBarras::linhasDoSistema(){
 
 
 }
-void FrameBarras::preencheTabela(QList<Barra> barras, int numeroDeBarras, int indiceharmonicoMax){
-    for(int i = 0 ; i < numeroDeBarras ; i++){
+void FrameBarras::preencheTabela(QList<Barra> barras){
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
         QTableWidgetItem* tensaoPu = new QTableWidgetItem(QString::number(barras[i].getTensaoPu(),'f',5));
         QTableWidgetItem* tensaoNominal = new QTableWidgetItem(QString::number(barras[i].getTensaoNominalKv(),'f',5));
         QTableWidgetItem* thdv = new QTableWidgetItem(QString::number(barras[i].getThdvPercent(),'f',5));
@@ -272,12 +284,12 @@ void FrameBarras::preencheTabela(QList<Barra> barras, int numeroDeBarras, int in
         ui->tableBarras->setItem(1,i,tensaoNominal);
         ui->tableBarras->setItem(2,i,thdv);
         int pos =3;
-        for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
+        for(int j = 3 ; j <= indiceHarmMax ; j+=2){
             QTableWidgetItem* dtiAbsolut = new QTableWidgetItem(QString::number(barras[i].getDti().find(j)->second.first.first,'e',5));
             ui->tableBarras->setItem(pos,i,dtiAbsolut);
             pos++;
         }
-        for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
+        for(int j = 3 ; j <= indiceHarmMax ; j+=2){
             QTableWidgetItem* dtiRelative = new QTableWidgetItem(QString::number(barras[i].getDti().find(j)->second.first.second,'f',5));
             ui->tableBarras->setItem(pos,i,dtiRelative);
             pos++;
@@ -287,12 +299,14 @@ void FrameBarras::preencheTabela(QList<Barra> barras, int numeroDeBarras, int in
     }
 
 }
-void FrameBarras::insereQssFrameBarras(int numeroDeBarras , int quantidadeDeComponentesHarm){
+void FrameBarras::insereQssFrameBarras(){
     insereQssBtnAvancar();
     insereQssBtnVoltar();
     insereQssTabWidget();
-    insereQssTableBarras(numeroDeBarras,quantidadeDeComponentesHarm);
+    insereQssTableBarras();
     insereQSSBtnFiltrar();
+    insereQssTableLinhas();
+
 }
 void FrameBarras::insereQssBtnAvancar(){
     Style style;
@@ -314,12 +328,12 @@ void FrameBarras::insereQssTabWidget(){
     Style style;
     ui->tabLinhas->setStyleSheet(style.cssTabWidget);
 }
-void FrameBarras::insereQssTableBarras(int numeroDeBarras , int quantidadeDeComponentesHarm){
+void FrameBarras::insereQssTableBarras(){
     Style style;
     //Inserindo cabeçalho vertical na priemira coluna
     ui->tableBarras->setRowCount(3 + 2*quantidadeDeComponentesHarm + 1);
-    ui->tableBarras->setColumnCount(numeroDeBarras);
-    ui->tableBarras->setVerticalHeaderLabels(cabecalhoBarras(quantidadeDeComponentesHarm));
+    ui->tableBarras->setColumnCount(FrameTensoes::numeroDeBarras);
+    ui->tableBarras->setVerticalHeaderLabels(cabecalhoBarras());
     ui->tableBarras->setStyleSheet(style.cssTabelaBarras); //insere QSS na tabela
     ui->tableBarras->verticalHeader()->setStyleSheet(style.cssHeaderTabela);
     ui->tableBarras->verticalHeader()->setLineWidth(1);
@@ -333,11 +347,11 @@ void FrameBarras::insereQssTableBarras(int numeroDeBarras , int quantidadeDeComp
     ui->tableBarras->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
 }
-void FrameBarras::insereQssTableLinhas(int numeroDeLinhas,int quantidadeDeComponentesHarm){
+void FrameBarras::insereQssTableLinhas(){
     Style style;
     ui->tableLinhas->setRowCount(2 + 2*quantidadeDeComponentesHarm + 4);
     ui->tableLinhas->setColumnCount(numeroDeLinhas);
-    ui->tableLinhas->setVerticalHeaderLabels(cabecalhoLinhas(quantidadeDeComponentesHarm));
+    ui->tableLinhas->setVerticalHeaderLabels(cabecalhoLinhas());
     ui->tableLinhas->setStyleSheet(style.cssTabelaBarras); //insere QSS na tabela
     ui->tableLinhas->verticalHeader()->setStyleSheet(style.cssHeaderTabela);
     ui->tableLinhas->verticalHeader()->setLineWidth(1);
@@ -348,23 +362,25 @@ void FrameBarras::insereQssTableLinhas(int numeroDeLinhas,int quantidadeDeCompon
         ui->tableLinhas->setRowHeight(i, 31);
     }
     ui->tableBarras->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    ui->tableLinhas->setHorizontalHeaderLabels(linhasDoSistema());
+
 
 }
-QList<Linha> FrameBarras::inicializaLinha(QList<Linha>linhas, int numeroDeLinhas){
+QList<Linha> FrameBarras::inicializaLinha(QList<Linha>linhas){
     for(int i = 0 ; i < numeroDeLinhas ; i++){
         Linha linha;
         linhas.push_back(linha);
     }
     return linhas;
 }
-QList<Barra> FrameBarras::inicializaBarra(QList<Barra>barras,int numeroDeBarras){
-    for(int i = 0 ; i < numeroDeBarras ; i++){
+QList<Barra> FrameBarras::inicializaBarra(QList<Barra>barras){
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
         Barra barra;
         barras.push_back(barra);
     }
     return barras;
 }
-QList<Barra> FrameBarras::preencheBarra(QList<Barra> barras, int numeroDeBarras, int quantidadeDeComponentesHarm){
+QList<Barra> FrameBarras::preencheBarra(QList<Barra> barras ){
 
     //O arquivo thdv possui uma linha de informa~ção para cada barra -- por isso foi selecionado
     //realiza o procedimento de abertura do arquivo e alerta caso aconteça algum erro -- Conforme explicado no mainwindow.cpp
@@ -380,7 +396,7 @@ QList<Barra> FrameBarras::preencheBarra(QList<Barra> barras, int numeroDeBarras,
         MainWindow::arquivoThdv->readLine();
     }
 
-    for(int i = 0 ; i < numeroDeBarras ; i++){
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
         QString line = MainWindow::arquivoThdv->readLine();
         QStringList indice = line.split(",");
         bool ok = false; // inicializa com 'false' indicando que a conversão falhou
@@ -449,7 +465,7 @@ QList<Barra> FrameBarras::preencheBarra(QList<Barra> barras, int numeroDeBarras,
     double percentHarm;
     int classeTensaoThdi;
     std::setlocale(LC_ALL,"");
-    for(int i = 0 ; i < numeroDeBarras*(quantidadeDeComponentesHarm+1) ; i++){
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras*(quantidadeDeComponentesHarm+1) ; i++){
         QString line = MainWindow::arquivoVsoln->readLine();
         QStringList indice = line.split(",");
 
@@ -525,7 +541,7 @@ int FrameBarras::buscaIndiceHarmMax(){
 inline int FrameBarras::buscaQtdHarm(int indiceHarmMax){
     return (indiceHarmMax/2) > 1 ? indiceHarmMax/2 : 0;
 }
-QStringList FrameBarras::cabecalhoBarras(int quantidadeDeComponentesHarm){
+QStringList FrameBarras::cabecalhoBarras(){
     QStringList cabecalhos={"Tensão na Barra[pu]","Tensão Nominal[Kv]","TDHV[%]"};
     for(int i = 0 , j = 3; i < quantidadeDeComponentesHarm ; i++ , j+=2){
         QString item = "DIT"+QString::number(j);
@@ -624,19 +640,19 @@ void FrameBarras::preencheLimites(){
     limitesDti[4][997] = 0.5; // impar nao multplica de 3 maior q 25
     limitesDti[4][998] = 0.5; // impar multipla de 3 maior q 21
 }
-void FrameBarras::insereBackgroundNasPoluidoras(int numeroDeBarras, int indiceharmonicoMax , QList<Barra> barras){
-    for(int i = 0 ; i < numeroDeBarras ; i++){
+void FrameBarras::insereBackgroundNasPoluidoras(QList<Barra> barras){
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
         if(barras[i].getBarraInfectadaThdv()){
             ui->tableBarras->item(2,i)->setBackground( QColor(255, 128, 128));
         }
         int pos =3;
-        for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
+        for(int j = 3 ; j <= indiceHarmMax ; j+=2){
             if(barras[i].getDti().find(j)->second.second.second){
                     ui->tableBarras->item(pos,i)->setBackground( QColor(255, 128, 128));
             }
             pos++;
         }
-        for(int j = 3 ; j <= indiceharmonicoMax ; j+=2){
+        for(int j = 3 ; j <= indiceHarmMax ; j+=2){
             if(barras[i].getDti().find(j)->second.second.second){
                     ui->tableBarras->item(pos,i)->setBackground( QColor(255, 128, 128));
             }
@@ -649,10 +665,10 @@ void FrameBarras::on_btnFiltrar_clicked()
 {
     if(indexTab == 0){
         //Declara e instancia o frame da nova janela
-        FiltrosBarra *filtrosBarra = new FiltrosBarra(this,ui,indiceharmonicoMax,numeroDeBarras);
+        FiltrosBarra *filtrosBarra = new FiltrosBarra(this,ui,indiceHarmMax,numeroDeBarras);
         filtrosBarra->show();
     }else if( indexTab == 1){
-        FiltroLinha *filtrosLinha = new FiltroLinha(this,ui, linhasDoSistema().size() , indiceharmonicoMax);
+        FiltroLinha *filtrosLinha = new FiltroLinha(this,ui, linhasDoSistema().size() , indiceHarmMax);
         filtrosLinha->show();
     }
 
@@ -667,7 +683,6 @@ void FrameBarras::atualizarRowBarras(){
 void FrameBarras::atualizarColumnBarras(){
 
 }
-
 void FrameBarras::on_btnVoltar_clicked()
 {
     MainWindow::frameAtual--; //subtrai de 1 a variavel que conta em qua frame o usuario está
@@ -677,15 +692,13 @@ void FrameBarras::on_btnVoltar_clicked()
     this->close(); //Fecha o frame atual
 
 }
-
-
 void FrameBarras::on_btnAvancar_clicked()
 {
     MainWindow::frameAtual++;
     MainWindow::atualizarStatus(frameM);
     this->hide();
 
-    FrameExportar *frameExportar = new FrameExportar(this,frameM, numeroDeBarras, linhasDoSistema().size(),indiceharmonicoMax, barra,linha,ui);
+    FrameExportar *frameExportar = new FrameExportar(this,frameM, numeroDeBarras, linhasDoSistema().size(),indiceHarmMax, barra,linha,ui);
     frameExportar->setParent(this->parentWidget());
     frameExportar->setGeometry(224,0,800,720);
     frameExportar->show();

@@ -1,6 +1,7 @@
 #include "filtrolinha.h"
 #include "ui_filtrolinha.h"
 #include "style.h"
+#include "framebarras.h"
 
 bool FiltroLinha::correntePu = true;
 bool FiltroLinha::dht = true;
@@ -13,7 +14,6 @@ bool FiltroLinha::perdasEficaz = true;
 int  FiltroLinha::indexComboBoxOrigem = 0;
 int FiltroLinha::indexComboBoxDestino = 0;
 int quantidadeDeLinhas;
-int indiceHarmMax;
 Ui::FrameBarras *frameBarras2;
 
 
@@ -26,7 +26,7 @@ FiltroLinha::FiltroLinha(QWidget *parent,  Ui::FrameBarras *fb, int numeroDeLinh
     setParent(parent);
     quantidadeDeLinhas = numeroDeLinhas;
     frameBarras2 = fb;
-    indiceHarmMax = harmMax;
+    FrameBarras::indiceHarmMax = harmMax;
     ui->comboBoxOrigem->setCurrentIndex(indexComboBoxOrigem);
     ui->comboBoxDestino->setCurrentIndex(indexComboBoxDestino);
 
@@ -125,7 +125,7 @@ void FiltroLinha::on_btnAplicar_clicked()
         frameBarras2->tableLinhas->setRowHidden(1,false);
     }
     int pos =2;
-    for(int j = 3 ; j <= indiceHarmMax ; j+=2){
+    for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
         if(!dit){
             frameBarras2->tableLinhas->setRowHidden(pos,true);
             pos++;
@@ -134,7 +134,7 @@ void FiltroLinha::on_btnAplicar_clicked()
             pos++;
         }
     }
-    for(int j = 3 ; j <= indiceHarmMax ; j+=2){
+    for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
         if(!ditPercent){
             frameBarras2->tableLinhas->setRowHidden(pos,true);
             pos++;
