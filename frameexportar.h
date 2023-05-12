@@ -34,6 +34,12 @@ public:
     void CsvInterBarrasInterL1TodL2();
     void CsvInterBarrasTodL1InterL2();
     void CsvInterBarrasTodL1TodL2();
+    QFile* criaArquivo();
+    void CsvEscreveBarrasIntervalo(QTextStream* );
+    void CsvEscreveLInterL1InterL2(QTextStream* );
+    void CsvEscreveLInterL1TodL2(QTextStream* );
+    void CsvEscreveLTodL1InterL2(QTextStream* );
+    void CsvEscreveLTodL1TodL2(QTextStream* );
 
 private slots:
     void on_btnVoltar_clicked();

@@ -385,547 +385,458 @@ void FrameExportar::imprimirPdfBarrasInfectadas(){
 
 
 void FrameExportar::CsvInterBarrasInterL1InterL2(){
-        //Configura-se um filtro para pesquisa do diretorio
-        QFile *arquivoSaida = new QFile();
-        QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
-        QString localSalvamento =QFileDialog::getSaveFileName(this,"Salvar Arquivo",QDir::homePath(),filtro);
-        arquivoSaida->setFileName(localSalvamento);
-        if(!arquivoSaida->open(QFile::WriteOnly | QFile::Text)){
-        if(arquivoSaida->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
-            return;
-        }
-        QMessageBox::warning(this,"Erro","Arquivo não pôde ser savo"); //caso tenha selecionado e não tenha conseguido abrir é enviado uma messagem de erro
-        return;
-        }
 
+        QFile *arquivoSaida = criaArquivo();
         QTextStream saida(arquivoSaida);
-        int inicio = FiltrosBarra::indiceBarrasEscolhidas.at(0).toInt()-1;
-        int fim = FiltrosBarra::indiceBarrasEscolhidas.at(1).toInt()-1;
-        //entra com o numero das Barras:
-        saida << "Barra" ;
-        for(int i= inicio ; i <= fim ; i++){
-        saida << ","+QString::number(i+1);
-        } saida << Qt::endl;
-        if(FiltrosBarra::tensaoPu){
-            saida << "Tensao na Barra[pu]" ;
-            for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
-            qDebug() << QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
-            } saida << Qt::endl;
-        }
-        if(FiltrosBarra::tensaoNominal){
-            saida << "Tensao Nominal[kV]" ;
-                for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5);
-            } saida << Qt::endl;
-        }
-        if(FiltrosBarra::thdv){
-            saida << "THDV[%]" ;
-                for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5);
-            } saida << Qt::endl;
-        }
-        if(FiltrosBarra::dit){
-            for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-            saida << "TDI"+QString::number(j)+"[pu]" ;
-                for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5);
-                } saida << Qt::endl;
-            }
-        }
-        if(FiltrosBarra::ditPercent){
-            for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-                saida << "TDI"+QString::number(j)+"[pu]" ;
-                for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5);
-                } saida << Qt::endl;
-            }
-        }
-        if(FiltrosBarra::tensaoEficaz){
-            saida << "Tensao Eficaz[pu]" ;
-            for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5);
-            } saida << Qt::endl;
-        }
-
-        for(int i = 0 ; i < 4 ; i++){
-            saida << Qt::endl;
-        }
-
+        CsvEscreveBarrasIntervalo(&saida);
+        CsvEscreveLInterL1InterL2(&saida);
         //Linhas
-        saida << "Linha" ;
-        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-            int barraDeDestino = FrameBarras::linhas[i].getDestino();
-            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                    for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
-                        if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                              saida << ","+QString::number(barraDeOrigem)+"->"+QString::number(barraDeDestino);
-                        }
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
-        if(FiltroLinha::correntePu){
-            saida << "Corrente[pu]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                int barraDeDestino = FrameBarras::linhas[i].getDestino();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
-                              if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                                  saida << ","+QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
-                              }
-                        }
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
-        if(FiltroLinha::dht){
-            saida << "DHT[%]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                int barraDeDestino = FrameBarras::linhas[i].getDestino();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
-                              if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                                  saida << ","+QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
-                              }
-                        }
-                    }
-                }
-            }
-        }
-        saida <<Qt::endl;
-        if(FiltroLinha::dit){
-            for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
-                saida << "DHT"+QString::number(p);
-                for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                    int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                    int barraDeDestino = FrameBarras::linhas[i].getDestino();
-                    for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                        if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                            for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
-                                  if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                                      saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.first,'f',5);
-                                  }
-                            }
-                        }
-                    }
-                }
-                saida <<Qt::endl;
-            }
-        }
-        if(FiltroLinha::ditPercent){
-            for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
-                saida << "DHT"+QString::number(p)+"[%]";
-                for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                    int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                    int barraDeDestino = FrameBarras::linhas[i].getDestino();
-                    for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                        if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                            for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
-                                  if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                                      saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.second,'f',5);
-                                  }
-                            }
-                        }
-                    }
-                }
-                saida <<Qt::endl;
-            }
-        }
-        if(FiltroLinha::resistencia){
-            saida << "Resistencia[ohm]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                int barraDeDestino = FrameBarras::linhas[i].getDestino();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
-                            if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                                  saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
-
-        if(FiltroLinha::perdas){
-            saida << "Perdas[pu]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                int barraDeDestino = FrameBarras::linhas[i].getDestino();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
-                            if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                                  saida << ","+QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
-
-        if(FiltroLinha::perdasEficaz){
-            saida << "Perdas[pu]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                int barraDeDestino = FrameBarras::linhas[i].getDestino();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
-                            if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                                  saida << ","+QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
-
         arquivoSaida->flush();
         arquivoSaida->close();
 }
 void FrameExportar::CsvInterBarrasInterL1TodL2(){
-        //Configura-se um filtro para pesquisa do diretorio
-        QFile *arquivoSaida = new QFile();
-        QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
-        QString localSalvamento =QFileDialog::getSaveFileName(this,"Salvar Arquivo",QDir::homePath(),filtro);
-        arquivoSaida->setFileName(localSalvamento);
-        if(!arquivoSaida->open(QFile::WriteOnly | QFile::Text)){
-            if(arquivoSaida->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
-                return;
-            }
-            QMessageBox::warning(this,"Erro","Arquivo não pôde ser savo"); //caso tenha selecionado e não tenha conseguido abrir é enviado uma messagem de erro
-            return;
-        }
-
+        QFile *arquivoSaida = criaArquivo();
         QTextStream saida(arquivoSaida);
-        int inicio = FiltrosBarra::indiceBarrasEscolhidas.at(0).toInt()-1;
-        int fim = FiltrosBarra::indiceBarrasEscolhidas.at(1).toInt()-1;
-        //entra com o numero das Barras:
-        saida << "Barra" ;
-        for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(i+1);
-        } saida << Qt::endl;
-        if(FiltrosBarra::tensaoPu){
-            saida << "Tensao na Barra[pu]" ;
-            for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
-            } saida << Qt::endl;
-        }
-        if(FiltrosBarra::tensaoNominal){
-            saida << "Tensao Nominal[kV]" ;
-            for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5);
-            } saida << Qt::endl;
-        }
-        if(FiltrosBarra::thdv){
-            saida << "THDV[%]" ;
-            for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5);
-            } saida << Qt::endl;
-        }
-        if(FiltrosBarra::dit){
-            for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-                saida << "TDI"+QString::number(j)+"[pu]" ;
-                for(int i= inicio ; i <= fim ; i++){
-                    saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5);
-                } saida << Qt::endl;
-            }
-        }
-        if(FiltrosBarra::ditPercent){
-            for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-                saida << "TDI"+QString::number(j)+"[pu]" ;
-                for(int i= inicio ; i <= fim ; i++){
-                    saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5);
-                } saida << Qt::endl;
-            }
-        }
-        if(FiltrosBarra::tensaoEficaz){
-            saida << "Tensao Eficaz[pu]" ;
-            for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5);
-            } saida << Qt::endl;
-        }
+        CsvEscreveBarrasIntervalo(&saida);
+        CsvEscreveLInterL1TodL2(&saida);
 
-        for(int i = 0 ; i < 4 ; i++){
-            saida << Qt::endl;
-        }
-
-        //Linhas
-        saida << "Linha" ;
-        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-            int barraDeDestino = FrameBarras::linhas[i].getDestino();
-            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                    saida << ","+QString::number(barraDeOrigem)+"->"+QString::number(barraDeDestino,'f',5);
-                }
-            }
-        }
-        saida << Qt::endl;
-        if(FiltroLinha::correntePu){
-            saida << "Corrente[pu]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        saida << ","+QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
-        if(FiltroLinha::dht){
-            saida << "DHT[%]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                       saida << ","+QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
-                    }
-                }
-            }
-        }
-        saida <<Qt::endl;
-        if(FiltroLinha::dit){
-            for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
-                saida << "DHT"+QString::number(p);
-                for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                    int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                    for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                        if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                            saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.first,'f',5);
-                        }
-                    }
-                }
-                saida <<Qt::endl;
-            }
-        }
-        if(FiltroLinha::ditPercent){
-            for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
-                saida << "DHT"+QString::number(p)+"[%]";
-                for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                    int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                    for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                        if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                            saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.second,'f',5);
-                        }
-                    }
-                }
-                saida <<Qt::endl;
-            }
-        }
-        if(FiltroLinha::resistencia){
-            saida << "Resistencia[ohm]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
-
-        if(FiltroLinha::perdas){
-            saida << "Perdas[pu]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        saida << ","+QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
-
-        if(FiltroLinha::perdasEficaz){
-            saida << "Perdas[pu]";
-            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
-                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
-                    if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
-                        saida << ","+QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
-                    }
-                }
-            }
-        }
-        saida << Qt::endl;
 
         arquivoSaida->flush();
         arquivoSaida->close();
 }
 void FrameExportar::CsvInterBarrasTodL1InterL2(){
+        QFile *arquivoSaida = criaArquivo();
+        QTextStream saida(arquivoSaida);
+        CsvEscreveBarrasIntervalo(&saida);
+        CsvEscreveLTodL1InterL2(&saida);
+
+
+    arquivoSaida->flush();
+    arquivoSaida->close();
+
+
+}
+void FrameExportar::CsvInterBarrasTodL1TodL2(){
+
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasIntervalo(&saida);
+    CsvEscreveLTodL1TodL2(&saida);
+
+
+    arquivoSaida->flush();
+    arquivoSaida->close();
+
+
+}
+
+
+QFile* FrameExportar::criaArquivo(){
     //Configura-se um filtro para pesquisa do diretorio
     QFile *arquivoSaida = new QFile();
-    QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
+    QString filtro="Arquivos separados por virgula (*.csv)";
     QString localSalvamento =QFileDialog::getSaveFileName(this,"Salvar Arquivo",QDir::homePath(),filtro);
     arquivoSaida->setFileName(localSalvamento);
     if(!arquivoSaida->open(QFile::WriteOnly | QFile::Text)){
         if(arquivoSaida->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
-            return;
+            return nullptr;
         }
         QMessageBox::warning(this,"Erro","Arquivo não pôde ser savo"); //caso tenha selecionado e não tenha conseguido abrir é enviado uma messagem de erro
-        return;
+        return nullptr;
     }
 
-    QTextStream saida(arquivoSaida);
+    return arquivoSaida;
+
+}
+void FrameExportar::CsvEscreveBarrasIntervalo(QTextStream* saida){
     int inicio = FiltrosBarra::indiceBarrasEscolhidas.at(0).toInt()-1;
     int fim = FiltrosBarra::indiceBarrasEscolhidas.at(1).toInt()-1;
-    //entra com o numero das Barras:
-    saida << "Barra" ;
+    //Barras
+    *saida << "Barra" ;
     for(int i= inicio ; i <= fim ; i++){
-        saida << ","+QString::number(i+1);
-    } saida << Qt::endl;
+        *saida << ","+QString::number(i+1);
+    } *saida << Qt::endl;
     if(FiltrosBarra::tensaoPu){
-        saida << "Tensao na Barra[pu]" ;
+        *saida << "Tensao na Barra[pu]" ;
         for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
-        } saida << Qt::endl;
+            *saida << ","+QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
+        } *saida << Qt::endl;
     }
     if(FiltrosBarra::tensaoNominal){
-        saida << "Tensao Nominal[kV]" ;
+        *saida << "Tensao Nominal[kV]" ;
         for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5);
-        } saida << Qt::endl;
+            *saida << ","+QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5);
+        } *saida << Qt::endl;
     }
     if(FiltrosBarra::thdv){
-        saida << "THDV[%]" ;
+        *saida << "THDV[%]" ;
         for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5);
-        } saida << Qt::endl;
+            *saida << ","+QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5);
+        } *saida << Qt::endl;
     }
     if(FiltrosBarra::dit){
         for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-            saida << "TDI"+QString::number(j)+"[pu]" ;
+            *saida << "TDI"+QString::number(j)+"[pu]" ;
             for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5);
-            } saida << Qt::endl;
+                *saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5);
+            } *saida << Qt::endl;
         }
     }
     if(FiltrosBarra::ditPercent){
         for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-            saida << "TDI"+QString::number(j)+"[pu]" ;
+            *saida << "TDI"+QString::number(j)+"[pu]" ;
             for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5);
-            } saida << Qt::endl;
+                *saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5);
+            } *saida << Qt::endl;
         }
     }
     if(FiltrosBarra::tensaoEficaz){
-        saida << "Tensao Eficaz[pu]" ;
+        *saida << "Tensao Eficaz[pu]" ;
         for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5);
-        } saida << Qt::endl;
+            *saida << ","+QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5);
+        } *saida << Qt::endl;
     }
 
     for(int i = 0 ; i < 4 ; i++){
-        saida << Qt::endl;
+        *saida << Qt::endl;
     }
+}
+void FrameExportar::CsvEscreveLInterL1InterL2(QTextStream* saida){
+    *saida << "Linha" ;
+    for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+        int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+        int barraDeDestino = FrameBarras::linhas[i].getDestino();
+        for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+            if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
+                      if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
+                          *saida << ","+QString::number(barraDeOrigem)+"->"+QString::number(barraDeDestino);
+                      }
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
+    if(FiltroLinha::correntePu){
+        *saida << "Corrente[pu]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            int barraDeDestino = FrameBarras::linhas[i].getDestino();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
+                          if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
+                              *saida << ","+QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
+                          }
+                      }
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
+    if(FiltroLinha::dht){
+        *saida << "DHT[%]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            int barraDeDestino = FrameBarras::linhas[i].getDestino();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
+                          if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
+                              *saida << ","+QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
+                          }
+                      }
+                }
+            }
+        }
+    }
+    *saida <<Qt::endl;
+    if(FiltroLinha::dit){
+        for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
+            *saida << "DHT"+QString::number(p);
+            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+                int barraDeDestino = FrameBarras::linhas[i].getDestino();
+                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                      if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                          for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
+                              if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
+                                  *saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.first,'f',5);
+                              }
+                          }
+                      }
+                }
+            }
+            *saida <<Qt::endl;
+        }
+    }
+    if(FiltroLinha::ditPercent){
+        for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
+            *saida << "DHT"+QString::number(p)+"[%]";
+            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+                int barraDeDestino = FrameBarras::linhas[i].getDestino();
+                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                      if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                          for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
+                              if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
+                                  *saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.second,'f',5);
+                              }
+                          }
+                      }
+                }
+            }
+            *saida <<Qt::endl;
+        }
+    }
+    if(FiltroLinha::resistencia){
+        *saida << "Resistencia[ohm]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            int barraDeDestino = FrameBarras::linhas[i].getDestino();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
+                          if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
+                              *saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
+                          }
+                      }
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
 
-    //Linhas
-    saida << "Linha" ;
+    if(FiltroLinha::perdas){
+        *saida << "Perdas[pu]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            int barraDeDestino = FrameBarras::linhas[i].getDestino();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
+                          if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
+                              *saida << ","+QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
+                          }
+                      }
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
+
+    if(FiltroLinha::perdasEficaz){
+        *saida << "Perdas[pu]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            int barraDeDestino = FrameBarras::linhas[i].getDestino();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
+                          if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
+                              *saida << ","+QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
+                          }
+                      }
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
+
+}
+void FrameExportar::CsvEscreveLInterL1TodL2(QTextStream* saida){
+    *saida << "Linha" ;
+    for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+        int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+        int barraDeDestino = FrameBarras::linhas[i].getDestino();
+        for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+            if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                *saida << ","+QString::number(barraDeOrigem)+"->"+QString::number(barraDeDestino,'f',5);
+            }
+        }
+    }
+    *saida << Qt::endl;
+    if(FiltroLinha::correntePu){
+        *saida << "Corrente[pu]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
+    if(FiltroLinha::dht){
+        *saida << "DHT[%]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
+                }
+            }
+        }
+    }
+    *saida <<Qt::endl;
+    if(FiltroLinha::dit){
+        for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
+            *saida << "DHT"+QString::number(p);
+            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                      if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                          *saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.first,'f',5);
+                      }
+                }
+            }
+            *saida <<Qt::endl;
+        }
+    }
+    if(FiltroLinha::ditPercent){
+        for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
+            *saida << "DHT"+QString::number(p)+"[%]";
+            for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+                int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+                for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                      if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                          *saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.second,'f',5);
+                      }
+                }
+            }
+            *saida <<Qt::endl;
+        }
+    }
+    if(FiltroLinha::resistencia){
+        *saida << "Resistencia[ohm]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
+
+    if(FiltroLinha::perdas){
+        *saida << "Perdas[pu]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
+
+    if(FiltroLinha::perdasEficaz){
+        *saida << "Perdas[pu]";
+        for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+            int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
+            for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
+                if(FiltroLinha::indiceOrigensEscolhidas.at(j).toInt() == barraDeOrigem){
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
+                }
+            }
+        }
+    }
+    *saida << Qt::endl;
+
+}
+void FrameExportar::CsvEscreveLTodL1InterL2(QTextStream* saida){
+    *saida << "Linha" ;
     for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
         int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
         int barraDeDestino = FrameBarras::linhas[i].getDestino();
         for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
             if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                saida << ","+QString::number(barraDeOrigem)+"->"+QString::number(barraDeDestino);
+                *saida << ","+QString::number(barraDeOrigem)+"->"+QString::number(barraDeDestino);
             }
+        }
     }
-    }
-    saida << Qt::endl;
+    *saida << Qt::endl;
     if(FiltroLinha::correntePu){
-        saida << "Corrente[pu]";
+        *saida << "Corrente[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
             for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
                 if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                      saida << ","+QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
                 }
             }
         }
     }
-    saida << Qt::endl;
+    *saida << Qt::endl;
     if(FiltroLinha::dht){
-        saida << "DHT[%]";
+        *saida << "DHT[%]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
             for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
                 if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                      saida << ","+QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
                 }
             }
         }
     }
-    saida <<Qt::endl;
+    *saida <<Qt::endl;
     if(FiltroLinha::dit){
         for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
-            saida << "DHT"+QString::number(p);
+            *saida << "DHT"+QString::number(p);
             for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
                 int barraDeDestino = FrameBarras::linhas[i].getDestino();
                 for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
                       if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                          saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.first,'f',5);
+                          *saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.first,'f',5);
                       }
                 }
             }
-            saida <<Qt::endl;
+            *saida <<Qt::endl;
         }
     }
     if(FiltroLinha::ditPercent){
         for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
-            saida << "DHT"+QString::number(p)+"[%]";
+            *saida << "DHT"+QString::number(p)+"[%]";
             for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
                 int barraDeDestino = FrameBarras::linhas[i].getDestino();
                 for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
                       if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                          saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.second,'f',5);
+                          *saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.second,'f',5);
                       }
                 }
             }
-            saida <<Qt::endl;
+            *saida <<Qt::endl;
         }
     }
     if(FiltroLinha::resistencia){
-        saida << "Resistencia[ohm]";
+        *saida << "Resistencia[ohm]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
             for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
                 if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                      saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                 }
             }
         }
     }
-    saida << Qt::endl;
+    *saida << Qt::endl;
 
     if(FiltroLinha::perdas){
-        saida << "Perdas[pu]";
+        *saida << "Perdas[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
             for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
                 if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                      saida << ","+QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
                 }
             }
         }
     }
-    saida << Qt::endl;
+    *saida << Qt::endl;
 
     if(FiltroLinha::perdasEficaz){
         saida << "Perdas[pu]";
@@ -939,147 +850,68 @@ void FrameExportar::CsvInterBarrasTodL1InterL2(){
         }
     }
     saida << Qt::endl;
-
-    arquivoSaida->flush();
-    arquivoSaida->close();
-
-
 }
-void FrameExportar::CsvInterBarrasTodL1TodL2(){
-
-    //Configura-se um filtro para pesquisa do diretorio
-    QFile *arquivoSaida = new QFile();
-    QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
-    QString localSalvamento =QFileDialog::getSaveFileName(this,"Salvar Arquivo",QDir::homePath(),filtro);
-    arquivoSaida->setFileName(localSalvamento);
-    if(!arquivoSaida->open(QFile::WriteOnly | QFile::Text)){
-        if(arquivoSaida->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
-            return;
-        }
-        QMessageBox::warning(this,"Erro","Arquivo não pôde ser savo"); //caso tenha selecionado e não tenha conseguido abrir é enviado uma messagem de erro
-        return;
-    }
-
-    QTextStream saida(arquivoSaida);
-    int inicio = FiltrosBarra::indiceBarrasEscolhidas.at(0).toInt()-1;
-    int fim = FiltrosBarra::indiceBarrasEscolhidas.at(1).toInt()-1;
-    //entra com o numero das Barras:
-    saida << "Barra" ;
-    for(int i= inicio ; i <= fim ; i++){
-        saida << ","+QString::number(i+1);
-    } saida << Qt::endl;
-    if(FiltrosBarra::tensaoPu){
-        saida << "Tensao na Barra[pu]" ;
-        for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
-            qDebug() << QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
-        } saida << Qt::endl;
-    }
-    if(FiltrosBarra::tensaoNominal){
-        saida << "Tensao Nominal[kV]" ;
-        for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5);
-        } saida << Qt::endl;
-    }
-    if(FiltrosBarra::thdv){
-        saida << "THDV[%]" ;
-        for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5);
-        } saida << Qt::endl;
-    }
-    if(FiltrosBarra::dit){
-        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-            saida << "TDI"+QString::number(j)+"[pu]" ;
-            for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5);
-            } saida << Qt::endl;
-        }
-    }
-    if(FiltrosBarra::ditPercent){
-        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-            saida << "TDI"+QString::number(j)+"[pu]" ;
-            for(int i= inicio ; i <= fim ; i++){
-                saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5);
-            } saida << Qt::endl;
-        }
-    }
-    if(FiltrosBarra::tensaoEficaz){
-        saida << "Tensao Eficaz[pu]" ;
-        for(int i= inicio ; i <= fim ; i++){
-            saida << ","+QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5);
-        } saida << Qt::endl;
-    }
-
-    for(int i = 0 ; i < 4 ; i++){
-        saida << Qt::endl;
-    }
-
-    //Linhas
-    saida << "Linha" ;
+void FrameExportar::CsvEscreveLTodL1TodL2(QTextStream* saida){
+    *saida << "Linha" ;
     for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
         int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
         int barraDeDestino = FrameBarras::linhas[i].getDestino();
-        saida << ","+QString::number(barraDeOrigem)+"->"+QString::number(barraDeDestino);
+        *saida << ","+QString::number(barraDeOrigem)+"->"+QString::number(barraDeDestino);
     }
-    saida << Qt::endl;
+    *saida << Qt::endl;
     if(FiltroLinha::correntePu){
-        saida << "Corrente[pu]";
+        *saida << "Corrente[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-            saida << ","+QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
+            *saida << ","+QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
         }
     }
-    saida << Qt::endl;
+    *saida << Qt::endl;
     if(FiltroLinha::dht){
-        saida << "DHT[%]";
+        *saida << "DHT[%]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-            saida << ","+QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
+            *saida << ","+QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
         }
     }
-    saida <<Qt::endl;
+    *saida <<Qt::endl;
     if(FiltroLinha::dit){
         for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
-            saida << "DHT"+QString::number(p);
+            *saida << "DHT"+QString::number(p);
             for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.first,'f',5);
+                *saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.first,'f',5);
             }
-            saida <<Qt::endl;
+            *saida <<Qt::endl;
         }
     }
     if(FiltroLinha::ditPercent){
         for(int p = 3 ; p <= FrameBarras::indiceHarmMax ; p+=2){
-            saida << "DHT"+QString::number(p)+"[%]";
+            *saida << "DHT"+QString::number(p)+"[%]";
             for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-                saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.second,'f',5);
+                *saida << ","+QString::number(FrameBarras::linhas[i].getDti().find(p)->second.second,'f',5);
             }
-            saida <<Qt::endl;
+            *saida <<Qt::endl;
         }
     }
     if(FiltroLinha::resistencia){
-        saida << "Resistencia[ohm]";
+        *saida << "Resistencia[ohm]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-            saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
+            *saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
         }
     }
-    saida << Qt::endl;
+    *saida << Qt::endl;
 
     if(FiltroLinha::perdas){
-        saida << "Perdas[pu]";
+        *saida << "Perdas[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-            saida << ","+QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
+            *saida << ","+QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
         }
     }
-    saida << Qt::endl;
+    *saida << Qt::endl;
 
     if(FiltroLinha::perdasEficaz){
-        saida << "Perdas[pu]";
+        *saida << "Perdas[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
-            saida << ","+QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
+            *saida << ","+QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
         }
     }
-    saida << Qt::endl;
-
-    arquivoSaida->flush();
-    arquivoSaida->close();
-
-
+    *saida << Qt::endl;
 }
