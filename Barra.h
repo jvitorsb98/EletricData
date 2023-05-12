@@ -34,8 +34,8 @@ public:
         return dti;
     }
 
-    void somatorioHarmonico(int key1, double dAbsolut ,  double dPercent,int classeTensaoThdi ,bool limpa ) {
-        this->dti.insert({key1,{{dAbsolut,dPercent},{classeTensaoThdi,limpa}}});
+    void somatorioHarmonico(int key1, double dAbsolut ,  double dPercent,int classeTensaoThdi ,bool poluida ) {
+        this->dti.insert({key1,{{dAbsolut,dPercent},{classeTensaoThdi,poluida}}});
     }
 
     double getTensaoEficaz() {

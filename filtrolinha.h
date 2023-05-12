@@ -35,6 +35,9 @@ public:
     void inserindoQssGroupBox();
     void inserindoQssJanela();
     void inicializandoFrame();
+    static QStringList indiceOrigensEscolhidas;
+    static QStringList indiceDestinosEscolhidos;
+
 
 
 private slots:

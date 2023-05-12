@@ -25,7 +25,15 @@ public:
     void inserirQssRadioButton();
     void inserirQssBtn();
     void inicializaFrame();
+    void imprimirPdfIntervaloBarras();
+    void imprimirPdfCombonentesBarras();
+    void imprimirPdfBarrasInfectadas();
 
+
+    void CsvInterBarrasInterL1InterL2();
+    void CsvInterBarrasInterL1TodL2();
+    void CsvInterBarrasTodL1InterL2();
+    void CsvInterBarrasTodL1TodL2();
 
 private slots:
     void on_btnVoltar_clicked();

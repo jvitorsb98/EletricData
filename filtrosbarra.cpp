@@ -61,7 +61,7 @@ void FiltrosBarra::inserindoQssComboBox(){
 }
 void FiltrosBarra::inserindoQssLineEdit(){
     Style style;
-    ui->lineEditFBarra->setPlaceholderText("1-5");
+    ui->lineEditFBarra->setPlaceholderText("1-"+QString::number(FrameTensoes::numeroDeBarras));
     ui->lineEditFBarra->setStyleSheet(style.cssLineEdit);
 }
 void FiltrosBarra::inserindoQssCheckBox(){

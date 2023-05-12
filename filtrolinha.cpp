@@ -14,6 +14,8 @@ bool FiltroLinha::perdasEficaz = true;
 int  FiltroLinha::indexComboBoxOrigem = 0;
 int FiltroLinha::indexComboBoxDestino = 0;
 Ui::FrameBarras *frameBarras2;
+QStringList FiltroLinha::indiceOrigensEscolhidas;
+QStringList FiltroLinha::indiceDestinosEscolhidos;
 
 
 FiltroLinha::FiltroLinha(QWidget *parent,  Ui::FrameBarras *fb) :
@@ -222,6 +224,7 @@ void FiltroLinha::on_btnAplicar_clicked()
                     }
                 }
             }
+            indiceDestinosEscolhidos = Selecionadas;
         }
     }else if(indexComboBoxOrigem==1 && indexComboBoxDestino==0){
         for(int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
@@ -239,6 +242,7 @@ void FiltroLinha::on_btnAplicar_clicked()
                     }
                 }
             }
+            indiceOrigensEscolhidas = Selecionadas;
         }
     }else{
         for(int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
@@ -267,6 +271,8 @@ void FiltroLinha::on_btnAplicar_clicked()
                     }
                 }
             }
+            indiceOrigensEscolhidas = SelecionadasOrigem;
+            indiceDestinosEscolhidos = SelecionadasDestino;
         }
     }
 
