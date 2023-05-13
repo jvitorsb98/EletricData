@@ -514,7 +514,7 @@ QXlsx::Document* FrameExportar::criaPlanilha(){
 }
 //Salva a planilha
 void FrameExportar::salvaPlanilha(QXlsx::Document* saida){
-    QString filtro="Arquivos separados por virgula (*.csv)";
+    QString filtro="Arquivo de planilha Excel. (*.xlsx)";
     QString localSalvamento =QFileDialog::getSaveFileName(this,"Salvar Arquivo",QDir::homePath(),filtro);
     saida->saveAs(localSalvamento);
 }
@@ -525,18 +525,332 @@ void FrameExportar::ExcelEscreveBarrasIntervalo(QXlsx::Document* saida ){
         //Barras
         saida->write("A1","Barra");
         for(int i= inicio , pos = 1 ; i <= fim ; i++, pos++){
-        qDebug() << QString(numeroParaLetra(pos))+"1";
-        saida->write(QString(numeroParaLetra(pos))+"1",QString::number(i+1));
+            saida->write(QString(numeroParaLetra(pos+1))+"1",QString::number(i+1));
+        }
+        int linha = 2;
+        if(FiltrosBarra::tensaoPu){
+            saida->write("A"+QString::number(linha),"Tensão na Barra[pu]");
+            int pos =1 ;
+            for(int i= inicio ; i <= fim ; i++){
+                saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5));
+                    pos++;
+            }
+            linha++;
+        }
+        if(FiltrosBarra::tensaoNominal){
+            saida->write("A"+QString::number(linha),"Tensão Nominal[kV]");
+                int pos =1 ;
+            for(int i= inicio ; i <= fim ; i++){
+                saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5));
+                pos++;
+            }
+            linha++;
+        }
+        if(FiltrosBarra::thdv){
+            saida->write("A"+QString::number(linha),"THDV[%]");
+                int pos =1 ;
+            for(int i= inicio ; i <= fim ; i++){
+                saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5));
+                pos++;
+            }
+            linha++;
+        }
+        if(FiltrosBarra::dit){
+            for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+                saida->write("A"+QString::number(linha),"TDI"+QString::number(j));
+                int pos =1 ;
+                for(int i= inicio ; i <= fim ; i++){
+                    saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5));
+                    pos++;
+                }
+                linha++;
+            }
+        }
+        if(FiltrosBarra::ditPercent){
+            for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+                saida->write("A"+QString::number(linha),"TDI"+QString::number(j)+"[%]");
+                int pos =1 ;
+                for(int i= inicio ; i <= fim ; i++){
+                    saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5));
+                    pos++;
+                }
+                linha++;
+            }
+        }
+        if(FiltrosBarra::tensaoEficaz){
+            saida->write("A"+QString::number(linha),"Tensao Eficaz[pu]");
+            int pos =1 ;
+            for(int i= inicio ; i <= fim ; i++){
+                saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5));
+                pos++;
+            }
+            linha++;
         }
 
 }
 //escreve as barras em componentes
 void FrameExportar::ExcelEscreveBarrasComp(QXlsx::Document* saida){
 
+    saida->write("A1","Barra");
+        int pos = 1;
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+        for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+            if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                    saida->write(QString(numeroParaLetra(pos+1))+"1",QString::number(i+1));
+                    pos++;
+                    break;
+            }
+        }
+    }
+    int linha = 2;
+    if(FiltrosBarra::tensaoPu){
+        pos = 1 ;
+        saida->write("A"+QString::number(linha),"Tensão na Barra[pu]");
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                    saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5));
+                    pos++;
+                    break;
+                }
+            }
+        }
+        linha++;
+    }
+    if(FiltrosBarra::tensaoNominal){
+        pos = 1 ;
+        saida->write("A"+QString::number(linha),"Tensão Nominal[kV]");
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                    saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5));
+                    pos++;
+                    break;
+                }
+            }
+        }
+        linha++;
+    }
+    if(FiltrosBarra::thdv){
+        pos = 1 ;
+        saida->write("A"+QString::number(linha),"THDV[%]");
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                    saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5));
+                    pos++;
+                    break;
+                }
+            }
+        }
+        linha++;
+    }
+    if(FiltrosBarra::dit){
+        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+            saida->write("A"+QString::number(linha),"TDI"+QString::number(j));
+            pos = 1;
+            for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+                for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                    if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                        saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5));
+                        pos++;
+                        break;
+                    }
+                }
+            }
+            linha++;
+        }
+    }
+    if(FiltrosBarra::ditPercent){
+        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+            saida->write("A"+QString::number(linha),"TDI"+QString::number(j)+"[%]");
+            pos = 1;
+            for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+                for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                    if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                        saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5));
+                        pos++;
+                        break;
+                    }
+                }
+            }
+            linha++;
+        }
+    }
+    if(FiltrosBarra::tensaoEficaz){
+        pos = 1 ;
+        saida->write("A"+QString::number(linha),"Tensao Eficaz[pu]");
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                    saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5));
+                    pos++;
+                    break;
+                }
+            }
+        }
+        linha++;
+    }
+
 }
 //escreve as barras Infectadas
 void FrameExportar::ExcelEscreveBarrasInfec(QXlsx::Document* saida){
-
+    saida->write("A1","Barra");
+    int pos = 1 ;
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+        bool infectada = false;
+        if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+            for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                    infectada = true;
+                    break;
+                }
+            }
+        }else{
+            infectada = true;
+        }
+        if(infectada){
+            saida->write(QString(numeroParaLetra(pos+1))+"1",QString::number(i+1));
+            pos++;
+        }
+    }
+    int linha = 2;
+    if(FiltrosBarra::tensaoPu){
+        pos = 1 ;
+        saida->write("A"+QString::number(linha),"Tensão na Barra[pu]");
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            bool infectada = false;
+            if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                    if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                        infectada = true;
+                        break;
+                    }
+                }
+            }else{
+                infectada = true;
+            }
+            if(infectada){
+                saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5));
+                pos++;
+            }
+        }
+        linha++;
+    }
+    if(FiltrosBarra::tensaoNominal){
+        pos = 1 ;
+        saida->write("A"+QString::number(linha),"Tensão Nominal[kV]");
+            for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            bool infectada = false;
+            if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                    if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                        infectada = true;
+                        break;
+                    }
+                }
+            }else{
+                infectada = true;
+            }
+            if(infectada){
+                saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5));
+                pos++;
+            }
+        }
+        linha++;
+    }
+    if(FiltrosBarra::thdv){
+        pos = 1 ;
+        saida->write("A"+QString::number(linha),"THDV[%]");
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            bool infectada = false;
+            if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                    if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                        infectada = true;
+                        break;
+                    }
+                }
+            }else{
+                infectada = true;
+            }
+            if(infectada){
+                saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5));
+                pos++;
+            }
+        }
+        linha++;
+    }
+    if(FiltrosBarra::dit){
+        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+            saida->write("A"+QString::number(linha),"TDI"+QString::number(j));
+            pos = 1;
+            for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+                bool infectada = false;
+                if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                    for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                        if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                            infectada = true;
+                            break;
+                        }
+                    }
+                }else{
+                    infectada = true;
+                }
+                if(infectada){
+                    saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5));
+                    pos++;
+                }
+            }
+            linha++;
+        }
+    }
+    if(FiltrosBarra::ditPercent){
+        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+            saida->write("A"+QString::number(linha),"TDI"+QString::number(j)+"[%]");
+            pos = 1;
+            for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+                bool infectada = false;
+                if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                    for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                        if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                            infectada = true;
+                            break;
+                        }
+                    }
+                }else{
+                    infectada = true;
+                }
+                if(infectada){
+                    saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5));
+                    pos++;
+                }
+            }
+            linha++;
+        }
+    }
+    if(FiltrosBarra::tensaoEficaz){
+        pos = 1 ;
+        saida->write("A"+QString::number(linha),"Tensao Eficaz[pu]");
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            bool infectada = false;
+            if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                    if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                        infectada = true;
+                        break;
+                    }
+                }
+            }else{
+                infectada = true;
+            }
+            if(infectada){
+                saida->write(QString(numeroParaLetra(pos+1))+QString::number(linha),QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5));
+                pos++;
+            }
+        }
+        linha++;
+    }
 }
 //escreve Linhas com origens e destinos em estado de componentes
 void FrameExportar::ExcelEscreveLInterL1InterL2(QXlsx::Document* saida){
@@ -1416,16 +1730,16 @@ void FrameExportar::CsvEscreveLTodL1TodL2(QTextStream* saida){
 
 QString FrameExportar::numeroParaLetra(int numero) {
 
-    QString saida;
-    int extouro=0;
-    numero--;
-    if(numero <= 25){
-        return QChar(numero+65);
+    QString coluna = "";
+    int resto;
+
+    while (numero > 0) {
+        resto = (numero - 1) % 26;
+        coluna.prepend(QChar(resto + 'A'));
+        numero = (numero - resto - 1) / 26;
     }
-    extouro = numero/25;
-    saida = QChar(extouro+64);
-    saida += QChar((numero%25)+64);
-    return saida;
+
+    return coluna;
 }
 
 

@@ -209,7 +209,6 @@ void FiltrosBarra::on_btnAplicar_clicked()
         }
     }
 
-    FrameBarras::filtroBarraInserido = true;
     close();
 
 }

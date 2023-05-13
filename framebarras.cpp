@@ -15,8 +15,6 @@ int FrameBarras::indexTab = 0 ;
 int FrameBarras::numeroDeLinhas;
 int FrameBarras::indiceHarmMax;
 int FrameBarras::quantidadeDeComponentesHarm;
-bool FrameBarras::filtroLinhaInserido = false;
-bool FrameBarras::filtroBarraInserido = false;
 QList<Barra> FrameBarras::barras = QList<Barra>();
 QList<Linha> FrameBarras::linhas =  QList<Linha>();
 std::map<int , std::map<int , double >> FrameBarras::limitesDti = std::map<int , std::map<int , double >>() ;
@@ -315,7 +313,6 @@ void FrameBarras::insereQssBtnAvancar(){
     ui->btnAvancar->setStyleSheet(style.cssBtnTransition);
     ui->btnAvancar->setIcon(QIcon(":/icons/imgs/icons/proximo.png")); //insere um icon ao botão
     ui->btnAvancar->setLayoutDirection(Qt::RightToLeft); //define que o icon será colocado após o texto
-    ui->btnAvancar->setEnabled(false);
 }
 void FrameBarras::insereQssBtnVoltar(){
     Style style;
@@ -671,7 +668,6 @@ void FrameBarras::on_btnFiltrar_clicked()
         FiltroLinha *filtrosLinha = new FiltroLinha(this,ui);
         filtrosLinha->show();
     }
-    verificaAvanco();
 
 }
 void FrameBarras::on_tabLinhas_currentChanged(int index)
@@ -703,9 +699,4 @@ void FrameBarras::on_btnAvancar_clicked()
     frameExportar->setGeometry(224,0,800,720);
     frameExportar->show();
 
-}
-void FrameBarras::verificaAvanco(){
-    if(filtroLinhaInserido && filtroBarraInserido){
-        ui->btnAvancar->setEnabled(true);
-    }
 }
