@@ -121,11 +121,35 @@ void FrameExportar::on_btnExportar_clicked()
         }
     }else{
         if(FiltrosBarra::indexComboBox == 0 ){
-//            imprimirPdfIntervaloBarras();
-        }else if(FiltrosBarra::indexComboBox == 1){
-//            imprimirPdfCombonentesBarras();
+            if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
+                ExcelInterBarrasTodL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
+                ExcelInterBInterL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
+                ExcelInterBarrasTodL1InterL2();
+            }else{
+                ExcelInterBInterL1InterL2();
+            }
+        }else if(FiltrosBarra::indexComboBox == 1 ){
+            if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
+                ExcelCompBarrasaTodL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
+                ExcelCompBarrasInterL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
+                ExcelCompBarrasTodL1InterL2();
+            }else{
+                ExcelCompBarrasInterL2InterL2();
+            }
         }else{
-//            imprimirPdfBarrasInfectadas();
+            if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
+                ExcelvInfecBarrasTodL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
+                ExcelInfecBarrasInterL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
+                ExcelInfecBarrasTodL1InterL2();
+            }else{
+                ExcelInfecBarrasInterL1InterL2();
+            }
         }
     }
 }
@@ -381,7 +405,155 @@ void FrameExportar::imprimirPdfBarrasInfectadas(){
 
 }
 
+//--------------Funções Excel
+//Funções para imprimir excel com barras em intervalo
+void FrameExportar::ExcelInterBInterL1InterL2(){
+    QXlsx::Document* planilha = criaPlanilha();
 
+    ExcelEscreveBarrasIntervalo(planilha);
+    ExcelEscreveLInterL1InterL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+
+}
+void FrameExportar::ExcelInterBInterL1TodL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasIntervalo(planilha);
+    ExcelEscreveLInterL1TodL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+void FrameExportar::ExcelInterBarrasTodL1InterL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasIntervalo(planilha);
+    ExcelEscreveLTodL1InterL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+void FrameExportar::ExcelInterBarrasTodL1TodL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasIntervalo(planilha);
+    ExcelEscreveLTodL1TodL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+//Funções para imprimir Excel com barras em componentes
+void FrameExportar::ExcelCompBarrasInterL2InterL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasComp(planilha);
+    ExcelEscreveLInterL1InterL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+void FrameExportar::ExcelCompBarrasInterL1TodL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasComp(planilha);
+    ExcelEscreveLInterL1TodL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+void FrameExportar::ExcelCompBarrasTodL1InterL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasComp(planilha);
+    ExcelEscreveLTodL1InterL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+void FrameExportar::ExcelCompBarrasaTodL1TodL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasComp(planilha);
+    ExcelEscreveLTodL1TodL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+//Funções de para imprimir Excel com barras infectadas
+void FrameExportar::ExcelInfecBarrasInterL1InterL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasInfec(planilha);
+    ExcelEscreveLInterL1InterL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+void FrameExportar::ExcelInfecBarrasInterL1TodL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasInfec(planilha);
+    ExcelEscreveLInterL1TodL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+void FrameExportar::ExcelInfecBarrasTodL1InterL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasInfec(planilha);
+    ExcelEscreveLTodL1InterL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+void FrameExportar::ExcelvInfecBarrasTodL1TodL2(){
+    QXlsx::Document* planilha = criaPlanilha();
+
+    ExcelEscreveBarrasInfec(planilha);
+    ExcelEscreveLTodL1TodL2(planilha);
+    salvaPlanilha(planilha);
+    delete planilha;
+}
+//Funções Auxiliares
+//Cria planilha
+QXlsx::Document* FrameExportar::criaPlanilha(){
+        QXlsx::Document* planilha = new QXlsx::Document;
+        return planilha;
+}
+//Salva a planilha
+void FrameExportar::salvaPlanilha(QXlsx::Document* saida){
+    QString filtro="Arquivos separados por virgula (*.csv)";
+    QString localSalvamento =QFileDialog::getSaveFileName(this,"Salvar Arquivo",QDir::homePath(),filtro);
+    saida->saveAs(localSalvamento);
+}
+//escreve as barras em intervalo
+void FrameExportar::ExcelEscreveBarrasIntervalo(QXlsx::Document* saida ){
+        int inicio = FiltrosBarra::indiceBarrasEscolhidas.at(0).toInt()-1;
+        int fim = FiltrosBarra::indiceBarrasEscolhidas.at(1).toInt()-1;
+        //Barras
+        saida->write("A1","Barra");
+        for(int i= inicio , pos = 1 ; i <= fim ; i++, pos++){
+        qDebug() << QString(numeroParaLetra(pos))+"1";
+        saida->write(QString(numeroParaLetra(pos))+"1",QString::number(i+1));
+        }
+
+}
+//escreve as barras em componentes
+void FrameExportar::ExcelEscreveBarrasComp(QXlsx::Document* saida){
+
+}
+//escreve as barras Infectadas
+void FrameExportar::ExcelEscreveBarrasInfec(QXlsx::Document* saida){
+
+}
+//escreve Linhas com origens e destinos em estado de componentes
+void FrameExportar::ExcelEscreveLInterL1InterL2(QXlsx::Document* saida){
+
+}
+//escreve Linhas com origens em estado de componentes e todos destinos
+void FrameExportar::ExcelEscreveLInterL1TodL2(QXlsx::Document* saida){
+
+}
+//escreve Linhas com todas origens e destinos em componenetes
+void FrameExportar::ExcelEscreveLTodL1InterL2(QXlsx::Document* saida){
+
+}
+//escreve Linhas de todas origens e destinos
+void FrameExportar::ExcelEscreveLTodL1TodL2(QXlsx::Document* saida){
+
+}
 
 //--------------Funções Csv
 //Funções para imprimir csv com barras em intervalo
@@ -1241,3 +1413,21 @@ void FrameExportar::CsvEscreveLTodL1TodL2(QTextStream* saida){
     }
     *saida << Qt::endl;
 }
+
+QString FrameExportar::numeroParaLetra(int numero) {
+
+    QString saida;
+    int extouro=0;
+    numero--;
+    if(numero <= 25){
+        return QChar(numero+65);
+    }
+    extouro = numero/25;
+    saida = QChar(extouro+64);
+    saida += QChar((numero%25)+64);
+    return saida;
+}
+
+
+
+
