@@ -100,23 +100,23 @@ void FrameExportar::on_btnExportar_clicked()
             }
         }else if(FiltrosBarra::indexComboBox == 1 ){
             if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
-//                CsvInterBarrasTodL2TodL2();
+                CsvCompBarrasaTodL1TodL2();
             }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
-//                CsvInterBarrasInterL1TodL2();
-            }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==1){
-
+                CsvCompBarrasInterL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
+                CsvCompBarrasTodL1InterL2();
             }else{
-                CsvInterBarrasInterL1InterL2();
+                CsvCompBarrasInterL2InterL2();
             }
         }else{
             if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
-//                CsvInterBarrasTodL2TodL2();
+                CsvInfecBarrasTodL1TodL2();
             }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
-//                CsvInterBarrasInterL1TodL2();
-            }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==1){
-
+                CsvInfecBarrasInterL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
+                CsvInfecBarrasTodL1InterL2();
             }else{
-//                CsvInterBarrasInterL1InterL2();
+                CsvInfecBarrasInterL1InterL2();
             }
         }
     }else{
@@ -383,7 +383,8 @@ void FrameExportar::imprimirPdfBarrasInfectadas(){
 
 
 
-
+//--------------Funções Csv
+//Funções para imprimir csv com barras em intervalo
 void FrameExportar::CsvInterBarrasInterL1InterL2(){
 
         QFile *arquivoSaida = criaArquivo();
@@ -427,10 +428,91 @@ void FrameExportar::CsvInterBarrasTodL1TodL2(){
     arquivoSaida->flush();
     arquivoSaida->close();
 
+}
+//Funções para imprimir csv com barras em componentes
+void FrameExportar::CsvCompBarrasInterL2InterL2(){
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasComp(&saida);
+    CsvEscreveLInterL1InterL2(&saida);
+    //Linhas
+    arquivoSaida->flush();
+    arquivoSaida->close();
+}
+void FrameExportar::CsvCompBarrasInterL1TodL2(){
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasComp(&saida);
+    CsvEscreveLInterL1TodL2(&saida);
+
+
+    arquivoSaida->flush();
+    arquivoSaida->close();
+}
+void FrameExportar::CsvCompBarrasTodL1InterL2(){
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasComp(&saida);
+    CsvEscreveLTodL1InterL2(&saida);
+
+
+    arquivoSaida->flush();
+    arquivoSaida->close();
 
 }
+void FrameExportar::CsvCompBarrasaTodL1TodL2(){
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasComp(&saida);
+    CsvEscreveLTodL1TodL2(&saida);
 
 
+    arquivoSaida->flush();
+    arquivoSaida->close();
+}
+//Funções de para imprimir csv com barras infectadas
+void FrameExportar::CsvInfecBarrasInterL1InterL2(){
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasInfec(&saida);
+    CsvEscreveLInterL1InterL2(&saida);
+
+
+    arquivoSaida->flush();
+    arquivoSaida->close();
+}
+void FrameExportar::CsvInfecBarrasInterL1TodL2(){
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasInfec(&saida);
+    CsvEscreveLInterL1TodL2(&saida);
+
+
+    arquivoSaida->flush();
+    arquivoSaida->close();
+}
+void FrameExportar::CsvInfecBarrasTodL1InterL2(){
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasInfec(&saida);
+    CsvEscreveLTodL1InterL2(&saida);
+
+
+    arquivoSaida->flush();
+    arquivoSaida->close();
+}
+void FrameExportar::CsvInfecBarrasTodL1TodL2(){
+    QFile *arquivoSaida = criaArquivo();
+    QTextStream saida(arquivoSaida);
+    CsvEscreveBarrasInfec(&saida);
+    CsvEscreveLTodL1TodL2(&saida);
+
+
+    arquivoSaida->flush();
+    arquivoSaida->close();
+}
+//Funções Auxiliares
+//Cria arquivo
 QFile* FrameExportar::criaArquivo(){
     //Configura-se um filtro para pesquisa do diretorio
     QFile *arquivoSaida = new QFile();
@@ -448,6 +530,7 @@ QFile* FrameExportar::criaArquivo(){
     return arquivoSaida;
 
 }
+//escreve as barras em intervalo
 void FrameExportar::CsvEscreveBarrasIntervalo(QTextStream* saida){
     int inicio = FiltrosBarra::indiceBarrasEscolhidas.at(0).toInt()-1;
     int fim = FiltrosBarra::indiceBarrasEscolhidas.at(1).toInt()-1;
@@ -484,7 +567,7 @@ void FrameExportar::CsvEscreveBarrasIntervalo(QTextStream* saida){
     }
     if(FiltrosBarra::ditPercent){
         for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
-            *saida << "TDI"+QString::number(j)+"[pu]" ;
+            *saida << "TDI"+QString::number(j)+"[%]" ;
             for(int i= inicio ; i <= fim ; i++){
                 *saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5);
             } *saida << Qt::endl;
@@ -501,6 +584,246 @@ void FrameExportar::CsvEscreveBarrasIntervalo(QTextStream* saida){
         *saida << Qt::endl;
     }
 }
+//escreve as barras em componentes
+void FrameExportar::CsvEscreveBarrasComp(QTextStream* saida){
+    *saida << "Barra";
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+        for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+            if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                *saida << ","+QString::number(i+1);
+                break;
+            }
+        }
+    }
+    *saida << Qt::endl;
+
+    if(FiltrosBarra::tensaoPu){
+        *saida << "Tensao na Barra[pu]" ;
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                *saida << ","+QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
+                break;
+                }
+            }
+        }
+        *saida << Qt::endl;
+    }
+    if(FiltrosBarra::tensaoNominal){
+        *saida << "Tensao Nominal[kV]" ;
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                *saida << ","+QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5);
+                break;
+                }
+            }
+        }
+        *saida << Qt::endl;
+    }
+    if(FiltrosBarra::thdv){
+        *saida << "THDV[%]" ;
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                *saida << ","+QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5);
+                break;
+                }
+            }
+        }
+        *saida << Qt::endl;
+    }
+    if(FiltrosBarra::dit){
+        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+            *saida << "TDI"+QString::number(j)+"[pu]" ;
+            for(int k = 0 ; k < FrameTensoes::numeroDeBarras ; k++){
+                for(int p = 0 ; p < FiltrosBarra::indiceBarrasEscolhidas.size() ; p++){
+                    if((FiltrosBarra::indiceBarrasEscolhidas.at(p).toInt()-1) == k ){
+                            *saida << ","+QString::number(FrameBarras::barras[k].getDti().find(j)->second.first.first,'f',5);
+                            break;
+                    }
+                }
+            }
+            *saida << Qt::endl;
+        }
+    }
+
+    if(FiltrosBarra::ditPercent){
+        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+            *saida << "TDI"+QString::number(j)+"[%]" ;
+            for(int k = 0 ; k < FrameTensoes::numeroDeBarras ; k++){
+                for(int p = 0 ; p < FiltrosBarra::indiceBarrasEscolhidas.size() ; p++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(p).toInt()-1) == k ){
+                        *saida << ","+QString::number(FrameBarras::barras[k].getDti().find(j)->second.first.second,'f',5);
+                        break;
+                }
+                }
+            }
+            *saida << Qt::endl;
+        }
+    }
+
+    if(FiltrosBarra::tensaoEficaz){
+        *saida << "Tensao Eficaz[pu]" ;
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            for(int j = 0 ; j < FiltrosBarra::indiceBarrasEscolhidas.size() ; j++){
+                if((FiltrosBarra::indiceBarrasEscolhidas.at(j).toInt()-1) == i ){
+                *saida << ","+QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5);
+                break;
+                }
+            }
+        }
+        *saida << Qt::endl;
+    }
+
+
+}
+//escreve as barras Infectadas
+void FrameExportar::CsvEscreveBarrasInfec(QTextStream* saida){
+    *saida << "Barra";
+    for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+        bool infectada = false;
+        if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+            for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                infectada = true;
+                break;
+                }
+            }
+        }else{
+            infectada = true;
+        }
+        if(infectada){
+            *saida << ","+QString::number(i+1);
+        }
+    }
+    *saida << Qt::endl;
+    if(FiltrosBarra::tensaoPu){
+        *saida << "Tensao na Barra[pu]" ;
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            bool infectada = false;
+            if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                        infectada = true;
+                        break;
+                }
+                }
+            }else{
+                infectada = true;
+            }
+            if(infectada){
+                *saida << ","+QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
+            }
+        }
+        *saida << Qt::endl;
+    }
+    if(FiltrosBarra::tensaoNominal){
+        *saida << "Tensao Nominal[kV]" ;
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            bool infectada = false;
+            if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                        infectada = true;
+                        break;
+                }
+                }
+            }else{
+                infectada = true;
+            }
+            if(infectada){
+                *saida << ","+QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5);
+            }
+        }
+        *saida << Qt::endl;
+    }
+    if(FiltrosBarra::thdv){
+        *saida << "THDV[%]" ;
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            bool infectada = false;
+            if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                        infectada = true;
+                        break;
+                }
+                }
+            }else{
+                infectada = true;
+            }
+            if(infectada){
+                *saida << ","+QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5);
+            }
+        }
+        *saida << Qt::endl;
+    }
+    if(FiltrosBarra::dit){
+        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+            *saida << "TDI"+QString::number(j)+"[pu]" ;
+            for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+                bool infectada = false;
+                if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                        if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                            infectada = true;
+                            break;
+                        }
+                }
+                }else{
+                infectada = true;
+                }
+                if(infectada){
+                    *saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'f',5);
+                }
+            }
+            *saida << Qt::endl;
+        }
+    }
+    if(FiltrosBarra::ditPercent){
+        for(int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+            *saida << "TDI"+QString::number(j)+"[%]" ;
+            for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+                bool infectada = false;
+                if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                    for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                        if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                            infectada = true;
+                            break;
+                        }
+                    }
+                }else{
+                    infectada = true;
+                }
+                if(infectada){
+                    *saida << ","+QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5);
+                }
+            }
+            *saida << Qt::endl;
+        }
+    }
+    if(FiltrosBarra::tensaoEficaz){
+        *saida << "THDV[%]" ;
+        for(int i = 0 ; i < FrameTensoes::numeroDeBarras ; i++){
+            bool infectada = false;
+            if(!FrameBarras::barras[i].getBarraInfectadaThdv()){
+                for(int j = 3 ; j <= FrameBarras::indiceHarmMax  ; j+=2 ){
+                    if(FrameBarras::barras[i].getDti().find(j)->second.second.second){
+                        infectada = true;
+                        break;
+                    }
+                }
+            }else{
+                infectada = true;
+            }
+            if(infectada){
+                *saida << ","+QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5);
+            }
+        }
+        *saida << Qt::endl;
+    }
+}
+//escreve Linhas com origens e destinos em estado de componentes
 void FrameExportar::CsvEscreveLInterL1InterL2(QTextStream* saida){
     *saida << "Linha" ;
     for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
@@ -644,6 +967,7 @@ void FrameExportar::CsvEscreveLInterL1InterL2(QTextStream* saida){
     *saida << Qt::endl;
 
 }
+//escreve Linhas com origens em estado de componentes e todos destinos
 void FrameExportar::CsvEscreveLInterL1TodL2(QTextStream* saida){
     *saida << "Linha" ;
     for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
@@ -748,6 +1072,7 @@ void FrameExportar::CsvEscreveLInterL1TodL2(QTextStream* saida){
     *saida << Qt::endl;
 
 }
+//escreve Linhas com todas origens e destinos em componenetes
 void FrameExportar::CsvEscreveLTodL1InterL2(QTextStream* saida){
     *saida << "Linha" ;
     for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
@@ -839,18 +1164,19 @@ void FrameExportar::CsvEscreveLTodL1InterL2(QTextStream* saida){
     *saida << Qt::endl;
 
     if(FiltroLinha::perdasEficaz){
-        saida << "Perdas[pu]";
+        *saida << "Perdas[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
             for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
                 if(FiltroLinha::indiceDestinosEscolhidos.at(k).toInt() == barraDeDestino){
-                      saida << ","+QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
+                      *saida << ","+QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
                 }
             }
         }
     }
-    saida << Qt::endl;
+    *saida << Qt::endl;
 }
+//escreve Linhas de todas origens e destinos
 void FrameExportar::CsvEscreveLTodL1TodL2(QTextStream* saida){
     *saida << "Linha" ;
     for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){

@@ -12,7 +12,7 @@ bool FiltrosBarra::tensaoEficaz = true;
 int  FiltrosBarra::indexComboBox = 0;
 Ui::FrameBarras *frameBarras;
 
-QStringList FiltrosBarra::indiceBarrasEscolhidas;
+QStringList FiltrosBarra::indiceBarrasEscolhidas ;
 
 FiltrosBarra::FiltrosBarra(QWidget *parent ,  Ui::FrameBarras *fb) :
     QDialog(parent),
@@ -61,7 +61,6 @@ void FiltrosBarra::inserindoQssComboBox(){
 }
 void FiltrosBarra::inserindoQssLineEdit(){
     Style style;
-    ui->lineEditFBarra->setPlaceholderText("1-"+QString::number(FrameTensoes::numeroDeBarras));
     ui->lineEditFBarra->setStyleSheet(style.cssLineEdit);
 }
 void FiltrosBarra::inserindoQssCheckBox(){
@@ -88,12 +87,17 @@ void FiltrosBarra::inserindoQssGroupBox(){
 void FiltrosBarra::on_comboBoxFBarra_currentIndexChanged(int index)
 {
     if(index == 0){
+        if(indexComboBox != index){
+            ui->lineEditFBarra->clear();
+        }
         ui->lineEditFBarra->setPlaceholderText("1-5");
         ui->lineEditFBarra->setEnabled(true);
     }else if (index==1){
+        ui->lineEditFBarra->clear();
         ui->lineEditFBarra->setPlaceholderText("1,2,3,4,5");
         ui->lineEditFBarra->setEnabled(true);
     }else{
+        ui->lineEditFBarra->clear();
         ui->lineEditFBarra->setPlaceholderText("Todas as Barras Poluidoras");
         ui->lineEditFBarra->setEnabled(false);
     }
@@ -205,6 +209,7 @@ void FiltrosBarra::on_btnAplicar_clicked()
         }
     }
 
+    FrameBarras::filtroBarraInserido = true;
     close();
 
 }

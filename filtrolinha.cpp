@@ -276,7 +276,9 @@ void FiltroLinha::on_btnAplicar_clicked()
         }
     }
 
+    FrameBarras::filtroLinhaInserido = true;
     close();
+
 
 }
 

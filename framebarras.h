@@ -54,6 +54,8 @@ public:
     void insereQSSBtnFiltrar();
     void preencheLinha();
     void inicializaLinha();
+    static bool filtroLinhaInserido;
+    static bool filtroBarraInserido;
     static std::map<int , std::map<int , double >> getLimitesDti(){
         return limitesDti;
     }
@@ -66,6 +68,7 @@ public:
     void insereBackgroundNasPoluidoras();
     void atualizarRowBarras();
     void atualizarColumnBarras();
+    void verificaAvanco();
 
 private slots:
 
