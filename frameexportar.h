@@ -57,22 +57,24 @@ public:
     //Funções Auxiliares
     //Cria planilha
     QXlsx::Document* criaPlanilha();
+    //pula linhas entre barras e Linhas
+    void ExcelPulaLinha(int* );
     //Salva Planilha
     void salvaPlanilha(QXlsx::Document* );
     //escreve as barras em intervalo
-    void ExcelEscreveBarrasIntervalo(QXlsx::Document* );
+    void ExcelEscreveBarrasIntervalo(QXlsx::Document* , int* );
     //escreve as barras em componentes
-    void ExcelEscreveBarrasComp(QXlsx::Document* );
+    void ExcelEscreveBarrasComp(QXlsx::Document* , int*  );
     //escreve as barras Infectadas
-    void ExcelEscreveBarrasInfec(QXlsx::Document* );
+    void ExcelEscreveBarrasInfec(QXlsx::Document* , int* );
     //escreve Linhas com origens e destinos em estado de componentes
-    void ExcelEscreveLInterL1InterL2(QXlsx::Document* );
+    void ExcelEscreveLInterL1InterL2(QXlsx::Document* , int* );
     //escreve Linhas com origens em estado de componentes e todos destinos
-    void ExcelEscreveLInterL1TodL2(QXlsx::Document* );
+    void ExcelEscreveLInterL1TodL2(QXlsx::Document*, int*  );
     //escreve Linhas com todas origens e destinos em componenetes
-    void ExcelEscreveLTodL1InterL2(QXlsx::Document* );
+    void ExcelEscreveLTodL1InterL2(QXlsx::Document* , int* );
     //escreve Linhas de todas origens e destinos
-    void ExcelEscreveLTodL1TodL2(QXlsx::Document* );
+    void ExcelEscreveLTodL1TodL2(QXlsx::Document*, int* );
 
     //----------funções csv
     //Funções para imprimir csv com barras em intervalo
