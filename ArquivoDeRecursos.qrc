@@ -16,4 +16,7 @@
     <qresource prefix="/imgExportar">
         <file>imgs/descritiva/relatorio.png</file>
     </qresource>
+    <qresource prefix="/logo">
+        <file>imgs/logo/logo.jpg</file>
+    </qresource>
 </RCC>

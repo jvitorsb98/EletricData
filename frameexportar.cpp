@@ -5,13 +5,18 @@
 #include "ui_mainwindow.h"
 #include "framebarras.h"
 #include "ui_framebarras.h"
-#include <QPrinter>
-#include<QPainter>
+
 #include <QMessageBox>
 #include <QDir>
 #include <QDesktopServices>
 #include <QFileDialog>
 #include <QDebug>
+#include <QFont>
+#include <QPdfWriter>
+#include <QUrl>
+#include <QPainter>
+#include <QFontMetrics>
+
 
 
 Ui::MainWindow *frameMa;
@@ -78,16 +83,39 @@ void FrameExportar::on_btnVoltar_clicked()
 }
 void FrameExportar::on_btnExportar_clicked()
 {
-
     if(ui->radioButtonPDF->isChecked()){
         if(FiltrosBarra::indexComboBox == 0 ){
-            imprimirPdfIntervaloBarras();
-        }else if(FiltrosBarra::indexComboBox == 1){
-            imprimirPdfCombonentesBarras();
+            if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
+                PdfInterBarrasTodL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
+                PdfInterBInterL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
+                PdfInterBarrasTodL1InterL2();
+            }else{
+                PdfInterBInterL1InterL2();
+            }
+        }else if(FiltrosBarra::indexComboBox == 1 ){
+            if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
+                PdfCompBarrasaTodL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
+                PdfCompBarrasInterL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
+                PdfCompBarrasTodL1InterL2();
+            }else{
+                PdfCompBarrasInterL2InterL2();
+            }
         }else{
-            imprimirPdfBarrasInfectadas();
+            if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
+                PdfInfecBarrasTodL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
+                PdfInfecBarrasInterL1TodL2();
+            }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
+                PdfInfecBarrasTodL1InterL2();
+            }else{
+                PdfInfecBarrasInterL1InterL2();
+            }
         }
-    }else if(ui->radioButtonCsv->isChecked()){
+    }else if(ui->radioButtonCsv->isChecked()){ // exportação CSV
         if(FiltrosBarra::indexComboBox == 0 ){
             if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
                 CsvInterBarrasTodL1TodL2();
@@ -119,7 +147,7 @@ void FrameExportar::on_btnExportar_clicked()
                 CsvInfecBarrasInterL1InterL2();
             }
         }
-    }else{
+    }else{  // Exportação Excel
         if(FiltrosBarra::indexComboBox == 0 ){
             if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
                 ExcelInterBarrasTodL1TodL2();
@@ -142,7 +170,7 @@ void FrameExportar::on_btnExportar_clicked()
             }
         }else{
             if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==0){
-                ExcelvInfecBarrasTodL1TodL2();
+                ExcelInfecBarrasTodL1TodL2();
             }else if(FiltroLinha::indexComboBoxOrigem == 1 && FiltroLinha::indexComboBoxDestino==0){
                 ExcelInfecBarrasInterL1TodL2();
             }else if(FiltroLinha::indexComboBoxOrigem == 0 && FiltroLinha::indexComboBoxDestino==1){
@@ -405,6 +433,292 @@ void FrameExportar::imprimirPdfBarrasInfectadas(){
 
 }
 
+
+//-------------Funções PDF
+//Funções para imprimir PDF com barras em intervalo
+void FrameExportar::PdfInterBInterL1InterL2(){
+        QPrinter printer;
+        printer.setPrinterName("PDF");
+
+        QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+        if (filename.isEmpty()) {
+        return;
+        }
+
+        printer.setOutputFormat(QPrinter::PdfFormat);
+        printer.setOutputFileName(filename);
+
+        QPainter painter(&printer);
+        PdfInsereCapa(&painter);
+
+        QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfInterBInterL1TodL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfInterBarrasTodL1InterL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfInterBarrasTodL1TodL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+//Funções para imprimir PDF com barras em componentes
+void FrameExportar::PdfCompBarrasInterL2InterL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfCompBarrasInterL1TodL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfCompBarrasTodL1InterL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfCompBarrasaTodL1TodL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+//Funções de para imprimir PDF com barras infectadas
+void FrameExportar::PdfInfecBarrasInterL1InterL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfInfecBarrasInterL1TodL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfInfecBarrasTodL1InterL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+void FrameExportar::PdfInfecBarrasTodL1TodL2(){
+    QPrinter printer;
+    printer.setPrinterName("PDF");
+
+    QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
+
+    if (filename.isEmpty()) {
+        return;
+    }
+
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(filename);
+
+    QPainter painter(&printer);
+    PdfInsereCapa(&painter);
+
+    QDesktopServices::openUrl(QUrl(filename));
+}
+
+void FrameExportar::PdfInsereCapa(QPainter* painter) {
+    int w = painter->device()->width();
+    int h = painter->device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter->drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter->setFont(fontePrincipal);
+    painter->drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter->setFont(fonteSubtexto);
+    painter->drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+
+    painter->end();
+}
+
+//escreve as barras em intervalo
+void FrameExportar::PdfEscreveBarrasIntervalo(QPdfWriter* pdf){
+
+}
+//escreve as barras em componentes
+void FrameExportar::PdfEscreveBarrasComp(QPdfWriter* pdf){
+
+}
+//escreve as barras Infectadas
+void FrameExportar::PdfEscreveBarrasInfec(QPdfWriter* pdf){
+
+}
+//escreve Linhas com origens e destinos em estado de componentes
+void FrameExportar::PdfEscreveLInterL1InterL2(QPdfWriter* pdf){
+
+}
+//escreve Linhas com origens em estado de componentes e todos destinos
+void FrameExportar::PdfEscreveLInterL1TodL2(QPdfWriter* pdf){
+
+}
+//escreve Linhas com todas origens e destinos em componenetes
+void FrameExportar::PdfEscreveLTodL1InterL2(QPdfWriter* pdf){
+
+}
+//escreve Linhas de todas origens e destinos
+void FrameExportar::PdfEscreveLTodL1TodL2(QPdfWriter* pdf){
+
+}
+
+
 //--------------Funções Excel
 //Funções para imprimir excel com barras em intervalo
 void FrameExportar::ExcelInterBInterL1InterL2(){
@@ -519,7 +833,7 @@ void FrameExportar::ExcelInfecBarrasTodL1InterL2(){
     delete planilha;
     delete linha;
 }
-void FrameExportar::ExcelvInfecBarrasTodL1TodL2(){
+void FrameExportar::ExcelInfecBarrasTodL1TodL2(){
     QXlsx::Document* planilha = criaPlanilha();
     int* linha = new int;
     ExcelEscreveBarrasInfec(planilha, linha);

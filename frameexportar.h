@@ -12,6 +12,9 @@
 #include "xlsxchart.h"
 #include "xlsxrichstring.h"
 #include "xlsxworkbook.h"
+#include <QPdfWriter>
+#include <QPrinter>
+#include<QPainter>
 using namespace QXlsx;
 
 
@@ -36,8 +39,45 @@ public:
     void imprimirPdfCombonentesBarras();
     void imprimirPdfBarrasInfectadas();
 
+    //----------Funções PDF
+    //Funções para imprimir PDF com barras em intervalo
+    void PdfInterBInterL1InterL2();
+    void PdfInterBInterL1TodL2();
+    void PdfInterBarrasTodL1InterL2();
+    void PdfInterBarrasTodL1TodL2();
+    //Funções para imprimir PDF com barras em componentes
+    void PdfCompBarrasInterL2InterL2();
+    void PdfCompBarrasInterL1TodL2();
+    void PdfCompBarrasTodL1InterL2();
+    void PdfCompBarrasaTodL1TodL2();
+    //Funções de para imprimir PDF com barras infectadas
+    void PdfInfecBarrasInterL1InterL2();
+    void PdfInfecBarrasInterL1TodL2();
+    void PdfInfecBarrasTodL1InterL2();
+    void PdfInfecBarrasTodL1TodL2();
+    //Funções Auxiliares
 
-    //----------funções Excel
+    void PdfInsereCapa(QPainter* painter);
+    //escreve as barras em intervalo
+    void PdfEscreveBarrasIntervalo(QPdfWriter*);
+    //escreve as barras em componentes
+    void PdfEscreveBarrasComp(QPdfWriter*);
+    //escreve as barras Infectadas
+    void PdfEscreveBarrasInfec(QPdfWriter*);
+    //escreve Linhas com origens e destinos em estado de componentes
+    void PdfEscreveLInterL1InterL2(QPdfWriter*);
+    //escreve Linhas com origens em estado de componentes e todos destinos
+    void PdfEscreveLInterL1TodL2(QPdfWriter*);
+    //escreve Linhas com todas origens e destinos em componenetes
+    void PdfEscreveLTodL1InterL2(QPdfWriter*);
+    //escreve Linhas de todas origens e destinos
+    void PdfEscreveLTodL1TodL2(QPdfWriter*);
+
+
+
+
+
+    //----------Funções Excel
     //Funções para imprimir excel com barras em intervalo
     void ExcelInterBInterL1InterL2();
     void ExcelInterBInterL1TodL2();
@@ -52,7 +92,7 @@ public:
     void ExcelInfecBarrasInterL1InterL2();
     void ExcelInfecBarrasInterL1TodL2();
     void ExcelInfecBarrasTodL1InterL2();
-    void ExcelvInfecBarrasTodL1TodL2();
+    void ExcelInfecBarrasTodL1TodL2();
     QString numeroParaLetra(int numero);
     //Funções Auxiliares
     //Cria planilha
@@ -76,7 +116,7 @@ public:
     //escreve Linhas de todas origens e destinos
     void ExcelEscreveLTodL1TodL2(QXlsx::Document*, int* );
 
-    //----------funções csv
+    //----------funções CSV
     //Funções para imprimir csv com barras em intervalo
     void CsvInterBarrasInterL1InterL2();
     void CsvInterBarrasInterL1TodL2();
