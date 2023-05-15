@@ -9,6 +9,8 @@
 #include<QFileDialog>
 #include<QFile>
 #include<QDebug>
+#include <QtCore/QCoreApplication>
+
 
 int MainWindow::frameAtual=0; //Inicializando a variavel estática que identifica cada frame está ( O primeiro é 0 )
 
@@ -24,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QCoreApplication::addLibraryPath("C:/Qt/6.5.0/mingw_64/plugins");
     insereCssMainWindow();
 }
 

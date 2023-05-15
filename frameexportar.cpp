@@ -37,7 +37,6 @@ FrameExportar::FrameExportar(QWidget *parent, Ui::MainWindow *mw, Ui::FrameBarra
 
     inicializaFrame();
 
-
 }
 
 void FrameExportar::inicializaFrame(){
@@ -440,6 +439,8 @@ void FrameExportar::PdfInterBInterL1InterL2(){
         QPrinter printer;
         printer.setPrinterName("PDF");
 
+
+
         QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
         if (filename.isEmpty()) {
@@ -449,8 +450,7 @@ void FrameExportar::PdfInterBInterL1InterL2(){
         printer.setOutputFormat(QPrinter::PdfFormat);
         printer.setOutputFileName(filename);
 
-        QPainter painter(&printer);
-        PdfInsereCapa(&painter);
+        ContInterBInterL1InterL2(&printer);
 
         QDesktopServices::openUrl(QUrl(filename));
 }
@@ -458,6 +458,8 @@ void FrameExportar::PdfInterBInterL1TodL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -467,8 +469,10 @@ void FrameExportar::PdfInterBInterL1TodL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+
+    ContInterBInterL1TodL2(&printer);
+
+
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -476,6 +480,8 @@ void FrameExportar::PdfInterBarrasTodL1InterL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -485,8 +491,10 @@ void FrameExportar::PdfInterBarrasTodL1InterL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+
+    ContInterBarrasTodL1InterL2(&printer);
+
+
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -494,6 +502,8 @@ void FrameExportar::PdfInterBarrasTodL1TodL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -503,8 +513,9 @@ void FrameExportar::PdfInterBarrasTodL1TodL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+    ContInterBarrasTodL1TodL2(&printer);
+
+
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -513,6 +524,8 @@ void FrameExportar::PdfCompBarrasInterL2InterL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -522,8 +535,9 @@ void FrameExportar::PdfCompBarrasInterL2InterL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+
+    ContCompBarrasInterL2InterL2(&printer);
+
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -531,6 +545,8 @@ void FrameExportar::PdfCompBarrasInterL1TodL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -540,8 +556,7 @@ void FrameExportar::PdfCompBarrasInterL1TodL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+    ContCompBarrasInterL1TodL2(&printer);
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -549,6 +564,8 @@ void FrameExportar::PdfCompBarrasTodL1InterL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -558,8 +575,9 @@ void FrameExportar::PdfCompBarrasTodL1InterL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+
+    ContCompBarrasTodL1InterL2(&printer);
+
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -567,6 +585,7 @@ void FrameExportar::PdfCompBarrasaTodL1TodL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -576,8 +595,9 @@ void FrameExportar::PdfCompBarrasaTodL1TodL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+
+    ContCompBarrasaTodL1TodL2(&printer);
+
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -586,6 +606,7 @@ void FrameExportar::PdfInfecBarrasInterL1InterL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -595,8 +616,9 @@ void FrameExportar::PdfInfecBarrasInterL1InterL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+
+    ContInfecBarrasInterL1InterL2(&printer);
+
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -604,6 +626,8 @@ void FrameExportar::PdfInfecBarrasInterL1TodL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -613,8 +637,8 @@ void FrameExportar::PdfInfecBarrasInterL1TodL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+    ContInfecBarrasInterL1TodL2(&printer);
+
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -622,6 +646,8 @@ void FrameExportar::PdfInfecBarrasTodL1InterL2(){
     QPrinter printer;
     printer.setPrinterName("PDF");
 
+
+
     QString filename = QFileDialog::getSaveFileName(this, "Salvar Arquivo", QDir::homePath(), "Arquivos PDF (*.pdf)");
 
     if (filename.isEmpty()) {
@@ -631,8 +657,7 @@ void FrameExportar::PdfInfecBarrasTodL1InterL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+    ContInfecBarrasTodL1InterL2(&printer);
 
     QDesktopServices::openUrl(QUrl(filename));
 }
@@ -649,15 +674,17 @@ void FrameExportar::PdfInfecBarrasTodL1TodL2(){
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName(filename);
 
-    QPainter painter(&printer);
-    PdfInsereCapa(&painter);
+    ContInfecBarrasTodL1TodL2(&printer);
 
     QDesktopServices::openUrl(QUrl(filename));
 }
-
-void FrameExportar::PdfInsereCapa(QPainter* painter) {
-    int w = painter->device()->width();
-    int h = painter->device()->height();
+//Funções Auxiliares
+//Funções os conteudos com barras em intervalo
+void FrameExportar::ContInterBInterL1InterL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
 
     // Carrega a imagem do arquivo
     QImage logo(":/logo/imgs/logo/logo.jpg");
@@ -666,7 +693,7 @@ void FrameExportar::PdfInsereCapa(QPainter* painter) {
     QRectF logoRect(20, 20, 300, 56);
 
     // Desenha a imagem na página
-    painter->drawImage(logoRect, logo);
+    painter.drawImage(logoRect, logo);
 
     QString textoPrincipal = "Relatório de Sistema Elétrico";
     QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
@@ -680,42 +707,665 @@ void FrameExportar::PdfInsereCapa(QPainter* painter) {
     int alturaTextoPrincipal = fmPrincipal.height();
     int alturaSubtexto = fmSubtexto.height();
 
-    painter->setFont(fontePrincipal);
-    painter->drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
 
-    painter->setFont(fonteSubtexto);
-    painter->drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContInterBInterL1TodL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
 
-    painter->end();
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContInterBarrasTodL1InterL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContInterBarrasTodL1TodL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+
+    printer->newPage();
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString TituloBarras = "Barras";
+
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, TituloBarras);
+
+    printer->newPage();
+
+
+
+    // Define a posição e tamanho da imagem
+    QRectF logoMenorRect(20, 20, 100, 19);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoMenorRect, logo);
+
+    int inicio = FiltrosBarra::indiceBarrasEscolhidas.at(0).toInt()-1;
+    int fim = FiltrosBarra::indiceBarrasEscolhidas.at(1).toInt()-1;
+
+    QLinearGradient gradient = QLinearGradient(0, 0, 0, 50);
+    gradient.setColorAt(0, QColor(180, 235, 249));
+    gradient.setColorAt(1, QColor(30, 56, 91));
+    painter.setBrush(QBrush(gradient));
+    //estilo da fonte do header
+    QFont fontHeader("Roboto",16,QFont::Bold);
+
+    // Define o estilo da fonte
+    QFont fontConteudo("Roboto",12);
+
+    int inicioItem = 100;
+
+
+    for (int i = inicio; i <= fim; i++) {
+
+        if((h - (inicioItem+100+30*QtdLinhasInfoBarra()) < 10 )){
+             printer->newPage();
+            inicioItem = 100;
+             painter.drawImage(logoMenorRect, logo);
+
+        }
+
+        QLabel* labelHeader = new QLabel();
+        labelHeader->setGeometry((w-500)/2, inicioItem, 500, 30);
+        labelHeader->setStyleSheet("background-color: #1E385B; border-top-left-radius: 10px; border-top-right-radius: 10px; padding: 10px;");
+        labelHeader->setFont(fontHeader);
+        labelHeader->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
+        labelHeader->setTextFormat(Qt::RichText);
+
+        // Cria a QString atributos com a tag <html>
+        QString atributos = "<html><div style='color: black; border-radius: 10px; padding: 10px'>";
+
+        if (FiltrosBarra::tensaoPu) {
+            atributos += "<p><b>Tensão na Barra[pu]:</b> %1</p>";
+                QString tensao = QString::number(FrameBarras::barras[i].getTensaoPu(),'f',5);
+            atributos = atributos.arg(tensao);
+        }
+
+        if (FiltrosBarra::tensaoNominal) {
+            atributos += "<p><b>Tensão Nominal[kV]:</b> %1</p>";
+                QString tensaoNominal = QString::number(FrameBarras::barras[i].getTensaoNominalKv(),'f',5);
+            atributos = atributos.arg(tensaoNominal);
+        }
+
+        if (FiltrosBarra::thdv) {
+            (FrameBarras::barras[i].getBarraInfectadaThdv()) ? atributos +=  "<p style='background-color: #FF8080;'><b>DHT[%]:</b> %1</p>" : atributos += "<p><b>THDV[%]:</b> %1</p>";
+                QString thdv = QString::number(FrameBarras::barras[i].getThdvPercent(),'f',5);
+            atributos = atributos.arg(thdv);
+        }
+
+        if(FiltrosBarra::dit){
+            for( int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+                (FrameBarras::barras[i].getDti().find(j)->second.second.second) ? atributos +=  "<p style='background-color: #FF8080;'><b>TDI%1[pu]:</b> %2</p>" : atributos += "<p><b>TDI%1[pu]:</b> %2</p>";
+                    QString tdi = QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.first,'g',5);
+                atributos = atributos.arg(j);
+                atributos = atributos.arg(tdi);
+            }
+        }
+
+        if(FiltrosBarra::ditPercent){
+            for( int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+                (FrameBarras::barras[i].getDti().find(j)->second.second.second) ? atributos +=  "<p style='background-color: #FF8080;'><b>TDI%1[%]:</b> %2</p>" : atributos += "<p><b>TDI%1[%]:</b> %2</p>";
+                QString tdi = QString::number(FrameBarras::barras[i].getDti().find(j)->second.first.second,'f',5);
+                atributos = atributos.arg(j);
+                atributos = atributos.arg(tdi);
+            }
+        }
+
+        if(FiltrosBarra::tensaoEficaz){
+            atributos += "<p><b>Tensao Eficaz[pu]:</b> %1</p>";
+            QString tensaoEficaz = QString::number(FrameBarras::barras[i].getTensaoEficaz(),'f',5);
+            atributos = atributos.arg(tensaoEficaz);
+        }
+
+        // Fecha a tag </div> e </html>
+        atributos += "</div></html>";
+
+        // Cria a QLabel com os atributos
+        QLabel* labelAtributos = new QLabel();
+        labelAtributos->setGeometry((w-500)/2, inicioItem + 30, 500,10+ 30*QtdLinhasInfoBarra());
+        labelAtributos->setStyleSheet("background-color: #F5F5F5; border-radius: 10px; padding: 10px;");
+        labelAtributos->setFont(fontConteudo);
+        labelAtributos->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        labelAtributos->setTextFormat(Qt::RichText);
+        labelAtributos->setText(atributos);
+
+        // Cria o título com o número da barra
+        QString titulo = QString("Barra %1").arg(i+1);
+        painter.fillRect(QRectF((w-500)/2, inicioItem, 500, 30), QBrush(QColor("#1E385B")));
+        painter.setFont(fontHeader);
+        painter.setPen(QPen(Qt::white));
+        painter.drawText(QRectF((w-500)/2, inicioItem, 500, 30), titulo, QTextOption(Qt::AlignCenter));
+
+        // Desenha a QLabel na imagem
+        QPixmap pixmap = labelAtributos->grab();
+        painter.drawPixmap(QRectF((w-500)/2, inicioItem + 30, 500,10+ 30*QtdLinhasInfoBarra()).toRect(), pixmap);
+
+        inicioItem += 100 + 30*QtdLinhasInfoBarra();
+
+    }
+
+    printer->newPage();
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString TituloLinhas = "Linhas";
+
+    painter.setPen(QPen());
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, TituloLinhas);
+
+
+    printer->newPage();
+
+    // Desenha a imagem na página
+    painter.drawImage(logoMenorRect, logo);
+
+    inicioItem = 100;
+
+    for(int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
+
+        if((h - (inicioItem+100+30*QtdLinhasInfoLinha()) < 10 )){
+            printer->newPage();
+            inicioItem = 100;
+            painter.drawImage(logoMenorRect, logo);
+
+        }
+
+        QLabel* labelHeader = new QLabel();
+        labelHeader->setGeometry((w-500)/2, inicioItem, 500, 30);
+        labelHeader->setStyleSheet("background-color: #1E385B; border-top-left-radius: 10px; border-top-right-radius: 10px; padding: 10px;");
+        labelHeader->setFont(fontHeader);
+        labelHeader->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
+        labelHeader->setTextFormat(Qt::RichText);
+
+
+        // Cria a QString atributos com a tag <html>
+        QString atributos = "<html><div style='color: black; border-radius: 10px; padding: 10px'>";
+
+        if(FiltroLinha::correntePu){
+            atributos += "<p><b>Corrente na Linha[pu]:</b> %1</p>";
+                QString corrente = QString::number(FrameBarras::linhas[i].getCorrente(),'f',5);
+            atributos = atributos.arg(corrente);
+        }
+        if(FiltroLinha::dht){
+            atributos += "<p><b>DHT[%]:</b> %1</p>";
+            QString dht = QString::number(FrameBarras::linhas[i].getDhtPercent(),'f',5);
+            atributos = atributos.arg(dht);
+        }
+        if(FiltroLinha::dit){
+            for( int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+                atributos += "<p><b>DHI%1[pu]:</b> %2</p>";
+                QString tdi = QString::number(FrameBarras::linhas[i].getDti().find(j)->second.first,'g',5);
+                atributos = atributos.arg(j);
+                atributos = atributos.arg(tdi);
+            }
+        }
+        if(FiltroLinha::ditPercent){
+            for( int j = 3 ; j <= FrameBarras::indiceHarmMax ; j+=2){
+                atributos += "<p><b>DHI%1[%]:</b> %2</p>";
+                QString tdiPercent = QString::number(FrameBarras::linhas[i].getDti().find(j)->second.second,'f',5);
+                atributos = atributos.arg(j);
+                atributos = atributos.arg(tdiPercent);
+            }
+        }
+        if(FiltroLinha::correnteEficaz){
+            atributos += "<p><b>Corrente Eficaz[pu]:</b> %1</p>";
+            QString correnteEficaz = QString::number(FrameBarras::linhas[i].getCorrenteEficaz(),'f',5);
+            atributos = atributos.arg(correnteEficaz);
+        }
+        if(FiltroLinha::resistencia){
+            atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+            QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
+            atributos = atributos.arg(resistencia);
+        }
+        if(FiltroLinha::perdas){
+            atributos += "<p><b>Perdas[pu]:</b> %1</p>";
+            QString perdas = QString::number(FrameBarras::linhas[i].getPerdas(),'f',5);
+            atributos = atributos.arg(perdas);
+        }
+        if(FiltroLinha::perdasEficaz){
+            atributos += "<p><b>Perdas[pu]:</b> %1</p>";
+            QString perdasEficaz = QString::number(FrameBarras::linhas[i].getPerdasEficaz(),'f',5);
+            atributos = atributos.arg(perdasEficaz);
+        }
+
+        // Fecha a tag </div> e </html>
+        atributos += "</div></html>";
+
+        // Cria a QLabel com os atributos
+        QLabel* labelAtributos = new QLabel();
+        labelAtributos->setGeometry((w-500)/2, inicioItem + 30, 500,10+ 30*QtdLinhasInfoLinha());
+        labelAtributos->setStyleSheet("background-color: #F5F5F5; border-radius: 10px; padding: 10px;");
+        labelAtributos->setFont(fontConteudo);
+        labelAtributos->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        labelAtributos->setTextFormat(Qt::RichText);
+        labelAtributos->setText(atributos);
+
+        // Cria o título com o número da linha
+        QString titulo = QString("Linha %1 \u279E %2");
+        titulo = titulo.arg(FrameBarras::linhas[i].getOrigem());
+        titulo = titulo.arg(FrameBarras::linhas[i].getDestino());
+
+
+        painter.fillRect(QRectF((w-500)/2, inicioItem, 500, 30), QBrush(QColor("#1E385B")));
+        painter.setFont(fontHeader);
+        painter.setPen(QPen(Qt::white));
+        painter.drawText(QRectF((w-500)/2, inicioItem, 500, 30), titulo, QTextOption(Qt::AlignCenter));
+
+        // Desenha a QLabel na imagem
+        QPixmap pixmap = labelAtributos->grab();
+        painter.drawPixmap(QRectF((w-500)/2, inicioItem + 30, 500,10+ 30*QtdLinhasInfoLinha()).toRect(), pixmap);
+
+        inicioItem += 100 + 30*QtdLinhasInfoLinha();
+
+    }
+
+    painter.end();
+}
+//Funções para imprimir PDF com barras em componentes
+void FrameExportar::ContCompBarrasInterL2InterL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContCompBarrasInterL1TodL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContCompBarrasTodL1InterL2(QPrinter* printer ){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContCompBarrasaTodL1TodL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+//Funções de para imprimir PDF com barras infectadas
+void FrameExportar::ContInfecBarrasInterL1InterL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContInfecBarrasInterL1TodL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContInfecBarrasTodL1InterL2(QPrinter* printer ){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+    painter.end();
+}
+void FrameExportar::ContInfecBarrasTodL1TodL2(QPrinter* printer){
+    QPainter painter(printer);
+    painter.begin(printer);
+    int w = painter.device()->width();
+    int h = painter.device()->height();
+
+    // Carrega a imagem do arquivo
+    QImage logo(":/logo/imgs/logo/logo.jpg");
+
+    // Define a posição e tamanho da imagem
+    QRectF logoRect(20, 20, 300, 56);
+
+    // Desenha a imagem na página
+    painter.drawImage(logoRect, logo);
+
+    QString textoPrincipal = "Relatório de Sistema Elétrico";
+    QString subtexto = "Sistema com " + QString::number(FrameTensoes::numeroDeBarras) + " barras e " + QString::number(FrameBarras::numeroDeLinhas) + " linhas";
+
+    QFont fontePrincipal("Arial", 20, QFont::Bold);
+    QFont fonteSubtexto("Arial", 12);
+
+    QFontMetrics fmPrincipal(fontePrincipal);
+    QFontMetrics fmSubtexto(fonteSubtexto);
+
+    int alturaTextoPrincipal = fmPrincipal.height();
+    int alturaSubtexto = fmSubtexto.height();
+
+    painter.setFont(fontePrincipal);
+    painter.drawText(QRectF(0, (h - alturaTextoPrincipal - alturaSubtexto) / 2, w, alturaTextoPrincipal), Qt::AlignHCenter | Qt::AlignTop, textoPrincipal);
+
+    painter.setFont(fonteSubtexto);
+    painter.drawText(QRectF(0, (h - alturaSubtexto) / 2 + alturaTextoPrincipal, w, alturaSubtexto), Qt::AlignHCenter | Qt::AlignTop, subtexto);
+
+
+    painter.end();
 }
 
-//escreve as barras em intervalo
-void FrameExportar::PdfEscreveBarrasIntervalo(QPdfWriter* pdf){
 
+//Insere sumário
+
+
+int FrameExportar::QtdLinhasInfoBarra(){
+    int linhas = 0 ;
+
+    linhas += (int)FiltrosBarra::tensaoPu;
+    linhas += (int)FiltrosBarra::tensaoNominal;
+    linhas += (int)FiltrosBarra::thdv;
+    linhas += (int)FiltrosBarra::dit * (FrameBarras::quantidadeDeComponentesHarm);
+    linhas += (int)FiltrosBarra::ditPercent * (FrameBarras::quantidadeDeComponentesHarm);
+    linhas += (int)FiltrosBarra::tensaoEficaz;
+
+    return linhas;
 }
-//escreve as barras em componentes
-void FrameExportar::PdfEscreveBarrasComp(QPdfWriter* pdf){
 
-}
-//escreve as barras Infectadas
-void FrameExportar::PdfEscreveBarrasInfec(QPdfWriter* pdf){
+int FrameExportar::QtdLinhasInfoLinha(){
+    int linhas = 0 ;
 
-}
-//escreve Linhas com origens e destinos em estado de componentes
-void FrameExportar::PdfEscreveLInterL1InterL2(QPdfWriter* pdf){
+    linhas += (int) FiltroLinha::correntePu;
+    linhas += (int) FiltroLinha::dht;
+    linhas += (int) FiltroLinha::dit * (FrameBarras::quantidadeDeComponentesHarm);
+    linhas += (int) FiltroLinha::ditPercent * (FrameBarras::quantidadeDeComponentesHarm);
+    linhas += (int) FiltroLinha::correnteEficaz;
+    linhas += (int) FiltroLinha::resistencia;
+    linhas += (int) FiltroLinha::perdas;
+    linhas += (int) FiltroLinha::perdasEficaz;
 
-}
-//escreve Linhas com origens em estado de componentes e todos destinos
-void FrameExportar::PdfEscreveLInterL1TodL2(QPdfWriter* pdf){
-
-}
-//escreve Linhas com todas origens e destinos em componenetes
-void FrameExportar::PdfEscreveLTodL1InterL2(QPdfWriter* pdf){
-
-}
-//escreve Linhas de todas origens e destinos
-void FrameExportar::PdfEscreveLTodL1TodL2(QPdfWriter* pdf){
-
+    return linhas;
 }
 
 
@@ -2644,3 +3294,4 @@ QString FrameExportar::numeroParaLetra(int numero) {
 
     return coluna;
 }
+

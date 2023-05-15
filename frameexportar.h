@@ -56,22 +56,26 @@ public:
     void PdfInfecBarrasTodL1InterL2();
     void PdfInfecBarrasTodL1TodL2();
     //Funções Auxiliares
+    //Funções os conteudos com barras em intervalo
+    void ContInterBInterL1InterL2(QPrinter* );
+    void ContInterBInterL1TodL2(QPrinter* );
+    void ContInterBarrasTodL1InterL2(QPrinter* );
+    void ContInterBarrasTodL1TodL2(QPrinter* );
+    //Funções para imprimir PDF com barras em componentes
+    void ContCompBarrasInterL2InterL2(QPrinter* );
+    void ContCompBarrasInterL1TodL2(QPrinter* );
+    void ContCompBarrasTodL1InterL2(QPrinter* );
+    void ContCompBarrasaTodL1TodL2(QPrinter* );
+    //Funções de para imprimir PDF com barras infectadas
+    void ContInfecBarrasInterL1InterL2(QPrinter* );
+    void ContInfecBarrasInterL1TodL2(QPrinter* );
+    void ContInfecBarrasTodL1InterL2(QPrinter* );
+    void ContInfecBarrasTodL1TodL2(QPrinter* );
 
-    void PdfInsereCapa(QPainter* painter);
-    //escreve as barras em intervalo
-    void PdfEscreveBarrasIntervalo(QPdfWriter*);
-    //escreve as barras em componentes
-    void PdfEscreveBarrasComp(QPdfWriter*);
-    //escreve as barras Infectadas
-    void PdfEscreveBarrasInfec(QPdfWriter*);
-    //escreve Linhas com origens e destinos em estado de componentes
-    void PdfEscreveLInterL1InterL2(QPdfWriter*);
-    //escreve Linhas com origens em estado de componentes e todos destinos
-    void PdfEscreveLInterL1TodL2(QPdfWriter*);
-    //escreve Linhas com todas origens e destinos em componenetes
-    void PdfEscreveLTodL1InterL2(QPdfWriter*);
-    //escreve Linhas de todas origens e destinos
-    void PdfEscreveLTodL1TodL2(QPdfWriter*);
+
+    //cacula quantidade de linhas que uma barra irá ocupar no sistema
+    int  QtdLinhasInfoBarra();
+    int  QtdLinhasInfoLinha();
 
 
 

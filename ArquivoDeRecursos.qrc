@@ -18,5 +18,6 @@
     </qresource>
     <qresource prefix="/logo">
         <file>imgs/logo/logo.jpg</file>
+        <file>imgs/logo/logoMenor.jpg</file>
     </qresource>
 </RCC>
