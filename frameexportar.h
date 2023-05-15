@@ -46,7 +46,7 @@ public:
     void PdfInterBarrasTodL1InterL2();
     void PdfInterBarrasTodL1TodL2();
     //Funções para imprimir PDF com barras em componentes
-    void PdfCompBarrasInterL2InterL2();
+    void PdfCompBarrasInterL1InterL2();
     void PdfCompBarrasInterL1TodL2();
     void PdfCompBarrasTodL1InterL2();
     void PdfCompBarrasaTodL1TodL2();
@@ -62,7 +62,7 @@ public:
     void ContInterBarrasTodL1InterL2(QPrinter* );
     void ContInterBarrasTodL1TodL2(QPrinter* );
     //Funções para imprimir PDF com barras em componentes
-    void ContCompBarrasInterL2InterL2(QPrinter* );
+    void ContCompBarrasInterL1InterL2(QPrinter* );
     void ContCompBarrasInterL1TodL2(QPrinter* );
     void ContCompBarrasTodL1InterL2(QPrinter* );
     void ContCompBarrasaTodL1TodL2(QPrinter* );
