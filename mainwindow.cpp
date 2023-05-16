@@ -552,9 +552,9 @@ void MainWindow::on_btnAvancar_clicked()
 void MainWindow::verificarAvanco(){
 
      for (int i = 0 ; i < 5; i++ ) {
-         if(!this->getStatusDePreenchimento(i)){
-            return;
+         if(!this->getStatusDePreenchimento(i)){ // verifica se os status de preenchimento estão com valor true para cada arquivo
+            return; //caso algum estejam false, nada acontece
          }
      }
-     ui->btnAvancar->setEnabled(true);
+     ui->btnAvancar->setEnabled(true); // caso todos estejam 'true' , o botão avançar é habilitado
 }
