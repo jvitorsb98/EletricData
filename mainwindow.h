@@ -79,7 +79,7 @@ public:
     void insereQssBtnLixeira();
     void insereQssLblVerifica();
     void setaFileNameNosArq();
-
+    void inicializaFrame();
 
     static QFile *arquivoVsoln;
     static QFile *arquivoIsoln;

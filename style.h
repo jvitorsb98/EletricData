@@ -36,8 +36,17 @@ class Style{
                         "QLineEdit:hover{"
                             "font-size:20px;"
                             "font-family: 'Roboto';"
-                            "border: 2px solid"+corPrimaria+";}"
-                        "QLineEdit:disabled{"
+                                     "border: 2px solid"+corPrimaria+";}";
+
+    QString cssLineEditDisabled="QLineEdit{"
+                                  "background-color:"+branco+";"
+                                     "font-size:12px;"
+                                     "border-radius:3px;}"
+                                 "QLineEdit:hover{"
+                                     "font-size:20px;"
+                                     "font-family: 'Roboto';"
+                                     "border: 2px solid"+corPrimaria+";}"
+                                  "QLineEdit:disabled{"
                                           "background-color:#808080;}";
     QString cssBtn="QPushButton{"
                          "border:2px solid "+corPrimaria+";"

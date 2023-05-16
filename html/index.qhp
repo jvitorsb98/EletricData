@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+<namespace>org.doxygen.Project</namespace>
+<virtualFolder>doc</virtualFolder>
+<filterSection>
+<filterAttribute>doxygen</filterAttribute>
+<toc>
+<section title="My Project" ref="index.html">
+<section title="Classes" ref="annotated.html">
+<section title="Class List" ref="annotated.html">
+<section title="AnimatedHoverButton" ref="class_animated_hover_button.html">
+<section title="AnimatedHoverButton" ref="class_animated_hover_button.html#af9abe0512b3ef5f2e9d14529dea65872"/>
+</section>
+<section title="Barra" ref="class_barra.html">
+</section>
+<section title="FiltroLinha" ref="class_filtro_linha.html">
+</section>
+<section title="FiltrosBarra" ref="class_filtros_barra.html">
+</section>
+<section title="FrameBarras" ref="class_frame_barras.html">
+</section>
+<section title="FrameExportar" ref="class_frame_exportar.html">
+</section>
+<section title="FrameTensoes" ref="class_frame_tensoes.html">
+</section>
+<section title="Linha" ref="class_linha.html">
+</section>
+<section title="MainWindow" ref="class_main_window.html">
+</section>
+<section title="Style" ref="class_style.html">
+</section>
+</section>
+<section title="Class Index" ref="classes.html"/>
+<section title="Class Hierarchy" ref="hierarchy.html">
+<section title="Barra" ref="class_barra.html"/>
+<section title="Linha" ref="class_linha.html"/>
+<section title="QDialog" ref="">
+<section title="FiltroLinha" ref="class_filtro_linha.html"/>
+<section title="FiltrosBarra" ref="class_filtros_barra.html"/>
+</section>
+<section title="QFrame" ref="">
+<section title="FrameBarras" ref="class_frame_barras.html"/>
+<section title="FrameExportar" ref="class_frame_exportar.html"/>
+<section title="FrameTensoes" ref="class_frame_tensoes.html"/>
+</section>
+<section title="QMainWindow" ref="">
+<section title="MainWindow" ref="class_main_window.html"/>
+</section>
+<section title="QPushButton" ref="">
+<section title="AnimatedHoverButton" ref="class_animated_hover_button.html"/>
+</section>
+<section title="Style" ref="class_style.html"/>
+</section>
+<section title="Class Members" ref="functions.html">
+<section title="All" ref="functions.html"/>
+<section title="Functions" ref="functions_func.html"/>
+<section title="Variables" ref="functions_vars.html"/>
+</section>
+</section>
+<section title="Files" ref="files.html">
+<section title="File List" ref="files.html">
+<section title="AnimatedHoverButton.h" ref="_animated_hover_button_8h_source.html"/>
+<section title="Barra.h" ref="_barra_8h_source.html"/>
+<section title="filtrolinha.h" ref="filtrolinha_8h_source.html"/>
+<section title="filtrosbarra.h" ref="filtrosbarra_8h_source.html"/>
+<section title="framebarras.h" ref="framebarras_8h_source.html"/>
+<section title="frameexportar.h" ref="frameexportar_8h_source.html"/>
+<section title="frametensoes.h" ref="frametensoes_8h_source.html"/>
+<section title="Linha.h" ref="_linha_8h_source.html"/>
+<section title="mainwindow.h" ref="mainwindow_8h_source.html"/>
+<section title="style.h" ref="style_8h_source.html"/>
+</section>
+</section>
+</section>
+</toc>
+<keywords>
+<keyword name="AnimatedHoverButton" id="AnimatedHoverButton_" ref="class_animated_hover_button.html"/>
+<keyword name="Barra" id="Barra_" ref="class_barra.html"/>
+<keyword name="FiltroLinha" id="FiltroLinha_" ref="class_filtro_linha.html"/>
+<keyword name="FiltrosBarra" id="FiltrosBarra_" ref="class_filtros_barra.html"/>
+<keyword name="FrameBarras" id="FrameBarras_" ref="class_frame_barras.html"/>
+<keyword name="FrameExportar" id="FrameExportar_" ref="class_frame_exportar.html"/>
+<keyword name="FrameTensoes" id="FrameTensoes_" ref="class_frame_tensoes.html"/>
+<keyword name="Linha" id="Linha_" ref="class_linha.html"/>
+<keyword name="MainWindow" id="MainWindow_" ref="class_main_window.html"/>
+<keyword name="Style" id="Style_" ref="class_style.html"/>
+<keyword name="AnimatedHoverButton(const QString &amp;text, QWidget *parent=nullptr)" id="AnimatedHoverButton::AnimatedHoverButton_af9abe0512b3ef5f2e9d14529dea65872" ref="class_animated_hover_button.html#af9abe0512b3ef5f2e9d14529dea65872"/>
+<keyword name="arquivoVsoln" id="MainWindow::arquivoVsoln_a360c705620fdeb0bd2731669cdc2557d" ref="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d"/>
+<keyword name="frameAtual" id="MainWindow::frameAtual_a9510ded4a3817b7a3b0b2da822fdd0f4" ref="class_main_window.html#a9510ded4a3817b7a3b0b2da822fdd0f4"/>
+</keywords>
+<files>
+<file>_animated_hover_button_8h_source.html</file>
+<file>_barra_8h_source.html</file>
+<file>_linha_8h_source.html</file>
+<file>annotated.html</file>
+<file>bc_s.png</file>
+<file>bc_sd.png</file>
+<file>bdwn.png</file>
+<file>class_animated_hover_button-members.html</file>
+<file>class_animated_hover_button.html</file>
+<file>class_animated_hover_button.png</file>
+<file>class_barra-members.html</file>
+<file>class_barra.html</file>
+<file>class_filtro_linha-members.html</file>
+<file>class_filtro_linha.html</file>
+<file>class_filtro_linha.png</file>
+<file>class_filtros_barra-members.html</file>
+<file>class_filtros_barra.html</file>
+<file>class_filtros_barra.png</file>
+<file>class_frame_barras-members.html</file>
+<file>class_frame_barras.html</file>
+<file>class_frame_barras.png</file>
+<file>class_frame_exportar-members.html</file>
+<file>class_frame_exportar.html</file>
+<file>class_frame_exportar.png</file>
+<file>class_frame_tensoes-members.html</file>
+<file>class_frame_tensoes.html</file>
+<file>class_frame_tensoes.png</file>
+<file>class_linha-members.html</file>
+<file>class_linha.html</file>
+<file>class_main_window-members.html</file>
+<file>class_main_window.html</file>
+<file>class_main_window.png</file>
+<file>class_style-members.html</file>
+<file>class_style.html</file>
+<file>classes.html</file>
+<file>closed.png</file>
+<file>doc.png</file>
+<file>docd.png</file>
+<file>doxygen.css</file>
+<file>doxygen.svg</file>
+<file>dynsections.js</file>
+<file>files.html</file>
+<file>filtrolinha_8h_source.html</file>
+<file>filtrosbarra_8h_source.html</file>
+<file>folderclosed.png</file>
+<file>folderopen.png</file>
+<file>framebarras_8h_source.html</file>
+<file>frameexportar_8h_source.html</file>
+<file>frametensoes_8h_source.html</file>
+<file>functions.html</file>
+<file>functions_func.html</file>
+<file>functions_vars.html</file>
+<file>hierarchy.html</file>
+<file>index.html</file>
+<file>jquery.js</file>
+<file>mainwindow_8h_source.html</file>
+<file>menu.js</file>
+<file>menudata.js</file>
+<file>nav_f.png</file>
+<file>nav_fd.png</file>
+<file>nav_g.png</file>
+<file>nav_h.png</file>
+<file>nav_hd.png</file>
+<file>open.png</file>
+<file>search/close.svg</file>
+<file>search/mag.svg</file>
+<file>search/mag_d.svg</file>
+<file>search/mag_sel.svg</file>
+<file>search/mag_seld.svg</file>
+<file>search/search.css</file>
+<file>search/search.js</file>
+<file>splitbar.png</file>
+<file>splitbard.png</file>
+<file>style_8h_source.html</file>
+<file>sync_off.png</file>
+<file>sync_on.png</file>
+<file>tab_a.png</file>
+<file>tab_ad.png</file>
+<file>tab_b.png</file>
+<file>tab_bd.png</file>
+<file>tab_h.png</file>
+<file>tab_hd.png</file>
+<file>tab_s.png</file>
+<file>tab_sd.png</file>
+<file>tabs.css</file>
+</files>
+</filterSection>
+</QtHelpProject>

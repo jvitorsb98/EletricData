@@ -1,0 +1,59 @@
+\hypertarget{frametensoes_8h_source}{}\doxysection{frametensoes.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FRAMETENSOES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FRAMETENSOES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QFrame>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}mainwindow.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}QMainWindow"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<ui\_mainwindow.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<QObject>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<utility>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_frame_tensoes}{FrameTensoes}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{00015\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_frame_tensoes}{FrameTensoes}}\ :\ \textcolor{keyword}{public}\ QFrame}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_frame_tensoes}{FrameTensoes}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ Ui::MainWindow\ *mw=\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_frame_tensoes}{\string~FrameTensoes}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ quantidadeDeBarras();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ verificaAvanco();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ QList<double>\ tensoesNominais;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBotaoAvancar();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssImportar();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBtnVoltar();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBtnLixeira();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBtnSalvar();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ insereQssFrame();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ insereTableTensoes();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssFrameTensoes();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ numeroDeBarras;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnVoltar\_clicked();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnImportar\_clicked();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnLixeira\_clicked();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnSalvarTabela\_clicked();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnAvancar\_clicked();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ Ui::FrameTensoes\ *ui;}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FRAMETENSOES\_H}}
+
+\end{DoxyCode}

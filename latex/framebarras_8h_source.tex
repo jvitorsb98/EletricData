@@ -1,0 +1,95 @@
+\hypertarget{framebarras_8h_source}{}\doxysection{framebarras.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FRAMEBARRAS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FRAMEBARRAS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QFrame>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ui\_frametensoes.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ui\_mainwindow.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}mainwindow.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}frametensoes.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}filtrosbarra.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ui\_filtrosbarra.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}filtrolinha.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ui\_filtrolinha.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Barra.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Linha.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_frame_barras}{FrameBarras}};}
+\DoxyCodeLine{00018\ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_frame_barras}{FrameBarras}}\ :\ \textcolor{keyword}{public}\ QFrame}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_frame_barras}{FrameBarras}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ Ui::MainWindow\ *mw=\textcolor{keyword}{nullptr},Ui::FrameTensoes\ *ft=\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_frame_barras}{\string~FrameBarras}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ buscaIndiceHarmMax();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ buscaQtdHarm(\textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ quantidadeDeBarras();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ indexTab;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ indiceHarmMax;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ numeroDeLinhas;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ quantidadeDeComponentesHarm;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ preencheFrameBarras();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ inicializaVariaveisStatic();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ inicializaFrame();}
+\DoxyCodeLine{00037\ \ \ \ \ QStringList\ cabecalhoBarras();}
+\DoxyCodeLine{00038\ \ \ \ \ QStringList\ cabecalhoLinhas();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ preencheBarra();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ inicializaBarra();}
+\DoxyCodeLine{00041\ \ \ \ \ QStringList\ linhasDoSistema();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ potencia(\textcolor{keywordtype}{double}\ ,\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBtnAvancar();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBtnVoltar();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssTabWidget();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssTableBarras();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssTableLinhas();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssFrameBarras();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ preencheTabelaBarra();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ preencheTabelaLinha();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ preencheLimites();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ QList<Barra>\ barras;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ QList<Linha>\ linhas;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQSSBtnFiltrar();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ preencheLinha();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ inicializaLinha();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ filtroLinhaInserido;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ filtroBarraInserido;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ std::map<int\ ,\ std::map<int\ ,\ double\ >>\ getLimitesDti()\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ limitesDti;}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setLimitesDti(\textcolor{keywordtype}{int}\ nivelTensao\ ,\ \textcolor{keywordtype}{int}\ harmonica\ ,\ \textcolor{keywordtype}{double}\ limite)\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ limitesDti[nivelTensao][harmonica]\ =\ limite;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ insereBackgroundNasPoluidoras();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ atualizarRowBarras();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ atualizarColumnBarras();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ verificaAvanco();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnFiltrar\_clicked();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_tabLinhas\_currentChanged(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnVoltar\_clicked();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnAvancar\_clicked();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \ \ Ui::FrameBarras\ *ui;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{static}\ std::map<int\ ,\ std::map<int\ ,\ double\ >>\ limitesDti;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FRAMEBARRAS\_H}}
+
+\end{DoxyCode}

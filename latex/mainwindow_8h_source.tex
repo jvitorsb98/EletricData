@@ -1,0 +1,148 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<QFile>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<ui\_mainwindow.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}style.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }Ui\ \{\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};\ \}}
+\DoxyCodeLine{00014\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_main_window}{\string~MainWindow}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ atualizarStatus(Ui::MainWindow\ *ui)\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_style}{Style}}\ style;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{class_main_window_a9510ded4a3817b7a3b0b2da822fdd0f4}{frameAtual}})\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtCarregarArquivos-\/>setStyleSheet(style.cssTxtSelected);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtTensoesNasBarras-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtPrepararSaida-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtExportar-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica1-\/>hide();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica2-\/>hide();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica3-\/>hide();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica4-\/>hide();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtCarregarArquivos-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtTensoesNasBarras-\/>setStyleSheet(style.cssTxtSelected);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtPrepararSaida-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtExportar-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica1-\/>show();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica2-\/>hide();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica3-\/>hide();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica4-\/>hide();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtCarregarArquivos-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtTensoesNasBarras-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtPrepararSaida-\/>setStyleSheet(style.cssTxtSelected);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtExportar-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica1-\/>show();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica2-\/>show();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica3-\/>hide();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica4-\/>hide();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtCarregarArquivos-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtTensoesNasBarras-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtPrepararSaida-\/>setStyleSheet(style.cssTxt);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>txtExportar-\/>setStyleSheet(style.cssTxtSelected);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica1-\/>show();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica2-\/>show();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica3-\/>show();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>lblVerifica4-\/>hide();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ insereCssMainWindow();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ insereIcon();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBarraDeStatus();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ verificarAvanco();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssTitulosLineEdit();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssLineEdit();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssPlaceHolderLineEdit();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBtnArquivos();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBtnAvancar();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssBtnLixeira();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ insereQssLblVerifica();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ setaFileNameNosArq();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ inicializaFrame();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ QFile\ *\mbox{\hyperlink{class_main_window_a360c705620fdeb0bd2731669cdc2557d}{arquivoVsoln}};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ QFile\ *arquivoIsoln;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{static}\ QFile\ *arquivoThdi;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{static}\ QFile\ *arquivoThdv;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ QFile\ *arquivoLdat;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ QFile\ *arquivoTensoes;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_main_window_a9510ded4a3817b7a3b0b2da822fdd0f4}{frameAtual}};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ getStatusDePreenchimento(\textcolor{keywordtype}{int}\ posicao)\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(posicao\ <\ 5\ \&\&\ posicao\ >=0)\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ statusDePreenchimento[posicao];}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ setStatusDePreenchimento(\textcolor{keywordtype}{int}\ posicao,\ \textcolor{keywordtype}{bool}\ status)\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(posicao\ <\ 5\ \&\&\ posicao\ >=0)\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ statusDePreenchimento[posicao]=status;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnAvancar\_clicked();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnVsoln\_clicked();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnThdv\_clicked();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnThdi\_clicked();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnIsoln\_clicked();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnLdat\_clicked();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnLixeiraVsoln\_clicked();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnLixeiraThdv\_clicked();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnLixeiraThdi\_clicked();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnLixeiraIsoln\_clicked();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnLixeiraLdat\_clicked();}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00130\ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ statusDePreenchimento[5]\{0\};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//Metodo\ para\ atualizar\ a\ barra\ de\ Status}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

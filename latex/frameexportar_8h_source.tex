@@ -1,0 +1,174 @@
+\hypertarget{frameexportar_8h_source}{}\doxysection{frameexportar.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FRAMEEXPORTAR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FRAMEEXPORTAR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QFrame>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ui\_mainwindow.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}mainwindow.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}ui\_framebarras.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}framebarras.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}xlsxdocument.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}xlsxchartsheet.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}xlsxcellrange.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}xlsxchart.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}xlsxrichstring.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}xlsxworkbook.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QPdfWriter>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QPrinter>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include<QPainter>}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{using\ namespace\ }QXlsx;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_frame_exportar}{FrameExportar}};}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_frame_exportar}{FrameExportar}}\ :\ \textcolor{keyword}{public}\ QFrame}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_frame_exportar}{FrameExportar}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ Ui::MainWindow\ *mw=\textcolor{keyword}{nullptr},\ \ Ui::FrameBarras\ *fb=\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_frame_exportar}{\string~FrameExportar}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ inserirQssFrame();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ inserirQssImg();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ inserirQssRadioButton();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ inserirQssBtn();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ inicializaFrame();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ imprimirPdfIntervaloBarras();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ imprimirPdfCombonentesBarras();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ imprimirPdfBarrasInfectadas();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Funções\ PDF}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//Funções\ para\ imprimir\ PDF\ com\ barras\ em\ intervalo}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfInterBInterL1InterL2();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfInterBInterL1TodL2();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfInterBarrasTodL1InterL2();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfInterBarrasTodL1TodL2();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//Funções\ para\ imprimir\ PDF\ com\ barras\ em\ componentes}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfCompBarrasInterL1InterL2();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfCompBarrasInterL1TodL2();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfCompBarrasTodL1InterL2();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfCompBarrasaTodL1TodL2();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//Funções\ de\ para\ imprimir\ PDF\ com\ barras\ infectadas}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfInfecBarrasInterL1InterL2();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfInfecBarrasInterL1TodL2();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfInfecBarrasTodL1InterL2();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ PdfInfecBarrasTodL1TodL2();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//Funções\ Auxiliares}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//Funções\ os\ conteudos\ com\ barras\ em\ intervalo}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ ContInterBInterL1InterL2(QPrinter*\ );}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ ContInterBInterL1TodL2(QPrinter*\ );}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ ContInterBarrasTodL1InterL2(QPrinter*\ );}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ ContInterBarrasTodL1TodL2(QPrinter*\ );}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//Funções\ para\ imprimir\ PDF\ com\ barras\ em\ componentes}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ ContCompBarrasInterL1InterL2(QPrinter*\ );}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ ContCompBarrasInterL1TodL2(QPrinter*\ );}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ ContCompBarrasTodL1InterL2(QPrinter*\ );}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ ContCompBarrasaTodL1TodL2(QPrinter*\ );}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//Funções\ de\ para\ imprimir\ PDF\ com\ barras\ infectadas}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ ContInfecBarrasInterL1InterL2(QPrinter*\ );}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ ContInfecBarrasInterL1TodL2(QPrinter*\ );}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ ContInfecBarrasTodL1InterL2(QPrinter*\ );}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ ContInfecBarrasTodL1TodL2(QPrinter*\ );}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//cacula\ quantidade\ de\ linhas\ que\ uma\ barra\ irá\ ocupar\ no\ sistema}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ \ QtdLinhasInfoBarra();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ \ QtdLinhasInfoLinha();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Funções\ Excel}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//Funções\ para\ imprimir\ excel\ com\ barras\ em\ intervalo}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelInterBInterL1InterL2();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelInterBInterL1TodL2();}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelInterBarrasTodL1InterL2();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelInterBarrasTodL1TodL2();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//Funções\ para\ imprimir\ Excel\ com\ barras\ em\ componentes}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelCompBarrasInterL2InterL2();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelCompBarrasInterL1TodL2();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelCompBarrasTodL1InterL2();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelCompBarrasaTodL1TodL2();}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//Funções\ de\ para\ imprimir\ Excel\ com\ barras\ infectadas}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelInfecBarrasInterL1InterL2();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelInfecBarrasInterL1TodL2();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelInfecBarrasTodL1InterL2();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelInfecBarrasTodL1TodL2();}
+\DoxyCodeLine{00100\ \ \ \ \ QString\ numeroParaLetra(\textcolor{keywordtype}{int}\ numero);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//Funções\ Auxiliares}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//Cria\ planilha}}
+\DoxyCodeLine{00103\ \ \ \ \ QXlsx::Document*\ criaPlanilha();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//pula\ linhas\ entre\ barras\ e\ Linhas}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelPulaLinha(\textcolor{keywordtype}{int}*\ );}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//Salva\ Planilha}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ salvaPlanilha(QXlsx::Document*\ );}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//escreve\ as\ barras\ em\ intervalo}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelEscreveBarrasIntervalo(QXlsx::Document*\ ,\ \textcolor{keywordtype}{int}*\ );}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//escreve\ as\ barras\ em\ componentes}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelEscreveBarrasComp(QXlsx::Document*\ ,\ \textcolor{keywordtype}{int}*\ \ );}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//escreve\ as\ barras\ Infectadas}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelEscreveBarrasInfec(QXlsx::Document*\ ,\ \textcolor{keywordtype}{int}*\ );}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//escreve\ Linhas\ com\ origens\ e\ destinos\ em\ estado\ de\ componentes}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelEscreveLInterL1InterL2(QXlsx::Document*\ ,\ \textcolor{keywordtype}{int}*\ );}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//escreve\ Linhas\ com\ origens\ em\ estado\ de\ componentes\ e\ todos\ destinos}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelEscreveLInterL1TodL2(QXlsx::Document*,\ \textcolor{keywordtype}{int}*\ \ );}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//escreve\ Linhas\ com\ todas\ origens\ e\ destinos\ em\ componenetes}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelEscreveLTodL1InterL2(QXlsx::Document*\ ,\ \textcolor{keywordtype}{int}*\ );}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//escreve\ Linhas\ de\ todas\ origens\ e\ destinos}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ ExcelEscreveLTodL1TodL2(QXlsx::Document*,\ \textcolor{keywordtype}{int}*\ );}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/funções\ CSV}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//Funções\ para\ imprimir\ csv\ com\ barras\ em\ intervalo}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvInterBarrasInterL1InterL2();}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvInterBarrasInterL1TodL2();}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvInterBarrasTodL1InterL2();}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvInterBarrasTodL1TodL2();}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//Funções\ para\ imprimir\ csv\ com\ barras\ em\ componentes}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvCompBarrasInterL2InterL2();}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvCompBarrasInterL1TodL2();}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvCompBarrasTodL1InterL2();}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvCompBarrasaTodL1TodL2();}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//Funções\ de\ para\ imprimir\ csv\ com\ barras\ infectadas}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvInfecBarrasInterL1InterL2();}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvInfecBarrasInterL1TodL2();}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvInfecBarrasTodL1InterL2();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvInfecBarrasTodL1TodL2();}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//Funções\ Auxiliares}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{//Cria\ arquivo}}
+\DoxyCodeLine{00141\ \ \ \ \ QFile*\ criaArquivo();}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//escreve\ as\ barras\ em\ intervalo}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvEscreveBarrasIntervalo(QTextStream*\ );}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//escreve\ as\ barras\ em\ componentes}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvEscreveBarrasComp(QTextStream*\ );}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//escreve\ as\ barras\ Infectadas}}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvEscreveBarrasInfec(QTextStream*\ );}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//escreve\ Linhas\ com\ origens\ e\ destinos\ em\ estado\ de\ componentes}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvEscreveLInterL1InterL2(QTextStream*\ );}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{//escreve\ Linhas\ com\ origens\ em\ estado\ de\ componentes\ e\ todos\ destinos}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvEscreveLInterL1TodL2(QTextStream*\ );}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//escreve\ Linhas\ com\ todas\ origens\ e\ destinos\ em\ componenetes}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvEscreveLTodL1InterL2(QTextStream*\ );}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//escreve\ Linhas\ de\ todas\ origens\ e\ destinos}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ CsvEscreveLTodL1TodL2(QTextStream*\ );}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnVoltar\_clicked();}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnExportar\_clicked();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00166\ \ \ \ \ Ui::FrameExportar\ *ui;}
+\DoxyCodeLine{00167\ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FRAMEEXPORTAR\_H}}
+
+\end{DoxyCode}

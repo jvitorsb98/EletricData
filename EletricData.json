@@ -1,0 +1,7 @@
+{
+    "name": "EletricData",
+    "version": "1.0.0",
+    "outputdir": "doc",
+    "index": "index.qdoc",
+    "basedir": "."
+}

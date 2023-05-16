@@ -1,0 +1,34 @@
+/*! \mainpage EletricData API Documentation
+
+Welcome to the EletricData API documentation.
+
+- \ref Introduction
+- \ref Usage
+- \ref Examples
+- \ref References
+
+*/
+
+/*! \page Introduction Introduction
+
+This documentation provides an overview of the EletricData API.
+
+*/
+
+/*! \page Usage Usage
+
+To use the EletricData API, you need to include the appropriate headers and link with the library.
+
+*/
+
+/*! \page Examples Examples
+
+Here are some examples of how to use the EletricData API:
+
+*/
+
+/*! \page References References
+
+Here are some references related to the EletricData API:
+
+*/

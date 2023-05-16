@@ -1,0 +1,60 @@
+\hypertarget{filtrolinha_8h_source}{}\doxysection{filtrolinha.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILTROLINHA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILTROLINHA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ui\_filtrolinha.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ui\_framebarras.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}mainwindow.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_filtro_linha}{FiltroLinha}};}
+\DoxyCodeLine{00010\ \}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_filtro_linha}{FiltroLinha}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_filtro_linha}{FiltroLinha}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ Ui::FrameBarras\ *fb=\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_filtro_linha}{\string~FiltroLinha}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ correntePu;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ dht;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ dit;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ ditPercent;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ correnteEficaz;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ resistencia;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ perdas;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ perdasEficaz;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ indexComboBoxOrigem;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ indexComboBoxDestino;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ inserindoQssFiltrosLinha();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ inserindoQssCheckBox();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ inserindoQssLineEdit();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ inserindoQssBtnAplicar();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ inserindoQssComboBox();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ inserindoQssGroupBox();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ inserindoQssJanela();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ inicializandoFrame();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ QStringList\ indiceOrigensEscolhidas;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ QStringList\ indiceDestinosEscolhidos;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBoxOrigem\_currentIndexChanged(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBoxDestino\_currentIndexChanged(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_btnAplicar\_clicked();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ Ui::FiltroLinha\ *ui;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILTROLINHA\_H}}
+
+\end{DoxyCode}
