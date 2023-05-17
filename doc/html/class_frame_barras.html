@@ -470,20 +470,20 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  379</span>                                        {</div>
-<div class="line"><span class="lineno">  380</span>    QStringList cabecalhos={<span class="stringliteral">&quot;Tensão na Barra[pu]&quot;</span>,<span class="stringliteral">&quot;Tensão Nominal[Kv]&quot;</span>,<span class="stringliteral">&quot;TDHV[%]&quot;</span>};</div>
-<div class="line"><span class="lineno">  381</span>                               <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 , j = 3; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> ; i++ , j+=2){</div>
-<div class="line"><span class="lineno">  382</span>                                                                                                    QString item = <span class="stringliteral">&quot;DIT&quot;</span>+QString::number(j);</div>
-<div class="line"><span class="lineno">  383</span>    cabecalhos.push_back(item);</div>
-<div class="line"><span class="lineno">  384</span>}</div>
-<div class="line"><span class="lineno">  385</span><span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 , j = 3; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> ; i++ , j+=2){</div>
-<div class="line"><span class="lineno">  386</span>    QString item = <span class="stringliteral">&quot;DIT&quot;</span>+QString::number(j)+<span class="stringliteral">&quot;[%]&quot;</span>;</div>
-<div class="line"><span class="lineno">  387</span>    cabecalhos.push_back(item);</div>
-<div class="line"><span class="lineno">  388</span>}</div>
-<div class="line"><span class="lineno">  389</span>cabecalhos.push_back(<span class="stringliteral">&quot;Tensão Eficaz[pu]&quot;</span>);</div>
-<div class="line"><span class="lineno">  390</span> </div>
-<div class="line"><span class="lineno">  391</span>    <span class="keywordflow">return</span> cabecalhos;</div>
+<div class="fragment"><div class="line"><span class="lineno">  387</span>                                        {</div>
+<div class="line"><span class="lineno">  388</span>    QStringList cabecalhos={<span class="stringliteral">&quot;Tensão na Barra[pu]&quot;</span>,<span class="stringliteral">&quot;Tensão Nominal[Kv]&quot;</span>,<span class="stringliteral">&quot;TDHV[%]&quot;</span>};</div>
+<div class="line"><span class="lineno">  389</span>                               <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 , j = 3; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> ; i++ , j+=2){</div>
+<div class="line"><span class="lineno">  390</span>                                                                                                    QString item = <span class="stringliteral">&quot;DIT&quot;</span>+QString::number(j);</div>
+<div class="line"><span class="lineno">  391</span>    cabecalhos.push_back(item);</div>
 <div class="line"><span class="lineno">  392</span>}</div>
+<div class="line"><span class="lineno">  393</span><span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 , j = 3; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> ; i++ , j+=2){</div>
+<div class="line"><span class="lineno">  394</span>    QString item = <span class="stringliteral">&quot;DIT&quot;</span>+QString::number(j)+<span class="stringliteral">&quot;[%]&quot;</span>;</div>
+<div class="line"><span class="lineno">  395</span>    cabecalhos.push_back(item);</div>
+<div class="line"><span class="lineno">  396</span>}</div>
+<div class="line"><span class="lineno">  397</span>cabecalhos.push_back(<span class="stringliteral">&quot;Tensão Eficaz[pu]&quot;</span>);</div>
+<div class="line"><span class="lineno">  398</span> </div>
+<div class="line"><span class="lineno">  399</span>    <span class="keywordflow">return</span> cabecalhos;</div>
+<div class="line"><span class="lineno">  400</span>}</div>
 <div class="ttc" id="aclass_frame_barras_html_aed065716987ae6b168c6f34a5476407b"><div class="ttname"><a href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">FrameBarras::quantidadeDeComponentesHarm</a></div><div class="ttdeci">static int quantidadeDeComponentesHarm</div><div class="ttdoc">Váriavel estática responsável por armazenar a quantidade de componentes harmônicas a serem análisadas...</div><div class="ttdef"><b>Definition:</b> framebarras.h:32</div></div>
 </div><!-- fragment -->
 </div>
@@ -502,24 +502,24 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  422</span>                                        {</div>
-<div class="line"><span class="lineno">  423</span> </div>
-<div class="line"><span class="lineno">  424</span>    QStringList cabecalhos={<span class="stringliteral">&quot;Corrente na Linha[pu]&quot;</span>,<span class="stringliteral">&quot;DHT[%]&quot;</span>};</div>
-<div class="line"><span class="lineno">  425</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 , j = 3; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> ; i++ , j+=2){</div>
-<div class="line"><span class="lineno">  426</span>        QString item = <span class="stringliteral">&quot;DHI&quot;</span>+QString::number(j);</div>
-<div class="line"><span class="lineno">  427</span>        cabecalhos.push_back(item);</div>
-<div class="line"><span class="lineno">  428</span>    }</div>
-<div class="line"><span class="lineno">  429</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 , j = 3; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> ; i++ , j+=2){</div>
-<div class="line"><span class="lineno">  430</span>        QString item = <span class="stringliteral">&quot;DHI&quot;</span>+QString::number(j)+<span class="stringliteral">&quot;[%]&quot;</span>;</div>
-<div class="line"><span class="lineno">  431</span>        cabecalhos.push_back(item);</div>
-<div class="line"><span class="lineno">  432</span>    }</div>
-<div class="line"><span class="lineno">  433</span>    cabecalhos.push_back(<span class="stringliteral">&quot;Corrente Eficaz[pu]&quot;</span>);</div>
-<div class="line"><span class="lineno">  434</span>    cabecalhos.push_back(<span class="stringliteral">&quot;Resistencia[ohm]&quot;</span>);</div>
-<div class="line"><span class="lineno">  435</span>    cabecalhos.push_back(<span class="stringliteral">&quot;Perdas[pu]&quot;</span>);</div>
-<div class="line"><span class="lineno">  436</span>    cabecalhos.push_back(<span class="stringliteral">&quot;Perdas eficaz[pu]&quot;</span>);</div>
-<div class="line"><span class="lineno">  437</span> </div>
-<div class="line"><span class="lineno">  438</span>    <span class="keywordflow">return</span> cabecalhos;</div>
-<div class="line"><span class="lineno">  439</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  430</span>                                        {</div>
+<div class="line"><span class="lineno">  431</span> </div>
+<div class="line"><span class="lineno">  432</span>    QStringList cabecalhos={<span class="stringliteral">&quot;Corrente na Linha[pu]&quot;</span>,<span class="stringliteral">&quot;DHT[%]&quot;</span>};</div>
+<div class="line"><span class="lineno">  433</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 , j = 3; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> ; i++ , j+=2){</div>
+<div class="line"><span class="lineno">  434</span>        QString item = <span class="stringliteral">&quot;DHI&quot;</span>+QString::number(j);</div>
+<div class="line"><span class="lineno">  435</span>        cabecalhos.push_back(item);</div>
+<div class="line"><span class="lineno">  436</span>    }</div>
+<div class="line"><span class="lineno">  437</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 , j = 3; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> ; i++ , j+=2){</div>
+<div class="line"><span class="lineno">  438</span>        QString item = <span class="stringliteral">&quot;DHI&quot;</span>+QString::number(j)+<span class="stringliteral">&quot;[%]&quot;</span>;</div>
+<div class="line"><span class="lineno">  439</span>        cabecalhos.push_back(item);</div>
+<div class="line"><span class="lineno">  440</span>    }</div>
+<div class="line"><span class="lineno">  441</span>    cabecalhos.push_back(<span class="stringliteral">&quot;Corrente Eficaz[pu]&quot;</span>);</div>
+<div class="line"><span class="lineno">  442</span>    cabecalhos.push_back(<span class="stringliteral">&quot;Resistencia[ohm]&quot;</span>);</div>
+<div class="line"><span class="lineno">  443</span>    cabecalhos.push_back(<span class="stringliteral">&quot;Perdas[pu]&quot;</span>);</div>
+<div class="line"><span class="lineno">  444</span>    cabecalhos.push_back(<span class="stringliteral">&quot;Perdas eficaz[pu]&quot;</span>);</div>
+<div class="line"><span class="lineno">  445</span> </div>
+<div class="line"><span class="lineno">  446</span>    <span class="keywordflow">return</span> cabecalhos;</div>
+<div class="line"><span class="lineno">  447</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -565,9 +565,9 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  446</span>                                  {</div>
-<div class="line"><span class="lineno">  447</span>    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>.resize(<a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>, <a class="code hl_class" href="class_barra.html">Barra</a>());</div>
-<div class="line"><span class="lineno">  448</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  454</span>                                  {</div>
+<div class="line"><span class="lineno">  455</span>    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>.resize(<a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>, <a class="code hl_class" href="class_barra.html">Barra</a>());</div>
+<div class="line"><span class="lineno">  456</span>}</div>
 <div class="ttc" id="aclass_barra_html"><div class="ttname"><a href="class_barra.html">Barra</a></div><div class="ttdef"><b>Definition:</b> Barra.h:7</div></div>
 <div class="ttc" id="aclass_frame_barras_html_a1f75ede62d028f32a2671442adb85162"><div class="ttname"><a href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">FrameBarras::barras</a></div><div class="ttdeci">static QList&lt; Barra &gt; barras</div><div class="ttdoc">QList estático do tipo 'Barra', responsável por armazenar todas as barras do sistema,...</div><div class="ttdef"><b>Definition:</b> framebarras.h:51</div></div>
 <div class="ttc" id="aclass_frame_tensoes_html_ad4945c4c046ecf3c8deb239a4541e110"><div class="ttname"><a href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a></div><div class="ttdeci">static int numeroDeBarras</div><div class="ttdoc">Variavel que armazenará o numero de barras do sistema, apartir da leitura dos arquivos inseridos no f...</div><div class="ttdef"><b>Definition:</b> frametensoes.h:39</div></div>
@@ -594,7 +594,7 @@ Atributos Estáticos Públicos</h2></td></tr>
 <div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="class_frame_barras.html#a766572c1758eba0d6b4df4e8dbf35c39">preencheFrameBarras</a>();</div>
 <div class="line"><span class="lineno">  120</span>}</div>
 <div class="ttc" id="aclass_frame_barras_html_a61fea3b1bd6c3dbde98effbc50eed400"><div class="ttname"><a href="class_frame_barras.html#a61fea3b1bd6c3dbde98effbc50eed400">FrameBarras::preencheLimites</a></div><div class="ttdeci">void preencheLimites()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:213</div></div>
-<div class="ttc" id="aclass_frame_barras_html_a766572c1758eba0d6b4df4e8dbf35c39"><div class="ttname"><a href="class_frame_barras.html#a766572c1758eba0d6b4df4e8dbf35c39">FrameBarras::preencheFrameBarras</a></div><div class="ttdeci">void preencheFrameBarras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:281</div></div>
+<div class="ttc" id="aclass_frame_barras_html_a766572c1758eba0d6b4df4e8dbf35c39"><div class="ttname"><a href="class_frame_barras.html#a766572c1758eba0d6b4df4e8dbf35c39">FrameBarras::preencheFrameBarras</a></div><div class="ttdeci">void preencheFrameBarras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:289</div></div>
 <div class="ttc" id="aclass_frame_barras_html_ada0b557f4e60345505db85d79ccb45d9"><div class="ttname"><a href="class_frame_barras.html#ada0b557f4e60345505db85d79ccb45d9">FrameBarras::inicializaVariaveisStatic</a></div><div class="ttdeci">void inicializaVariaveisStatic()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:127</div></div>
 </div><!-- fragment -->
 </div>
@@ -613,9 +613,9 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  612</span>                                  {</div>
-<div class="line"><span class="lineno">  613</span>    <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>.resize(<a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>, <a class="code hl_class" href="class_linha.html">Linha</a>());</div>
-<div class="line"><span class="lineno">  614</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  620</span>                                  {</div>
+<div class="line"><span class="lineno">  621</span>    <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>.resize(<a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>, <a class="code hl_class" href="class_linha.html">Linha</a>());</div>
+<div class="line"><span class="lineno">  622</span>}</div>
 <div class="ttc" id="aclass_frame_barras_html_a9d5bc091db2113c8c074ea09b1a96e12"><div class="ttname"><a href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">FrameBarras::linhas</a></div><div class="ttdeci">static QList&lt; Linha &gt; linhas</div><div class="ttdoc">QList estático do tipo 'Linha', responsável por armazenar todas as linhas do sistema,...</div><div class="ttdef"><b>Definition:</b> framebarras.h:52</div></div>
 <div class="ttc" id="aclass_frame_barras_html_afb47ea5870e412c793ba125ebc432cda"><div class="ttname"><a href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">FrameBarras::numeroDeLinhas</a></div><div class="ttdeci">static int numeroDeLinhas</div><div class="ttdoc">Variável estática responsável por armazenar o número de linhas do sistema.</div><div class="ttdef"><b>Definition:</b> framebarras.h:31</div></div>
 <div class="ttc" id="aclass_linha_html"><div class="ttname"><a href="class_linha.html">Linha</a></div><div class="ttdef"><b>Definition:</b> Linha.h:8</div></div>
@@ -661,26 +661,26 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  786</span>                                               {</div>
-<div class="line"><span class="lineno">  787</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a> ; i++){</div>
-<div class="line"><span class="lineno">  788</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getBarraInfectadaThdv()){</div>
-<div class="line"><span class="lineno">  789</span>            ui-&gt;tableBarras-&gt;item(2,i)-&gt;setBackground( QColor(255, 128, 128));</div>
-<div class="line"><span class="lineno">  790</span>        }</div>
-<div class="line"><span class="lineno">  791</span>        <span class="keywordtype">int</span> pos =3;</div>
-<div class="line"><span class="lineno">  792</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 3 ; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a> ; j+=2){</div>
-<div class="line"><span class="lineno">  793</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getDti().find(j)-&gt;second.second.second){</div>
-<div class="line"><span class="lineno">  794</span>                ui-&gt;tableBarras-&gt;item(pos,i)-&gt;setBackground( QColor(255, 128, 128));</div>
-<div class="line"><span class="lineno">  795</span>            }</div>
-<div class="line"><span class="lineno">  796</span>            pos++;</div>
-<div class="line"><span class="lineno">  797</span>        }</div>
-<div class="line"><span class="lineno">  798</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 3 ; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a> ; j+=2){</div>
-<div class="line"><span class="lineno">  799</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getDti().find(j)-&gt;second.second.second){</div>
-<div class="line"><span class="lineno">  800</span>                ui-&gt;tableBarras-&gt;item(pos,i)-&gt;setBackground( QColor(255, 128, 128));</div>
-<div class="line"><span class="lineno">  801</span>            }</div>
-<div class="line"><span class="lineno">  802</span>            pos++;</div>
-<div class="line"><span class="lineno">  803</span>        }</div>
-<div class="line"><span class="lineno">  804</span>    }</div>
-<div class="line"><span class="lineno">  805</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  794</span>                                               {</div>
+<div class="line"><span class="lineno">  795</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a> ; i++){</div>
+<div class="line"><span class="lineno">  796</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getBarraInfectadaThdv()){</div>
+<div class="line"><span class="lineno">  797</span>            ui-&gt;tableBarras-&gt;item(2,i)-&gt;setBackground( QColor(255, 128, 128));</div>
+<div class="line"><span class="lineno">  798</span>        }</div>
+<div class="line"><span class="lineno">  799</span>        <span class="keywordtype">int</span> pos =3;</div>
+<div class="line"><span class="lineno">  800</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 3 ; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a> ; j+=2){</div>
+<div class="line"><span class="lineno">  801</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getDti().find(j)-&gt;second.second.second){</div>
+<div class="line"><span class="lineno">  802</span>                ui-&gt;tableBarras-&gt;item(pos,i)-&gt;setBackground( QColor(255, 128, 128));</div>
+<div class="line"><span class="lineno">  803</span>            }</div>
+<div class="line"><span class="lineno">  804</span>            pos++;</div>
+<div class="line"><span class="lineno">  805</span>        }</div>
+<div class="line"><span class="lineno">  806</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 3 ; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a> ; j+=2){</div>
+<div class="line"><span class="lineno">  807</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getDti().find(j)-&gt;second.second.second){</div>
+<div class="line"><span class="lineno">  808</span>                ui-&gt;tableBarras-&gt;item(pos,i)-&gt;setBackground( QColor(255, 128, 128));</div>
+<div class="line"><span class="lineno">  809</span>            }</div>
+<div class="line"><span class="lineno">  810</span>            pos++;</div>
+<div class="line"><span class="lineno">  811</span>        }</div>
+<div class="line"><span class="lineno">  812</span>    }</div>
+<div class="line"><span class="lineno">  813</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -698,12 +698,12 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  311</span>                                     {</div>
-<div class="line"><span class="lineno">  312</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  313</span>    ui-&gt;btnAvancar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a53aa01cbf685a90075b0b6c3cb3db6c0">cssBtnTransition</a>);</div>
-<div class="line"><span class="lineno">  314</span>    ui-&gt;btnAvancar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/proximo.png&quot;</span>)); <span class="comment">//insere um icon ao botão</span></div>
-<div class="line"><span class="lineno">  315</span>    ui-&gt;btnAvancar-&gt;setLayoutDirection(Qt::RightToLeft); <span class="comment">//define que o icon será colocado após o texto</span></div>
-<div class="line"><span class="lineno">  316</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  319</span>                                     {</div>
+<div class="line"><span class="lineno">  320</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">  321</span>    ui-&gt;btnAvancar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a53aa01cbf685a90075b0b6c3cb3db6c0">cssBtnTransition</a>);</div>
+<div class="line"><span class="lineno">  322</span>    ui-&gt;btnAvancar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/proximo.png&quot;</span>)); <span class="comment">//insere um icon ao botão</span></div>
+<div class="line"><span class="lineno">  323</span>    ui-&gt;btnAvancar-&gt;setLayoutDirection(Qt::RightToLeft); <span class="comment">//define que o icon será colocado após o texto</span></div>
+<div class="line"><span class="lineno">  324</span>}</div>
 <div class="ttc" id="aclass_style_html"><div class="ttname"><a href="class_style.html">Style</a></div><div class="ttdef"><b>Definition:</b> style.h:6</div></div>
 <div class="ttc" id="aclass_style_html_a53aa01cbf685a90075b0b6c3cb3db6c0"><div class="ttname"><a href="class_style.html#a53aa01cbf685a90075b0b6c3cb3db6c0">Style::cssBtnTransition</a></div><div class="ttdeci">QString cssBtnTransition</div><div class="ttdef"><b>Definition:</b> style.h:68</div></div>
 </div><!-- fragment -->
@@ -723,11 +723,11 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  334</span>                                     {</div>
-<div class="line"><span class="lineno">  335</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  336</span>    ui-&gt;btnFiltrar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>);</div>
-<div class="line"><span class="lineno">  337</span>    ui-&gt;btnFiltrar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/filtro.png&quot;</span>));</div>
-<div class="line"><span class="lineno">  338</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  342</span>                                     {</div>
+<div class="line"><span class="lineno">  343</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">  344</span>    ui-&gt;btnFiltrar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>);</div>
+<div class="line"><span class="lineno">  345</span>    ui-&gt;btnFiltrar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/filtro.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  346</span>}</div>
 <div class="ttc" id="aclass_style_html_af8e9280cb6fee63da578ae8de656a3a7"><div class="ttname"><a href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">Style::cssBtn</a></div><div class="ttdeci">QString cssBtn</div><div class="ttdef"><b>Definition:</b> style.h:51</div></div>
 </div><!-- fragment -->
 </div>
@@ -746,11 +746,11 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  323</span>                                    {</div>
-<div class="line"><span class="lineno">  324</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  325</span>    ui-&gt;btnVoltar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>);</div>
-<div class="line"><span class="lineno">  326</span>    ui-&gt;btnVoltar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/anterior.png&quot;</span>));</div>
-<div class="line"><span class="lineno">  327</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  331</span>                                    {</div>
+<div class="line"><span class="lineno">  332</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">  333</span>    ui-&gt;btnVoltar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>);</div>
+<div class="line"><span class="lineno">  334</span>    ui-&gt;btnVoltar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/anterior.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  335</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -768,20 +768,20 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  297</span>                                      {</div>
-<div class="line"><span class="lineno">  298</span>    <a class="code hl_function" href="class_frame_barras.html#ac69eb8d65f85f0bd300d37822bde2f9d">insereQssBtnAvancar</a>();</div>
-<div class="line"><span class="lineno">  299</span>    <a class="code hl_function" href="class_frame_barras.html#a80845a4c067f46720d943a9ecd506e6e">insereQssBtnVoltar</a>();</div>
-<div class="line"><span class="lineno">  300</span>    <a class="code hl_function" href="class_frame_barras.html#a195b1c443939897e25de7e19153dd004">insereQSSBtnFiltrar</a>();</div>
-<div class="line"><span class="lineno">  301</span>    <a class="code hl_function" href="class_frame_barras.html#ae3a62f3b576b41d20e09e5cd6df1b4a7">insereQssTabWidget</a>();</div>
-<div class="line"><span class="lineno">  302</span>    <a class="code hl_function" href="class_frame_barras.html#ad48b13bdc7ea594d2b412187ed6ef6f3">insereQssTableBarras</a>();</div>
-<div class="line"><span class="lineno">  303</span>    <a class="code hl_function" href="class_frame_barras.html#a4254de5cd13d7c2fe7936fe18b4b6a97">insereQssTableLinhas</a>();</div>
-<div class="line"><span class="lineno">  304</span>}</div>
-<div class="ttc" id="aclass_frame_barras_html_a195b1c443939897e25de7e19153dd004"><div class="ttname"><a href="class_frame_barras.html#a195b1c443939897e25de7e19153dd004">FrameBarras::insereQSSBtnFiltrar</a></div><div class="ttdeci">void insereQSSBtnFiltrar()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:334</div></div>
-<div class="ttc" id="aclass_frame_barras_html_a4254de5cd13d7c2fe7936fe18b4b6a97"><div class="ttname"><a href="class_frame_barras.html#a4254de5cd13d7c2fe7936fe18b4b6a97">FrameBarras::insereQssTableLinhas</a></div><div class="ttdeci">void insereQssTableLinhas()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:399</div></div>
-<div class="ttc" id="aclass_frame_barras_html_a80845a4c067f46720d943a9ecd506e6e"><div class="ttname"><a href="class_frame_barras.html#a80845a4c067f46720d943a9ecd506e6e">FrameBarras::insereQssBtnVoltar</a></div><div class="ttdeci">void insereQssBtnVoltar()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:323</div></div>
-<div class="ttc" id="aclass_frame_barras_html_ac69eb8d65f85f0bd300d37822bde2f9d"><div class="ttname"><a href="class_frame_barras.html#ac69eb8d65f85f0bd300d37822bde2f9d">FrameBarras::insereQssBtnAvancar</a></div><div class="ttdeci">void insereQssBtnAvancar()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:311</div></div>
-<div class="ttc" id="aclass_frame_barras_html_ad48b13bdc7ea594d2b412187ed6ef6f3"><div class="ttname"><a href="class_frame_barras.html#ad48b13bdc7ea594d2b412187ed6ef6f3">FrameBarras::insereQssTableBarras</a></div><div class="ttdeci">void insereQssTableBarras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:355</div></div>
-<div class="ttc" id="aclass_frame_barras_html_ae3a62f3b576b41d20e09e5cd6df1b4a7"><div class="ttname"><a href="class_frame_barras.html#ae3a62f3b576b41d20e09e5cd6df1b4a7">FrameBarras::insereQssTabWidget</a></div><div class="ttdeci">void insereQssTabWidget()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:345</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  305</span>                                      {</div>
+<div class="line"><span class="lineno">  306</span>    <a class="code hl_function" href="class_frame_barras.html#ac69eb8d65f85f0bd300d37822bde2f9d">insereQssBtnAvancar</a>();</div>
+<div class="line"><span class="lineno">  307</span>    <a class="code hl_function" href="class_frame_barras.html#a80845a4c067f46720d943a9ecd506e6e">insereQssBtnVoltar</a>();</div>
+<div class="line"><span class="lineno">  308</span>    <a class="code hl_function" href="class_frame_barras.html#a195b1c443939897e25de7e19153dd004">insereQSSBtnFiltrar</a>();</div>
+<div class="line"><span class="lineno">  309</span>    <a class="code hl_function" href="class_frame_barras.html#ae3a62f3b576b41d20e09e5cd6df1b4a7">insereQssTabWidget</a>();</div>
+<div class="line"><span class="lineno">  310</span>    <a class="code hl_function" href="class_frame_barras.html#ad48b13bdc7ea594d2b412187ed6ef6f3">insereQssTableBarras</a>();</div>
+<div class="line"><span class="lineno">  311</span>    <a class="code hl_function" href="class_frame_barras.html#a4254de5cd13d7c2fe7936fe18b4b6a97">insereQssTableLinhas</a>();</div>
+<div class="line"><span class="lineno">  312</span>}</div>
+<div class="ttc" id="aclass_frame_barras_html_a195b1c443939897e25de7e19153dd004"><div class="ttname"><a href="class_frame_barras.html#a195b1c443939897e25de7e19153dd004">FrameBarras::insereQSSBtnFiltrar</a></div><div class="ttdeci">void insereQSSBtnFiltrar()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:342</div></div>
+<div class="ttc" id="aclass_frame_barras_html_a4254de5cd13d7c2fe7936fe18b4b6a97"><div class="ttname"><a href="class_frame_barras.html#a4254de5cd13d7c2fe7936fe18b4b6a97">FrameBarras::insereQssTableLinhas</a></div><div class="ttdeci">void insereQssTableLinhas()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:407</div></div>
+<div class="ttc" id="aclass_frame_barras_html_a80845a4c067f46720d943a9ecd506e6e"><div class="ttname"><a href="class_frame_barras.html#a80845a4c067f46720d943a9ecd506e6e">FrameBarras::insereQssBtnVoltar</a></div><div class="ttdeci">void insereQssBtnVoltar()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:331</div></div>
+<div class="ttc" id="aclass_frame_barras_html_ac69eb8d65f85f0bd300d37822bde2f9d"><div class="ttname"><a href="class_frame_barras.html#ac69eb8d65f85f0bd300d37822bde2f9d">FrameBarras::insereQssBtnAvancar</a></div><div class="ttdeci">void insereQssBtnAvancar()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:319</div></div>
+<div class="ttc" id="aclass_frame_barras_html_ad48b13bdc7ea594d2b412187ed6ef6f3"><div class="ttname"><a href="class_frame_barras.html#ad48b13bdc7ea594d2b412187ed6ef6f3">FrameBarras::insereQssTableBarras</a></div><div class="ttdeci">void insereQssTableBarras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:363</div></div>
+<div class="ttc" id="aclass_frame_barras_html_ae3a62f3b576b41d20e09e5cd6df1b4a7"><div class="ttname"><a href="class_frame_barras.html#ae3a62f3b576b41d20e09e5cd6df1b4a7">FrameBarras::insereQssTabWidget</a></div><div class="ttdeci">void insereQssTabWidget()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:353</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -799,25 +799,25 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  355</span>                                      {</div>
-<div class="line"><span class="lineno">  356</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  357</span>    <span class="comment">//Inserindo cabeçalho vertical na priemira coluna</span></div>
-<div class="line"><span class="lineno">  358</span>    ui-&gt;tableBarras-&gt;setRowCount(3 + 2*<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> + 1);</div>
-<div class="line"><span class="lineno">  359</span>    ui-&gt;tableBarras-&gt;setColumnCount(<a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>);</div>
-<div class="line"><span class="lineno">  360</span>    ui-&gt;tableBarras-&gt;setVerticalHeaderLabels(<a class="code hl_function" href="class_frame_barras.html#a527c20684ff66c7c4baead62ad426c61">cabecalhoBarras</a>());</div>
-<div class="line"><span class="lineno">  361</span>    ui-&gt;tableBarras-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a00728557d55943be026cc3a2c0c7d257">cssTabelaBarras</a>); <span class="comment">//insere QSS na tabela</span></div>
-<div class="line"><span class="lineno">  362</span>    ui-&gt;tableBarras-&gt;verticalHeader()-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#aaa6071853640ec470f5504be018c02cb">cssHeaderTabela</a>);</div>
-<div class="line"><span class="lineno">  363</span>    ui-&gt;tableBarras-&gt;verticalHeader()-&gt;setLineWidth(1);</div>
-<div class="line"><span class="lineno">  364</span>    <span class="comment">//insere um numero de linhas à tabela correspondente ao numero de Barras</span></div>
-<div class="line"><span class="lineno">  365</span>    ui-&gt;tableBarras-&gt;horizontalHeader()-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  366</span>    ui-&gt;tableBarras-&gt;setAlternatingRowColors(<span class="keyword">true</span>); <span class="comment">//aplica anternacia de cores na tabela</span></div>
-<div class="line"><span class="lineno">  367</span>    ui-&gt;tableBarras-&gt;verticalHeader()-&gt;setDefaultSectionSize(30);</div>
-<div class="line"><span class="lineno">  368</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; (3 + 2*<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> + 1) ; i++){</div>
-<div class="line"><span class="lineno">  369</span>        ui-&gt;tableBarras-&gt;setRowHeight(i, 31);</div>
-<div class="line"><span class="lineno">  370</span>    }</div>
-<div class="line"><span class="lineno">  371</span>    ui-&gt;tableBarras-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);</div>
-<div class="line"><span class="lineno">  372</span>}</div>
-<div class="ttc" id="aclass_frame_barras_html_a527c20684ff66c7c4baead62ad426c61"><div class="ttname"><a href="class_frame_barras.html#a527c20684ff66c7c4baead62ad426c61">FrameBarras::cabecalhoBarras</a></div><div class="ttdeci">QStringList cabecalhoBarras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:379</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  363</span>                                      {</div>
+<div class="line"><span class="lineno">  364</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">  365</span>    <span class="comment">//Inserindo cabeçalho vertical na priemira coluna</span></div>
+<div class="line"><span class="lineno">  366</span>    ui-&gt;tableBarras-&gt;setRowCount(3 + 2*<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> + 1);</div>
+<div class="line"><span class="lineno">  367</span>    ui-&gt;tableBarras-&gt;setColumnCount(<a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>);</div>
+<div class="line"><span class="lineno">  368</span>    ui-&gt;tableBarras-&gt;setVerticalHeaderLabels(<a class="code hl_function" href="class_frame_barras.html#a527c20684ff66c7c4baead62ad426c61">cabecalhoBarras</a>());</div>
+<div class="line"><span class="lineno">  369</span>    ui-&gt;tableBarras-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a00728557d55943be026cc3a2c0c7d257">cssTabelaBarras</a>); <span class="comment">//insere QSS na tabela</span></div>
+<div class="line"><span class="lineno">  370</span>    ui-&gt;tableBarras-&gt;verticalHeader()-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#aaa6071853640ec470f5504be018c02cb">cssHeaderTabela</a>);</div>
+<div class="line"><span class="lineno">  371</span>    ui-&gt;tableBarras-&gt;verticalHeader()-&gt;setLineWidth(1);</div>
+<div class="line"><span class="lineno">  372</span>    <span class="comment">//insere um numero de linhas à tabela correspondente ao numero de Barras</span></div>
+<div class="line"><span class="lineno">  373</span>    ui-&gt;tableBarras-&gt;horizontalHeader()-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  374</span>    ui-&gt;tableBarras-&gt;setAlternatingRowColors(<span class="keyword">true</span>); <span class="comment">//aplica anternacia de cores na tabela</span></div>
+<div class="line"><span class="lineno">  375</span>    ui-&gt;tableBarras-&gt;verticalHeader()-&gt;setDefaultSectionSize(30);</div>
+<div class="line"><span class="lineno">  376</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; (3 + 2*<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> + 1) ; i++){</div>
+<div class="line"><span class="lineno">  377</span>        ui-&gt;tableBarras-&gt;setRowHeight(i, 31);</div>
+<div class="line"><span class="lineno">  378</span>    }</div>
+<div class="line"><span class="lineno">  379</span>    ui-&gt;tableBarras-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);</div>
+<div class="line"><span class="lineno">  380</span>}</div>
+<div class="ttc" id="aclass_frame_barras_html_a527c20684ff66c7c4baead62ad426c61"><div class="ttname"><a href="class_frame_barras.html#a527c20684ff66c7c4baead62ad426c61">FrameBarras::cabecalhoBarras</a></div><div class="ttdeci">QStringList cabecalhoBarras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:387</div></div>
 <div class="ttc" id="aclass_style_html_a00728557d55943be026cc3a2c0c7d257"><div class="ttname"><a href="class_style.html#a00728557d55943be026cc3a2c0c7d257">Style::cssTabelaBarras</a></div><div class="ttdeci">QString cssTabelaBarras</div><div class="ttdef"><b>Definition:</b> style.h:161</div></div>
 <div class="ttc" id="aclass_style_html_aaa6071853640ec470f5504be018c02cb"><div class="ttname"><a href="class_style.html#aaa6071853640ec470f5504be018c02cb">Style::cssHeaderTabela</a></div><div class="ttdeci">QString cssHeaderTabela</div><div class="ttdef"><b>Definition:</b> style.h:224</div></div>
 </div><!-- fragment -->
@@ -837,24 +837,24 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  399</span>                                      {</div>
-<div class="line"><span class="lineno">  400</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  401</span>    ui-&gt;tableLinhas-&gt;setRowCount(2 + 2*<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> + 4);</div>
-<div class="line"><span class="lineno">  402</span>    ui-&gt;tableLinhas-&gt;setColumnCount(<a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>);</div>
-<div class="line"><span class="lineno">  403</span>    ui-&gt;tableLinhas-&gt;setVerticalHeaderLabels(<a class="code hl_function" href="class_frame_barras.html#a9c6269a6fc97acd48f4e28fb58d1560c">cabecalhoLinhas</a>());</div>
-<div class="line"><span class="lineno">  404</span>    ui-&gt;tableLinhas-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a00728557d55943be026cc3a2c0c7d257">cssTabelaBarras</a>); <span class="comment">//insere QSS na tabela</span></div>
-<div class="line"><span class="lineno">  405</span>    ui-&gt;tableLinhas-&gt;verticalHeader()-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#aaa6071853640ec470f5504be018c02cb">cssHeaderTabela</a>);</div>
-<div class="line"><span class="lineno">  406</span>    ui-&gt;tableLinhas-&gt;verticalHeader()-&gt;setLineWidth(1);</div>
-<div class="line"><span class="lineno">  407</span>    ui-&gt;tableLinhas-&gt;horizontalHeader()-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  408</span>    ui-&gt;tableLinhas-&gt;setAlternatingRowColors(<span class="keyword">true</span>); <span class="comment">//aplica anternacia de cores na tabela</span></div>
-<div class="line"><span class="lineno">  409</span>    ui-&gt;tableLinhas-&gt;verticalHeader()-&gt;setDefaultSectionSize(30);</div>
-<div class="line"><span class="lineno">  410</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; (2 + 2*<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> + 4) ; i++){</div>
-<div class="line"><span class="lineno">  411</span>        ui-&gt;tableLinhas-&gt;setRowHeight(i, 31);</div>
-<div class="line"><span class="lineno">  412</span>    }</div>
-<div class="line"><span class="lineno">  413</span>    ui-&gt;tableBarras-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);</div>
-<div class="line"><span class="lineno">  414</span>    ui-&gt;tableLinhas-&gt;setHorizontalHeaderLabels(<a class="code hl_function" href="class_frame_barras.html#a0e81fa2f0ace66a7492af9ac1843a596">linhasDoSistema</a>());</div>
-<div class="line"><span class="lineno">  415</span>}</div>
-<div class="ttc" id="aclass_frame_barras_html_a9c6269a6fc97acd48f4e28fb58d1560c"><div class="ttname"><a href="class_frame_barras.html#a9c6269a6fc97acd48f4e28fb58d1560c">FrameBarras::cabecalhoLinhas</a></div><div class="ttdeci">QStringList cabecalhoLinhas()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:422</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  407</span>                                      {</div>
+<div class="line"><span class="lineno">  408</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">  409</span>    ui-&gt;tableLinhas-&gt;setRowCount(2 + 2*<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> + 4);</div>
+<div class="line"><span class="lineno">  410</span>    ui-&gt;tableLinhas-&gt;setColumnCount(<a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>);</div>
+<div class="line"><span class="lineno">  411</span>    ui-&gt;tableLinhas-&gt;setVerticalHeaderLabels(<a class="code hl_function" href="class_frame_barras.html#a9c6269a6fc97acd48f4e28fb58d1560c">cabecalhoLinhas</a>());</div>
+<div class="line"><span class="lineno">  412</span>    ui-&gt;tableLinhas-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a00728557d55943be026cc3a2c0c7d257">cssTabelaBarras</a>); <span class="comment">//insere QSS na tabela</span></div>
+<div class="line"><span class="lineno">  413</span>    ui-&gt;tableLinhas-&gt;verticalHeader()-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#aaa6071853640ec470f5504be018c02cb">cssHeaderTabela</a>);</div>
+<div class="line"><span class="lineno">  414</span>    ui-&gt;tableLinhas-&gt;verticalHeader()-&gt;setLineWidth(1);</div>
+<div class="line"><span class="lineno">  415</span>    ui-&gt;tableLinhas-&gt;horizontalHeader()-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  416</span>    ui-&gt;tableLinhas-&gt;setAlternatingRowColors(<span class="keyword">true</span>); <span class="comment">//aplica anternacia de cores na tabela</span></div>
+<div class="line"><span class="lineno">  417</span>    ui-&gt;tableLinhas-&gt;verticalHeader()-&gt;setDefaultSectionSize(30);</div>
+<div class="line"><span class="lineno">  418</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; (2 + 2*<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a> + 4) ; i++){</div>
+<div class="line"><span class="lineno">  419</span>        ui-&gt;tableLinhas-&gt;setRowHeight(i, 31);</div>
+<div class="line"><span class="lineno">  420</span>    }</div>
+<div class="line"><span class="lineno">  421</span>    ui-&gt;tableBarras-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);</div>
+<div class="line"><span class="lineno">  422</span>    ui-&gt;tableLinhas-&gt;setHorizontalHeaderLabels(<a class="code hl_function" href="class_frame_barras.html#a0e81fa2f0ace66a7492af9ac1843a596">linhasDoSistema</a>());</div>
+<div class="line"><span class="lineno">  423</span>}</div>
+<div class="ttc" id="aclass_frame_barras_html_a9c6269a6fc97acd48f4e28fb58d1560c"><div class="ttname"><a href="class_frame_barras.html#a9c6269a6fc97acd48f4e28fb58d1560c">FrameBarras::cabecalhoLinhas</a></div><div class="ttdeci">QStringList cabecalhoLinhas()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:430</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -872,10 +872,10 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  345</span>                                    {</div>
-<div class="line"><span class="lineno">  346</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  347</span>    ui-&gt;tabLinhas-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a7f2e66ac843e67809bb66e8144d87968">cssTabWidget</a>);</div>
-<div class="line"><span class="lineno">  348</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  353</span>                                    {</div>
+<div class="line"><span class="lineno">  354</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">  355</span>    ui-&gt;tabLinhas-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a7f2e66ac843e67809bb66e8144d87968">cssTabWidget</a>);</div>
+<div class="line"><span class="lineno">  356</span>}</div>
 <div class="ttc" id="aclass_style_html_a7f2e66ac843e67809bb66e8144d87968"><div class="ttname"><a href="class_style.html#a7f2e66ac843e67809bb66e8144d87968">Style::cssTabWidget</a></div><div class="ttdeci">QString cssTabWidget</div><div class="ttdef"><b>Definition:</b> style.h:228</div></div>
 </div><!-- fragment -->
 </div>
@@ -960,10 +960,10 @@ Atributos Estáticos Públicos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  814</span>                                                             {</div>
-<div class="line"><span class="lineno">  815</span>    <span class="keywordflow">return</span> (expoente==0) ? 1 : (expoente == 1) ? base : base*<a class="code hl_function" href="class_frame_barras.html#a8b495710e0c40ca4074fa18ddcd00a77">potencia</a>(base,expoente-1);</div>
-<div class="line"><span class="lineno">  816</span>}</div>
-<div class="ttc" id="aclass_frame_barras_html_a8b495710e0c40ca4074fa18ddcd00a77"><div class="ttname"><a href="class_frame_barras.html#a8b495710e0c40ca4074fa18ddcd00a77">FrameBarras::potencia</a></div><div class="ttdeci">double potencia(double, int)</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:814</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  822</span>                                                             {</div>
+<div class="line"><span class="lineno">  823</span>    <span class="keywordflow">return</span> (expoente==0) ? 1 : (expoente == 1) ? base : base*<a class="code hl_function" href="class_frame_barras.html#a8b495710e0c40ca4074fa18ddcd00a77">potencia</a>(base,expoente-1);</div>
+<div class="line"><span class="lineno">  824</span>}</div>
+<div class="ttc" id="aclass_frame_barras_html_a8b495710e0c40ca4074fa18ddcd00a77"><div class="ttname"><a href="class_frame_barras.html#a8b495710e0c40ca4074fa18ddcd00a77">FrameBarras::potencia</a></div><div class="ttdeci">double potencia(double, int)</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:822</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -981,130 +981,130 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  455</span>                               {</div>
-<div class="line"><span class="lineno">  456</span> </div>
-<div class="line"><span class="lineno">  457</span>    <span class="comment">//O arquivo thdv possui uma linha de informa~ção para cada barra -- por isso foi selecionado</span></div>
-<div class="line"><span class="lineno">  458</span>    <span class="comment">//realiza o procedimento de abertura do arquivo e alerta caso aconteça algum erro -- Conforme explicado no mainwindow.cpp</span></div>
-<div class="line"><span class="lineno">  459</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;open(QFile::ReadOnly|QFile::Text)){</div>
-<div class="line"><span class="lineno">  460</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;error() == QFile::OpenError){</div>
-<div class="line"><span class="lineno">  461</span>            return ;</div>
-<div class="line"><span class="lineno">  462</span>        }</div>
-<div class="line"><span class="lineno">  463</span>        QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erro&quot;</span>,<span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
-<div class="line"><span class="lineno">  464</span>        return ;</div>
-<div class="line"><span class="lineno">  465</span>    }</div>
-<div class="line"><span class="lineno">  466</span> </div>
-<div class="line"><span class="lineno">  467</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2; i++) {</div>
-<div class="line"><span class="lineno">  468</span>        <a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  469</span>    }</div>
-<div class="line"><span class="lineno">  470</span> </div>
-<div class="line"><span class="lineno">  471</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>; i++) {</div>
-<div class="line"><span class="lineno">  472</span>        QString line = <a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  473</span>        QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><span class="lineno">  474</span>        <span class="keywordtype">bool</span> ok = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  475</span>        <span class="keywordtype">double</span> tensaoPu = indice.at(2).trimmed().toDouble(&amp;ok);</div>
-<div class="line"><span class="lineno">  476</span>        <span class="keywordflow">if</span> (ok) {</div>
-<div class="line"><span class="lineno">  477</span>            <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setTensaoPu(tensaoPu);</div>
-<div class="line"><span class="lineno">  478</span>        }</div>
-<div class="line"><span class="lineno">  479</span>        ok = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  480</span>        <span class="keywordtype">double</span> thdv = indice.at(3).trimmed().toDouble(&amp;ok);</div>
-<div class="line"><span class="lineno">  481</span>        <span class="keywordflow">if</span> (ok) {</div>
-<div class="line"><span class="lineno">  482</span>            <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setThdvPercent(thdv);</div>
-<div class="line"><span class="lineno">  483</span>        }</div>
-<div class="line"><span class="lineno">  484</span>        <span class="keywordtype">double</span> tensaoNominal = <a class="code hl_variable" href="class_frame_tensoes.html#a05ce19ff6efdb055d2addf9bd6e70d55">FrameTensoes::tensoesNominais</a>[i];</div>
-<div class="line"><span class="lineno">  485</span>        <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setTensaoNominalKv(tensaoNominal);</div>
-<div class="line"><span class="lineno">  486</span> </div>
-<div class="line"><span class="lineno">  487</span>        <span class="keywordtype">int</span> classeTensaoThdv;</div>
-<div class="line"><span class="lineno">  488</span>        <span class="keywordflow">if</span> (tensaoNominal &lt;= 1) {</div>
-<div class="line"><span class="lineno">  489</span>            classeTensaoThdv = 1;</div>
-<div class="line"><span class="lineno">  490</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tensaoNominal &lt; 69) {</div>
-<div class="line"><span class="lineno">  491</span>            classeTensaoThdv = 2;</div>
-<div class="line"><span class="lineno">  492</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  493</span>            classeTensaoThdv = 3;</div>
-<div class="line"><span class="lineno">  494</span>        }</div>
-<div class="line"><span class="lineno">  495</span> </div>
-<div class="line"><span class="lineno">  496</span>        <span class="keywordtype">bool</span> barraInfectadaThdv = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  497</span>        <span class="keywordflow">switch</span> (classeTensaoThdv) {</div>
-<div class="line"><span class="lineno">  498</span>        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">  499</span>            barraInfectadaThdv = (<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getThdvPercent() &gt; 10);</div>
-<div class="line"><span class="lineno">  500</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  501</span>        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">  502</span>            barraInfectadaThdv = (<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getThdvPercent() &gt; 8);</div>
-<div class="line"><span class="lineno">  503</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  504</span>        <span class="keywordflow">case</span> 3:</div>
-<div class="line"><span class="lineno">  505</span>            barraInfectadaThdv = (<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getThdvPercent() &gt; 5);</div>
-<div class="line"><span class="lineno">  506</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  507</span>        }</div>
-<div class="line"><span class="lineno">  508</span>        <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setbarraInfectadaThdv(barraInfectadaThdv);</div>
-<div class="line"><span class="lineno">  509</span> </div>
-<div class="line"><span class="lineno">  510</span>        <span class="keywordtype">double</span> tensaoEficaz = tensaoPu * sqrt(1 + pow((thdv / 100), 2));</div>
-<div class="line"><span class="lineno">  511</span>        <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setTensaoEficaz(tensaoEficaz);</div>
-<div class="line"><span class="lineno">  512</span>    }</div>
-<div class="line"><span class="lineno">  513</span>    <a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;close();</div>
-<div class="line"><span class="lineno">  514</span> </div>
-<div class="line"><span class="lineno">  515</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;open(QFile::ReadOnly|QFile::Text)){</div>
-<div class="line"><span class="lineno">  516</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;error() == QFile::OpenError){</div>
-<div class="line"><span class="lineno">  517</span>            return  ;</div>
-<div class="line"><span class="lineno">  518</span>        }</div>
-<div class="line"><span class="lineno">  519</span>        QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erro&quot;</span>,<span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
-<div class="line"><span class="lineno">  520</span>        return  ;</div>
-<div class="line"><span class="lineno">  521</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  463</span>                               {</div>
+<div class="line"><span class="lineno">  464</span> </div>
+<div class="line"><span class="lineno">  465</span>    <span class="comment">//O arquivo thdv possui uma linha de informa~ção para cada barra -- por isso foi selecionado</span></div>
+<div class="line"><span class="lineno">  466</span>    <span class="comment">//realiza o procedimento de abertura do arquivo e alerta caso aconteça algum erro -- Conforme explicado no mainwindow.cpp</span></div>
+<div class="line"><span class="lineno">  467</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;open(QFile::ReadOnly|QFile::Text)){</div>
+<div class="line"><span class="lineno">  468</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;error() == QFile::OpenError){</div>
+<div class="line"><span class="lineno">  469</span>            return ;</div>
+<div class="line"><span class="lineno">  470</span>        }</div>
+<div class="line"><span class="lineno">  471</span>        QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erro&quot;</span>,<span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
+<div class="line"><span class="lineno">  472</span>        return ;</div>
+<div class="line"><span class="lineno">  473</span>    }</div>
+<div class="line"><span class="lineno">  474</span> </div>
+<div class="line"><span class="lineno">  475</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2; i++) {</div>
+<div class="line"><span class="lineno">  476</span>        <a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  477</span>    }</div>
+<div class="line"><span class="lineno">  478</span> </div>
+<div class="line"><span class="lineno">  479</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>; i++) {</div>
+<div class="line"><span class="lineno">  480</span>        QString line = <a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  481</span>        QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><span class="lineno">  482</span>        <span class="keywordtype">bool</span> ok = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  483</span>        <span class="keywordtype">double</span> tensaoPu = indice.at(2).trimmed().toDouble(&amp;ok);</div>
+<div class="line"><span class="lineno">  484</span>        <span class="keywordflow">if</span> (ok) {</div>
+<div class="line"><span class="lineno">  485</span>            <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setTensaoPu(tensaoPu);</div>
+<div class="line"><span class="lineno">  486</span>        }</div>
+<div class="line"><span class="lineno">  487</span>        ok = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  488</span>        <span class="keywordtype">double</span> thdv = indice.at(3).trimmed().toDouble(&amp;ok);</div>
+<div class="line"><span class="lineno">  489</span>        <span class="keywordflow">if</span> (ok) {</div>
+<div class="line"><span class="lineno">  490</span>            <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setThdvPercent(thdv);</div>
+<div class="line"><span class="lineno">  491</span>        }</div>
+<div class="line"><span class="lineno">  492</span>        <span class="keywordtype">double</span> tensaoNominal = <a class="code hl_variable" href="class_frame_tensoes.html#a05ce19ff6efdb055d2addf9bd6e70d55">FrameTensoes::tensoesNominais</a>[i];</div>
+<div class="line"><span class="lineno">  493</span>        <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setTensaoNominalKv(tensaoNominal);</div>
+<div class="line"><span class="lineno">  494</span> </div>
+<div class="line"><span class="lineno">  495</span>        <span class="keywordtype">int</span> classeTensaoThdv;</div>
+<div class="line"><span class="lineno">  496</span>        <span class="keywordflow">if</span> (tensaoNominal &lt;= 1) {</div>
+<div class="line"><span class="lineno">  497</span>            classeTensaoThdv = 1;</div>
+<div class="line"><span class="lineno">  498</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tensaoNominal &lt; 69) {</div>
+<div class="line"><span class="lineno">  499</span>            classeTensaoThdv = 2;</div>
+<div class="line"><span class="lineno">  500</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  501</span>            classeTensaoThdv = 3;</div>
+<div class="line"><span class="lineno">  502</span>        }</div>
+<div class="line"><span class="lineno">  503</span> </div>
+<div class="line"><span class="lineno">  504</span>        <span class="keywordtype">bool</span> barraInfectadaThdv = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  505</span>        <span class="keywordflow">switch</span> (classeTensaoThdv) {</div>
+<div class="line"><span class="lineno">  506</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">  507</span>            barraInfectadaThdv = (<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getThdvPercent() &gt; 10);</div>
+<div class="line"><span class="lineno">  508</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  509</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">  510</span>            barraInfectadaThdv = (<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getThdvPercent() &gt; 8);</div>
+<div class="line"><span class="lineno">  511</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  512</span>        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">  513</span>            barraInfectadaThdv = (<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getThdvPercent() &gt; 5);</div>
+<div class="line"><span class="lineno">  514</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  515</span>        }</div>
+<div class="line"><span class="lineno">  516</span>        <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setbarraInfectadaThdv(barraInfectadaThdv);</div>
+<div class="line"><span class="lineno">  517</span> </div>
+<div class="line"><span class="lineno">  518</span>        <span class="keywordtype">double</span> tensaoEficaz = tensaoPu * sqrt(1 + pow((thdv / 100), 2));</div>
+<div class="line"><span class="lineno">  519</span>        <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].setTensaoEficaz(tensaoEficaz);</div>
+<div class="line"><span class="lineno">  520</span>    }</div>
+<div class="line"><span class="lineno">  521</span>    <a class="code hl_variable" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a>-&gt;close();</div>
 <div class="line"><span class="lineno">  522</span> </div>
-<div class="line"><span class="lineno">  523</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; 4 ; i++){</div>
-<div class="line"><span class="lineno">  524</span>        <a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  525</span>    }</div>
-<div class="line"><span class="lineno">  526</span> </div>
-<div class="line"><span class="lineno">  527</span>    <span class="keywordtype">int</span> numBarra;</div>
-<div class="line"><span class="lineno">  528</span>    <span class="keywordtype">int</span> numHarm;</div>
-<div class="line"><span class="lineno">  529</span>    <span class="keywordtype">double</span> magHarm;</div>
-<div class="line"><span class="lineno">  530</span>    <span class="keywordtype">double</span> percentHarm;</div>
-<div class="line"><span class="lineno">  531</span>    <span class="keywordtype">int</span> classeTensaoThdi;</div>
-<div class="line"><span class="lineno">  532</span>    std::setlocale(LC_ALL,<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">  533</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>*(<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a>+1) ; i++){</div>
-<div class="line"><span class="lineno">  534</span>        QString line = <a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  535</span>        QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><span class="lineno">  536</span> </div>
-<div class="line"><span class="lineno">  537</span>        numBarra = indice.at(1).trimmed().toInt()-1;</div>
-<div class="line"><span class="lineno">  538</span>        numHarm = indice.at(0).trimmed().toInt();</div>
-<div class="line"><span class="lineno">  539</span>        magHarm = indice.at(2).trimmed().toDouble();</div>
-<div class="line"><span class="lineno">  540</span>        percentHarm = 100*magHarm/(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoPu());</div>
-<div class="line"><span class="lineno">  541</span> </div>
-<div class="line"><span class="lineno">  542</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &lt;= 1 ){</div>
-<div class="line"><span class="lineno">  543</span>            classeTensaoThdi = 1;</div>
-<div class="line"><span class="lineno">  544</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &gt; 1 &amp;&amp; <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &lt;= 13.8){</div>
-<div class="line"><span class="lineno">  545</span>            classeTensaoThdi = 2;</div>
-<div class="line"><span class="lineno">  546</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &gt; 13.8 &amp;&amp; <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &lt;= 69){</div>
-<div class="line"><span class="lineno">  547</span>            classeTensaoThdi = 3;</div>
-<div class="line"><span class="lineno">  548</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  549</span>            classeTensaoThdi = 4;</div>
-<div class="line"><span class="lineno">  550</span>        }</div>
-<div class="line"><span class="lineno">  551</span> </div>
-<div class="line"><span class="lineno">  552</span> </div>
-<div class="line"><span class="lineno">  553</span>        <span class="keywordflow">if</span>(indice.at(0).trimmed().toInt()!=1){</div>
-<div class="line"><span class="lineno">  554</span> </div>
-<div class="line"><span class="lineno">  555</span>            <span class="keywordflow">if</span>(numHarm &gt; 25 &amp;&amp; numHarm%3==0){</div>
-<div class="line"><span class="lineno">  556</span>                <span class="keywordflow">if</span>(percentHarm &gt; limitesDti[classeTensaoThdi][997]){</div>
-<div class="line"><span class="lineno">  557</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  558</span>                }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  559</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  560</span>                }</div>
-<div class="line"><span class="lineno">  561</span>            }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(numHarm &gt; 25 &amp;&amp; numHarm%3!=0){</div>
-<div class="line"><span class="lineno">  562</span>                <span class="keywordflow">if</span>(percentHarm &gt; limitesDti[classeTensaoThdi][998]){</div>
-<div class="line"><span class="lineno">  563</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  564</span>                }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  565</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  566</span>                }</div>
-<div class="line"><span class="lineno">  567</span>            }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  568</span>                <span class="keywordflow">if</span>(percentHarm &gt; limitesDti[classeTensaoThdi][numHarm]){</div>
-<div class="line"><span class="lineno">  569</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  570</span>                }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  571</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  572</span>                }</div>
-<div class="line"><span class="lineno">  573</span>            }</div>
-<div class="line"><span class="lineno">  574</span>        }</div>
-<div class="line"><span class="lineno">  575</span>    }</div>
-<div class="line"><span class="lineno">  576</span> </div>
-<div class="line"><span class="lineno">  577</span>    <a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;close();</div>
-<div class="line"><span class="lineno">  578</span>}</div>
+<div class="line"><span class="lineno">  523</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;open(QFile::ReadOnly|QFile::Text)){</div>
+<div class="line"><span class="lineno">  524</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;error() == QFile::OpenError){</div>
+<div class="line"><span class="lineno">  525</span>            return  ;</div>
+<div class="line"><span class="lineno">  526</span>        }</div>
+<div class="line"><span class="lineno">  527</span>        QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erro&quot;</span>,<span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
+<div class="line"><span class="lineno">  528</span>        return  ;</div>
+<div class="line"><span class="lineno">  529</span>    }</div>
+<div class="line"><span class="lineno">  530</span> </div>
+<div class="line"><span class="lineno">  531</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; 4 ; i++){</div>
+<div class="line"><span class="lineno">  532</span>        <a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  533</span>    }</div>
+<div class="line"><span class="lineno">  534</span> </div>
+<div class="line"><span class="lineno">  535</span>    <span class="keywordtype">int</span> numBarra;</div>
+<div class="line"><span class="lineno">  536</span>    <span class="keywordtype">int</span> numHarm;</div>
+<div class="line"><span class="lineno">  537</span>    <span class="keywordtype">double</span> magHarm;</div>
+<div class="line"><span class="lineno">  538</span>    <span class="keywordtype">double</span> percentHarm;</div>
+<div class="line"><span class="lineno">  539</span>    <span class="keywordtype">int</span> classeTensaoThdi;</div>
+<div class="line"><span class="lineno">  540</span>    std::setlocale(LC_ALL,<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  541</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>*(<a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a>+1) ; i++){</div>
+<div class="line"><span class="lineno">  542</span>        QString line = <a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  543</span>        QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><span class="lineno">  544</span> </div>
+<div class="line"><span class="lineno">  545</span>        numBarra = indice.at(1).trimmed().toInt()-1;</div>
+<div class="line"><span class="lineno">  546</span>        numHarm = indice.at(0).trimmed().toInt();</div>
+<div class="line"><span class="lineno">  547</span>        magHarm = indice.at(2).trimmed().toDouble();</div>
+<div class="line"><span class="lineno">  548</span>        percentHarm = 100*magHarm/(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoPu());</div>
+<div class="line"><span class="lineno">  549</span> </div>
+<div class="line"><span class="lineno">  550</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &lt;= 1 ){</div>
+<div class="line"><span class="lineno">  551</span>            classeTensaoThdi = 1;</div>
+<div class="line"><span class="lineno">  552</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &gt; 1 &amp;&amp; <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &lt;= 13.8){</div>
+<div class="line"><span class="lineno">  553</span>            classeTensaoThdi = 2;</div>
+<div class="line"><span class="lineno">  554</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &gt; 13.8 &amp;&amp; <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].getTensaoNominalKv() &lt;= 69){</div>
+<div class="line"><span class="lineno">  555</span>            classeTensaoThdi = 3;</div>
+<div class="line"><span class="lineno">  556</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  557</span>            classeTensaoThdi = 4;</div>
+<div class="line"><span class="lineno">  558</span>        }</div>
+<div class="line"><span class="lineno">  559</span> </div>
+<div class="line"><span class="lineno">  560</span> </div>
+<div class="line"><span class="lineno">  561</span>        <span class="keywordflow">if</span>(indice.at(0).trimmed().toInt()!=1){</div>
+<div class="line"><span class="lineno">  562</span> </div>
+<div class="line"><span class="lineno">  563</span>            <span class="keywordflow">if</span>(numHarm &gt; 25 &amp;&amp; numHarm%3==0){</div>
+<div class="line"><span class="lineno">  564</span>                <span class="keywordflow">if</span>(percentHarm &gt; limitesDti[classeTensaoThdi][997]){</div>
+<div class="line"><span class="lineno">  565</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  566</span>                }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  567</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  568</span>                }</div>
+<div class="line"><span class="lineno">  569</span>            }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(numHarm &gt; 25 &amp;&amp; numHarm%3!=0){</div>
+<div class="line"><span class="lineno">  570</span>                <span class="keywordflow">if</span>(percentHarm &gt; limitesDti[classeTensaoThdi][998]){</div>
+<div class="line"><span class="lineno">  571</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  572</span>                }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  573</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  574</span>                }</div>
+<div class="line"><span class="lineno">  575</span>            }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  576</span>                <span class="keywordflow">if</span>(percentHarm &gt; limitesDti[classeTensaoThdi][numHarm]){</div>
+<div class="line"><span class="lineno">  577</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  578</span>                }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  579</span>                    <a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[numBarra].somatorioHarmonico(numHarm,magHarm,percentHarm,classeTensaoThdi,<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  580</span>                }</div>
+<div class="line"><span class="lineno">  581</span>            }</div>
+<div class="line"><span class="lineno">  582</span>        }</div>
+<div class="line"><span class="lineno">  583</span>    }</div>
+<div class="line"><span class="lineno">  584</span> </div>
+<div class="line"><span class="lineno">  585</span>    <a class="code hl_variable" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d">MainWindow::arquivoVsoln</a>-&gt;close();</div>
+<div class="line"><span class="lineno">  586</span>}</div>
 <div class="ttc" id="aclass_frame_tensoes_html_a05ce19ff6efdb055d2addf9bd6e70d55"><div class="ttname"><a href="class_frame_tensoes.html#a05ce19ff6efdb055d2addf9bd6e70d55">FrameTensoes::tensoesNominais</a></div><div class="ttdeci">static QList&lt; double &gt; tensoesNominais</div><div class="ttdoc">Variável responsável por armazenar os valores das tensões nominais das barras para utilizar esses dad...</div><div class="ttdef"><b>Definition:</b> frametensoes.h:30</div></div>
 <div class="ttc" id="aclass_main_window_html_ac80702759127a32bdd29120aa7cc8312"><div class="ttname"><a href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a></div><div class="ttdeci">static QFile * arquivoThdv</div><div class="ttdef"><b>Definition:</b> mainwindow.h:87</div></div>
 </div><!-- fragment -->
@@ -1124,24 +1124,24 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  281</span>                                     {</div>
-<div class="line"><span class="lineno">  282</span>    <a class="code hl_function" href="class_frame_barras.html#a5eb1dc1f180e1a512a3070ebc85ac6db">insereQssFrameBarras</a>();</div>
-<div class="line"><span class="lineno">  283</span>    <a class="code hl_function" href="class_frame_barras.html#a33c2774f043febcc238a715f0b4206ff">inicializaBarra</a>();</div>
-<div class="line"><span class="lineno">  284</span>    <a class="code hl_function" href="class_frame_barras.html#afc1ab05115ee12a204e47872bf00ba21">preencheBarra</a>();</div>
-<div class="line"><span class="lineno">  285</span>    <a class="code hl_function" href="class_frame_barras.html#a11704def1dfb3c37d8bdae7e559dba42">preencheTabelaBarra</a>();</div>
-<div class="line"><span class="lineno">  286</span>    <a class="code hl_function" href="class_frame_barras.html#acce9790951920ba9320411dae375c0b1">inicializaLinha</a>();</div>
-<div class="line"><span class="lineno">  287</span>    <a class="code hl_function" href="class_frame_barras.html#a1bd5ace6685c64bb29daf99119557a79">preencheLinha</a>();</div>
-<div class="line"><span class="lineno">  288</span>    <a class="code hl_function" href="class_frame_barras.html#aea21262b057a1b6521e0eaa9fbf8fcb7">preencheTabelaLinha</a>();</div>
-<div class="line"><span class="lineno">  289</span>    <a class="code hl_function" href="class_frame_barras.html#ac97c4e40dd605851db77e335b8608f19">insereBackgroundNasPoluidoras</a>();</div>
-<div class="line"><span class="lineno">  290</span>}</div>
-<div class="ttc" id="aclass_frame_barras_html_a11704def1dfb3c37d8bdae7e559dba42"><div class="ttname"><a href="class_frame_barras.html#a11704def1dfb3c37d8bdae7e559dba42">FrameBarras::preencheTabelaBarra</a></div><div class="ttdeci">void preencheTabelaBarra()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:585</div></div>
-<div class="ttc" id="aclass_frame_barras_html_a1bd5ace6685c64bb29daf99119557a79"><div class="ttname"><a href="class_frame_barras.html#a1bd5ace6685c64bb29daf99119557a79">FrameBarras::preencheLinha</a></div><div class="ttdeci">void preencheLinha()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:621</div></div>
-<div class="ttc" id="aclass_frame_barras_html_a33c2774f043febcc238a715f0b4206ff"><div class="ttname"><a href="class_frame_barras.html#a33c2774f043febcc238a715f0b4206ff">FrameBarras::inicializaBarra</a></div><div class="ttdeci">void inicializaBarra()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:446</div></div>
-<div class="ttc" id="aclass_frame_barras_html_a5eb1dc1f180e1a512a3070ebc85ac6db"><div class="ttname"><a href="class_frame_barras.html#a5eb1dc1f180e1a512a3070ebc85ac6db">FrameBarras::insereQssFrameBarras</a></div><div class="ttdeci">void insereQssFrameBarras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:297</div></div>
-<div class="ttc" id="aclass_frame_barras_html_ac97c4e40dd605851db77e335b8608f19"><div class="ttname"><a href="class_frame_barras.html#ac97c4e40dd605851db77e335b8608f19">FrameBarras::insereBackgroundNasPoluidoras</a></div><div class="ttdeci">void insereBackgroundNasPoluidoras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:786</div></div>
-<div class="ttc" id="aclass_frame_barras_html_acce9790951920ba9320411dae375c0b1"><div class="ttname"><a href="class_frame_barras.html#acce9790951920ba9320411dae375c0b1">FrameBarras::inicializaLinha</a></div><div class="ttdeci">void inicializaLinha()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:612</div></div>
-<div class="ttc" id="aclass_frame_barras_html_aea21262b057a1b6521e0eaa9fbf8fcb7"><div class="ttname"><a href="class_frame_barras.html#aea21262b057a1b6521e0eaa9fbf8fcb7">FrameBarras::preencheTabelaLinha</a></div><div class="ttdeci">void preencheTabelaLinha()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:746</div></div>
-<div class="ttc" id="aclass_frame_barras_html_afc1ab05115ee12a204e47872bf00ba21"><div class="ttname"><a href="class_frame_barras.html#afc1ab05115ee12a204e47872bf00ba21">FrameBarras::preencheBarra</a></div><div class="ttdeci">void preencheBarra()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:455</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  289</span>                                     {</div>
+<div class="line"><span class="lineno">  290</span>    <a class="code hl_function" href="class_frame_barras.html#a5eb1dc1f180e1a512a3070ebc85ac6db">insereQssFrameBarras</a>();</div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_function" href="class_frame_barras.html#a33c2774f043febcc238a715f0b4206ff">inicializaBarra</a>();</div>
+<div class="line"><span class="lineno">  292</span>    <a class="code hl_function" href="class_frame_barras.html#afc1ab05115ee12a204e47872bf00ba21">preencheBarra</a>();</div>
+<div class="line"><span class="lineno">  293</span>    <a class="code hl_function" href="class_frame_barras.html#a11704def1dfb3c37d8bdae7e559dba42">preencheTabelaBarra</a>();</div>
+<div class="line"><span class="lineno">  294</span>    <a class="code hl_function" href="class_frame_barras.html#acce9790951920ba9320411dae375c0b1">inicializaLinha</a>();</div>
+<div class="line"><span class="lineno">  295</span>    <a class="code hl_function" href="class_frame_barras.html#a1bd5ace6685c64bb29daf99119557a79">preencheLinha</a>();</div>
+<div class="line"><span class="lineno">  296</span>    <a class="code hl_function" href="class_frame_barras.html#aea21262b057a1b6521e0eaa9fbf8fcb7">preencheTabelaLinha</a>();</div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_function" href="class_frame_barras.html#ac97c4e40dd605851db77e335b8608f19">insereBackgroundNasPoluidoras</a>();</div>
+<div class="line"><span class="lineno">  298</span>}</div>
+<div class="ttc" id="aclass_frame_barras_html_a11704def1dfb3c37d8bdae7e559dba42"><div class="ttname"><a href="class_frame_barras.html#a11704def1dfb3c37d8bdae7e559dba42">FrameBarras::preencheTabelaBarra</a></div><div class="ttdeci">void preencheTabelaBarra()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:593</div></div>
+<div class="ttc" id="aclass_frame_barras_html_a1bd5ace6685c64bb29daf99119557a79"><div class="ttname"><a href="class_frame_barras.html#a1bd5ace6685c64bb29daf99119557a79">FrameBarras::preencheLinha</a></div><div class="ttdeci">void preencheLinha()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:629</div></div>
+<div class="ttc" id="aclass_frame_barras_html_a33c2774f043febcc238a715f0b4206ff"><div class="ttname"><a href="class_frame_barras.html#a33c2774f043febcc238a715f0b4206ff">FrameBarras::inicializaBarra</a></div><div class="ttdeci">void inicializaBarra()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:454</div></div>
+<div class="ttc" id="aclass_frame_barras_html_a5eb1dc1f180e1a512a3070ebc85ac6db"><div class="ttname"><a href="class_frame_barras.html#a5eb1dc1f180e1a512a3070ebc85ac6db">FrameBarras::insereQssFrameBarras</a></div><div class="ttdeci">void insereQssFrameBarras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:305</div></div>
+<div class="ttc" id="aclass_frame_barras_html_ac97c4e40dd605851db77e335b8608f19"><div class="ttname"><a href="class_frame_barras.html#ac97c4e40dd605851db77e335b8608f19">FrameBarras::insereBackgroundNasPoluidoras</a></div><div class="ttdeci">void insereBackgroundNasPoluidoras()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:794</div></div>
+<div class="ttc" id="aclass_frame_barras_html_acce9790951920ba9320411dae375c0b1"><div class="ttname"><a href="class_frame_barras.html#acce9790951920ba9320411dae375c0b1">FrameBarras::inicializaLinha</a></div><div class="ttdeci">void inicializaLinha()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:620</div></div>
+<div class="ttc" id="aclass_frame_barras_html_aea21262b057a1b6521e0eaa9fbf8fcb7"><div class="ttname"><a href="class_frame_barras.html#aea21262b057a1b6521e0eaa9fbf8fcb7">FrameBarras::preencheTabelaLinha</a></div><div class="ttdeci">void preencheTabelaLinha()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:754</div></div>
+<div class="ttc" id="aclass_frame_barras_html_afc1ab05115ee12a204e47872bf00ba21"><div class="ttname"><a href="class_frame_barras.html#afc1ab05115ee12a204e47872bf00ba21">FrameBarras::preencheBarra</a></div><div class="ttdeci">void preencheBarra()</div><div class="ttdef"><b>Definition:</b> framebarras.cpp:463</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1160,67 +1160,75 @@ Atributos Estáticos Públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><span class="lineno">  213</span>                                 {</div>
-<div class="line"><span class="lineno">  214</span>    limitesDti[1][3] = 6.5;</div>
-<div class="line"><span class="lineno">  215</span>    limitesDti[1][5] = 7.5;</div>
-<div class="line"><span class="lineno">  216</span>    limitesDti[1][7] = 6.5;</div>
-<div class="line"><span class="lineno">  217</span>    limitesDti[1][9] = 2;</div>
-<div class="line"><span class="lineno">  218</span>    limitesDti[1][11] = 4.5;</div>
-<div class="line"><span class="lineno">  219</span>    limitesDti[1][13] = 4;</div>
-<div class="line"><span class="lineno">  220</span>    limitesDti[1][15] = 1;</div>
-<div class="line"><span class="lineno">  221</span>    limitesDti[1][17] = 2.5;</div>
-<div class="line"><span class="lineno">  222</span>    limitesDti[1][19] = 2;</div>
-<div class="line"><span class="lineno">  223</span>    limitesDti[1][21] = 1;</div>
-<div class="line"><span class="lineno">  224</span>    limitesDti[1][23] = 2;</div>
-<div class="line"><span class="lineno">  225</span>    limitesDti[1][25] = 2;</div>
-<div class="line"><span class="lineno">  226</span>    limitesDti[1][997] = 1.5; <span class="comment">// impar nao multplica de 3</span></div>
-<div class="line"><span class="lineno">  227</span>    limitesDti[1][998] = 1; <span class="comment">// impar multipla de 3</span></div>
-<div class="line"><span class="lineno">  228</span> </div>
-<div class="line"><span class="lineno">  229</span>    limitesDti[2][3] = 5;</div>
-<div class="line"><span class="lineno">  230</span>    limitesDti[2][5] = 6;</div>
-<div class="line"><span class="lineno">  231</span>    limitesDti[2][7] = 5;</div>
-<div class="line"><span class="lineno">  232</span>    limitesDti[2][9] = 1.5;</div>
-<div class="line"><span class="lineno">  233</span>    limitesDti[2][11] = 3.5;</div>
-<div class="line"><span class="lineno">  234</span>    limitesDti[2][13] = 3;</div>
-<div class="line"><span class="lineno">  235</span>    limitesDti[2][15] = 0.5;</div>
-<div class="line"><span class="lineno">  236</span>    limitesDti[2][17] = 2;</div>
-<div class="line"><span class="lineno">  237</span>    limitesDti[2][19] = 1.5;</div>
-<div class="line"><span class="lineno">  238</span>    limitesDti[2][21] = 0.5;</div>
-<div class="line"><span class="lineno">  239</span>    limitesDti[2][23] = 1.5;</div>
-<div class="line"><span class="lineno">  240</span>    limitesDti[2][25] = 2;</div>
-<div class="line"><span class="lineno">  241</span>    limitesDti[1][997] = 1.5; <span class="comment">// impar nao multplica de 3 maior q 25</span></div>
-<div class="line"><span class="lineno">  242</span>    limitesDti[1][998] = 1; <span class="comment">// impar multipla de 3 maior q 21</span></div>
-<div class="line"><span class="lineno">  243</span> </div>
-<div class="line"><span class="lineno">  244</span> </div>
-<div class="line"><span class="lineno">  245</span>    limitesDti[3][3] = 1;</div>
-<div class="line"><span class="lineno">  246</span>    limitesDti[3][5] = 4.5;</div>
-<div class="line"><span class="lineno">  247</span>    limitesDti[3][7] = 4;</div>
-<div class="line"><span class="lineno">  248</span>    limitesDti[3][9] = 1.5;</div>
-<div class="line"><span class="lineno">  249</span>    limitesDti[3][11] = 3;</div>
-<div class="line"><span class="lineno">  250</span>    limitesDti[3][13] = 2.5;</div>
-<div class="line"><span class="lineno">  251</span>    limitesDti[3][15] = 0.5;</div>
-<div class="line"><span class="lineno">  252</span>    limitesDti[3][17] = 1.5;</div>
-<div class="line"><span class="lineno">  253</span>    limitesDti[3][19] = 1.5;</div>
-<div class="line"><span class="lineno">  254</span>    limitesDti[3][21] = 0.5;</div>
-<div class="line"><span class="lineno">  255</span>    limitesDti[3][23] = 1.5;</div>
-<div class="line"><span class="lineno">  256</span>    limitesDti[3][25] = 1.5;</div>
-<div class="line"><span class="lineno">  257</span>    limitesDti[3][997] = 1.5; <span class="comment">// impar nao multplica de 3 maior q 25</span></div>
-<div class="line"><span class="lineno">  258</span>    limitesDti[3][998] = 0.5; <span class="comment">// impar multipla de 3 maior q 21</span></div>
-<div class="line"><span class="lineno">  259</span> </div>
-<div class="line"><span class="lineno">  260</span>    limitesDti[4][3] = 0.5;</div>
-<div class="line"><span class="lineno">  261</span>    limitesDti[4][5] = 2.5;</div>
-<div class="line"><span class="lineno">  262</span>    limitesDti[4][7] = 2;</div>
-<div class="line"><span class="lineno">  263</span>    limitesDti[4][9] = 1;</div>
-<div class="line"><span class="lineno">  264</span>    limitesDti[4][11] = 1.5;</div>
-<div class="line"><span class="lineno">  265</span>    limitesDti[4][13] = 1.5;</div>
-<div class="line"><span class="lineno">  266</span>    limitesDti[4][15] = 0.5;</div>
-<div class="line"><span class="lineno">  267</span>    limitesDti[4][17] = 1;</div>
-<div class="line"><span class="lineno">  268</span>    limitesDti[4][19] = 1;</div>
-<div class="line"><span class="lineno">  269</span>    limitesDti[4][21] = 0.5;</div>
-<div class="line"><span class="lineno">  270</span>    limitesDti[4][23] = 1;</div>
-<div class="line"><span class="lineno">  271</span>    limitesDti[4][25] = 1;</div>
-<div class="line"><span class="lineno">  272</span>    limitesDti[4][997] = 0.5; <span class="comment">// impar nao multplica de 3 maior q 25</span></div>
-<div class="line"><span class="lineno">  273</span>    limitesDti[4][998] = 0.5; <span class="comment">// impar multipla de 3 maior q 21</span></div>
-<div class="line"><span class="lineno">  274</span>}</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  216</span><span class="comment">     * 1 equivale a (Tensao Nominal &lt;= 1kV)</span></div>
+<div class="line"><span class="lineno">  217</span><span class="comment">     * 2 equivale a (Tensao Nominal &gt; 1 kv &amp;&amp; Tensao Nonimal &lt;= 13.8 kV)</span></div>
+<div class="line"><span class="lineno">  218</span><span class="comment">     * 3 equivale a (Tensao Nominal &gt; 13.8 kV &amp;&amp; Tensao Nominal &lt;= 69kV)</span></div>
+<div class="line"><span class="lineno">  219</span><span class="comment">     * 4 equivale a (Tensao Nominal &gt; 69kV)</span></div>
+<div class="line"><span class="lineno">  220</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    limitesDti[1][3] = 6.5;</div>
+<div class="line"><span class="lineno">  223</span>    limitesDti[1][5] = 7.5;</div>
+<div class="line"><span class="lineno">  224</span>    limitesDti[1][7] = 6.5;</div>
+<div class="line"><span class="lineno">  225</span>    limitesDti[1][9] = 2;</div>
+<div class="line"><span class="lineno">  226</span>    limitesDti[1][11] = 4.5;</div>
+<div class="line"><span class="lineno">  227</span>    limitesDti[1][13] = 4;</div>
+<div class="line"><span class="lineno">  228</span>    limitesDti[1][15] = 1;</div>
+<div class="line"><span class="lineno">  229</span>    limitesDti[1][17] = 2.5;</div>
+<div class="line"><span class="lineno">  230</span>    limitesDti[1][19] = 2;</div>
+<div class="line"><span class="lineno">  231</span>    limitesDti[1][21] = 1;</div>
+<div class="line"><span class="lineno">  232</span>    limitesDti[1][23] = 2;</div>
+<div class="line"><span class="lineno">  233</span>    limitesDti[1][25] = 2;</div>
+<div class="line"><span class="lineno">  234</span>    limitesDti[1][997] = 1.5; <span class="comment">// impar nao multplica de 3</span></div>
+<div class="line"><span class="lineno">  235</span>    limitesDti[1][998] = 1; <span class="comment">// impar multipla de 3</span></div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    limitesDti[2][3] = 5;</div>
+<div class="line"><span class="lineno">  238</span>    limitesDti[2][5] = 6;</div>
+<div class="line"><span class="lineno">  239</span>    limitesDti[2][7] = 5;</div>
+<div class="line"><span class="lineno">  240</span>    limitesDti[2][9] = 1.5;</div>
+<div class="line"><span class="lineno">  241</span>    limitesDti[2][11] = 3.5;</div>
+<div class="line"><span class="lineno">  242</span>    limitesDti[2][13] = 3;</div>
+<div class="line"><span class="lineno">  243</span>    limitesDti[2][15] = 0.5;</div>
+<div class="line"><span class="lineno">  244</span>    limitesDti[2][17] = 2;</div>
+<div class="line"><span class="lineno">  245</span>    limitesDti[2][19] = 1.5;</div>
+<div class="line"><span class="lineno">  246</span>    limitesDti[2][21] = 0.5;</div>
+<div class="line"><span class="lineno">  247</span>    limitesDti[2][23] = 1.5;</div>
+<div class="line"><span class="lineno">  248</span>    limitesDti[2][25] = 2;</div>
+<div class="line"><span class="lineno">  249</span>    limitesDti[1][997] = 1.5; <span class="comment">// impar nao multplica de 3 maior q 25</span></div>
+<div class="line"><span class="lineno">  250</span>    limitesDti[1][998] = 1; <span class="comment">// impar multipla de 3 maior q 21</span></div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>    limitesDti[3][3] = 1;</div>
+<div class="line"><span class="lineno">  254</span>    limitesDti[3][5] = 4.5;</div>
+<div class="line"><span class="lineno">  255</span>    limitesDti[3][7] = 4;</div>
+<div class="line"><span class="lineno">  256</span>    limitesDti[3][9] = 1.5;</div>
+<div class="line"><span class="lineno">  257</span>    limitesDti[3][11] = 3;</div>
+<div class="line"><span class="lineno">  258</span>    limitesDti[3][13] = 2.5;</div>
+<div class="line"><span class="lineno">  259</span>    limitesDti[3][15] = 0.5;</div>
+<div class="line"><span class="lineno">  260</span>    limitesDti[3][17] = 1.5;</div>
+<div class="line"><span class="lineno">  261</span>    limitesDti[3][19] = 1.5;</div>
+<div class="line"><span class="lineno">  262</span>    limitesDti[3][21] = 0.5;</div>
+<div class="line"><span class="lineno">  263</span>    limitesDti[3][23] = 1.5;</div>
+<div class="line"><span class="lineno">  264</span>    limitesDti[3][25] = 1.5;</div>
+<div class="line"><span class="lineno">  265</span>    limitesDti[3][997] = 1.5; <span class="comment">// impar nao multplica de 3 maior q 25</span></div>
+<div class="line"><span class="lineno">  266</span>    limitesDti[3][998] = 0.5; <span class="comment">// impar multipla de 3 maior q 21</span></div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>    limitesDti[4][3] = 0.5;</div>
+<div class="line"><span class="lineno">  269</span>    limitesDti[4][5] = 2.5;</div>
+<div class="line"><span class="lineno">  270</span>    limitesDti[4][7] = 2;</div>
+<div class="line"><span class="lineno">  271</span>    limitesDti[4][9] = 1;</div>
+<div class="line"><span class="lineno">  272</span>    limitesDti[4][11] = 1.5;</div>
+<div class="line"><span class="lineno">  273</span>    limitesDti[4][13] = 1.5;</div>
+<div class="line"><span class="lineno">  274</span>    limitesDti[4][15] = 0.5;</div>
+<div class="line"><span class="lineno">  275</span>    limitesDti[4][17] = 1;</div>
+<div class="line"><span class="lineno">  276</span>    limitesDti[4][19] = 1;</div>
+<div class="line"><span class="lineno">  277</span>    limitesDti[4][21] = 0.5;</div>
+<div class="line"><span class="lineno">  278</span>    limitesDti[4][23] = 1;</div>
+<div class="line"><span class="lineno">  279</span>    limitesDti[4][25] = 1;</div>
+<div class="line"><span class="lineno">  280</span>    limitesDti[4][997] = 0.5; <span class="comment">// impar nao multplica de 3 maior q 25</span></div>
+<div class="line"><span class="lineno">  281</span>    limitesDti[4][998] = 0.5; <span class="comment">// impar multipla de 3 maior q 21</span></div>
+<div class="line"><span class="lineno">  282</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1238,124 +1246,124 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  622</span>{</div>
-<div class="line"><span class="lineno">  623</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;open(QFile::ReadOnly | QFile::Text)) {</div>
-<div class="line"><span class="lineno">  624</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;error() == QFile::OpenError) {</div>
-<div class="line"><span class="lineno">  625</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  626</span>        }</div>
-<div class="line"><span class="lineno">  627</span>        QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Erro&quot;</span>, <span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
-<div class="line"><span class="lineno">  628</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  629</span>    }</div>
-<div class="line"><span class="lineno">  630</span> </div>
-<div class="line"><span class="lineno">  631</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2; i++) {</div>
-<div class="line"><span class="lineno">  632</span>        <a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  633</span>    }</div>
-<div class="line"><span class="lineno">  634</span> </div>
-<div class="line"><span class="lineno">  635</span>    <span class="keywordtype">int</span> origem, destino;</div>
-<div class="line"><span class="lineno">  636</span>    <span class="keywordtype">double</span> corrente, dht;</div>
-<div class="line"><span class="lineno">  637</span>    <span class="keywordtype">int</span> cont = 0;</div>
-<div class="line"><span class="lineno">  638</span>    <span class="keywordtype">double</span> correnteEficaz;</div>
-<div class="line"><span class="lineno">  639</span> </div>
-<div class="line"><span class="lineno">  640</span>    <span class="keywordflow">while</span> (!<a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;atEnd()) {</div>
-<div class="line"><span class="lineno">  641</span>        QString line = <a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  642</span>        QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><span class="lineno">  643</span>        origem = indice.at(0).trimmed().toInt();</div>
-<div class="line"><span class="lineno">  644</span>        destino = indice.at(2).trimmed().toInt();</div>
-<div class="line"><span class="lineno">  645</span>        corrente = indice.at(5).trimmed().toDouble();</div>
-<div class="line"><span class="lineno">  646</span>        dht = indice.at(6).trimmed().toDouble();</div>
-<div class="line"><span class="lineno">  647</span>        correnteEficaz = corrente * sqrt(1 + pow((dht / 100), 2));</div>
-<div class="line"><span class="lineno">  648</span> </div>
-<div class="line"><span class="lineno">  649</span>        <span class="keywordflow">if</span> (origem &lt; destino) {</div>
-<div class="line"><span class="lineno">  650</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setOrigem(origem);</div>
-<div class="line"><span class="lineno">  651</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setDestino(destino);</div>
-<div class="line"><span class="lineno">  652</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setCorrente(corrente);</div>
-<div class="line"><span class="lineno">  653</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setDhtPercent(dht);</div>
-<div class="line"><span class="lineno">  654</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setCorrenteEficaz(correnteEficaz);</div>
-<div class="line"><span class="lineno">  655</span>            cont++;</div>
-<div class="line"><span class="lineno">  656</span>        }</div>
-<div class="line"><span class="lineno">  657</span>    }</div>
-<div class="line"><span class="lineno">  658</span> </div>
-<div class="line"><span class="lineno">  659</span>    <a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;close();</div>
-<div class="line"><span class="lineno">  660</span> </div>
-<div class="line"><span class="lineno">  661</span>    <span class="comment">// ...</span></div>
-<div class="line"><span class="lineno">  662</span> </div>
-<div class="line"><span class="lineno">  663</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;open(QFile::ReadOnly | QFile::Text)) {</div>
-<div class="line"><span class="lineno">  664</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;error() == QFile::OpenError) {</div>
-<div class="line"><span class="lineno">  665</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  666</span>        }</div>
-<div class="line"><span class="lineno">  667</span>        QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Erro&quot;</span>, <span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
-<div class="line"><span class="lineno">  668</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  669</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  630</span>{</div>
+<div class="line"><span class="lineno">  631</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;open(QFile::ReadOnly | QFile::Text)) {</div>
+<div class="line"><span class="lineno">  632</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;error() == QFile::OpenError) {</div>
+<div class="line"><span class="lineno">  633</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  634</span>        }</div>
+<div class="line"><span class="lineno">  635</span>        QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Erro&quot;</span>, <span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
+<div class="line"><span class="lineno">  636</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  637</span>    }</div>
+<div class="line"><span class="lineno">  638</span> </div>
+<div class="line"><span class="lineno">  639</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2; i++) {</div>
+<div class="line"><span class="lineno">  640</span>        <a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  641</span>    }</div>
+<div class="line"><span class="lineno">  642</span> </div>
+<div class="line"><span class="lineno">  643</span>    <span class="keywordtype">int</span> origem, destino;</div>
+<div class="line"><span class="lineno">  644</span>    <span class="keywordtype">double</span> corrente, dht;</div>
+<div class="line"><span class="lineno">  645</span>    <span class="keywordtype">int</span> cont = 0;</div>
+<div class="line"><span class="lineno">  646</span>    <span class="keywordtype">double</span> correnteEficaz;</div>
+<div class="line"><span class="lineno">  647</span> </div>
+<div class="line"><span class="lineno">  648</span>    <span class="keywordflow">while</span> (!<a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;atEnd()) {</div>
+<div class="line"><span class="lineno">  649</span>        QString line = <a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  650</span>        QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><span class="lineno">  651</span>        origem = indice.at(0).trimmed().toInt();</div>
+<div class="line"><span class="lineno">  652</span>        destino = indice.at(2).trimmed().toInt();</div>
+<div class="line"><span class="lineno">  653</span>        corrente = indice.at(5).trimmed().toDouble();</div>
+<div class="line"><span class="lineno">  654</span>        dht = indice.at(6).trimmed().toDouble();</div>
+<div class="line"><span class="lineno">  655</span>        correnteEficaz = corrente * sqrt(1 + pow((dht / 100), 2));</div>
+<div class="line"><span class="lineno">  656</span> </div>
+<div class="line"><span class="lineno">  657</span>        <span class="keywordflow">if</span> (origem &lt; destino) {</div>
+<div class="line"><span class="lineno">  658</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setOrigem(origem);</div>
+<div class="line"><span class="lineno">  659</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setDestino(destino);</div>
+<div class="line"><span class="lineno">  660</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setCorrente(corrente);</div>
+<div class="line"><span class="lineno">  661</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setDhtPercent(dht);</div>
+<div class="line"><span class="lineno">  662</span>            <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[cont].setCorrenteEficaz(correnteEficaz);</div>
+<div class="line"><span class="lineno">  663</span>            cont++;</div>
+<div class="line"><span class="lineno">  664</span>        }</div>
+<div class="line"><span class="lineno">  665</span>    }</div>
+<div class="line"><span class="lineno">  666</span> </div>
+<div class="line"><span class="lineno">  667</span>    <a class="code hl_variable" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a>-&gt;close();</div>
+<div class="line"><span class="lineno">  668</span> </div>
+<div class="line"><span class="lineno">  669</span>    <span class="comment">// ...</span></div>
 <div class="line"><span class="lineno">  670</span> </div>
-<div class="line"><span class="lineno">  671</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++) {</div>
-<div class="line"><span class="lineno">  672</span>        <a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  673</span>    }</div>
-<div class="line"><span class="lineno">  674</span> </div>
-<div class="line"><span class="lineno">  675</span>    <span class="keywordtype">int</span> numHarm;</div>
-<div class="line"><span class="lineno">  676</span>    <span class="keywordtype">double</span> magHarm;</div>
-<div class="line"><span class="lineno">  677</span>    <span class="keywordtype">double</span> percentHarm;</div>
+<div class="line"><span class="lineno">  671</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;open(QFile::ReadOnly | QFile::Text)) {</div>
+<div class="line"><span class="lineno">  672</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;error() == QFile::OpenError) {</div>
+<div class="line"><span class="lineno">  673</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  674</span>        }</div>
+<div class="line"><span class="lineno">  675</span>        QMessageBox::warning(<span class="keyword">this</span>, <span class="stringliteral">&quot;Erro&quot;</span>, <span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
+<div class="line"><span class="lineno">  676</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  677</span>    }</div>
 <div class="line"><span class="lineno">  678</span> </div>
-<div class="line"><span class="lineno">  679</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a>; i++) {</div>
-<div class="line"><span class="lineno">  680</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>;) {</div>
-<div class="line"><span class="lineno">  681</span>            QString line = <a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  682</span>            <span class="keywordflow">if</span> (line.trimmed().isEmpty()) {</div>
-<div class="line"><span class="lineno">  683</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  684</span>            }</div>
-<div class="line"><span class="lineno">  685</span>            QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><span class="lineno">  686</span>            numHarm = indice.at(0).trimmed().toInt();</div>
-<div class="line"><span class="lineno">  687</span>            origem = indice.at(1).trimmed().toInt();</div>
-<div class="line"><span class="lineno">  688</span>            destino = indice.at(2).trimmed().toInt();</div>
-<div class="line"><span class="lineno">  689</span>            magHarm = indice.at(4).trimmed().toDouble();</div>
-<div class="line"><span class="lineno">  690</span>            percentHarm = 100 * (magHarm / <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getCorrente());</div>
-<div class="line"><span class="lineno">  691</span>            <span class="keywordflow">if</span> (numHarm != 1 &amp;&amp; origem &lt; destino &amp;&amp; origem != 0 &amp;&amp; destino != 0) {</div>
-<div class="line"><span class="lineno">  692</span>                <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].setDti(numHarm, magHarm, percentHarm);</div>
-<div class="line"><span class="lineno">  693</span>                j++;</div>
-<div class="line"><span class="lineno">  694</span>            }</div>
-<div class="line"><span class="lineno">  695</span>        }</div>
-<div class="line"><span class="lineno">  696</span>    }</div>
-<div class="line"><span class="lineno">  697</span> </div>
-<div class="line"><span class="lineno">  698</span>    <a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;close();</div>
-<div class="line"><span class="lineno">  699</span> </div>
-<div class="line"><span class="lineno">  700</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;open(QFile::ReadOnly|QFile::Text)){</div>
-<div class="line"><span class="lineno">  701</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;error() == QFile::OpenError){</div>
-<div class="line"><span class="lineno">  702</span>            return  ;</div>
+<div class="line"><span class="lineno">  679</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++) {</div>
+<div class="line"><span class="lineno">  680</span>        <a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  681</span>    }</div>
+<div class="line"><span class="lineno">  682</span> </div>
+<div class="line"><span class="lineno">  683</span>    <span class="keywordtype">int</span> numHarm;</div>
+<div class="line"><span class="lineno">  684</span>    <span class="keywordtype">double</span> magHarm;</div>
+<div class="line"><span class="lineno">  685</span>    <span class="keywordtype">double</span> percentHarm;</div>
+<div class="line"><span class="lineno">  686</span> </div>
+<div class="line"><span class="lineno">  687</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_frame_barras.html#aed065716987ae6b168c6f34a5476407b">quantidadeDeComponentesHarm</a>; i++) {</div>
+<div class="line"><span class="lineno">  688</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>;) {</div>
+<div class="line"><span class="lineno">  689</span>            QString line = <a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  690</span>            <span class="keywordflow">if</span> (line.trimmed().isEmpty()) {</div>
+<div class="line"><span class="lineno">  691</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  692</span>            }</div>
+<div class="line"><span class="lineno">  693</span>            QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><span class="lineno">  694</span>            numHarm = indice.at(0).trimmed().toInt();</div>
+<div class="line"><span class="lineno">  695</span>            origem = indice.at(1).trimmed().toInt();</div>
+<div class="line"><span class="lineno">  696</span>            destino = indice.at(2).trimmed().toInt();</div>
+<div class="line"><span class="lineno">  697</span>            magHarm = indice.at(4).trimmed().toDouble();</div>
+<div class="line"><span class="lineno">  698</span>            percentHarm = 100 * (magHarm / <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getCorrente());</div>
+<div class="line"><span class="lineno">  699</span>            <span class="keywordflow">if</span> (numHarm != 1 &amp;&amp; origem &lt; destino &amp;&amp; origem != 0 &amp;&amp; destino != 0) {</div>
+<div class="line"><span class="lineno">  700</span>                <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].setDti(numHarm, magHarm, percentHarm);</div>
+<div class="line"><span class="lineno">  701</span>                j++;</div>
+<div class="line"><span class="lineno">  702</span>            }</div>
 <div class="line"><span class="lineno">  703</span>        }</div>
-<div class="line"><span class="lineno">  704</span>        QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erro&quot;</span>,<span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
-<div class="line"><span class="lineno">  705</span>        return  ;</div>
-<div class="line"><span class="lineno">  706</span>    }</div>
+<div class="line"><span class="lineno">  704</span>    }</div>
+<div class="line"><span class="lineno">  705</span> </div>
+<div class="line"><span class="lineno">  706</span>    <a class="code hl_variable" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a>-&gt;close();</div>
 <div class="line"><span class="lineno">  707</span> </div>
-<div class="line"><span class="lineno">  708</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; 9 ; i++){</div>
-<div class="line"><span class="lineno">  709</span>        <a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  710</span>    }</div>
-<div class="line"><span class="lineno">  711</span>    <span class="keywordtype">double</span> resistencia;</div>
-<div class="line"><span class="lineno">  712</span>    <span class="keywordtype">double</span> perdas;</div>
-<div class="line"><span class="lineno">  713</span>    <span class="keywordtype">double</span> perdasEficaz;</div>
-<div class="line"><span class="lineno">  714</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>; i++) {</div>
-<div class="line"><span class="lineno">  715</span>        QString line = <a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;readLine();</div>
-<div class="line"><span class="lineno">  716</span>        <span class="keywordflow">if</span> (line.trimmed().isEmpty()) { <span class="comment">// verificar se é uma linha vazia</span></div>
-<div class="line"><span class="lineno">  717</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  718</span>        }</div>
-<div class="line"><span class="lineno">  719</span>        QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><span class="lineno">  720</span>        origem = indice.at(0).trimmed().toInt();</div>
-<div class="line"><span class="lineno">  721</span>        destino = indice.at(1).trimmed().toInt();</div>
-<div class="line"><span class="lineno">  722</span>        <span class="keywordflow">if</span> (origem &lt; destino) {</div>
-<div class="line"><span class="lineno">  723</span>            resistencia = indice.at(3).trimmed().toDouble();</div>
-<div class="line"><span class="lineno">  724</span> </div>
-<div class="line"><span class="lineno">  725</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>; j++) {</div>
-<div class="line"><span class="lineno">  726</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getOrigem() == origem &amp;&amp; <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getDestino() == destino) {</div>
-<div class="line"><span class="lineno">  727</span>                    <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].setResistencia(resistencia);</div>
-<div class="line"><span class="lineno">  728</span>                    perdas = <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getCorrente() * resistencia;</div>
-<div class="line"><span class="lineno">  729</span>                    perdasEficaz = <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getCorrenteEficaz() * resistencia;</div>
-<div class="line"><span class="lineno">  730</span>                    <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].setPerdas(perdas);</div>
-<div class="line"><span class="lineno">  731</span>                    <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].setPerdasEficaz(perdasEficaz);</div>
-<div class="line"><span class="lineno">  732</span>                }</div>
-<div class="line"><span class="lineno">  733</span>            }</div>
-<div class="line"><span class="lineno">  734</span>        }</div>
-<div class="line"><span class="lineno">  735</span>    }</div>
-<div class="line"><span class="lineno">  736</span> </div>
-<div class="line"><span class="lineno">  737</span>    <a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;close();</div>
-<div class="line"><span class="lineno">  738</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  739</span>}</div>
+<div class="line"><span class="lineno">  708</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;open(QFile::ReadOnly|QFile::Text)){</div>
+<div class="line"><span class="lineno">  709</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;error() == QFile::OpenError){</div>
+<div class="line"><span class="lineno">  710</span>            return  ;</div>
+<div class="line"><span class="lineno">  711</span>        }</div>
+<div class="line"><span class="lineno">  712</span>        QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erro&quot;</span>,<span class="stringliteral">&quot;Erro ao abrir arquivo&quot;</span>);</div>
+<div class="line"><span class="lineno">  713</span>        return  ;</div>
+<div class="line"><span class="lineno">  714</span>    }</div>
+<div class="line"><span class="lineno">  715</span> </div>
+<div class="line"><span class="lineno">  716</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; 9 ; i++){</div>
+<div class="line"><span class="lineno">  717</span>        <a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  718</span>    }</div>
+<div class="line"><span class="lineno">  719</span>    <span class="keywordtype">double</span> resistencia;</div>
+<div class="line"><span class="lineno">  720</span>    <span class="keywordtype">double</span> perdas;</div>
+<div class="line"><span class="lineno">  721</span>    <span class="keywordtype">double</span> perdasEficaz;</div>
+<div class="line"><span class="lineno">  722</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>; i++) {</div>
+<div class="line"><span class="lineno">  723</span>        QString line = <a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;readLine();</div>
+<div class="line"><span class="lineno">  724</span>        <span class="keywordflow">if</span> (line.trimmed().isEmpty()) { <span class="comment">// verificar se é uma linha vazia</span></div>
+<div class="line"><span class="lineno">  725</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  726</span>        }</div>
+<div class="line"><span class="lineno">  727</span>        QStringList indice = line.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><span class="lineno">  728</span>        origem = indice.at(0).trimmed().toInt();</div>
+<div class="line"><span class="lineno">  729</span>        destino = indice.at(1).trimmed().toInt();</div>
+<div class="line"><span class="lineno">  730</span>        <span class="keywordflow">if</span> (origem &lt; destino) {</div>
+<div class="line"><span class="lineno">  731</span>            resistencia = indice.at(3).trimmed().toDouble();</div>
+<div class="line"><span class="lineno">  732</span> </div>
+<div class="line"><span class="lineno">  733</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a>; j++) {</div>
+<div class="line"><span class="lineno">  734</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getOrigem() == origem &amp;&amp; <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getDestino() == destino) {</div>
+<div class="line"><span class="lineno">  735</span>                    <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].setResistencia(resistencia);</div>
+<div class="line"><span class="lineno">  736</span>                    perdas = <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getCorrente() * resistencia;</div>
+<div class="line"><span class="lineno">  737</span>                    perdasEficaz = <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].getCorrenteEficaz() * resistencia;</div>
+<div class="line"><span class="lineno">  738</span>                    <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].setPerdas(perdas);</div>
+<div class="line"><span class="lineno">  739</span>                    <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[j].setPerdasEficaz(perdasEficaz);</div>
+<div class="line"><span class="lineno">  740</span>                }</div>
+<div class="line"><span class="lineno">  741</span>            }</div>
+<div class="line"><span class="lineno">  742</span>        }</div>
+<div class="line"><span class="lineno">  743</span>    }</div>
+<div class="line"><span class="lineno">  744</span> </div>
+<div class="line"><span class="lineno">  745</span>    <a class="code hl_variable" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a>-&gt;close();</div>
+<div class="line"><span class="lineno">  746</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  747</span>}</div>
 <div class="ttc" id="aclass_main_window_html_a59f508f7f42af1699ef6b265c3b99faa"><div class="ttname"><a href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a></div><div class="ttdeci">static QFile * arquivoLdat</div><div class="ttdef"><b>Definition:</b> mainwindow.h:88</div></div>
 <div class="ttc" id="aclass_main_window_html_a90c66ded8aee4fd59f22b9c4aabfcf23"><div class="ttname"><a href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a></div><div class="ttdeci">static QFile * arquivoIsoln</div><div class="ttdef"><b>Definition:</b> mainwindow.h:85</div></div>
 </div><!-- fragment -->
@@ -1375,27 +1383,27 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  585</span>                                      {</div>
-<div class="line"><span class="lineno">  586</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>; i++) {</div>
-<div class="line"><span class="lineno">  587</span>        <span class="keywordtype">int</span> pos = 0;</div>
-<div class="line"><span class="lineno">  588</span> </div>
-<div class="line"><span class="lineno">  589</span>        ui-&gt;tableBarras-&gt;setItem(pos++, i, <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getTensaoPu(), <span class="charliteral">&#39;f&#39;</span>, 5)));</div>
-<div class="line"><span class="lineno">  590</span>        ui-&gt;tableBarras-&gt;setItem(pos++, i, <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getTensaoNominalKv(), <span class="charliteral">&#39;f&#39;</span>, 5)));</div>
-<div class="line"><span class="lineno">  591</span>        ui-&gt;tableBarras-&gt;setItem(pos++, i, <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getThdvPercent(), <span class="charliteral">&#39;f&#39;</span>, 5)));</div>
-<div class="line"><span class="lineno">  592</span> </div>
-<div class="line"><span class="lineno">  593</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 3; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a>; j += 2) {</div>
-<div class="line"><span class="lineno">  594</span>            QTableWidgetItem* dtiAbsolut = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getDti().find(j)-&gt;second.first.first, <span class="charliteral">&#39;e&#39;</span>, 5));</div>
-<div class="line"><span class="lineno">  595</span>            ui-&gt;tableBarras-&gt;setItem(pos++, i, dtiAbsolut);</div>
-<div class="line"><span class="lineno">  596</span>        }</div>
-<div class="line"><span class="lineno">  597</span> </div>
-<div class="line"><span class="lineno">  598</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 3; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a>; j += 2) {</div>
-<div class="line"><span class="lineno">  599</span>            QTableWidgetItem* dtiRelative = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getDti().find(j)-&gt;second.first.second, <span class="charliteral">&#39;f&#39;</span>, 5));</div>
-<div class="line"><span class="lineno">  600</span>            ui-&gt;tableBarras-&gt;setItem(pos++, i, dtiRelative);</div>
-<div class="line"><span class="lineno">  601</span>        }</div>
-<div class="line"><span class="lineno">  602</span> </div>
-<div class="line"><span class="lineno">  603</span>        ui-&gt;tableBarras-&gt;setItem(pos, i, <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getTensaoEficaz(), <span class="charliteral">&#39;f&#39;</span>, 5)));</div>
-<div class="line"><span class="lineno">  604</span>    }</div>
-<div class="line"><span class="lineno">  605</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  593</span>                                      {</div>
+<div class="line"><span class="lineno">  594</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_frame_tensoes.html#ad4945c4c046ecf3c8deb239a4541e110">FrameTensoes::numeroDeBarras</a>; i++) {</div>
+<div class="line"><span class="lineno">  595</span>        <span class="keywordtype">int</span> pos = 0;</div>
+<div class="line"><span class="lineno">  596</span> </div>
+<div class="line"><span class="lineno">  597</span>        ui-&gt;tableBarras-&gt;setItem(pos++, i, <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getTensaoPu(), <span class="charliteral">&#39;f&#39;</span>, 5)));</div>
+<div class="line"><span class="lineno">  598</span>        ui-&gt;tableBarras-&gt;setItem(pos++, i, <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getTensaoNominalKv(), <span class="charliteral">&#39;f&#39;</span>, 5)));</div>
+<div class="line"><span class="lineno">  599</span>        ui-&gt;tableBarras-&gt;setItem(pos++, i, <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getThdvPercent(), <span class="charliteral">&#39;f&#39;</span>, 5)));</div>
+<div class="line"><span class="lineno">  600</span> </div>
+<div class="line"><span class="lineno">  601</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 3; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a>; j += 2) {</div>
+<div class="line"><span class="lineno">  602</span>            QTableWidgetItem* dtiAbsolut = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getDti().find(j)-&gt;second.first.first, <span class="charliteral">&#39;e&#39;</span>, 5));</div>
+<div class="line"><span class="lineno">  603</span>            ui-&gt;tableBarras-&gt;setItem(pos++, i, dtiAbsolut);</div>
+<div class="line"><span class="lineno">  604</span>        }</div>
+<div class="line"><span class="lineno">  605</span> </div>
+<div class="line"><span class="lineno">  606</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 3; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a>; j += 2) {</div>
+<div class="line"><span class="lineno">  607</span>            QTableWidgetItem* dtiRelative = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getDti().find(j)-&gt;second.first.second, <span class="charliteral">&#39;f&#39;</span>, 5));</div>
+<div class="line"><span class="lineno">  608</span>            ui-&gt;tableBarras-&gt;setItem(pos++, i, dtiRelative);</div>
+<div class="line"><span class="lineno">  609</span>        }</div>
+<div class="line"><span class="lineno">  610</span> </div>
+<div class="line"><span class="lineno">  611</span>        ui-&gt;tableBarras-&gt;setItem(pos, i, <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a1f75ede62d028f32a2671442adb85162">barras</a>[i].getTensaoEficaz(), <span class="charliteral">&#39;f&#39;</span>, 5)));</div>
+<div class="line"><span class="lineno">  612</span>    }</div>
+<div class="line"><span class="lineno">  613</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1413,40 +1421,40 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  746</span>                                     {</div>
-<div class="line"><span class="lineno">  747</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a> ; i++){</div>
-<div class="line"><span class="lineno">  748</span>        QTableWidgetItem* correntePu = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getCorrente(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
-<div class="line"><span class="lineno">  749</span>        QTableWidgetItem* dht = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getDhtPercent(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
-<div class="line"><span class="lineno">  750</span>        ui-&gt;tableLinhas-&gt;setItem(0,i,correntePu);</div>
-<div class="line"><span class="lineno">  751</span>        ui-&gt;tableLinhas-&gt;setItem(1,i,dht);</div>
-<div class="line"><span class="lineno">  752</span>        <span class="keywordtype">int</span> pos =2;</div>
-<div class="line"><span class="lineno">  753</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 3 ; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a> ; j+=2){</div>
-<div class="line"><span class="lineno">  754</span>            QTableWidgetItem* dtiAbsolut = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getDti().find(j)-&gt;second.first,<span class="charliteral">&#39;e&#39;</span>,5));</div>
-<div class="line"><span class="lineno">  755</span>            ui-&gt;tableLinhas-&gt;setItem(pos,i,dtiAbsolut);</div>
-<div class="line"><span class="lineno">  756</span>            pos++;</div>
-<div class="line"><span class="lineno">  757</span>        }</div>
-<div class="line"><span class="lineno">  758</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 3 ; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a> ; j+=2){</div>
-<div class="line"><span class="lineno">  759</span>            QTableWidgetItem* dtiRelative = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getDti().find(j)-&gt;second.second,<span class="charliteral">&#39;f&#39;</span>,5));</div>
-<div class="line"><span class="lineno">  760</span>            ui-&gt;tableLinhas-&gt;setItem(pos,i,dtiRelative);</div>
-<div class="line"><span class="lineno">  761</span>            pos++;</div>
-<div class="line"><span class="lineno">  762</span>        }</div>
-<div class="line"><span class="lineno">  763</span>        QTableWidgetItem* correnteEficaz = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getCorrenteEficaz(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
-<div class="line"><span class="lineno">  764</span>        ui-&gt;tableLinhas-&gt;setItem(pos,i,correnteEficaz);</div>
-<div class="line"><span class="lineno">  765</span>        pos++;</div>
-<div class="line"><span class="lineno">  766</span> </div>
-<div class="line"><span class="lineno">  767</span>        QTableWidgetItem* resistencia = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getResistencia(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
-<div class="line"><span class="lineno">  768</span>        ui-&gt;tableLinhas-&gt;setItem(pos,i,resistencia);</div>
-<div class="line"><span class="lineno">  769</span>        pos++;</div>
-<div class="line"><span class="lineno">  770</span> </div>
-<div class="line"><span class="lineno">  771</span>        QTableWidgetItem* perdas = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getPerdas(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
-<div class="line"><span class="lineno">  772</span>        ui-&gt;tableLinhas-&gt;setItem(pos,i,perdas);</div>
+<div class="fragment"><div class="line"><span class="lineno">  754</span>                                     {</div>
+<div class="line"><span class="lineno">  755</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">numeroDeLinhas</a> ; i++){</div>
+<div class="line"><span class="lineno">  756</span>        QTableWidgetItem* correntePu = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getCorrente(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
+<div class="line"><span class="lineno">  757</span>        QTableWidgetItem* dht = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getDhtPercent(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
+<div class="line"><span class="lineno">  758</span>        ui-&gt;tableLinhas-&gt;setItem(0,i,correntePu);</div>
+<div class="line"><span class="lineno">  759</span>        ui-&gt;tableLinhas-&gt;setItem(1,i,dht);</div>
+<div class="line"><span class="lineno">  760</span>        <span class="keywordtype">int</span> pos =2;</div>
+<div class="line"><span class="lineno">  761</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 3 ; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a> ; j+=2){</div>
+<div class="line"><span class="lineno">  762</span>            QTableWidgetItem* dtiAbsolut = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getDti().find(j)-&gt;second.first,<span class="charliteral">&#39;e&#39;</span>,5));</div>
+<div class="line"><span class="lineno">  763</span>            ui-&gt;tableLinhas-&gt;setItem(pos,i,dtiAbsolut);</div>
+<div class="line"><span class="lineno">  764</span>            pos++;</div>
+<div class="line"><span class="lineno">  765</span>        }</div>
+<div class="line"><span class="lineno">  766</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 3 ; j &lt;= <a class="code hl_variable" href="class_frame_barras.html#a3a8e37c7723b26bd896524de2ab2f776">indiceHarmMax</a> ; j+=2){</div>
+<div class="line"><span class="lineno">  767</span>            QTableWidgetItem* dtiRelative = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getDti().find(j)-&gt;second.second,<span class="charliteral">&#39;f&#39;</span>,5));</div>
+<div class="line"><span class="lineno">  768</span>            ui-&gt;tableLinhas-&gt;setItem(pos,i,dtiRelative);</div>
+<div class="line"><span class="lineno">  769</span>            pos++;</div>
+<div class="line"><span class="lineno">  770</span>        }</div>
+<div class="line"><span class="lineno">  771</span>        QTableWidgetItem* correnteEficaz = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getCorrenteEficaz(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
+<div class="line"><span class="lineno">  772</span>        ui-&gt;tableLinhas-&gt;setItem(pos,i,correnteEficaz);</div>
 <div class="line"><span class="lineno">  773</span>        pos++;</div>
 <div class="line"><span class="lineno">  774</span> </div>
-<div class="line"><span class="lineno">  775</span>        QTableWidgetItem* perdasEficaz = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getPerdasEficaz(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
-<div class="line"><span class="lineno">  776</span>        ui-&gt;tableLinhas-&gt;setItem(pos,i,perdasEficaz);</div>
+<div class="line"><span class="lineno">  775</span>        QTableWidgetItem* resistencia = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getResistencia(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
+<div class="line"><span class="lineno">  776</span>        ui-&gt;tableLinhas-&gt;setItem(pos,i,resistencia);</div>
 <div class="line"><span class="lineno">  777</span>        pos++;</div>
-<div class="line"><span class="lineno">  778</span>    }</div>
-<div class="line"><span class="lineno">  779</span>}</div>
+<div class="line"><span class="lineno">  778</span> </div>
+<div class="line"><span class="lineno">  779</span>        QTableWidgetItem* perdas = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getPerdas(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
+<div class="line"><span class="lineno">  780</span>        ui-&gt;tableLinhas-&gt;setItem(pos,i,perdas);</div>
+<div class="line"><span class="lineno">  781</span>        pos++;</div>
+<div class="line"><span class="lineno">  782</span> </div>
+<div class="line"><span class="lineno">  783</span>        QTableWidgetItem* perdasEficaz = <span class="keyword">new</span> QTableWidgetItem(QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">linhas</a>[i].getPerdasEficaz(),<span class="charliteral">&#39;f&#39;</span>,5));</div>
+<div class="line"><span class="lineno">  784</span>        ui-&gt;tableLinhas-&gt;setItem(pos,i,perdasEficaz);</div>
+<div class="line"><span class="lineno">  785</span>        pos++;</div>
+<div class="line"><span class="lineno">  786</span>    }</div>
+<div class="line"><span class="lineno">  787</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

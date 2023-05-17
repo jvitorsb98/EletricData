@@ -27,6 +27,7 @@ public:
     static bool ditPercent;
     static bool tensaoEficaz;
     static int indexComboBox;
+    static int indexComboBoxEnvio;
     static QStringList indiceBarrasEscolhidas;
     void inserindoQssFiltrosBarra();
     void inserindoQssCheckBox();

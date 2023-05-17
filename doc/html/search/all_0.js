@@ -9,5 +9,6 @@ var searchData=
   ['arquivothdi_6',['arquivoThdi',['../class_main_window.html#a5d94a93f0dc947657172518690e0f67f',1,'MainWindow']]],
   ['arquivothdv_7',['arquivoThdv',['../class_main_window.html#ac80702759127a32bdd29120aa7cc8312',1,'MainWindow']]],
   ['arquivovsoln_8',['arquivoVsoln',['../class_main_window.html#a360c705620fdeb0bd2731669cdc2557d',1,'MainWindow']]],
-  ['atualizarstatus_9',['atualizarStatus',['../class_main_window.html#a73b4135ba794d7fca83d77e80953d73f',1,'MainWindow']]]
+  ['atualizarstatus_9',['atualizarStatus',['../class_main_window.html#a73b4135ba794d7fca83d77e80953d73f',1,'MainWindow']]],
+  ['atualizavariaveis_10',['atualizaVariaveis',['../class_filtro_linha.html#a43dfa9216c33f3eeabc2247006a9113a',1,'FiltroLinha::atualizaVariaveis()'],['../class_filtros_barra.html#a3878fc31b2a97729932fbedadac67a25',1,'FiltrosBarra::atualizaVariaveis()']]]
 ];

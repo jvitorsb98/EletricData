@@ -26,6 +26,8 @@ public:
     static bool perdasEficaz;
     static int indexComboBoxOrigem;
     static int indexComboBoxDestino;
+    static int indexComboBoxOrigemEnvio;
+    static int indexComboBoxDestinoEnvio;
 
     void inserindoQssFiltrosLinha();
     void inserindoQssCheckBox();
@@ -37,6 +39,14 @@ public:
     void inicializandoFrame();
     static QStringList indiceOrigensEscolhidas;
     static QStringList indiceDestinosEscolhidos;
+
+    void atualizaVariaveis();
+    void filtrarLinhasTabela();
+    void filtrarColunasTabela();
+    void filtrarColTod1Tod2();
+    void filtrarColTod1Ind2();
+    void filtrarColInd1Tod2();
+    void filtrarColInd1Ind2();
 
 
 
