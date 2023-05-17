@@ -26,7 +26,6 @@ public:
     ~FrameBarras();
     int buscaIndiceHarmMax();
     inline int buscaQtdHarm(int );
-    int quantidadeDeBarras();
     static int indexTab;
     static int indiceHarmMax;
     static int numeroDeLinhas;
@@ -66,8 +65,6 @@ public:
 
 
     void insereBackgroundNasPoluidoras();
-    void atualizarRowBarras();
-    void atualizarColumnBarras();
     void verificaAvanco();
 
 private slots:
@@ -75,7 +72,7 @@ private slots:
 
     void on_btnFiltrar_clicked();
 
-    void on_tabLinhas_currentChanged(int index);
+    inline void on_tabLinhas_currentChanged(int index);
 
     void on_btnVoltar_clicked();
 

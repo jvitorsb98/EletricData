@@ -1,8 +1,9 @@
 /**
- * @class MainWindow
+ * @class FrameTensoes
  * @brief Janela responsável pela aquisição dos dados de tensão nominal do sistema elétrico
  * @reentrant Essa janela foi construida com 1 frame que se posiciona no mesmo local do frame responsável por receber os arquivos no MainWindow,
  * nele há um QTableWidget para inserção dos valores das tensões, seja por inserção manual ou para importar um arquivo com esses dados. Além de botões de salva, avançar e voltar.
+ * @author João Vitor N. Ramos
 */
 
 #include "frametensoes.h"
@@ -397,22 +398,22 @@ void FrameTensoes::on_btnAvancar_clicked()
             MainWindow::arquivoTensoes->flush();
             MainWindow::arquivoTensoes->close();
         }
-
-        for(int i = 0 ; i < numeroDeBarras ; i++){
-            tensoesNominais.push_back(ui->tableTensoes->item(i,1)->text().toDouble());
-        }
-
-        MainWindow::frameAtual++;
-        MainWindow::atualizarStatus(frameMain);
-        this->hide();
-
-
-        //Declara e instancia o frame da nova janela
-        FrameBarras *frameBarras = new FrameBarras(this,frameMain,ui);
-        frameBarras->setParent(this->parentWidget());
-        frameBarras->setGeometry(224,0,800,720);
-        frameBarras->show();
     }
+
+    for(int i = 0 ; i < numeroDeBarras ; i++){
+        tensoesNominais.push_back(ui->tableTensoes->item(i,1)->text().toDouble());
+    }
+
+    MainWindow::frameAtual++;
+    MainWindow::atualizarStatus(frameMain);
+    this->hide();
+
+
+    //Declara e instancia o frame da nova janela
+    FrameBarras *frameBarras = new FrameBarras(this,frameMain,ui);
+    frameBarras->setParent(this->parentWidget());
+    frameBarras->setGeometry(224,0,800,720);
+    frameBarras->show();
 
 }
 

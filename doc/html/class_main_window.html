@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentação EletricData: Referência da Classe MainWindow</title>
+<title>EletricData: Referência da Classe MainWindow</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentação EletricData<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">EletricData<span id="projectnumber">&#160;1.0.0</span>
    </div>
   </td>
  </tr>
@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Janela Principal do Programa.  
+<p>Janela Principal do Programa @reentrant Essa janela foi construida com 2 frames, um com o intuito de funcionar como uma barra de status do andamento da aplicação(tendo 4 labels como sinalizadores) e o outro possui componentes reponsáveis por receber endereço de arquivos que serão utilizados nos proximos frames para trataemnto de dados.  
  <a href="class_main_window.html#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
@@ -96,7 +96,7 @@ Membros Públicos</h2></td></tr>
 <tr class="memitem:a54b8217b621989965a04d5e1e66418e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a54b8217b621989965a04d5e1e66418e3">setStatusDePreenchimento</a> (int posicao, bool status)</td></tr>
 <tr class="separator:a54b8217b621989965a04d5e1e66418e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">MainWindow::MainWindow</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Construtor da classe <a class="el" href="class_main_window.html" title="Janela Principal do Programa.">MainWindow</a></p>
+<tr><td colspan="2"><div class="groupText"><p>Construtor da classe <a class="el" href="class_main_window.html" title="Janela Principal do Programa @reentrant Essa janela foi construida com 2 frames, um com o intuito de ...">MainWindow</a></p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">parent</td><td>(Parâmetro do tipo QWidget que indica a interface pai da classe atual) </td></tr>
@@ -107,7 +107,7 @@ Membros Públicos</h2></td></tr>
 <tr class="memitem:a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">MainWindow::~MainWindow</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Destrutor da classe <a class="el" href="class_main_window.html" title="Janela Principal do Programa.">MainWindow</a> </p>
+<tr><td colspan="2"><div class="groupText"><p>Destrutor da classe <a class="el" href="class_main_window.html" title="Janela Principal do Programa @reentrant Essa janela foi construida com 2 frames, um com o intuito de ...">MainWindow</a> </p>
 </div></td></tr>
 <tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
 <tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,8 +115,8 @@ Membros Públicos</h2></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Método responsável por chamar métodos que irão inserir Qss na interface do frame</p>
 <dl class="section return"><dt>Retorna</dt><dd>void </dd></dl>
 </div></td></tr>
-<tr class="memitem:af85938ede7a46628893f7c3df6c853a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af85938ede7a46628893f7c3df6c853a3">insereCssMainWindow</a> ()</td></tr>
-<tr class="separator:af85938ede7a46628893f7c3df6c853a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3dc1abe946527d5d820b51212eae38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9d3dc1abe946527d5d820b51212eae38">insereQssMainWindow</a> ()</td></tr>
+<tr class="separator:a9d3dc1abe946527d5d820b51212eae38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">MainWindow::insereIcon</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Método responsável por inserir o Icon do programa, diretamente do arquivo de recursos, além de inserir o nome do programa</p>
 <dl class="section return"><dt>Retorna</dt><dd>void </dd></dl>
@@ -203,6 +203,7 @@ Atributos Estáticos Públicos</h2></td></tr>
 <tr class="memitem:a59f508f7f42af1699ef6b265c3b99faa"><td class="memItemLeft" align="right" valign="top">static QFile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">arquivoLdat</a> = new QFile()</td></tr>
 <tr class="separator:a59f508f7f42af1699ef6b265c3b99faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeff10ffbaa37c5f770f934f85cbab645"><td class="memItemLeft" align="right" valign="top">static QFile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aeff10ffbaa37c5f770f934f85cbab645">arquivoTensoes</a> = new QFile()</td></tr>
+<tr class="memdesc:aeff10ffbaa37c5f770f934f85cbab645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variável estática responsável por apontar para o arquivo que armazenará os valores das tensões nominais das barras do sistema elétrico.  <br /></td></tr>
 <tr class="separator:aeff10ffbaa37c5f770f934f85cbab645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9510ded4a3817b7a3b0b2da822fdd0f4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9510ded4a3817b7a3b0b2da822fdd0f4">frameAtual</a> =0</td></tr>
 <tr class="memdesc:a9510ded4a3817b7a3b0b2da822fdd0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">//Inicializando a variável estática que identifica em que frame a aplicação está rodando. Seu valor inicial é 0. Sua classificação de armazenamento foi definida como static pela necessidade dessa variável ser acessada e seu valor modificado ao longo de outros frames.  <br /></td></tr>
@@ -216,8 +217,8 @@ Atributos Estáticos Públicos</h2></td></tr>
 <tr class="separator:a55f79f031a5cabd9821032147812938c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Janela Principal do Programa. </p>
-<dl class="section author"><dt>Autor</dt><dd>João Vitor N. Ramos @reentrant Essa janela foi construida com 2 frames, um com o intuito de funcionar como uma barra de status do andamento da aplicação(tendo 4 labels como sinalizadores) e o outro possui componentes reponsáveis por receber endereço de arquivos que serão utilizados nos proximos frames para trataemnto de dados. </dd></dl>
+<div class="textblock"><p>Janela Principal do Programa @reentrant Essa janela foi construida com 2 frames, um com o intuito de funcionar como uma barra de status do andamento da aplicação(tendo 4 labels como sinalizadores) e o outro possui componentes reponsáveis por receber endereço de arquivos que serão utilizados nos proximos frames para trataemnto de dados. </p>
+<dl class="section author"><dt>Autor</dt><dd>João Vitor N. Ramos </dd></dl>
 </div><h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&#160;</a></span>MainWindow()</h2>
@@ -391,46 +392,9 @@ Atributos Estáticos Públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><span class="lineno">   74</span>                                {</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_function" href="class_main_window.html#af85938ede7a46628893f7c3df6c853a3">insereCssMainWindow</a>();</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_function" href="class_main_window.html#a9d3dc1abe946527d5d820b51212eae38">insereQssMainWindow</a>();</div>
 <div class="line"><span class="lineno">   76</span>}</div>
-<div class="ttc" id="aclass_main_window_html_af85938ede7a46628893f7c3df6c853a3"><div class="ttname"><a href="class_main_window.html#af85938ede7a46628893f7c3df6c853a3">MainWindow::insereCssMainWindow</a></div><div class="ttdeci">void insereCssMainWindow()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:83</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="af85938ede7a46628893f7c3df6c853a3" name="af85938ede7a46628893f7c3df6c853a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af85938ede7a46628893f7c3df6c853a3">&#9670;&#160;</a></span>insereCssMainWindow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::insereCssMainWindow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   83</span>                                    {</div>
-<div class="line"><span class="lineno">   84</span>    <a class="code hl_function" href="class_main_window.html#a0dbae32601b13d64df1fc3da03d34728">insereIcon</a>();</div>
-<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="class_main_window.html#affd6202e4e294cb36cce3c347e56c3f0">insereQssBarraDeStatus</a>();</div>
-<div class="line"><span class="lineno">   86</span>    <a class="code hl_function" href="class_main_window.html#a2d39ddc9e60b7d19abe4d26667d90d92">insereQssTitulosLineEdit</a>();</div>
-<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="class_main_window.html#a11102302c1d4c6777ad7c730591914f0">insereQssLineEdit</a>();</div>
-<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="class_main_window.html#a57eec5aff0b946ef9e1c3426a37fa481">insereQssPlaceHolderLineEdit</a>();</div>
-<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="class_main_window.html#ac4b3376aecf795c377e3e34f0687135e">insereQssBtnArquivos</a>();</div>
-<div class="line"><span class="lineno">   90</span>    <a class="code hl_function" href="class_main_window.html#aac9c9a1de10e50296032feaa465872c6">insereQssBtnAvancar</a>();</div>
-<div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="class_main_window.html#aead54b018ef4bb186725a01a31c63ca2">insereQssBtnLixeira</a>();</div>
-<div class="line"><span class="lineno">   92</span>    <a class="code hl_function" href="class_main_window.html#abb61c5da1d41c36e94e8ff199c0e3593">insereQssLblVerifica</a>();</div>
-<div class="line"><span class="lineno">   93</span>}</div>
-<div class="ttc" id="aclass_main_window_html_a0dbae32601b13d64df1fc3da03d34728"><div class="ttname"><a href="class_main_window.html#a0dbae32601b13d64df1fc3da03d34728">MainWindow::insereIcon</a></div><div class="ttdeci">void insereIcon()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:100</div></div>
-<div class="ttc" id="aclass_main_window_html_a11102302c1d4c6777ad7c730591914f0"><div class="ttname"><a href="class_main_window.html#a11102302c1d4c6777ad7c730591914f0">MainWindow::insereQssLineEdit</a></div><div class="ttdeci">void insereQssLineEdit()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:141</div></div>
-<div class="ttc" id="aclass_main_window_html_a2d39ddc9e60b7d19abe4d26667d90d92"><div class="ttname"><a href="class_main_window.html#a2d39ddc9e60b7d19abe4d26667d90d92">MainWindow::insereQssTitulosLineEdit</a></div><div class="ttdeci">void insereQssTitulosLineEdit()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:125</div></div>
-<div class="ttc" id="aclass_main_window_html_a57eec5aff0b946ef9e1c3426a37fa481"><div class="ttname"><a href="class_main_window.html#a57eec5aff0b946ef9e1c3426a37fa481">MainWindow::insereQssPlaceHolderLineEdit</a></div><div class="ttdeci">void insereQssPlaceHolderLineEdit()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:161</div></div>
-<div class="ttc" id="aclass_main_window_html_aac9c9a1de10e50296032feaa465872c6"><div class="ttname"><a href="class_main_window.html#aac9c9a1de10e50296032feaa465872c6">MainWindow::insereQssBtnAvancar</a></div><div class="ttdeci">void insereQssBtnAvancar()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:194</div></div>
-<div class="ttc" id="aclass_main_window_html_abb61c5da1d41c36e94e8ff199c0e3593"><div class="ttname"><a href="class_main_window.html#abb61c5da1d41c36e94e8ff199c0e3593">MainWindow::insereQssLblVerifica</a></div><div class="ttdeci">void insereQssLblVerifica()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:240</div></div>
-<div class="ttc" id="aclass_main_window_html_ac4b3376aecf795c377e3e34f0687135e"><div class="ttname"><a href="class_main_window.html#ac4b3376aecf795c377e3e34f0687135e">MainWindow::insereQssBtnArquivos</a></div><div class="ttdeci">void insereQssBtnArquivos()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:176</div></div>
-<div class="ttc" id="aclass_main_window_html_aead54b018ef4bb186725a01a31c63ca2"><div class="ttname"><a href="class_main_window.html#aead54b018ef4bb186725a01a31c63ca2">MainWindow::insereQssBtnLixeira</a></div><div class="ttdeci">void insereQssBtnLixeira()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:210</div></div>
-<div class="ttc" id="aclass_main_window_html_affd6202e4e294cb36cce3c347e56c3f0"><div class="ttname"><a href="class_main_window.html#affd6202e4e294cb36cce3c347e56c3f0">MainWindow::insereQssBarraDeStatus</a></div><div class="ttdeci">void insereQssBarraDeStatus()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:110</div></div>
+<div class="ttc" id="aclass_main_window_html_a9d3dc1abe946527d5d820b51212eae38"><div class="ttname"><a href="class_main_window.html#a9d3dc1abe946527d5d820b51212eae38">MainWindow::insereQssMainWindow</a></div><div class="ttdeci">void insereQssMainWindow()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:83</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -630,6 +594,43 @@ Atributos Estáticos Públicos</h2></td></tr>
 <div class="line"><span class="lineno">  153</span>    ui-&gt;lineEditLdat-&gt;setEnabled(<span class="keyword">false</span>);    <span class="comment">//Desativa alteração no lineEditLdat para que só possa ser alterado pela inserção de texto no botão buscar</span></div>
 <div class="line"><span class="lineno">  154</span>}</div>
 <div class="ttc" id="aclass_style_html_a422d75b8dcf55d91ddb986df588e8a78"><div class="ttname"><a href="class_style.html#a422d75b8dcf55d91ddb986df588e8a78">Style::cssLineEdit</a></div><div class="ttdeci">QString cssLineEdit</div><div class="ttdef"><b>Definition:</b> style.h:32</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9d3dc1abe946527d5d820b51212eae38" name="a9d3dc1abe946527d5d820b51212eae38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3dc1abe946527d5d820b51212eae38">&#9670;&#160;</a></span>insereQssMainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::insereQssMainWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   83</span>                                    {</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_function" href="class_main_window.html#a0dbae32601b13d64df1fc3da03d34728">insereIcon</a>();</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="class_main_window.html#affd6202e4e294cb36cce3c347e56c3f0">insereQssBarraDeStatus</a>();</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_function" href="class_main_window.html#a2d39ddc9e60b7d19abe4d26667d90d92">insereQssTitulosLineEdit</a>();</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="class_main_window.html#a11102302c1d4c6777ad7c730591914f0">insereQssLineEdit</a>();</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="class_main_window.html#a57eec5aff0b946ef9e1c3426a37fa481">insereQssPlaceHolderLineEdit</a>();</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="class_main_window.html#ac4b3376aecf795c377e3e34f0687135e">insereQssBtnArquivos</a>();</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_function" href="class_main_window.html#aac9c9a1de10e50296032feaa465872c6">insereQssBtnAvancar</a>();</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="class_main_window.html#aead54b018ef4bb186725a01a31c63ca2">insereQssBtnLixeira</a>();</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_function" href="class_main_window.html#abb61c5da1d41c36e94e8ff199c0e3593">insereQssLblVerifica</a>();</div>
+<div class="line"><span class="lineno">   93</span>}</div>
+<div class="ttc" id="aclass_main_window_html_a0dbae32601b13d64df1fc3da03d34728"><div class="ttname"><a href="class_main_window.html#a0dbae32601b13d64df1fc3da03d34728">MainWindow::insereIcon</a></div><div class="ttdeci">void insereIcon()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:100</div></div>
+<div class="ttc" id="aclass_main_window_html_a11102302c1d4c6777ad7c730591914f0"><div class="ttname"><a href="class_main_window.html#a11102302c1d4c6777ad7c730591914f0">MainWindow::insereQssLineEdit</a></div><div class="ttdeci">void insereQssLineEdit()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:141</div></div>
+<div class="ttc" id="aclass_main_window_html_a2d39ddc9e60b7d19abe4d26667d90d92"><div class="ttname"><a href="class_main_window.html#a2d39ddc9e60b7d19abe4d26667d90d92">MainWindow::insereQssTitulosLineEdit</a></div><div class="ttdeci">void insereQssTitulosLineEdit()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:125</div></div>
+<div class="ttc" id="aclass_main_window_html_a57eec5aff0b946ef9e1c3426a37fa481"><div class="ttname"><a href="class_main_window.html#a57eec5aff0b946ef9e1c3426a37fa481">MainWindow::insereQssPlaceHolderLineEdit</a></div><div class="ttdeci">void insereQssPlaceHolderLineEdit()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:161</div></div>
+<div class="ttc" id="aclass_main_window_html_aac9c9a1de10e50296032feaa465872c6"><div class="ttname"><a href="class_main_window.html#aac9c9a1de10e50296032feaa465872c6">MainWindow::insereQssBtnAvancar</a></div><div class="ttdeci">void insereQssBtnAvancar()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:194</div></div>
+<div class="ttc" id="aclass_main_window_html_abb61c5da1d41c36e94e8ff199c0e3593"><div class="ttname"><a href="class_main_window.html#abb61c5da1d41c36e94e8ff199c0e3593">MainWindow::insereQssLblVerifica</a></div><div class="ttdeci">void insereQssLblVerifica()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:240</div></div>
+<div class="ttc" id="aclass_main_window_html_ac4b3376aecf795c377e3e34f0687135e"><div class="ttname"><a href="class_main_window.html#ac4b3376aecf795c377e3e34f0687135e">MainWindow::insereQssBtnArquivos</a></div><div class="ttdeci">void insereQssBtnArquivos()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:176</div></div>
+<div class="ttc" id="aclass_main_window_html_aead54b018ef4bb186725a01a31c63ca2"><div class="ttname"><a href="class_main_window.html#aead54b018ef4bb186725a01a31c63ca2">MainWindow::insereQssBtnLixeira</a></div><div class="ttdeci">void insereQssBtnLixeira()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:210</div></div>
+<div class="ttc" id="aclass_main_window_html_affd6202e4e294cb36cce3c347e56c3f0"><div class="ttname"><a href="class_main_window.html#affd6202e4e294cb36cce3c347e56c3f0">MainWindow::insereQssBarraDeStatus</a></div><div class="ttdeci">void insereQssBarraDeStatus()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:110</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -850,6 +851,9 @@ Atributos Estáticos Públicos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Variável estática responsável por apontar para o arquivo que armazenará os valores das tensões nominais das barras do sistema elétrico. </p>
+<p>@variable QFile* <a class="el" href="class_main_window.html#aeff10ffbaa37c5f770f934f85cbab645" title="Variável estática responsável por apontar para o arquivo que armazenará os valores das tensões nomina...">MainWindow::arquivoTensoes</a> </p>
+
 </div>
 </div>
 <a id="a5d94a93f0dc947657172518690e0f67f" name="a5d94a93f0dc947657172518690e0f67f"></a>
@@ -917,7 +921,7 @@ Atributos Estáticos Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Inicializando as variáveis estáticas responsáveis por apontar para os arquivos que serão inseridos. A classificação de armazenamento dessas váriaveis foi definida como static pela necessidade dessa variável ser acessada em outros frames para abertura dos arquivos. </p>
-<p>@variable <a class="el" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d" title="Inicializando as variáveis estáticas responsáveis por apontar para os arquivos que serão inseridos....">MainWindow::arquivoVsoln</a> @variable <a class="el" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a> @variable <a class="el" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a> @variable <a class="el" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a> @variable <a class="el" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a> </p>
+<p>@variable QFile* <a class="el" href="class_main_window.html#a360c705620fdeb0bd2731669cdc2557d" title="Inicializando as variáveis estáticas responsáveis por apontar para os arquivos que serão inseridos....">MainWindow::arquivoVsoln</a> @variable QFile* <a class="el" href="class_main_window.html#a90c66ded8aee4fd59f22b9c4aabfcf23">MainWindow::arquivoIsoln</a> @variable QFile* <a class="el" href="class_main_window.html#a5d94a93f0dc947657172518690e0f67f">MainWindow::arquivoThdi</a> @variable QFile* <a class="el" href="class_main_window.html#ac80702759127a32bdd29120aa7cc8312">MainWindow::arquivoThdv</a> @variable QFile* <a class="el" href="class_main_window.html#a59f508f7f42af1699ef6b265c3b99faa">MainWindow::arquivoLdat</a> </p>
 
 </div>
 </div>
@@ -942,7 +946,7 @@ Atributos Estáticos Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>//Inicializando a variável estática que identifica em que frame a aplicação está rodando. Seu valor inicial é 0. Sua classificação de armazenamento foi definida como static pela necessidade dessa variável ser acessada e seu valor modificado ao longo de outros frames. </p>
-<p>@variable <a class="el" href="class_main_window.html#a9510ded4a3817b7a3b0b2da822fdd0f4" title="//Inicializando a variável estática que identifica em que frame a aplicação está rodando....">MainWindow::frameAtual</a> </p>
+<p>@variable int <a class="el" href="class_main_window.html#a9510ded4a3817b7a3b0b2da822fdd0f4" title="//Inicializando a variável estática que identifica em que frame a aplicação está rodando....">MainWindow::frameAtual</a> </p>
 
 </div>
 </div>

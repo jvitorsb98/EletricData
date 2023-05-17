@@ -1,10 +1,10 @@
 /**
  * @class MainWindow
  * @brief Janela Principal do Programa
- * @author João Vitor N. Ramos
  * @reentrant Essa janela foi construida com 2 frames,
  * um com o intuito de funcionar como uma barra de status do andamento da aplicação(tendo 4 labels como sinalizadores)
  *  e o outro possui componentes reponsáveis por receber endereço de arquivos que serão utilizados nos proximos frames para trataemnto de dados.
+ * @author João Vitor N. Ramos
 */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -21,7 +21,7 @@
 
 /**
  * @variable int MainWindow::frameAtual
- * @brief //Inicializando a variável estática que identifica em que frame a aplicação está rodando.
+ * @brief Variável estática que identifica em que frame a aplicação está rodando.
  *  Seu valor inicial é 0.
  *   Sua classificação de armazenamento foi definida como static pela necessidade dessa variável ser acessada e seu valor modificado ao longo de outros frames.
  */
@@ -33,7 +33,7 @@ int MainWindow::frameAtual=0;
  * @variable QFile* MainWindow::arquivoThdi
  * @variable QFile* MainWindow::arquivoThdv
  * @variable QFile* MainWindow::arquivoLdat
- * @brief Inicializando as variáveis estáticas responsáveis por apontar para os arquivos que serão inseridos.
+ * @brief Variáveis estáticas responsáveis por apontar para os arquivos que serão inseridos.
  *   A classificação de armazenamento dessas váriaveis foi definida como static pela necessidade dessa variável ser acessada em outros frames para abertura dos arquivos
  */
 QFile* MainWindow::arquivoVsoln = new QFile();
