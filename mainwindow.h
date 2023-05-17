@@ -67,7 +67,7 @@ public:
         }
     }
 
-    void insereCssMainWindow();
+    void insereQssMainWindow();
     void insereIcon();
     void insereQssBarraDeStatus();
     void verificarAvanco();

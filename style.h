@@ -113,8 +113,6 @@ class Style{
                                "    width: 10px;"
                                "    margin: 0px 0 0px 0;"
                                "}"
-                               "QTableWidget::item{"
-                                               "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #F6F6F6, stop:1 #ECECEC);}"
                                "QTableWidget QScrollBar::handle:vertical {"
                                "    background-color: #d3d3d3;"
                                "    min-height: 20px;"

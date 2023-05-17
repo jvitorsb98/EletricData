@@ -110,7 +110,7 @@
 1.0.0 \par
 }}Documenta\'E7\'E3o EletricData}
 {\comment Gerado por doxygen 1.9.6.}
-{\creatim \yr2023\mo5\dy15\hr20\min59\sec53}
+{\creatim \yr2023\mo5\dy15\hr22\min1\sec15}
 }\pard\plain 
 \sectd\pgnlcrm
 {\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
@@ -145,7 +145,7 @@ Lista de Namespaces\par \pard\plain
 {
 \par
 \pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
-{\b {\b Ui} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAALX \\*MERGEFORMAT}{\fldrslt pagenum}}
+{\b {\b Ui} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAALY \\*MERGEFORMAT}{\fldrslt pagenum}}
 \par
 \par}
 \pard\plain \sect\sbkpage
@@ -288,8 +288,8 @@ Lista de Arquivos\par \pard\plain
 Ref\'EAncia do Namespace Ui\par \pard\plain 
 {\tc\tcl2 \v Ui}
 {\xe \v Ui}
-{\bkmkstart AAAAAAAALX}
-{\bkmkend AAAAAAAALX}
+{\bkmkstart AAAAAAAALY}
+{\bkmkend AAAAAAAALY}
 
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
@@ -10708,6 +10708,18 @@ void \par
 void {\b insereQssBarraDeStatus} ()\par
 }
 }{
+\pard\plain \s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid MainWindow::verificarAvanco()\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+M\'E9todo respons\'E1vel por habilitar o bot\'E3o avan\'E7ar caso todos os LineEdits estejam preenchdiso\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Retorna\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+void \par
+}}}}\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+{
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b verificarAvanco} ()\par
+}
+}{
 \pard\plain \s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid MainWindow::insereQssTitulosLineEdit\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 M\'E9todo respons\'E1vel por inserir Qss no frame que recebe endere\'E7o dos arquivos e seus labels, que correspondem ao titulo de cada arquivo.\par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -10847,15 +10859,13 @@ MainWindow::setaFileNameNosArq\par
 {
 \pard\plain \s60\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Conecta o FileName dos ponteiros dos arquivos para o que estiver escrito no lineEdit correpondente de cada um\par
+seta o FileName dos ponteiros dos arquivos com o que estiver escrito no lineEdit correpondente de cada um.\par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
 Retorna\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
 void \par
 }}}}
 
 {
-\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-void {\b verificarAvanco} ()\par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 void {\b setaFileNameNosArq} ()\par
 }
@@ -11298,15 +11308,15 @@ void MainWindow::verificarAvanco ()}}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 {
-\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 491                                 \{\par
-492 \par
-493      {\cf19 for} ({\cf18 int} i = 0 ; i < 5; i++ ) \{\par
-494          {\cf19 if}(!this->getStatusDePreenchimento(i))\{\par
-495             {\cf19 return};\par
-496          \}\par
-497      \}\par
-498      ui->btnAvancar->setEnabled({\cf17 true});\par
-499 \}\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 552                                 \{\par
+553 \par
+554      {\cf19 for} ({\cf18 int} i = 0 ; i < 5; i++ ) \{\par
+555          {\cf19 if}(!this->getStatusDePreenchimento(i))\{ {\cf20 // verifica se os status de preenchimento est\'E3o com valor true para cada arquivo}\par
+556             {\cf19 return}; {\cf20 //caso algum estejam false, nada acontece}\par
+557          \}\par
+558      \}\par
+559      ui->btnAvancar->setEnabled({\cf17 true}); {\cf20 // caso todos estejam 'true' , o bot\'E3o avan\'E7ar \'E9 habilitado}\par
+560 \}\par
 }
 }
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
@@ -11452,6 +11462,8 @@ QString {\b cssTxtArquivos}\par
 QString {\b cssFrameArq}\par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 QString {\b cssLineEdit}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+QString {\b cssLineEditDisabled}\par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 QString {\b cssBtn}\par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
@@ -11739,8 +11751,29 @@ QString Style::cssLineEdit}}
                         {\cf22 "QLineEdit:hover\{"}\par
                             {\cf22 "font-size:20px;"}\par
                             {\cf22 "font-family: 'Roboto';"}\par
-                            {\cf22 "border: 2px solid"}+corPrimaria+{\cf22 ";\}"}\par
-                        {\cf22 "QLineEdit:disabled\{"}\par
+                                     {\cf22 "border: 2px solid"}+corPrimaria+{\cf22 ";\}"}\par
+}
+}
+{\xe \v cssLineEditDisabled\:Style}
+{\xe \v Style\:cssLineEditDisabled}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+QString Style::cssLineEditDisabled}}
+\par
+{\bkmkstart AAAAAAAALO}
+{\bkmkend AAAAAAAALO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\b Valor inicial:}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid ={\cf22 "QLineEdit\{"}\par
+                                  {\cf22 "background-color:"}+branco+{\cf22 ";"}\par
+                                     {\cf22 "font-size:12px;"}\par
+                                     {\cf22 "border-radius:3px;\}"}\par
+                                 {\cf22 "QLineEdit:hover\{"}\par
+                                     {\cf22 "font-size:20px;"}\par
+                                     {\cf22 "font-family: 'Roboto';"}\par
+                                     {\cf22 "border: 2px solid"}+corPrimaria+{\cf22 ";\}"}\par
+                                  {\cf22 "QLineEdit:disabled\{"}\par
                                           {\cf22 "background-color:#808080;\}"}\par
 }
 }
@@ -11750,8 +11783,8 @@ QString Style::cssLineEdit}}
 {\b 
 QString Style::cssRadioButton}}
 \par
-{\bkmkstart AAAAAAAALO}
-{\bkmkend AAAAAAAALO}
+{\bkmkstart AAAAAAAALP}
+{\bkmkend AAAAAAAALP}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 {\b Valor inicial:}{
@@ -11768,8 +11801,8 @@ QString Style::cssRadioButton}}
 {\b 
 QString Style::cssStatusFrame ="background-color:"+{\b corPrimaria}+";"}}
 \par
-{\bkmkstart AAAAAAAALP}
-{\bkmkend AAAAAAAALP}
+{\bkmkstart AAAAAAAALQ}
+{\bkmkend AAAAAAAALQ}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }
@@ -11779,8 +11812,8 @@ QString Style::cssStatusFrame ="background-color:"+{\b corPrimaria}+";"}}
 {\b 
 QString Style::cssTabelaBarras}}
 \par
-{\bkmkstart AAAAAAAALQ}
-{\bkmkend AAAAAAAALQ}
+{\bkmkstart AAAAAAAALR}
+{\bkmkend AAAAAAAALR}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }
@@ -11790,8 +11823,8 @@ QString Style::cssTabelaBarras}}
 {\b 
 QString Style::csstabelaTensoes}}
 \par
-{\bkmkstart AAAAAAAALR}
-{\bkmkend AAAAAAAALR}
+{\bkmkstart AAAAAAAALS}
+{\bkmkend AAAAAAAALS}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }
@@ -11801,8 +11834,8 @@ QString Style::csstabelaTensoes}}
 {\b 
 QString Style::cssTabWidget}}
 \par
-{\bkmkstart AAAAAAAALS}
-{\bkmkend AAAAAAAALS}
+{\bkmkstart AAAAAAAALT}
+{\bkmkend AAAAAAAALT}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 {\b Valor inicial:}{
@@ -11836,8 +11869,8 @@ QString Style::cssTabWidget}}
 {\b 
 QString Style::cssTxt}}
 \par
-{\bkmkstart AAAAAAAALT}
-{\bkmkend AAAAAAAALT}
+{\bkmkstart AAAAAAAALU}
+{\bkmkend AAAAAAAALU}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 {\b Valor inicial:}{
@@ -11854,8 +11887,8 @@ QString Style::cssTxt}}
 {\b 
 QString Style::cssTxtArquivos}}
 \par
-{\bkmkstart AAAAAAAALU}
-{\bkmkend AAAAAAAALU}
+{\bkmkstart AAAAAAAALV}
+{\bkmkend AAAAAAAALV}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 {\b Valor inicial:}{
@@ -11873,8 +11906,8 @@ QString Style::cssTxtArquivos}}
 {\b 
 QString Style::cssTxtSelected}}
 \par
-{\bkmkstart AAAAAAAALV}
-{\bkmkend AAAAAAAALV}
+{\bkmkstart AAAAAAAALW}
+{\bkmkend AAAAAAAALW}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 {\b Valor inicial:}{
@@ -11890,8 +11923,8 @@ QString Style::cssTxtSelected}}
 {\b 
 QString Style::segundaOpcao ="#c7db79"}}
 \par
-{\bkmkstart AAAAAAAALW}
-{\bkmkend AAAAAAAALW}
+{\bkmkstart AAAAAAAALX}
+{\bkmkend AAAAAAAALX}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }
@@ -13502,252 +13535,261 @@ V\'E1 para a documenta\'E7\'E3o desse arquivo.{
 36                         {\cf22 "QLineEdit:hover\{"}\par
 37                             {\cf22 "font-size:20px;"}\par
 38                             {\cf22 "font-family: 'Roboto';"}\par
-39                             {\cf22 "border: 2px solid"}+corPrimaria+{\cf22 ";\}"}\par
-40                         {\cf22 "QLineEdit:disabled\{"}\par
-41                                           {\cf22 "background-color:#808080;\}"};\par
-42     QString cssBtn={\cf22 "QPushButton\{"}\par
-43                          {\cf22 "border:2px solid "}+corPrimaria+{\cf22 ";"}\par
-44                          {\cf22 "font-family: 'Roboto';"}\par
-45                          {\cf22 "font-size:15px;"}\par
-46                          {\cf22 "background-color:"}+corPrimaria+{\cf22 ";"}\par
-47                          {\cf22 "color:white;"}\par
-48                          {\cf22 "border-radius:5px;\}"}\par
-49                     {\cf22 "QPushButton:hover\{"}\par
-50                          {\cf22 "border:2px solid "}+corHoverBtn+{\cf22 ";"}\par
-51                          {\cf22 "font-size:15px;"}\par
-52                          {\cf22 "font-weight:bold;"}\par
-53                          {\cf22 "color:white;"}\par
-54                          {\cf22 "background-color:"}+corHoverBtn+{\cf22 ";\}"}\par
-55                     {\cf22 "QPushButton:pressed\{"}\par
-56                         {\cf22 "background-color: #0D2C4D;"}\par
-57                         {\cf22 "color: #FFFFFF;\}"};\par
-58 \par
-59     QString cssBtnTransition={\cf22 "QPushButton\{"}\par
-60                                      {\cf22 "border:2px solid "}+corPrimaria+{\cf22 ";"}\par
-61                                      {\cf22 "font-family: 'Roboto';"}\par
-62                                      {\cf22 "font-size: 15px;"}\par
-63                                      {\cf22 "background-color:"}+corPrimaria+{\cf22 ";"}\par
-64                                      {\cf22 "color:white;"}\par
-65                                      {\cf22 "border-radius:5px;\}"}\par
-66                              {\cf22 "QPushButton:hover\{"}\par
-67                                      {\cf22 "border:2px solid "}+corHoverBtn+{\cf22 ";"}\par
-68                                      {\cf22 "font-size: 15px;"}\par
-69                                      {\cf22 "font-weight:bold;"}\par
-70                                      {\cf22 "color:white;"}\par
-71                                      {\cf22 "background-color:"}+corHoverBtn+{\cf22 ";\}"}\par
-72                              {\cf22 "QPushButton:pressed\{"}\par
-73                                      {\cf22 "background-color: #0D2C4D;"}\par
-74                                      {\cf22 "color: #FFFFFF;\}"}\par
-75                              {\cf22 "QPushButton:disabled\{"}\par
-76                                      {\cf22 "border:2px solid #808080;"}\par
-77                                      {\cf22 "background-color:#808080;\}"};\par
-78 \par
-79     QString cssBtnLixeira={\cf22 "QPushButton\{"}\par
-80                                      {\cf22 "font-family: 'Roboto';"}\par
-81                                      {\cf22 "font-size:15px;"}\par
-82                                      {\cf22 "background-color:#8B0000;"}\par
-83                                      {\cf22 "color:white;"}\par
-84                                      {\cf22 "border-radius:5px;\}"}\par
-85                                      {\cf22 "QPushButton:hover\{"}\par
-86                                      {\cf22 "font-size:15px;"}\par
-87                                      {\cf22 "font-weight:bold;"}\par
-88                                      {\cf22 "color:white;"}\par
-89                                      {\cf22 "background-color:#B22222;\}"}\par
-90                                      {\cf22 "QPushButton:pressed\{"}\par
-91                                      {\cf22 "background-color: #CD5C5C;"}\par
-92                                      {\cf22 "color: #FFFFFF;\}"};\par
-93 \par
-94     QString csstabelaTensoes={\cf22 "QTableWidget\{font-family: 'Roboto' ;"}\par
-95                                {\cf22 "font-size:15px;"}\par
-96                                {\cf22 "border:2px solid "}+corPrimaria+{\cf22 ";"}\par
-97                                {\cf22 "color: black;"}\par
-98                                {\cf22 "border-radius:5px;"}\par
-99                                {\cf22 "text-align: center;"}\par
-100                                {\cf22 "background-color:#f0f0f0;\}"}\par
-101                                {\cf22 "QTableWidget QScrollBar:vertical \{"}\par
-102                                {\cf22 "    border: none;"}\par
-103                                {\cf22 "    background-color: #f5f5f5;"}\par
-104                                {\cf22 "    width: 10px;"}\par
-105                                {\cf22 "    margin: 0px 0 0px 0;"}\par
-106                                {\cf22 "\}"}\par
-107                                {\cf22 "QTableWidget::item\{"}\par
-108                                                {\cf22 "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #F6F6F6, stop:1 #ECECEC);\}"}\par
-109                                {\cf22 "QTableWidget QScrollBar::handle:vertical \{"}\par
-110                                {\cf22 "    background-color: #d3d3d3;"}\par
-111                                {\cf22 "    min-height: 20px;"}\par
-112                                {\cf22 "\}"}\par
-113                                {\cf22 "QTableWidget QScrollBar::add-line:vertical \{"}\par
-114                                {\cf22 "    background-color: #f5f5f5;"}\par
-115                                {\cf22 "    height: 20px;"}\par
-116                                {\cf22 "    subcontrol-position: bottom;"}\par
-117                                {\cf22 "    subcontrol-origin: margin;"}\par
-118                                {\cf22 "\}"}\par
-119                                {\cf22 "QTableWidget QScrollBar::sub-line:vertical \{"}\par
-120                                {\cf22 "    background-color: #f5f5f5;"}\par
-121                                {\cf22 "    height: 20px;"}\par
-122                                {\cf22 "    subcontrol-position: top;"}\par
-123                                {\cf22 "    subcontrol-origin: margin;"}\par
-124                                {\cf22 "\}"}\par
-125                                {\cf22 "QTableWidget QScrollBar::up-arrow:vertical, QTableWidget QScrollBar::down-arrow:vertical \{"}\par
-126                                {\cf22 "    border: none;"}\par
-127                                {\cf22 "    background-color: #f5f5f5;"}\par
-128                                {\cf22 "    height: 20px;"}\par
-129                                {\cf22 "    width: 10px;"}\par
-130                                {\cf22 "\}"}\par
-131                                {\cf22 "QTableWidget QScrollBar::add-page:vertical, QTableWidget QScrollBar::sub-page:vertical \{"}\par
-132                                {\cf22 "    background-color: #f5f5f5;"}\par
+39                                      {\cf22 "border: 2px solid"}+corPrimaria+{\cf22 ";\}"};\par
+40 \par
+41     QString cssLineEditDisabled={\cf22 "QLineEdit\{"}\par
+42                                   {\cf22 "background-color:"}+branco+{\cf22 ";"}\par
+43                                      {\cf22 "font-size:12px;"}\par
+44                                      {\cf22 "border-radius:3px;\}"}\par
+45                                  {\cf22 "QLineEdit:hover\{"}\par
+46                                      {\cf22 "font-size:20px;"}\par
+47                                      {\cf22 "font-family: 'Roboto';"}\par
+48                                      {\cf22 "border: 2px solid"}+corPrimaria+{\cf22 ";\}"}\par
+49                                   {\cf22 "QLineEdit:disabled\{"}\par
+50                                           {\cf22 "background-color:#808080;\}"};\par
+51     QString cssBtn={\cf22 "QPushButton\{"}\par
+52                          {\cf22 "border:2px solid "}+corPrimaria+{\cf22 ";"}\par
+53                          {\cf22 "font-family: 'Roboto';"}\par
+54                          {\cf22 "font-size:15px;"}\par
+55                          {\cf22 "background-color:"}+corPrimaria+{\cf22 ";"}\par
+56                          {\cf22 "color:white;"}\par
+57                          {\cf22 "border-radius:5px;\}"}\par
+58                     {\cf22 "QPushButton:hover\{"}\par
+59                          {\cf22 "border:2px solid "}+corHoverBtn+{\cf22 ";"}\par
+60                          {\cf22 "font-size:15px;"}\par
+61                          {\cf22 "font-weight:bold;"}\par
+62                          {\cf22 "color:white;"}\par
+63                          {\cf22 "background-color:"}+corHoverBtn+{\cf22 ";\}"}\par
+64                     {\cf22 "QPushButton:pressed\{"}\par
+65                         {\cf22 "background-color: #0D2C4D;"}\par
+66                         {\cf22 "color: #FFFFFF;\}"};\par
+67 \par
+68     QString cssBtnTransition={\cf22 "QPushButton\{"}\par
+69                                      {\cf22 "border:2px solid "}+corPrimaria+{\cf22 ";"}\par
+70                                      {\cf22 "font-family: 'Roboto';"}\par
+71                                      {\cf22 "font-size: 15px;"}\par
+72                                      {\cf22 "background-color:"}+corPrimaria+{\cf22 ";"}\par
+73                                      {\cf22 "color:white;"}\par
+74                                      {\cf22 "border-radius:5px;\}"}\par
+75                              {\cf22 "QPushButton:hover\{"}\par
+76                                      {\cf22 "border:2px solid "}+corHoverBtn+{\cf22 ";"}\par
+77                                      {\cf22 "font-size: 15px;"}\par
+78                                      {\cf22 "font-weight:bold;"}\par
+79                                      {\cf22 "color:white;"}\par
+80                                      {\cf22 "background-color:"}+corHoverBtn+{\cf22 ";\}"}\par
+81                              {\cf22 "QPushButton:pressed\{"}\par
+82                                      {\cf22 "background-color: #0D2C4D;"}\par
+83                                      {\cf22 "color: #FFFFFF;\}"}\par
+84                              {\cf22 "QPushButton:disabled\{"}\par
+85                                      {\cf22 "border:2px solid #808080;"}\par
+86                                      {\cf22 "background-color:#808080;\}"};\par
+87 \par
+88     QString cssBtnLixeira={\cf22 "QPushButton\{"}\par
+89                                      {\cf22 "font-family: 'Roboto';"}\par
+90                                      {\cf22 "font-size:15px;"}\par
+91                                      {\cf22 "background-color:#8B0000;"}\par
+92                                      {\cf22 "color:white;"}\par
+93                                      {\cf22 "border-radius:5px;\}"}\par
+94                                      {\cf22 "QPushButton:hover\{"}\par
+95                                      {\cf22 "font-size:15px;"}\par
+96                                      {\cf22 "font-weight:bold;"}\par
+97                                      {\cf22 "color:white;"}\par
+98                                      {\cf22 "background-color:#B22222;\}"}\par
+99                                      {\cf22 "QPushButton:pressed\{"}\par
+100                                      {\cf22 "background-color: #CD5C5C;"}\par
+101                                      {\cf22 "color: #FFFFFF;\}"};\par
+102 \par
+103     QString csstabelaTensoes={\cf22 "QTableWidget\{font-family: 'Roboto' ;"}\par
+104                                {\cf22 "font-size:15px;"}\par
+105                                {\cf22 "border:2px solid "}+corPrimaria+{\cf22 ";"}\par
+106                                {\cf22 "color: black;"}\par
+107                                {\cf22 "border-radius:5px;"}\par
+108                                {\cf22 "text-align: center;"}\par
+109                                {\cf22 "background-color:#f0f0f0;\}"}\par
+110                                {\cf22 "QTableWidget QScrollBar:vertical \{"}\par
+111                                {\cf22 "    border: none;"}\par
+112                                {\cf22 "    background-color: #f5f5f5;"}\par
+113                                {\cf22 "    width: 10px;"}\par
+114                                {\cf22 "    margin: 0px 0 0px 0;"}\par
+115                                {\cf22 "\}"}\par
+116                                {\cf22 "QTableWidget::item\{"}\par
+117                                                {\cf22 "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #F6F6F6, stop:1 #ECECEC);\}"}\par
+118                                {\cf22 "QTableWidget QScrollBar::handle:vertical \{"}\par
+119                                {\cf22 "    background-color: #d3d3d3;"}\par
+120                                {\cf22 "    min-height: 20px;"}\par
+121                                {\cf22 "\}"}\par
+122                                {\cf22 "QTableWidget QScrollBar::add-line:vertical \{"}\par
+123                                {\cf22 "    background-color: #f5f5f5;"}\par
+124                                {\cf22 "    height: 20px;"}\par
+125                                {\cf22 "    subcontrol-position: bottom;"}\par
+126                                {\cf22 "    subcontrol-origin: margin;"}\par
+127                                {\cf22 "\}"}\par
+128                                {\cf22 "QTableWidget QScrollBar::sub-line:vertical \{"}\par
+129                                {\cf22 "    background-color: #f5f5f5;"}\par
+130                                {\cf22 "    height: 20px;"}\par
+131                                {\cf22 "    subcontrol-position: top;"}\par
+132                                {\cf22 "    subcontrol-origin: margin;"}\par
 133                                {\cf22 "\}"}\par
-134                                {\cf22 "QTableWidget::horizontalScrollBar  \{"}\par
-135                                     {\cf22 "border: none;"}\par
-136                                     {\cf22 "background-color: #F5F5F5;"}\par
-137                                     {\cf22 "height: 10px;"}\par
-138                                     {\cf22 "margin: 0px 21px 0 21px;\}"}\par
-139                                 {\cf22 "QTableWidget::horizontalScrollBar::handle \{"}\par
-140                                     {\cf22 "background: #DBDBDB;"}\par
-141                                     {\cf22 "    min-width: 20px;\}"}\par
-142                                 {\cf22 "QTableWidget::horizontalScrollBar::add-line\{"}\par
-143                                 {\cf22 "background-color: none;"}\par
-144                                 {\cf22 "width: 20px;"}\par
-145                                     {\cf22 "subcontrol-position: right;"}\par
-146                                     {\cf22 "subcontrol-origin: margin;\}"}\par
-147                                 {\cf22 "QTableWidget::horizontalScrollBar::sub-line \{"}\par
-148                                 {\cf22 "background-color: none;"}\par
-149                                 {\cf22 "width: 20px;"}\par
-150                                     {\cf22 "subcontrol-position: left;"}\par
-151                                                {\cf22 "subcontrol-origin: margin;\}"};\par
-152 \par
-153 \par
-154     QString cssTabelaBarras={\cf22 "QTableWidget\{font-family: 'Roboto' ;"}\par
-155                                {\cf22 "font-size:15px;"}\par
-156                                {\cf22 "color: black;"}\par
-157                                {\cf22 "border-radius:25px;"}\par
-158                                {\cf22 "text-align: center;"}\par
-159                                {\cf22 "background-color:#f0f0f0;\}"}\par
-160                               {\cf22 "QTableWidget::verticalScrollBar  \{"}\par
-161                                {\cf22 "    border: none;"}\par
-162                                {\cf22 "    background-color: #f5f5f5;"}\par
-163                                {\cf22 "    width: 10px;"}\par
-164                                {\cf22 "    margin: 0px 0 0px 0;"}\par
-165                                {\cf22 "\}"}\par
-166                               {\cf22 "QTableWidget::verticalScrollBar::handle \{"}\par
-167                                {\cf22 "    background-color: #d3d3d3;"}\par
-168                                {\cf22 "    min-height: 20px;"}\par
-169                                {\cf22 "\}"}\par
-170                               {\cf22 "QTableWidget::verticalScrollBar::add-line\{"}\par
+134                                {\cf22 "QTableWidget QScrollBar::up-arrow:vertical, QTableWidget QScrollBar::down-arrow:vertical \{"}\par
+135                                {\cf22 "    border: none;"}\par
+136                                {\cf22 "    background-color: #f5f5f5;"}\par
+137                                {\cf22 "    height: 20px;"}\par
+138                                {\cf22 "    width: 10px;"}\par
+139                                {\cf22 "\}"}\par
+140                                {\cf22 "QTableWidget QScrollBar::add-page:vertical, QTableWidget QScrollBar::sub-page:vertical \{"}\par
+141                                {\cf22 "    background-color: #f5f5f5;"}\par
+142                                {\cf22 "\}"}\par
+143                                {\cf22 "QTableWidget::horizontalScrollBar  \{"}\par
+144                                     {\cf22 "border: none;"}\par
+145                                     {\cf22 "background-color: #F5F5F5;"}\par
+146                                     {\cf22 "height: 10px;"}\par
+147                                     {\cf22 "margin: 0px 21px 0 21px;\}"}\par
+148                                 {\cf22 "QTableWidget::horizontalScrollBar::handle \{"}\par
+149                                     {\cf22 "background: #DBDBDB;"}\par
+150                                     {\cf22 "    min-width: 20px;\}"}\par
+151                                 {\cf22 "QTableWidget::horizontalScrollBar::add-line\{"}\par
+152                                 {\cf22 "background-color: none;"}\par
+153                                 {\cf22 "width: 20px;"}\par
+154                                     {\cf22 "subcontrol-position: right;"}\par
+155                                     {\cf22 "subcontrol-origin: margin;\}"}\par
+156                                 {\cf22 "QTableWidget::horizontalScrollBar::sub-line \{"}\par
+157                                 {\cf22 "background-color: none;"}\par
+158                                 {\cf22 "width: 20px;"}\par
+159                                     {\cf22 "subcontrol-position: left;"}\par
+160                                                {\cf22 "subcontrol-origin: margin;\}"};\par
+161 \par
+162 \par
+163     QString cssTabelaBarras={\cf22 "QTableWidget\{font-family: 'Roboto' ;"}\par
+164                                {\cf22 "font-size:15px;"}\par
+165                                {\cf22 "color: black;"}\par
+166                                {\cf22 "border-radius:25px;"}\par
+167                                {\cf22 "text-align: center;"}\par
+168                                {\cf22 "background-color:#f0f0f0;\}"}\par
+169                               {\cf22 "QTableWidget::verticalScrollBar  \{"}\par
+170                                {\cf22 "    border: none;"}\par
 171                                {\cf22 "    background-color: #f5f5f5;"}\par
-172                                {\cf22 "    height: 20px;"}\par
-173                                {\cf22 "    subcontrol-position: bottom;"}\par
-174                                {\cf22 "    subcontrol-origin: margin;"}\par
-175                                {\cf22 "\}"}\par
-176                               {\cf22 "QTableWidget::verticalScrollBar::add-line\{"}\par
-177                                {\cf22 "    background-color: #f5f5f5;"}\par
-178                                {\cf22 "    height: 20px;"}\par
-179                                {\cf22 "    subcontrol-position: top;"}\par
-180                                {\cf22 "    subcontrol-origin: margin;"}\par
-181                                {\cf22 "\}"}\par
-182                                {\cf22 "QTableWidget QScrollBar::up-arrow:vertical, QTableWidget QScrollBar::down-arrow:vertical \{"}\par
-183                                {\cf22 "    border: none;"}\par
-184                                {\cf22 "    background-color: #f5f5f5;"}\par
-185                                {\cf22 "    height: 20px;"}\par
-186                                {\cf22 "    width: 10px;"}\par
-187                                {\cf22 "\}"}\par
-188                                {\cf22 "QHeaderView::section\{"}\par
-189                                     {\cf22 "border-bottom:1px solid #D8D8D8;"}\par
-190                                     {\cf22 "border-left:0px;"}\par
-191                                     {\cf22 "padding-left:5px;"}\par
-192                                     {\cf22 "margin:0px;\}"}\par
-193                                {\cf22 "QTableWidget QScrollBar::add-page:vertical, QTableWidget QScrollBar::sub-page:vertical \{"}\par
-194                                {\cf22 "    background-color: #f5f5f5;"}\par
-195                                {\cf22 "\}"}\par
-196                                {\cf22 "QTableWidget::horizontalScrollBar  \{"}\par
-197                                    {\cf22 "border: none;"}\par
-198                                    {\cf22 "background-color: #F5F5F5;"}\par
-199                                    {\cf22 "height: 10px;"}\par
-200                                    {\cf22 "margin: 0px 21px 0 21px;\}"}\par
-201                                {\cf22 "QTableWidget::horizontalScrollBar::handle \{"}\par
-202                                    {\cf22 "background: #DBDBDB;"}\par
-203                                    {\cf22 "    min-width: 20px;\}"}\par
-204                                {\cf22 "QTableWidget::horizontalScrollBar::add-line\{"}\par
-205                                    {\cf22 "background-color: none;"}\par
-206                                    {\cf22 "width: 20px;"}\par
-207                                    {\cf22 "subcontrol-position: right;"}\par
-208                                    {\cf22 "subcontrol-origin: margin;\}"}\par
-209                                {\cf22 "QTableWidget::horizontalScrollBar::sub-line \{"}\par
-210                                {\cf22 "background-color: none;"}\par
-211                                {\cf22 "width: 20px;"}\par
-212                                {\cf22 "subcontrol-position: left;"}\par
-213                                {\cf22 "subcontrol-origin: margin;\}"};\par
-214 \par
-215 \par
-216 \par
-217     QString cssHeaderTabela={\cf22 "font-family: 'Roboto';"}\par
-218                             {\cf22 "font-size:17px;"}\par
-219                             ;\par
-220 \par
-221     QString cssTabWidget = {\cf22 "QTabWidget::pane \{"}\par
-222                               {\cf22 "border: 2px solid "}+corPrimaria+{\cf22 ";"}\par
-223                               {\cf22 "border-radius:4px;"}\par
-224                               {\cf22 "\}"}\par
-225                               {\cf22 "QTabBar::tab \{"}\par
-226                                {\cf22 "border-radius:1px;"}\par
-227                               {\cf22 "background-color: #2E4E7E;"}\par
-228                               {\cf22 "color: #FFFFFF;"}\par
-229                               {\cf22 "font-weight: bold;"}\par
-230                                {\cf22 "min-width: 100px;"}\par
-231                                {\cf22 "min-height:20px;"}\par
-232                               {\cf22 "\}"}\par
-233                               {\cf22 "QTabBar::tab:selected \{"}\par
-234                               {\cf22 "background-color: #1E385B;"}\par
-235                               {\cf22 "\}"}\par
-236                               {\cf22 "QTabBar::tab:focus \{"}\par
-237                               {\cf22 "border: none;"}\par
-238                               {\cf22 "font-size: 15px;"}\par
-239                               {\cf22 "font-weight: 500;"}\par
-240                               {\cf22 "font-family: 'Roboto';"}\par
-241                               {\cf22 "color:branco;"}\par
-242                                          {\cf22 "\}"};\par
-243     QString cssCheckbox = {\cf22 "QCheckBox\{"}\par
-244                               {\cf22 "font-size:13px;"}\par
-245                               {\cf22 "font-weight:bold;"}\par
-246                               {\cf22 "color:"}+corPrimaria+{\cf22 ";\}"}\par
-247                           {\cf22 "QCheckBox::indicator\{"}\par
-248                               {\cf22 "width: 30px;"}\par
-249                               {\cf22 "height: 30px;\}"};\par
-250 \par
-251     QString cssComboBox = {\cf22 "QComboBox \{"}\par
-252                           {\cf22 "border-radius: 3px;"}\par
-253                           {\cf22 "border:1px solid"}+corPrimaria+{\cf22 ";"}\par
-254                           {\cf22 "color: #1E385B;"}\par
-255                           {\cf22 "background-color: #FFFFFF;"}\par
-256                           {\cf22 "\}"};\par
-257 \par
-258     QString cssGroupBox = {\cf22 "QGroupBox \{"}\par
-259                           {\cf22 "font-size:15px;"}\par
-260                           {\cf22 "font-weight:bold;"}\par
-261                           {\cf22 "color:"}+corPrimaria+{\cf22 ";\}"};\par
-262 \par
-263     QString cssRadioButton = {\cf22 "QRadioButton \{"}\par
-264                              {\cf22 "font-size:20px;"}\par
-265                              {\cf22 "font-family: 'Roboto';"}\par
-266                              {\cf22 "font-weight:bold;"}\par
-267                              {\cf22 "color:"}+corPrimaria+{\cf22 ";\}"};\par
-268 \par
-269     QString cssImgExportar = {\cf22 "border-radius:30px;"};\par
-270 \par
+172                                {\cf22 "    width: 10px;"}\par
+173                                {\cf22 "    margin: 0px 0 0px 0;"}\par
+174                                {\cf22 "\}"}\par
+175                               {\cf22 "QTableWidget::verticalScrollBar::handle \{"}\par
+176                                {\cf22 "    background-color: #d3d3d3;"}\par
+177                                {\cf22 "    min-height: 20px;"}\par
+178                                {\cf22 "\}"}\par
+179                               {\cf22 "QTableWidget::verticalScrollBar::add-line\{"}\par
+180                                {\cf22 "    background-color: #f5f5f5;"}\par
+181                                {\cf22 "    height: 20px;"}\par
+182                                {\cf22 "    subcontrol-position: bottom;"}\par
+183                                {\cf22 "    subcontrol-origin: margin;"}\par
+184                                {\cf22 "\}"}\par
+185                               {\cf22 "QTableWidget::verticalScrollBar::add-line\{"}\par
+186                                {\cf22 "    background-color: #f5f5f5;"}\par
+187                                {\cf22 "    height: 20px;"}\par
+188                                {\cf22 "    subcontrol-position: top;"}\par
+189                                {\cf22 "    subcontrol-origin: margin;"}\par
+190                                {\cf22 "\}"}\par
+191                                {\cf22 "QTableWidget QScrollBar::up-arrow:vertical, QTableWidget QScrollBar::down-arrow:vertical \{"}\par
+192                                {\cf22 "    border: none;"}\par
+193                                {\cf22 "    background-color: #f5f5f5;"}\par
+194                                {\cf22 "    height: 20px;"}\par
+195                                {\cf22 "    width: 10px;"}\par
+196                                {\cf22 "\}"}\par
+197                                {\cf22 "QHeaderView::section\{"}\par
+198                                     {\cf22 "border-bottom:1px solid #D8D8D8;"}\par
+199                                     {\cf22 "border-left:0px;"}\par
+200                                     {\cf22 "padding-left:5px;"}\par
+201                                     {\cf22 "margin:0px;\}"}\par
+202                                {\cf22 "QTableWidget QScrollBar::add-page:vertical, QTableWidget QScrollBar::sub-page:vertical \{"}\par
+203                                {\cf22 "    background-color: #f5f5f5;"}\par
+204                                {\cf22 "\}"}\par
+205                                {\cf22 "QTableWidget::horizontalScrollBar  \{"}\par
+206                                    {\cf22 "border: none;"}\par
+207                                    {\cf22 "background-color: #F5F5F5;"}\par
+208                                    {\cf22 "height: 10px;"}\par
+209                                    {\cf22 "margin: 0px 21px 0 21px;\}"}\par
+210                                {\cf22 "QTableWidget::horizontalScrollBar::handle \{"}\par
+211                                    {\cf22 "background: #DBDBDB;"}\par
+212                                    {\cf22 "    min-width: 20px;\}"}\par
+213                                {\cf22 "QTableWidget::horizontalScrollBar::add-line\{"}\par
+214                                    {\cf22 "background-color: none;"}\par
+215                                    {\cf22 "width: 20px;"}\par
+216                                    {\cf22 "subcontrol-position: right;"}\par
+217                                    {\cf22 "subcontrol-origin: margin;\}"}\par
+218                                {\cf22 "QTableWidget::horizontalScrollBar::sub-line \{"}\par
+219                                {\cf22 "background-color: none;"}\par
+220                                {\cf22 "width: 20px;"}\par
+221                                {\cf22 "subcontrol-position: left;"}\par
+222                                {\cf22 "subcontrol-origin: margin;\}"};\par
+223 \par
+224 \par
+225 \par
+226     QString cssHeaderTabela={\cf22 "font-family: 'Roboto';"}\par
+227                             {\cf22 "font-size:17px;"}\par
+228                             ;\par
+229 \par
+230     QString cssTabWidget = {\cf22 "QTabWidget::pane \{"}\par
+231                               {\cf22 "border: 2px solid "}+corPrimaria+{\cf22 ";"}\par
+232                               {\cf22 "border-radius:4px;"}\par
+233                               {\cf22 "\}"}\par
+234                               {\cf22 "QTabBar::tab \{"}\par
+235                                {\cf22 "border-radius:1px;"}\par
+236                               {\cf22 "background-color: #2E4E7E;"}\par
+237                               {\cf22 "color: #FFFFFF;"}\par
+238                               {\cf22 "font-weight: bold;"}\par
+239                                {\cf22 "min-width: 100px;"}\par
+240                                {\cf22 "min-height:20px;"}\par
+241                               {\cf22 "\}"}\par
+242                               {\cf22 "QTabBar::tab:selected \{"}\par
+243                               {\cf22 "background-color: #1E385B;"}\par
+244                               {\cf22 "\}"}\par
+245                               {\cf22 "QTabBar::tab:focus \{"}\par
+246                               {\cf22 "border: none;"}\par
+247                               {\cf22 "font-size: 15px;"}\par
+248                               {\cf22 "font-weight: 500;"}\par
+249                               {\cf22 "font-family: 'Roboto';"}\par
+250                               {\cf22 "color:branco;"}\par
+251                                          {\cf22 "\}"};\par
+252     QString cssCheckbox = {\cf22 "QCheckBox\{"}\par
+253                               {\cf22 "font-size:13px;"}\par
+254                               {\cf22 "font-weight:bold;"}\par
+255                               {\cf22 "color:"}+corPrimaria+{\cf22 ";\}"}\par
+256                           {\cf22 "QCheckBox::indicator\{"}\par
+257                               {\cf22 "width: 30px;"}\par
+258                               {\cf22 "height: 30px;\}"};\par
+259 \par
+260     QString cssComboBox = {\cf22 "QComboBox \{"}\par
+261                           {\cf22 "border-radius: 3px;"}\par
+262                           {\cf22 "border:1px solid"}+corPrimaria+{\cf22 ";"}\par
+263                           {\cf22 "color: #1E385B;"}\par
+264                           {\cf22 "background-color: #FFFFFF;"}\par
+265                           {\cf22 "\}"};\par
+266 \par
+267     QString cssGroupBox = {\cf22 "QGroupBox \{"}\par
+268                           {\cf22 "font-size:15px;"}\par
+269                           {\cf22 "font-weight:bold;"}\par
+270                           {\cf22 "color:"}+corPrimaria+{\cf22 ";\}"};\par
 271 \par
-272 \par
-273 \par
-274 \par
-275 \};\par
-276 \par
+272     QString cssRadioButton = {\cf22 "QRadioButton \{"}\par
+273                              {\cf22 "font-size:20px;"}\par
+274                              {\cf22 "font-family: 'Roboto';"}\par
+275                              {\cf22 "font-weight:bold;"}\par
+276                              {\cf22 "color:"}+corPrimaria+{\cf22 ";\}"};\par
 277 \par
-278 \par
+278     QString cssImgExportar = {\cf22 "border-radius:30px;"};\par
 279 \par
-280 {\cf21 #endif }{\cf20 // STYLE_H}\par
+280 \par
 281 \par
 282 \par
 283 \par
-284 \par
+284 \};\par
+285 \par
+286 \par
+287 \par
+288 \par
+289 {\cf21 #endif }{\cf20 // STYLE_H}\par
+290 \par
+291 \par
+292 \par
+293 \par
 }
 
 \pard\plain \sect\sbkpage

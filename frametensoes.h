@@ -7,6 +7,11 @@
 #include<ui_mainwindow.h>
 #include<QObject>
 #include<utility>
+#include <QTableWidgetItem>
+#include <QTableWidget>
+
+
+
 
 
 namespace Ui {
@@ -22,7 +27,6 @@ public:
     explicit FrameTensoes(QWidget *parent = nullptr, Ui::MainWindow *mw=nullptr);
     ~FrameTensoes();
     int quantidadeDeBarras();
-    bool verificaAvanco();
     static QList<double> tensoesNominais;
     void insereQssBotaoAvancar();
     void insereQssImportar();
@@ -33,6 +37,8 @@ public:
     void insereTableTensoes();
     void insereQssFrameTensoes();
     static int numeroDeBarras;
+    void inicializaFrame();
+    bool tabelaTensoesPreenchida();
 
 private slots:
 
@@ -47,8 +53,12 @@ private slots:
 
     void on_btnAvancar_clicked();
 
+    void verificarPreenchimentoTabela(QTableWidgetItem* item);
+
+
 private:
     Ui::FrameTensoes *ui;
+
 };
 
 #endif // FRAMETENSOES_H

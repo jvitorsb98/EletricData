@@ -20,7 +20,7 @@
 #include <QtCore/QCoreApplication>
 
 /**
- * @variable MainWindow::frameAtual
+ * @variable int MainWindow::frameAtual
  * @brief //Inicializando a variável estática que identifica em que frame a aplicação está rodando.
  *  Seu valor inicial é 0.
  *   Sua classificação de armazenamento foi definida como static pela necessidade dessa variável ser acessada e seu valor modificado ao longo de outros frames.
@@ -28,11 +28,11 @@
 int MainWindow::frameAtual=0;
 
 /**
- * @variable MainWindow::arquivoVsoln
- * @variable MainWindow::arquivoIsoln
- * @variable MainWindow::arquivoThdi
- * @variable MainWindow::arquivoThdv
- * @variable MainWindow::arquivoLdat
+ * @variable QFile* MainWindow::arquivoVsoln
+ * @variable QFile* MainWindow::arquivoIsoln
+ * @variable QFile* MainWindow::arquivoThdi
+ * @variable QFile* MainWindow::arquivoThdv
+ * @variable QFile* MainWindow::arquivoLdat
  * @brief Inicializando as variáveis estáticas responsáveis por apontar para os arquivos que serão inseridos.
  *   A classificação de armazenamento dessas váriaveis foi definida como static pela necessidade dessa variável ser acessada em outros frames para abertura dos arquivos
  */
@@ -72,7 +72,7 @@ MainWindow::~MainWindow()
  * @return void
  */
 void MainWindow::inicializaFrame(){
-    insereCssMainWindow();
+    insereQssMainWindow();
 }
 
 /**
@@ -80,7 +80,7 @@ void MainWindow::inicializaFrame(){
  * @brief Método responsável por chamar métodos que irão inserir Qss na interface do frame
  * @return void
  */
-void MainWindow::insereCssMainWindow(){
+void MainWindow::insereQssMainWindow(){
     insereIcon();
     insereQssBarraDeStatus();
     insereQssTitulosLineEdit();

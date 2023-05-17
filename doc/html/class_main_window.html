@@ -129,6 +129,12 @@ Membros Públicos</h2></td></tr>
 </div></td></tr>
 <tr class="memitem:affd6202e4e294cb36cce3c347e56c3f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#affd6202e4e294cb36cce3c347e56c3f0">insereQssBarraDeStatus</a> ()</td></tr>
 <tr class="separator:affd6202e4e294cb36cce3c347e56c3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">MainWindow::verificarAvanco()</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Método responsável por habilitar o botão avançar caso todos os LineEdits estejam preenchdiso</p>
+<dl class="section return"><dt>Retorna</dt><dd>void </dd></dl>
+</div></td></tr>
+<tr class="memitem:a50da9b3861db835480f029eee3051d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a50da9b3861db835480f029eee3051d86">verificarAvanco</a> ()</td></tr>
+<tr class="separator:a50da9b3861db835480f029eee3051d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">MainWindow::insereQssTitulosLineEdit</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Método responsável por inserir Qss no frame que recebe endereço dos arquivos e seus labels, que correspondem ao titulo de cada arquivo.</p>
 <dl class="section return"><dt>Retorna</dt><dd>void </dd></dl>
@@ -203,11 +209,9 @@ Atributos Estáticos Públicos</h2></td></tr>
 <tr class="separator:a9510ded4a3817b7a3b0b2da822fdd0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">MainWindow::setaFileNameNosArq</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>Conecta o FileName dos ponteiros dos arquivos para o que estiver escrito no lineEdit correpondente de cada um</p>
+<tr><td class="ititle" colspan="2"><p>seta o FileName dos ponteiros dos arquivos com o que estiver escrito no lineEdit correpondente de cada um.</p>
 <dl class="section return"><dt>Retorna</dt><dd>void </dd></dl>
 </td></tr>
-<tr class="memitem:a50da9b3861db835480f029eee3051d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a50da9b3861db835480f029eee3051d86">verificarAvanco</a> ()</td></tr>
-<tr class="separator:a50da9b3861db835480f029eee3051d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55f79f031a5cabd9821032147812938c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a55f79f031a5cabd9821032147812938c">setaFileNameNosArq</a> ()</td></tr>
 <tr class="separator:a55f79f031a5cabd9821032147812938c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -501,7 +505,7 @@ Atributos Estáticos Públicos</h2></td></tr>
 <div class="line"><span class="lineno">  182</span>    ui-&gt;btnIsoln-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>); <span class="comment">//Insere Qss no Botão de busca do arquivo Isoln</span></div>
 <div class="line"><span class="lineno">  183</span>    ui-&gt;btnLdat-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>); <span class="comment">//Insere Qss no Botão de busca do arquivo Ldat</span></div>
 <div class="line"><span class="lineno">  184</span>}</div>
-<div class="ttc" id="aclass_style_html_af8e9280cb6fee63da578ae8de656a3a7"><div class="ttname"><a href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">Style::cssBtn</a></div><div class="ttdeci">QString cssBtn</div><div class="ttdef"><b>Definition:</b> style.h:42</div></div>
+<div class="ttc" id="aclass_style_html_af8e9280cb6fee63da578ae8de656a3a7"><div class="ttname"><a href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">Style::cssBtn</a></div><div class="ttdeci">QString cssBtn</div><div class="ttdef"><b>Definition:</b> style.h:51</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -527,7 +531,7 @@ Atributos Estáticos Públicos</h2></td></tr>
 <div class="line"><span class="lineno">  199</span>    ui-&gt;btnAvancar-&gt;setLayoutDirection(Qt::RightToLeft); <span class="comment">// Icone é inserido a direita do texto</span></div>
 <div class="line"><span class="lineno">  200</span>    ui-&gt;btnAvancar-&gt;setEnabled(<span class="keyword">false</span>); <span class="comment">// Botão inicia desabilitado</span></div>
 <div class="line"><span class="lineno">  201</span>}</div>
-<div class="ttc" id="aclass_style_html_a53aa01cbf685a90075b0b6c3cb3db6c0"><div class="ttname"><a href="class_style.html#a53aa01cbf685a90075b0b6c3cb3db6c0">Style::cssBtnTransition</a></div><div class="ttdeci">QString cssBtnTransition</div><div class="ttdef"><b>Definition:</b> style.h:59</div></div>
+<div class="ttc" id="aclass_style_html_a53aa01cbf685a90075b0b6c3cb3db6c0"><div class="ttname"><a href="class_style.html#a53aa01cbf685a90075b0b6c3cb3db6c0">Style::cssBtnTransition</a></div><div class="ttdeci">QString cssBtnTransition</div><div class="ttdef"><b>Definition:</b> style.h:68</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -569,7 +573,7 @@ Atributos Estáticos Públicos</h2></td></tr>
 <div class="line"><span class="lineno">  231</span>    ui-&gt;btnLixeiraLdat-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a370be53a6fd2cff99fdae67bb73f5e0d">cssBtnLixeira</a>); <span class="comment">// Inserindo Qss no botão</span></div>
 <div class="line"><span class="lineno">  232</span>    ui-&gt;btnLixeiraLdat-&gt;hide();<span class="comment">//O botão inicia escondido, para só ser mostrado após ter algo inserido no LineEdit</span></div>
 <div class="line"><span class="lineno">  233</span>}</div>
-<div class="ttc" id="aclass_style_html_a370be53a6fd2cff99fdae67bb73f5e0d"><div class="ttname"><a href="class_style.html#a370be53a6fd2cff99fdae67bb73f5e0d">Style::cssBtnLixeira</a></div><div class="ttdeci">QString cssBtnLixeira</div><div class="ttdef"><b>Definition:</b> style.h:79</div></div>
+<div class="ttc" id="aclass_style_html_a370be53a6fd2cff99fdae67bb73f5e0d"><div class="ttname"><a href="class_style.html#a370be53a6fd2cff99fdae67bb73f5e0d">Style::cssBtnLixeira</a></div><div class="ttdeci">QString cssBtnLixeira</div><div class="ttdef"><b>Definition:</b> style.h:88</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -768,15 +772,15 @@ Atributos Estáticos Públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  491</span>                                {</div>
-<div class="line"><span class="lineno">  492</span> </div>
-<div class="line"><span class="lineno">  493</span>     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; 5; i++ ) {</div>
-<div class="line"><span class="lineno">  494</span>         <span class="keywordflow">if</span>(!this-&gt;<a class="code hl_function" href="class_main_window.html#a29f854c25adfe49fa7a5e8da954bebd9">getStatusDePreenchimento</a>(i)){</div>
-<div class="line"><span class="lineno">  495</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  496</span>         }</div>
-<div class="line"><span class="lineno">  497</span>     }</div>
-<div class="line"><span class="lineno">  498</span>     ui-&gt;btnAvancar-&gt;setEnabled(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  499</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  552</span>                                {</div>
+<div class="line"><span class="lineno">  553</span> </div>
+<div class="line"><span class="lineno">  554</span>     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; 5; i++ ) {</div>
+<div class="line"><span class="lineno">  555</span>         <span class="keywordflow">if</span>(!this-&gt;<a class="code hl_function" href="class_main_window.html#a29f854c25adfe49fa7a5e8da954bebd9">getStatusDePreenchimento</a>(i)){ <span class="comment">// verifica se os status de preenchimento estão com valor true para cada arquivo</span></div>
+<div class="line"><span class="lineno">  556</span>            <span class="keywordflow">return</span>; <span class="comment">//caso algum estejam false, nada acontece</span></div>
+<div class="line"><span class="lineno">  557</span>         }</div>
+<div class="line"><span class="lineno">  558</span>     }</div>
+<div class="line"><span class="lineno">  559</span>     ui-&gt;btnAvancar-&gt;setEnabled(<span class="keyword">true</span>); <span class="comment">// caso todos estejam &#39;true&#39; , o botão avançar é habilitado</span></div>
+<div class="line"><span class="lineno">  560</span>}</div>
 <div class="ttc" id="aclass_main_window_html_a29f854c25adfe49fa7a5e8da954bebd9"><div class="ttname"><a href="class_main_window.html#a29f854c25adfe49fa7a5e8da954bebd9">MainWindow::getStatusDePreenchimento</a></div><div class="ttdeci">bool getStatusDePreenchimento(int posicao)</div><div class="ttdef"><b>Definition:</b> mainwindow.h:91</div></div>
 </div><!-- fragment -->
 </div>
