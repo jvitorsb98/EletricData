@@ -63,7 +63,7 @@ QList<Linha> FrameBarras::linhas =  QList<Linha>();
 std::map<int , std::map<int , double >> FrameBarras::limitesDti = std::map<int , std::map<int , double >>() ;
 
 /**
- * @variable Ui::MainWindow *frameT
+ * @variable Ui::FrameTensoes *frameT
  * @brief Variavel que permite acessar o 'Ui' do FrameTensoes. Foi declarada como várival global para ser utilizada em qualquer parte da classe.
  */
 Ui::FrameTensoes *frameT;
@@ -211,6 +211,14 @@ QStringList FrameBarras::linhasDoSistema(){
  * @return void
  */
 void FrameBarras::preencheLimites(){
+
+    /*
+     * 1 equivale a (Tensao Nominal <= 1kV)
+     * 2 equivale a (Tensao Nominal > 1 kv && Tensao Nonimal <= 13.8 kV)
+     * 3 equivale a (Tensao Nominal > 13.8 kV && Tensao Nominal <= 69kV)
+     * 4 equivale a (Tensao Nominal > 69kV)
+    */
+
     limitesDti[1][3] = 6.5;
     limitesDti[1][5] = 7.5;
     limitesDti[1][7] = 6.5;
@@ -840,7 +848,7 @@ void FrameBarras::on_btnFiltrar_clicked()
  * @brief Método responsável por atualizar a variável estática indexTab a cada alternancia do tabWidget
  * @param index
  */
-inline void FrameBarras::on_tabLinhas_currentChanged(int index)
+void FrameBarras::on_tabLinhas_currentChanged(int index)
 {
     indexTab = index;
 }

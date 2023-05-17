@@ -72,7 +72,7 @@ private slots:
 
     void on_btnFiltrar_clicked();
 
-    inline void on_tabLinhas_currentChanged(int index);
+    void on_tabLinhas_currentChanged(int index);
 
     void on_btnVoltar_clicked();
 

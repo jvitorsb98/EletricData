@@ -37,6 +37,13 @@ public:
     void inserindoQssJanela();
     void inicializandoFrame();
 
+    void atualizaVariaveis();
+    void filtrarLinhasTabela();
+    void filtrarColunasTabela();
+    void filtrarColunasPorIndices();
+    void filtrarColunasPorFaixa();
+    void filtrarColunasPorMarcadores();
+
 private slots:
     void on_comboBoxFBarra_currentIndexChanged(int index);
 
