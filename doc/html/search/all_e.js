@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['salvaplanilha_0',['salvaPlanilha',['../class_frame_exportar.html#afa675a81e237bee01d3612dea3b03d51',1,'FrameExportar']]],
+  ['salvaplanilha_0',['salvaPlanilha',['../class_exportar_excel.html#a70bc2596fa27c57f96d638fe905e82dc',1,'ExportarExcel']]],
   ['segundaopcao_1',['segundaOpcao',['../class_style.html#a903734eb8cf9929c62f79a0dda0c928f',1,'Style']]],
   ['setafilenamenosarq_2',['setaFileNameNosArq',['../class_main_window.html#a55f79f031a5cabd9821032147812938c',1,'MainWindow']]],
   ['setbarrainfectadathdv_3',['setbarraInfectadaThdv',['../class_barra.html#aca8f6f2f6c534442a1a10544aac8f9df',1,'Barra']]],

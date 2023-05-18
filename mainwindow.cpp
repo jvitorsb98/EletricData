@@ -246,19 +246,6 @@ void MainWindow::insereQssLblVerifica(){
 }
 
 /**
- * @name MainWindow::setaFileNameNosArq
- * @brief seta o FileName dos ponteiros dos arquivos com o que estiver escrito no lineEdit correpondente de cada um.
- * @return void
- */
-void MainWindow::setaFileNameNosArq(){
-    arquivoVsoln->setFileName(ui->lineEditVsoln->text());   //seta FileName no arquivoVsoln
-    arquivoThdi->setFileName(ui->lineEditThdi->text());     //seta FileName no arquivoThdi
-    arquivoThdv->setFileName(ui->lineEditThdv->text());     //seta FileName no arquivoThdv
-    arquivoIsoln->setFileName(ui->lineEditIsoln->text());   //seta FileName no arquivoIsoln
-    arquivoLdat->setFileName(ui->lineEditLdat->text());     //seta FileName no arquivoLdat
-}
-
-/**
  * @sa MainWindow::on_btnVsoln_clicked
  * @brief Método que implementa a busca pelo arquivo Vsoln.
  * @return void
@@ -315,7 +302,6 @@ void MainWindow::on_btnThdv_clicked()
     this->setStatusDePreenchimento(1,true); //guarda a informação de que esta parte do form foi inserida
     verificarAvanco(); //verifica se o form está completo para habilitar o botão de avançar
     arquivoThdv->close(); //realiza fechamento do arquivo
-
 }
 
 /**
@@ -347,6 +333,7 @@ void MainWindow::on_btnThdi_clicked()
     arquivoThdi->close(); //realiza fechamento do arquivo
 
 }
+
 /**
  * @sa MainWindow::on_btnIsoln_clicked
  * @brief Método que implementa a busca pelo arquivo Isoln.
@@ -372,7 +359,6 @@ void MainWindow::on_btnIsoln_clicked()
     this->setStatusDePreenchimento(3,true); //guarda a informação de que esta parte do form foi inserida
     verificarAvanco(); //verifica se o form está completo para habilitar o botão de avançar
     arquivoIsoln->close(); //realiza fechamento do arquivo
-
 }
 
 /**
@@ -400,8 +386,23 @@ void MainWindow::on_btnLdat_clicked()
     this->setStatusDePreenchimento(4,true); //guarda a informação de que esta parte do form foi inserida
     verificarAvanco(); //verifica se o form está completo para habilitar o botão de avançar
     arquivoLdat->close(); //realiza fechamento do arquivo
-
 }
+
+/**
+ * @name MainWindow::verificarAvanco()
+ * @brief Método responsável por habilitar o botão avançar caso todos os LineEdits estejam preenchdiso
+ * @return void
+ */
+void MainWindow::verificarAvanco(){
+
+    for (int i = 0 ; i < 5; i++ ) {
+        if(!this->getStatusDePreenchimento(i)){ // verifica se os status de preenchimento estão com valor true para cada arquivo
+            return; //caso algum estejam false, nada acontece
+        }
+    }
+    ui->btnAvancar->setEnabled(true); // caso todos estejam 'true' , o botão avançar é habilitado
+}
+
 /**
  * @sa MainWindow::on_btnLixeiraVsoln_clicked
  * @brief Método que implementa a exclusão do endereço para o arquivo Vsoln inserido pelo usuário.
@@ -425,6 +426,7 @@ void MainWindow::on_btnLixeiraVsoln_clicked()
         return; // caso não queira
     }
 }
+
 /**
  * @sa MainWindow::on_btnLixeiraThdv_clicked
  * @brief Método que implementa a exclusão do endereço para o arquivo Thdv inserido pelo usuário.
@@ -448,6 +450,7 @@ void MainWindow::on_btnLixeiraThdv_clicked()
         return; // caso não queira
     }
 }
+
 /**
  * @sa MainWindow::on_btnLixeiraThdi_clicked
  * @brief Método que implementa a exclusão do endereço para o arquivo Thdi inserido pelo usuário.
@@ -471,6 +474,7 @@ void MainWindow::on_btnLixeiraThdi_clicked()
         return;
     }
 }
+
 /**
  * @sa MainWindow::on_btnLixeiraIsoln_clicked
  * @brief Método que implementa a exclusão do endereço para o arquivo Isoln inserido pelo usuário.
@@ -494,6 +498,7 @@ void MainWindow::on_btnLixeiraIsoln_clicked()
         return;
     }
 }
+
 /**
  * @sa MainWindow::on_btnLixeiraLdat_clicked
  * @brief Método que implementa a exclusão do endereço para o arquivo Ldat inserido pelo usuário.
@@ -517,6 +522,7 @@ void MainWindow::on_btnLixeiraLdat_clicked()
         return;
     }
 }
+
 /**
  * @sa MainWindow::on_btnLixeiraLdat_clicked
  * @brief Método que implementa a transição do Frame MainWindow para o FrameTensoes atráves do botão avançar
@@ -544,17 +550,18 @@ void MainWindow::on_btnAvancar_clicked()
         return; // caso não ,apenas retorna a janela atual
     }
 }
+
 /**
- * @name MainWindow::verificarAvanco()
- * @brief Método responsável por habilitar o botão avançar caso todos os LineEdits estejam preenchdiso
+ * @name MainWindow::setaFileNameNosArq
+ * @brief seta o FileName dos ponteiros dos arquivos com o que estiver escrito no lineEdit correpondente de cada um.
  * @return void
  */
-void MainWindow::verificarAvanco(){
-
-     for (int i = 0 ; i < 5; i++ ) {
-         if(!this->getStatusDePreenchimento(i)){ // verifica se os status de preenchimento estão com valor true para cada arquivo
-            return; //caso algum estejam false, nada acontece
-         }
-     }
-     ui->btnAvancar->setEnabled(true); // caso todos estejam 'true' , o botão avançar é habilitado
+void MainWindow::setaFileNameNosArq(){
+    arquivoVsoln->setFileName(ui->lineEditVsoln->text());   //seta FileName no arquivoVsoln
+    arquivoThdi->setFileName(ui->lineEditThdi->text());     //seta FileName no arquivoThdi
+    arquivoThdv->setFileName(ui->lineEditThdv->text());     //seta FileName no arquivoThdv
+    arquivoIsoln->setFileName(ui->lineEditIsoln->text());   //seta FileName no arquivoIsoln
+    arquivoLdat->setFileName(ui->lineEditLdat->text());     //seta FileName no arquivoLdat
 }
+
+

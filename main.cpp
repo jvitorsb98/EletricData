@@ -1,3 +1,9 @@
+/**
+ * @class Main
+ * @brief Classe principal do programa
+ * @reentrant Responsável por iniciar o programa, iniciar um spash e o Frame MainWindow
+ * @author João Vitor N. Ramos
+*/
 
 #include "mainwindow.h"
 #include <QApplication>
@@ -5,7 +11,6 @@
 #include <QTranslator>
 #include<QTimer>
 #include<QSplashScreen>
-#include "filtrosbarra.h"
 
 
 int main(int argc, char *argv[])

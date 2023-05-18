@@ -880,6 +880,13 @@ void FrameBarras::on_btnAvancar_clicked()
     MainWindow::atualizarStatus(frameM);
     this->hide();
 
+    if(FiltrosBarra::indexComboBoxEnvio == 0 && FiltrosBarra::indiceBarrasEscolhidas.isEmpty()){
+
+        FiltrosBarra::indiceBarrasEscolhidas.append(QString::number(1));
+        FiltrosBarra::indiceBarrasEscolhidas.append(QString::number(FrameTensoes::numeroDeBarras));
+
+    }
+
     FrameExportar *frameExportar = new FrameExportar(this,frameM,ui);
     frameExportar->setParent(this->parentWidget());
     frameExportar->setGeometry(224,0,800,720);

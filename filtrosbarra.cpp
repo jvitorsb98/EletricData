@@ -326,7 +326,7 @@ void FiltrosBarra::filtrarLinhasTabela(){
 
 /**
  * @name FiltrosBarra::filtrarColunasTabela
- * @brief Método responsável por chamar metodos que filtraram as colunas à depender da escolha do usúario
+ * @brief Método responsável por chamar metodos que filtram as colunas à depender da escolha do usúario
  * @return void
  */
 void FiltrosBarra::filtrarColunasTabela(){

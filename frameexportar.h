@@ -5,17 +5,8 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include "ui_framebarras.h"
-#include "framebarras.h"
-#include "xlsxdocument.h"
-#include "xlsxchartsheet.h"
-#include "xlsxcellrange.h"
-#include "xlsxchart.h"
-#include "xlsxrichstring.h"
-#include "xlsxworkbook.h"
-#include <QPdfWriter>
-#include <QPrinter>
-#include<QPainter>
-using namespace QXlsx;
+
+
 
 
 namespace Ui {
@@ -35,126 +26,10 @@ public:
     void inserirQssRadioButton();
     void inserirQssBtn();
     void inicializaFrame();
-    void imprimirPdfIntervaloBarras();
-    void imprimirPdfCombonentesBarras();
-    void imprimirPdfBarrasInfectadas();
 
-    //----------Funções PDF
-    //Funções para imprimir PDF com barras em intervalo
-    void PdfInterBInterL1InterL2();
-    void PdfInterBInterL1TodL2();
-    void PdfInterBarrasTodL1InterL2();
-    void PdfInterBarrasTodL1TodL2();
-    //Funções para imprimir PDF com barras em componentes
-    void PdfCompBarrasInterL1InterL2();
-    void PdfCompBarrasInterL1TodL2();
-    void PdfCompBarrasTodL1InterL2();
-    void PdfCompBarrasaTodL1TodL2();
-    //Funções de para imprimir PDF com barras infectadas
-    void PdfInfecBarrasInterL1InterL2();
-    void PdfInfecBarrasInterL1TodL2();
-    void PdfInfecBarrasTodL1InterL2();
-    void PdfInfecBarrasTodL1TodL2();
-    //Funções Auxiliares
-    //Funções os conteudos com barras em intervalo
-    void ContInterBInterL1InterL2(QPrinter* );
-    void ContInterBInterL1TodL2(QPrinter* );
-    void ContInterBarrasTodL1InterL2(QPrinter* );
-    void ContInterBarrasTodL1TodL2(QPrinter* );
-    //Funções para imprimir PDF com barras em componentes
-    void ContCompBarrasInterL1InterL2(QPrinter* );
-    void ContCompBarrasInterL1TodL2(QPrinter* );
-    void ContCompBarrasTodL1InterL2(QPrinter* );
-    void ContCompBarrasaTodL1TodL2(QPrinter* );
-    //Funções de para imprimir PDF com barras infectadas
-    void ContInfecBarrasInterL1InterL2(QPrinter* );
-    void ContInfecBarrasInterL1TodL2(QPrinter* );
-    void ContInfecBarrasTodL1InterL2(QPrinter* );
-    void ContInfecBarrasTodL1TodL2(QPrinter* );
-
-
-    //cacula quantidade de linhas que uma barra irá ocupar no sistema
-    int  QtdLinhasInfoBarra();
-    int  QtdLinhasInfoLinha();
-
-
-
-
-
-    //----------Funções Excel
-    //Funções para imprimir excel com barras em intervalo
-    void ExcelInterBInterL1InterL2();
-    void ExcelInterBInterL1TodL2();
-    void ExcelInterBarrasTodL1InterL2();
-    void ExcelInterBarrasTodL1TodL2();
-    //Funções para imprimir Excel com barras em componentes
-    void ExcelCompBarrasInterL2InterL2();
-    void ExcelCompBarrasInterL1TodL2();
-    void ExcelCompBarrasTodL1InterL2();
-    void ExcelCompBarrasaTodL1TodL2();
-    //Funções de para imprimir Excel com barras infectadas
-    void ExcelInfecBarrasInterL1InterL2();
-    void ExcelInfecBarrasInterL1TodL2();
-    void ExcelInfecBarrasTodL1InterL2();
-    void ExcelInfecBarrasTodL1TodL2();
-    QString numeroParaLetra(int numero);
-    //Funções Auxiliares
-    //Cria planilha
-    QXlsx::Document* criaPlanilha();
-    //pula linhas entre barras e Linhas
-    void ExcelPulaLinha(int* );
-    //Salva Planilha
-    void salvaPlanilha(QXlsx::Document* );
-    //escreve as barras em intervalo
-    void ExcelEscreveBarrasIntervalo(QXlsx::Document* , int* );
-    //escreve as barras em componentes
-    void ExcelEscreveBarrasComp(QXlsx::Document* , int*  );
-    //escreve as barras Infectadas
-    void ExcelEscreveBarrasInfec(QXlsx::Document* , int* );
-    //escreve Linhas com origens e destinos em estado de componentes
-    void ExcelEscreveLInterL1InterL2(QXlsx::Document* , int* );
-    //escreve Linhas com origens em estado de componentes e todos destinos
-    void ExcelEscreveLInterL1TodL2(QXlsx::Document*, int*  );
-    //escreve Linhas com todas origens e destinos em componenetes
-    void ExcelEscreveLTodL1InterL2(QXlsx::Document* , int* );
-    //escreve Linhas de todas origens e destinos
-    void ExcelEscreveLTodL1TodL2(QXlsx::Document*, int* );
-
-    //----------funções CSV
-    //Funções para imprimir csv com barras em intervalo
-    void CsvInterBarrasInterL1InterL2();
-    void CsvInterBarrasInterL1TodL2();
-    void CsvInterBarrasTodL1InterL2();
-    void CsvInterBarrasTodL1TodL2();
-    //Funções para imprimir csv com barras em componentes
-    void CsvCompBarrasInterL2InterL2();
-    void CsvCompBarrasInterL1TodL2();
-    void CsvCompBarrasTodL1InterL2();
-    void CsvCompBarrasaTodL1TodL2();
-    //Funções de para imprimir csv com barras infectadas
-    void CsvInfecBarrasInterL1InterL2();
-    void CsvInfecBarrasInterL1TodL2();
-    void CsvInfecBarrasTodL1InterL2();
-    void CsvInfecBarrasTodL1TodL2();
-    //Funções Auxiliares
-    //Cria arquivo
-    QFile* criaArquivo();
-    //escreve as barras em intervalo
-    void CsvEscreveBarrasIntervalo(QTextStream* );
-    //escreve as barras em componentes
-    void CsvEscreveBarrasComp(QTextStream* );
-    //escreve as barras Infectadas
-    void CsvEscreveBarrasInfec(QTextStream* );
-    //escreve Linhas com origens e destinos em estado de componentes
-    void CsvEscreveLInterL1InterL2(QTextStream* );
-    //escreve Linhas com origens em estado de componentes e todos destinos
-    void CsvEscreveLInterL1TodL2(QTextStream* );
-    //escreve Linhas com todas origens e destinos em componenetes
-    void CsvEscreveLTodL1InterL2(QTextStream* );
-    //escreve Linhas de todas origens e destinos
-    void CsvEscreveLTodL1TodL2(QTextStream* );
-
-
+    void ExportacaoParaPdf();
+    void ExportacaoParaExcel();
+    void ExportacaoParaCsv();
 
 
 private slots:

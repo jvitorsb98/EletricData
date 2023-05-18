@@ -9,6 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    exportarcsv.cpp \
+    exportarexcel.cpp \
+    exportarpdf.cpp \
     filtrolinha.cpp \
     filtrosbarra.cpp \
     framebarras.cpp \
@@ -20,6 +23,9 @@ SOURCES += \
 HEADERS += \
     Barra.h \
     Linha.h \
+    exportarcsv.h \
+    exportarexcel.h \
+    exportarpdf.h \
     filtrolinha.h \
     filtrosbarra.h \
     framebarras.h \
