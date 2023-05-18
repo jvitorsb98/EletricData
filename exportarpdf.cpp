@@ -547,7 +547,7 @@ void ExportarPdf::ContInterBInterL1InterL2(QPrinter* printer){
                             atributos = atributos.arg(correnteEficaz);
                         }
                         if(FiltroLinha::resistencia){
-                            atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                            atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                             QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                             atributos = atributos.arg(resistencia);
                         }
@@ -835,7 +835,7 @@ void ExportarPdf::ContInterBInterL1TodL2(QPrinter* printer){
                     atributos = atributos.arg(correnteEficaz);
                 }
                 if(FiltroLinha::resistencia){
-                    atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                    atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                     QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                     atributos = atributos.arg(resistencia);
                 }
@@ -1122,7 +1122,7 @@ void ExportarPdf::ContInterBarrasTodL1InterL2(QPrinter* printer){
                     atributos = atributos.arg(correnteEficaz);
                 }
                 if(FiltroLinha::resistencia){
-                    atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                    atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                     QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                     atributos = atributos.arg(resistencia);
                 }
@@ -1407,7 +1407,7 @@ void ExportarPdf::ContInterBarrasTodL1TodL2(QPrinter* printer){
             atributos = atributos.arg(correnteEficaz);
         }
         if(FiltroLinha::resistencia){
-            atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+            atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
             QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
             atributos = atributos.arg(resistencia);
         }
@@ -1692,7 +1692,7 @@ void ExportarPdf::ContCompBarrasInterL1InterL2(QPrinter* printer){
                             atributos = atributos.arg(correnteEficaz);
                         }
                         if(FiltroLinha::resistencia){
-                            atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                            atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                             QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                             atributos = atributos.arg(resistencia);
                         }
@@ -1976,7 +1976,7 @@ void ExportarPdf::ContCompBarrasInterL1TodL2(QPrinter* printer){
                     atributos = atributos.arg(correnteEficaz);
                 }
                 if(FiltroLinha::resistencia){
-                    atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                    atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                     QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                     atributos = atributos.arg(resistencia);
                 }
@@ -2260,7 +2260,7 @@ void ExportarPdf::ContCompBarrasTodL1InterL2(QPrinter* printer ){
                     atributos = atributos.arg(correnteEficaz);
                 }
                 if(FiltroLinha::resistencia){
-                    atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                    atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                     QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                     atributos = atributos.arg(resistencia);
                 }
@@ -2542,7 +2542,7 @@ void ExportarPdf::ContCompBarrasaTodL1TodL2(QPrinter* printer){
             atributos = atributos.arg(correnteEficaz);
         }
         if(FiltroLinha::resistencia){
-            atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+            atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
             QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
             atributos = atributos.arg(resistencia);
         }
@@ -2836,7 +2836,7 @@ void ExportarPdf::ContInfecBarrasInterL1InterL2(QPrinter* printer){
                             atributos = atributos.arg(correnteEficaz);
                         }
                         if(FiltroLinha::resistencia){
-                            atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                            atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                             QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                             atributos = atributos.arg(resistencia);
                         }
@@ -3129,7 +3129,7 @@ void ExportarPdf::ContInfecBarrasInterL1TodL2(QPrinter* printer){
                     atributos = atributos.arg(correnteEficaz);
                 }
                 if(FiltroLinha::resistencia){
-                    atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                    atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                     QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                     atributos = atributos.arg(resistencia);
                 }
@@ -3422,7 +3422,7 @@ void ExportarPdf::ContInfecBarrasTodL1InterL2(QPrinter* printer ){
                     atributos = atributos.arg(correnteEficaz);
                 }
                 if(FiltroLinha::resistencia){
-                    atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+                    atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
                     QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
                     atributos = atributos.arg(resistencia);
                 }
@@ -3713,7 +3713,7 @@ void ExportarPdf::ContInfecBarrasTodL1TodL2(QPrinter* printer){
             atributos = atributos.arg(correnteEficaz);
         }
         if(FiltroLinha::resistencia){
-            atributos += "<p><b>Resistencia[ohm]:</b> %1</p>";
+            atributos += "<p><b>Resistencia[pu]:</b> %1</p>";
             QString resistencia = QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
             atributos = atributos.arg(resistencia);
         }

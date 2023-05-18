@@ -439,7 +439,7 @@ QStringList FrameBarras::cabecalhoLinhas(){
         cabecalhos.push_back(item);
     }
     cabecalhos.push_back("Corrente Eficaz[pu]");
-    cabecalhos.push_back("Resistencia[ohm]");
+    cabecalhos.push_back("Resistencia[pu]");
     cabecalhos.push_back("Perdas[pu]");
     cabecalhos.push_back("Perdas eficaz[pu]");
 

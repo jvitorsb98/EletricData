@@ -124,6 +124,21 @@ Public Member Functions</h2></td></tr>
 </div></td></tr>
 <tr class="memitem:a65cea9270237655f2abe9f0279013845"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_exportar.html#a65cea9270237655f2abe9f0279013845">inicializaFrame</a> ()</td></tr>
 <tr class="separator:a65cea9270237655f2abe9f0279013845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">FrameExportar::ExportacaoParaPdf</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Método responsável por implementar a exportação para Pdf. Este método é responsável por verificar quais foram os filtros escolhidos pelo usúario no frame anterior e direcionar para o método responsável pela exportação escolhida. </p>
+</div></td></tr>
+<tr class="memitem:ada2b31c2e31885402108c776240cb459"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_exportar.html#ada2b31c2e31885402108c776240cb459">ExportacaoParaPdf</a> ()</td></tr>
+<tr class="separator:ada2b31c2e31885402108c776240cb459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">FrameExportar::ExportacaoParaExcel</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Método responsável por implementar a exportação para Excel. Este método é responsável por verificar quais foram os filtros escolhidos pelo usúario no frame anterior e direcionar para o método responsável pela exportação escolhida. </p>
+</div></td></tr>
+<tr class="memitem:a84676d397137c6ed9876b92cfcb49675"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_exportar.html#a84676d397137c6ed9876b92cfcb49675">ExportacaoParaExcel</a> ()</td></tr>
+<tr class="separator:a84676d397137c6ed9876b92cfcb49675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">FrameExportar::ExportacaoParaCsv</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Método responsável por implementar a exportação para Csv. Este método é responsável por verificar quais foram os filtros escolhidos pelo usúario no frame anterior e direcionar para o método responsável pela exportação escolhida. </p>
+</div></td></tr>
+<tr class="memitem:ab0a91dfca3d5e4f4cb19ddb704f4e1ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_exportar.html#ab0a91dfca3d5e4f4cb19ddb704f4e1ab">ExportacaoParaCsv</a> ()</td></tr>
+<tr class="separator:ab0a91dfca3d5e4f4cb19ddb704f4e1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">FrameExportar::inserirQssRadioButton</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>Método responsável por inserir Qss nos botões exportar e voltar</p>
@@ -133,12 +148,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afa7e2341732199ae468c334bcf2c9d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82b0a75239a9ad20f681d84d4f2d1587"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_exportar.html#a82b0a75239a9ad20f681d84d4f2d1587">inserirQssBtn</a> ()</td></tr>
 <tr class="separator:a82b0a75239a9ad20f681d84d4f2d1587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada2b31c2e31885402108c776240cb459"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_exportar.html#ada2b31c2e31885402108c776240cb459">ExportacaoParaPdf</a> ()</td></tr>
-<tr class="separator:ada2b31c2e31885402108c776240cb459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84676d397137c6ed9876b92cfcb49675"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_exportar.html#a84676d397137c6ed9876b92cfcb49675">ExportacaoParaExcel</a> ()</td></tr>
-<tr class="separator:a84676d397137c6ed9876b92cfcb49675"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0a91dfca3d5e4f4cb19ddb704f4e1ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_exportar.html#ab0a91dfca3d5e4f4cb19ddb704f4e1ab">ExportacaoParaCsv</a> ()</td></tr>
-<tr class="separator:ab0a91dfca3d5e4f4cb19ddb704f4e1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Janela responsável pela exportação dos dados em 3 formatos diferentes ( Pdf , Excel e .csv ) @reentrant Essa janela foi construida com 1 tabWidget e dois TableWidget entro dela, um para as Barras e outro para as linhas, além de botões para filtragem, avanço e voltar. </p>
@@ -183,24 +192,24 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                                                                                 :</div>
-<div class="line"><span class="lineno">   51</span>    QFrame(parent),</div>
-<div class="line"><span class="lineno">   52</span>    ui(<span class="keyword">new</span> Ui::FrameExportar)</div>
-<div class="line"><span class="lineno">   53</span>{</div>
-<div class="line"><span class="lineno">   54</span>    ui-&gt;setupUi(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="frameexportar_8cpp.html#ababa3f69b561f4589d2394e1726b26f2">frameMa</a> = mw;</div>
-<div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a> = parent;</div>
-<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="frameexportar_8cpp.html#a33b3bd76e1dcc710264d3bfaf662c20f">frameB</a> = fb;</div>
-<div class="line"><span class="lineno">   59</span> </div>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                                                 :</div>
+<div class="line"><span class="lineno">   49</span>    QFrame(parent),</div>
+<div class="line"><span class="lineno">   50</span>    ui(<span class="keyword">new</span> Ui::FrameExportar)</div>
+<div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    ui-&gt;setupUi(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="frameexportar_8cpp.html#ababa3f69b561f4589d2394e1726b26f2">frameMa</a> = mw;</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a> = parent;</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="frameexportar_8cpp.html#a33b3bd76e1dcc710264d3bfaf662c20f">frameB</a> = fb;</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_function" href="class_frame_exportar.html#a65cea9270237655f2abe9f0279013845">inicializaFrame</a>();</div>
 <div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_function" href="class_frame_exportar.html#a65cea9270237655f2abe9f0279013845">inicializaFrame</a>();</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>}</div>
-<div class="ttc" id="aclass_frame_exportar_html_a65cea9270237655f2abe9f0279013845"><div class="ttname"><a href="class_frame_exportar.html#a65cea9270237655f2abe9f0279013845">FrameExportar::inicializaFrame</a></div><div class="ttdeci">void inicializaFrame()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:79</div></div>
-<div class="ttc" id="aframeexportar_8cpp_html_a33b3bd76e1dcc710264d3bfaf662c20f"><div class="ttname"><a href="frameexportar_8cpp.html#a33b3bd76e1dcc710264d3bfaf662c20f">frameB</a></div><div class="ttdeci">Ui::FrameBarras * frameB</div><div class="ttdoc">Variavel que permite acessar o 'Ui' do FrameBarras. Foi declarada como várival global para ser utiliz...</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:34</div></div>
-<div class="ttc" id="aframeexportar_8cpp_html_a756c4fb3c6fe4c9a3eb751be29a95da4"><div class="ttname"><a href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a></div><div class="ttdeci">QWidget * pa</div><div class="ttdoc">Variavel que permite acessar seu parent. Foi declarada como várival global para ser utilizada em qual...</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:40</div></div>
-<div class="ttc" id="aframeexportar_8cpp_html_ababa3f69b561f4589d2394e1726b26f2"><div class="ttname"><a href="frameexportar_8cpp.html#ababa3f69b561f4589d2394e1726b26f2">frameMa</a></div><div class="ttdeci">Ui::MainWindow * frameMa</div><div class="ttdoc">Variavel que permite acessar o 'Ui' do MainWindow. Foi declarada como várival global para ser utiliza...</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:28</div></div>
+<div class="line"><span class="lineno">   61</span>}</div>
+<div class="ttc" id="aclass_frame_exportar_html_a65cea9270237655f2abe9f0279013845"><div class="ttname"><a href="class_frame_exportar.html#a65cea9270237655f2abe9f0279013845">FrameExportar::inicializaFrame</a></div><div class="ttdeci">void inicializaFrame()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:77</div></div>
+<div class="ttc" id="aframeexportar_8cpp_html_a33b3bd76e1dcc710264d3bfaf662c20f"><div class="ttname"><a href="frameexportar_8cpp.html#a33b3bd76e1dcc710264d3bfaf662c20f">frameB</a></div><div class="ttdeci">Ui::FrameBarras * frameB</div><div class="ttdoc">Variavel que permite acessar o 'Ui' do FrameBarras. Foi declarada como várival global para ser utiliz...</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:32</div></div>
+<div class="ttc" id="aframeexportar_8cpp_html_a756c4fb3c6fe4c9a3eb751be29a95da4"><div class="ttname"><a href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a></div><div class="ttdeci">QWidget * pa</div><div class="ttdoc">Variavel que permite acessar seu parent. Foi declarada como várival global para ser utilizada em qual...</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:38</div></div>
+<div class="ttc" id="aframeexportar_8cpp_html_ababa3f69b561f4589d2394e1726b26f2"><div class="ttname"><a href="frameexportar_8cpp.html#ababa3f69b561f4589d2394e1726b26f2">frameMa</a></div><div class="ttdeci">Ui::MainWindow * frameMa</div><div class="ttdoc">Variavel que permite acessar o 'Ui' do MainWindow. Foi declarada como várival global para ser utiliza...</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:26</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -218,9 +227,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keyword">delete</span> ui;</div>
-<div class="line"><span class="lineno">   72</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keyword">delete</span> ui;</div>
+<div class="line"><span class="lineno">   70</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -239,41 +248,41 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  226</span>                                     {</div>
-<div class="line"><span class="lineno">  227</span>    <a class="code hl_class" href="class_exportar_csv.html">ExportarCsv</a> csv(<a class="code hl_variable" href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a>);</div>
-<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 0 ){</div>
-<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  230</span>            csv.CsvInterBarrasTodL1TodL2();</div>
-<div class="line"><span class="lineno">  231</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  232</span>            csv.CsvInterBarrasInterL1TodL2();</div>
-<div class="line"><span class="lineno">  233</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  234</span>            csv.CsvInterBarrasTodL1InterL2();</div>
-<div class="line"><span class="lineno">  235</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  236</span>            csv.CsvInterBarrasInterL1InterL2();</div>
-<div class="line"><span class="lineno">  237</span>        }</div>
-<div class="line"><span class="lineno">  238</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 1 ){</div>
-<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  240</span>            csv.CsvCompBarrasaTodL1TodL2();</div>
-<div class="line"><span class="lineno">  241</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  242</span>            csv.CsvCompBarrasInterL1TodL2();</div>
-<div class="line"><span class="lineno">  243</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  244</span>            csv.CsvCompBarrasTodL1InterL2();</div>
-<div class="line"><span class="lineno">  245</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  246</span>            csv.CsvCompBarrasInterL2InterL2();</div>
-<div class="line"><span class="lineno">  247</span>        }</div>
-<div class="line"><span class="lineno">  248</span>    }<span class="keywordflow">else</span>{</div>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>                                     {</div>
+<div class="line"><span class="lineno">  247</span>    <a class="code hl_class" href="class_exportar_csv.html">ExportarCsv</a> csv(<a class="code hl_variable" href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a>);</div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 0 ){</div>
 <div class="line"><span class="lineno">  249</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  250</span>            csv.CsvInfecBarrasTodL1TodL2();</div>
+<div class="line"><span class="lineno">  250</span>            csv.CsvInterBarrasTodL1TodL2();</div>
 <div class="line"><span class="lineno">  251</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  252</span>            csv.CsvInfecBarrasInterL1TodL2();</div>
+<div class="line"><span class="lineno">  252</span>            csv.CsvInterBarrasInterL1TodL2();</div>
 <div class="line"><span class="lineno">  253</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  254</span>            csv.CsvInfecBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  254</span>            csv.CsvInterBarrasTodL1InterL2();</div>
 <div class="line"><span class="lineno">  255</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  256</span>            csv.CsvInfecBarrasInterL1InterL2();</div>
+<div class="line"><span class="lineno">  256</span>            csv.CsvInterBarrasInterL1InterL2();</div>
 <div class="line"><span class="lineno">  257</span>        }</div>
-<div class="line"><span class="lineno">  258</span>    }</div>
-<div class="line"><span class="lineno">  259</span>}</div>
-<div class="ttc" id="aclass_exportar_csv_html"><div class="ttname"><a href="class_exportar_csv.html">ExportarCsv</a></div><div class="ttdef"><b>Definition:</b> exportarcsv.h:9</div></div>
+<div class="line"><span class="lineno">  258</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 1 ){</div>
+<div class="line"><span class="lineno">  259</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  260</span>            csv.CsvCompBarrasaTodL1TodL2();</div>
+<div class="line"><span class="lineno">  261</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  262</span>            csv.CsvCompBarrasInterL1TodL2();</div>
+<div class="line"><span class="lineno">  263</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
+<div class="line"><span class="lineno">  264</span>            csv.CsvCompBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  265</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  266</span>            csv.CsvCompBarrasInterL1InterL2();</div>
+<div class="line"><span class="lineno">  267</span>        }</div>
+<div class="line"><span class="lineno">  268</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  269</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  270</span>            csv.CsvInfecBarrasTodL1TodL2();</div>
+<div class="line"><span class="lineno">  271</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  272</span>            csv.CsvInfecBarrasInterL1TodL2();</div>
+<div class="line"><span class="lineno">  273</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
+<div class="line"><span class="lineno">  274</span>            csv.CsvInfecBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  275</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  276</span>            csv.CsvInfecBarrasInterL1InterL2();</div>
+<div class="line"><span class="lineno">  277</span>        }</div>
+<div class="line"><span class="lineno">  278</span>    }</div>
+<div class="line"><span class="lineno">  279</span>}</div>
+<div class="ttc" id="aclass_exportar_csv_html"><div class="ttname"><a href="class_exportar_csv.html">ExportarCsv</a></div><div class="ttdoc">Classe responsável por realizar as exportações para csv Classe sem atributos. Utilizada para realizaç...</div><div class="ttdef"><b>Definition:</b> exportarcsv.h:9</div></div>
 <div class="ttc" id="aclass_filtro_linha_html_a00631732c553f1eb43abba982fa71f70"><div class="ttname"><a href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a></div><div class="ttdeci">static int indexComboBoxOrigem</div><div class="ttdoc">Variável estática que identifica qual checkbox está selecionado para a origem das linhas ( 0 para tod...</div><div class="ttdef"><b>Definition:</b> filtrolinha.h:27</div></div>
 <div class="ttc" id="aclass_filtro_linha_html_a06f1d970da9e917d543b2fc6581f4e8a"><div class="ttname"><a href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a></div><div class="ttdeci">static int indexComboBoxDestino</div><div class="ttdoc">Variável estática que identifica qual checkbox está selecionado para a destino das linhas ( 0 para to...</div><div class="ttdef"><b>Definition:</b> filtrolinha.h:28</div></div>
 <div class="ttc" id="aclass_filtros_barra_html_a703b8c56637450d3ed91abf8bd76b2ce"><div class="ttname"><a href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a></div><div class="ttdeci">static int indexComboBox</div><div class="ttdoc">Variável estática que identifica qual tipo de filtragem das barras está selecionada Seu valor inicial...</div><div class="ttdef"><b>Definition:</b> filtrosbarra.h:29</div></div>
@@ -294,41 +303,41 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  192</span>                                       {</div>
-<div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="class_exportar_excel.html">ExportarExcel</a> excel(<a class="code hl_variable" href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a>);</div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 0 ){</div>
-<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  196</span>            excel.ExcelInterBarrasTodL1TodL2();</div>
-<div class="line"><span class="lineno">  197</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  198</span>            excel.ExcelInterBInterL1TodL2();</div>
-<div class="line"><span class="lineno">  199</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  200</span>            excel.ExcelInterBarrasTodL1InterL2();</div>
-<div class="line"><span class="lineno">  201</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  202</span>            excel.ExcelInterBInterL1InterL2();</div>
-<div class="line"><span class="lineno">  203</span>        }</div>
-<div class="line"><span class="lineno">  204</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 1 ){</div>
-<div class="line"><span class="lineno">  205</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  206</span>            excel.ExcelCompBarrasaTodL1TodL2();</div>
-<div class="line"><span class="lineno">  207</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  208</span>            excel.ExcelCompBarrasInterL1TodL2();</div>
-<div class="line"><span class="lineno">  209</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  210</span>            excel.ExcelCompBarrasTodL1InterL2();</div>
-<div class="line"><span class="lineno">  211</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  212</span>            excel.ExcelCompBarrasInterL2InterL2();</div>
-<div class="line"><span class="lineno">  213</span>        }</div>
-<div class="line"><span class="lineno">  214</span>    }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  216</span>            excel.ExcelInfecBarrasTodL1TodL2();</div>
-<div class="line"><span class="lineno">  217</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  218</span>            excel.ExcelInfecBarrasInterL1TodL2();</div>
-<div class="line"><span class="lineno">  219</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  220</span>            excel.ExcelInfecBarrasTodL1InterL2();</div>
-<div class="line"><span class="lineno">  221</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  222</span>            excel.ExcelInfecBarrasInterL1InterL2();</div>
-<div class="line"><span class="lineno">  223</span>        }</div>
-<div class="line"><span class="lineno">  224</span>    }</div>
-<div class="line"><span class="lineno">  225</span>}</div>
-<div class="ttc" id="aclass_exportar_excel_html"><div class="ttname"><a href="class_exportar_excel.html">ExportarExcel</a></div><div class="ttdef"><b>Definition:</b> exportarexcel.h:11</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  206</span>                                       {</div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_class" href="class_exportar_excel.html">ExportarExcel</a> excel(<a class="code hl_variable" href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a>);</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 0 ){</div>
+<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  210</span>            excel.ExcelInterBarrasTodL1TodL2();</div>
+<div class="line"><span class="lineno">  211</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  212</span>            excel.ExcelInterBInterL1TodL2();</div>
+<div class="line"><span class="lineno">  213</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
+<div class="line"><span class="lineno">  214</span>            excel.ExcelInterBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  215</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  216</span>            excel.ExcelInterBInterL1InterL2();</div>
+<div class="line"><span class="lineno">  217</span>        }</div>
+<div class="line"><span class="lineno">  218</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 1 ){</div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  220</span>            excel.ExcelCompBarrasaTodL1TodL2();</div>
+<div class="line"><span class="lineno">  221</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  222</span>            excel.ExcelCompBarrasInterL1TodL2();</div>
+<div class="line"><span class="lineno">  223</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
+<div class="line"><span class="lineno">  224</span>            excel.ExcelCompBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  225</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  226</span>            excel.ExcelCompBarrasInterL1InterL2();</div>
+<div class="line"><span class="lineno">  227</span>        }</div>
+<div class="line"><span class="lineno">  228</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  230</span>            excel.ExcelInfecBarrasTodL1TodL2();</div>
+<div class="line"><span class="lineno">  231</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  232</span>            excel.ExcelInfecBarrasInterL1TodL2();</div>
+<div class="line"><span class="lineno">  233</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
+<div class="line"><span class="lineno">  234</span>            excel.ExcelInfecBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  235</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  236</span>            excel.ExcelInfecBarrasInterL1InterL2();</div>
+<div class="line"><span class="lineno">  237</span>        }</div>
+<div class="line"><span class="lineno">  238</span>    }</div>
+<div class="line"><span class="lineno">  239</span>}</div>
+<div class="ttc" id="aclass_exportar_excel_html"><div class="ttname"><a href="class_exportar_excel.html">ExportarExcel</a></div><div class="ttdoc">Classe responsável por realizar as exportações para csv Classe sem atributos. Utilizada para realizaç...</div><div class="ttdef"><b>Definition:</b> exportarexcel.h:11</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -346,40 +355,40 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  158</span>                                     {</div>
-<div class="line"><span class="lineno">  159</span>    <a class="code hl_class" href="class_exportar_pdf.html">ExportarPdf</a> pdf(<a class="code hl_variable" href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a>);</div>
-<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 0 ){</div>
-<div class="line"><span class="lineno">  161</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  162</span>            pdf.PdfInterBarrasTodL1TodL2();</div>
-<div class="line"><span class="lineno">  163</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  164</span>            pdf.PdfInterBInterL1TodL2();</div>
-<div class="line"><span class="lineno">  165</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  166</span>            pdf.PdfInterBarrasTodL1InterL2();</div>
-<div class="line"><span class="lineno">  167</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  168</span>            pdf.PdfInterBInterL1InterL2();</div>
-<div class="line"><span class="lineno">  169</span>        }</div>
-<div class="line"><span class="lineno">  170</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 1 ){</div>
-<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  172</span>            pdf.PdfCompBarrasaTodL1TodL2();</div>
-<div class="line"><span class="lineno">  173</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  174</span>            pdf.PdfCompBarrasInterL1TodL2();</div>
-<div class="line"><span class="lineno">  175</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  176</span>            pdf.PdfCompBarrasTodL1InterL2();</div>
-<div class="line"><span class="lineno">  177</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  178</span>            pdf.PdfCompBarrasInterL1InterL2();</div>
-<div class="line"><span class="lineno">  179</span>        }</div>
-<div class="line"><span class="lineno">  180</span>    }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  182</span>            pdf.PdfInfecBarrasTodL1TodL2();</div>
-<div class="line"><span class="lineno">  183</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
-<div class="line"><span class="lineno">  184</span>            pdf.PdfInfecBarrasInterL1TodL2();</div>
-<div class="line"><span class="lineno">  185</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
-<div class="line"><span class="lineno">  186</span>            pdf.PdfInfecBarrasTodL1InterL2();</div>
-<div class="line"><span class="lineno">  187</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  188</span>            pdf.PdfInfecBarrasInterL1InterL2();</div>
-<div class="line"><span class="lineno">  189</span>        }</div>
-<div class="line"><span class="lineno">  190</span>    }</div>
-<div class="line"><span class="lineno">  191</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>                                     {</div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_class" href="class_exportar_pdf.html">ExportarPdf</a> pdf(<a class="code hl_variable" href="frameexportar_8cpp.html#a756c4fb3c6fe4c9a3eb751be29a95da4">pa</a>);</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 0 ){</div>
+<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  170</span>            pdf.PdfInterBarrasTodL1TodL2();</div>
+<div class="line"><span class="lineno">  171</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  172</span>            pdf.PdfInterBInterL1TodL2();</div>
+<div class="line"><span class="lineno">  173</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
+<div class="line"><span class="lineno">  174</span>            pdf.PdfInterBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  175</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  176</span>            pdf.PdfInterBInterL1InterL2();</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+<div class="line"><span class="lineno">  178</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtros_barra.html#a703b8c56637450d3ed91abf8bd76b2ce">FiltrosBarra::indexComboBox</a> == 1 ){</div>
+<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  180</span>            pdf.PdfCompBarrasaTodL1TodL2();</div>
+<div class="line"><span class="lineno">  181</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  182</span>            pdf.PdfCompBarrasInterL1TodL2();</div>
+<div class="line"><span class="lineno">  183</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
+<div class="line"><span class="lineno">  184</span>            pdf.PdfCompBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  185</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  186</span>            pdf.PdfCompBarrasInterL1InterL2();</div>
+<div class="line"><span class="lineno">  187</span>        }</div>
+<div class="line"><span class="lineno">  188</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  189</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  190</span>            pdf.PdfInfecBarrasTodL1TodL2();</div>
+<div class="line"><span class="lineno">  191</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 1 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==0){</div>
+<div class="line"><span class="lineno">  192</span>            pdf.PdfInfecBarrasInterL1TodL2();</div>
+<div class="line"><span class="lineno">  193</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a00631732c553f1eb43abba982fa71f70">FiltroLinha::indexComboBoxOrigem</a> == 0 &amp;&amp; <a class="code hl_variable" href="class_filtro_linha.html#a06f1d970da9e917d543b2fc6581f4e8a">FiltroLinha::indexComboBoxDestino</a>==1){</div>
+<div class="line"><span class="lineno">  194</span>            pdf.PdfInfecBarrasTodL1InterL2();</div>
+<div class="line"><span class="lineno">  195</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  196</span>            pdf.PdfInfecBarrasInterL1InterL2();</div>
+<div class="line"><span class="lineno">  197</span>        }</div>
+<div class="line"><span class="lineno">  198</span>    }</div>
+<div class="line"><span class="lineno">  199</span>}</div>
 <div class="ttc" id="aclass_exportar_pdf_html"><div class="ttname"><a href="class_exportar_pdf.html">ExportarPdf</a></div><div class="ttdoc">Classe responsável por realizar as exportações para pdf Classe sem atributos. Utilizada para realizaç...</div><div class="ttdef"><b>Definition:</b> exportarpdf.h:11</div></div>
 </div><!-- fragment -->
 </div>
@@ -398,10 +407,10 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   79</span>                                   {</div>
-<div class="line"><span class="lineno">   80</span>    <a class="code hl_function" href="class_frame_exportar.html#a45fd7dbc573069fc76d89eefa90e1db6">inserirQssFrame</a>();</div>
-<div class="line"><span class="lineno">   81</span>}</div>
-<div class="ttc" id="aclass_frame_exportar_html_a45fd7dbc573069fc76d89eefa90e1db6"><div class="ttname"><a href="class_frame_exportar.html#a45fd7dbc573069fc76d89eefa90e1db6">FrameExportar::inserirQssFrame</a></div><div class="ttdeci">void inserirQssFrame()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:88</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                                   {</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_function" href="class_frame_exportar.html#a45fd7dbc573069fc76d89eefa90e1db6">inserirQssFrame</a>();</div>
+<div class="line"><span class="lineno">   79</span>}</div>
+<div class="ttc" id="aclass_frame_exportar_html_a45fd7dbc573069fc76d89eefa90e1db6"><div class="ttname"><a href="class_frame_exportar.html#a45fd7dbc573069fc76d89eefa90e1db6">FrameExportar::inserirQssFrame</a></div><div class="ttdeci">void inserirQssFrame()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:86</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -419,16 +428,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  123</span>                                 {</div>
-<div class="line"><span class="lineno">  124</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  125</span>    ui-&gt;btnExportar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>);</div>
-<div class="line"><span class="lineno">  126</span>    ui-&gt;btnExportar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/exportar.png&quot;</span>));</div>
-<div class="line"><span class="lineno">  127</span>    ui-&gt;btnExportar-&gt;setLayoutDirection(Qt::RightToLeft);</div>
-<div class="line"><span class="lineno">  128</span>    ui-&gt;btnVoltar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>);</div>
-<div class="line"><span class="lineno">  129</span>    ui-&gt;btnVoltar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/anterior.png&quot;</span>));</div>
-<div class="line"><span class="lineno">  130</span>}</div>
-<div class="ttc" id="aclass_style_html"><div class="ttname"><a href="class_style.html">Style</a></div><div class="ttdef"><b>Definition:</b> style.h:6</div></div>
-<div class="ttc" id="aclass_style_html_af8e9280cb6fee63da578ae8de656a3a7"><div class="ttname"><a href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">Style::cssBtn</a></div><div class="ttdeci">QString cssBtn</div><div class="ttdef"><b>Definition:</b> style.h:51</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>                                 {</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">  123</span>    ui-&gt;btnExportar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>);</div>
+<div class="line"><span class="lineno">  124</span>    ui-&gt;btnExportar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/exportar.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  125</span>    ui-&gt;btnExportar-&gt;setLayoutDirection(Qt::RightToLeft);</div>
+<div class="line"><span class="lineno">  126</span>    ui-&gt;btnVoltar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>);</div>
+<div class="line"><span class="lineno">  127</span>    ui-&gt;btnVoltar-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/imgs/icons/anterior.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  128</span>}</div>
+<div class="ttc" id="aclass_style_html"><div class="ttname"><a href="class_style.html">Style</a></div><div class="ttdoc">Classe responsável por armazenar as QString dos Qss a serem utilizados nas interfaces.</div><div class="ttdef"><b>Definition:</b> style.h:13</div></div>
+<div class="ttc" id="aclass_style_html_af8e9280cb6fee63da578ae8de656a3a7"><div class="ttname"><a href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">Style::cssBtn</a></div><div class="ttdeci">QString cssBtn</div><div class="ttdef"><b>Definition:</b> style.h:58</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -446,14 +455,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   88</span>                                   {</div>
-<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="class_frame_exportar.html#a549d27131fec0da9681fd1a069649ee0">inserirQssImg</a>();</div>
-<div class="line"><span class="lineno">   90</span>    <a class="code hl_function" href="class_frame_exportar.html#afa7e2341732199ae468c334bcf2c9d5e">inserirQssRadioButton</a>();</div>
-<div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="class_frame_exportar.html#a82b0a75239a9ad20f681d84d4f2d1587">inserirQssBtn</a>();</div>
-<div class="line"><span class="lineno">   92</span>}</div>
-<div class="ttc" id="aclass_frame_exportar_html_a549d27131fec0da9681fd1a069649ee0"><div class="ttname"><a href="class_frame_exportar.html#a549d27131fec0da9681fd1a069649ee0">FrameExportar::inserirQssImg</a></div><div class="ttdeci">void inserirQssImg()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:99</div></div>
-<div class="ttc" id="aclass_frame_exportar_html_a82b0a75239a9ad20f681d84d4f2d1587"><div class="ttname"><a href="class_frame_exportar.html#a82b0a75239a9ad20f681d84d4f2d1587">FrameExportar::inserirQssBtn</a></div><div class="ttdeci">void inserirQssBtn()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:123</div></div>
-<div class="ttc" id="aclass_frame_exportar_html_afa7e2341732199ae468c334bcf2c9d5e"><div class="ttname"><a href="class_frame_exportar.html#afa7e2341732199ae468c334bcf2c9d5e">FrameExportar::inserirQssRadioButton</a></div><div class="ttdeci">void inserirQssRadioButton()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:110</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                   {</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="class_frame_exportar.html#a549d27131fec0da9681fd1a069649ee0">inserirQssImg</a>();</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="class_frame_exportar.html#afa7e2341732199ae468c334bcf2c9d5e">inserirQssRadioButton</a>();</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="class_frame_exportar.html#a82b0a75239a9ad20f681d84d4f2d1587">inserirQssBtn</a>();</div>
+<div class="line"><span class="lineno">   90</span>}</div>
+<div class="ttc" id="aclass_frame_exportar_html_a549d27131fec0da9681fd1a069649ee0"><div class="ttname"><a href="class_frame_exportar.html#a549d27131fec0da9681fd1a069649ee0">FrameExportar::inserirQssImg</a></div><div class="ttdeci">void inserirQssImg()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:97</div></div>
+<div class="ttc" id="aclass_frame_exportar_html_a82b0a75239a9ad20f681d84d4f2d1587"><div class="ttname"><a href="class_frame_exportar.html#a82b0a75239a9ad20f681d84d4f2d1587">FrameExportar::inserirQssBtn</a></div><div class="ttdeci">void inserirQssBtn()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:121</div></div>
+<div class="ttc" id="aclass_frame_exportar_html_afa7e2341732199ae468c334bcf2c9d5e"><div class="ttname"><a href="class_frame_exportar.html#afa7e2341732199ae468c334bcf2c9d5e">FrameExportar::inserirQssRadioButton</a></div><div class="ttdeci">void inserirQssRadioButton()</div><div class="ttdef"><b>Definition:</b> frameexportar.cpp:108</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -471,12 +480,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   99</span>                                 {</div>
-<div class="line"><span class="lineno">  100</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  101</span>    ui-&gt;img-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;:/imgExportar/imgs/descritiva/relatorio.png&quot;</span>));</div>
-<div class="line"><span class="lineno">  102</span>    ui-&gt;img-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#ae09e8589ce0142e5190afc0572cb8647">cssImgExportar</a>);</div>
-<div class="line"><span class="lineno">  103</span>}</div>
-<div class="ttc" id="aclass_style_html_ae09e8589ce0142e5190afc0572cb8647"><div class="ttname"><a href="class_style.html#ae09e8589ce0142e5190afc0572cb8647">Style::cssImgExportar</a></div><div class="ttdeci">QString cssImgExportar</div><div class="ttdef"><b>Definition:</b> style.h:276</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>                                 {</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">   99</span>    ui-&gt;img-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;:/imgExportar/imgs/descritiva/relatorio.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  100</span>    ui-&gt;img-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#ae09e8589ce0142e5190afc0572cb8647">cssImgExportar</a>);</div>
+<div class="line"><span class="lineno">  101</span>}</div>
+<div class="ttc" id="aclass_style_html_ae09e8589ce0142e5190afc0572cb8647"><div class="ttname"><a href="class_style.html#ae09e8589ce0142e5190afc0572cb8647">Style::cssImgExportar</a></div><div class="ttdeci">QString cssImgExportar</div><div class="ttdef"><b>Definition:</b> style.h:283</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -494,14 +503,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  110</span>                                         {</div>
-<div class="line"><span class="lineno">  111</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
-<div class="line"><span class="lineno">  112</span>    ui-&gt;radioButtonCsv-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a10162e10553dbc9607df559a1b6a80f3">cssRadioButton</a>);</div>
-<div class="line"><span class="lineno">  113</span>    ui-&gt;radioButtonPDF-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  114</span>    ui-&gt;radioButtonExcel-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a10162e10553dbc9607df559a1b6a80f3">cssRadioButton</a>);</div>
-<div class="line"><span class="lineno">  115</span>    ui-&gt;radioButtonPDF-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a10162e10553dbc9607df559a1b6a80f3">cssRadioButton</a>);</div>
-<div class="line"><span class="lineno">  116</span>}</div>
-<div class="ttc" id="aclass_style_html_a10162e10553dbc9607df559a1b6a80f3"><div class="ttname"><a href="class_style.html#a10162e10553dbc9607df559a1b6a80f3">Style::cssRadioButton</a></div><div class="ttdeci">QString cssRadioButton</div><div class="ttdef"><b>Definition:</b> style.h:270</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>                                         {</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_class" href="class_style.html">Style</a> style;</div>
+<div class="line"><span class="lineno">  110</span>    ui-&gt;radioButtonCsv-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a10162e10553dbc9607df559a1b6a80f3">cssRadioButton</a>);</div>
+<div class="line"><span class="lineno">  111</span>    ui-&gt;radioButtonPDF-&gt;setChecked(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  112</span>    ui-&gt;radioButtonExcel-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a10162e10553dbc9607df559a1b6a80f3">cssRadioButton</a>);</div>
+<div class="line"><span class="lineno">  113</span>    ui-&gt;radioButtonPDF-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a10162e10553dbc9607df559a1b6a80f3">cssRadioButton</a>);</div>
+<div class="line"><span class="lineno">  114</span>}</div>
+<div class="ttc" id="aclass_style_html_a10162e10553dbc9607df559a1b6a80f3"><div class="ttname"><a href="class_style.html#a10162e10553dbc9607df559a1b6a80f3">Style::cssRadioButton</a></div><div class="ttdeci">QString cssRadioButton</div><div class="ttdef"><b>Definition:</b> style.h:277</div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,6 +1,13 @@
 
 #ifndef LINHA_H
 #define LINHA_H
+
+/**
+ * @class Linha
+ * @brief Classe responsável por armazenar os dados das Linhas
+ * @author João Vitor N. Ramos
+*/
+
 #include<utility>
 #include<QObject>
 #endif // LINHA_H
@@ -88,15 +95,56 @@ public:
     }
 
 private:
+    /**
+     * @variable int origem
+     * @brief Variavel privada responsável por armazenar o numero da barra de origem da ligação
+     */
     int origem;
+    /**
+     * @variable int destino
+     * @brief Variavel privada responsável por armazenar o numero da barra de destino da ligação
+     */
     int destino;
+    /**
+     * @variable double corrente
+     * @brief Variavel privada responsável por armazenar o valor da corrente elétrica que percorre a linha, em pu
+     */
     double corrente;
+    /**
+     * @variable double dhtPercent
+     * @brief Variavel privada responsável por armazenar o valor da distorção harmônica total da linha, em %
+     */
     double dhtPercent;
+    /**
+     * @variable double resistencia
+     * @brief Variavel privada responsável por armazenar o valor da resistencia elétrica da linha, em ohm
+     */
     double resistencia;
-    double perdas;
+    /**
+     * @variable double correnteEficaz
+     * @brief Variavel privada responsável por armazenar o valor da corrente eficaz elétrica que percorre a linha, em pu
+     */
     double correnteEficaz;
+    /**
+     * @variable double perdas
+     * @brief Variavel privada responsável por armazenar o valor das perdas elétricas na linha, pu
+     */
+    double perdas;
+    /**
+     * @variable double perdasEficaz
+     * @brief Variavel privada responsável por armazenar o valor das perdas elétricas eficaz na linha, pu
+     */
     double perdasEficaz;
+    /**
+     * @variable bool linhaInfectadaDht
+     * @brief Variavel privada responsável por armazenar se uma linhas está ultrapassando o valor de dht
+     */
     bool linhaInfectadaDht;
+    /**
+     * @variable std::map<int, std::pair<double, double>> dti
+     * @brief  Váriavel responsável por armazenar os indices de distorção harmônica individuais.
+     * std::map<indice da harmônica, std::pair<std::pair<valor absoluto, valor em porcentagem>>
+     */
     std::map<int, std::pair<double, double>> dti;
 
 };

@@ -642,7 +642,7 @@ void ExportarCsv::CsvEscreveLInterL1InterL2(QTextStream* saida){
     }
     *saida << Qt::endl;
     if(FiltroLinha::resistencia){
-        *saida << "Resistencia[ohm]";
+        *saida << "Resistencia[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
@@ -779,7 +779,7 @@ void ExportarCsv::CsvEscreveLInterL1TodL2(QTextStream* saida){
     }
     *saida << Qt::endl;
     if(FiltroLinha::resistencia){
-        *saida << "Resistencia[ohm]";
+        *saida << "Resistencia[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
             for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
@@ -901,7 +901,7 @@ void ExportarCsv::CsvEscreveLTodL1InterL2(QTextStream* saida){
     }
     *saida << Qt::endl;
     if(FiltroLinha::resistencia){
-        *saida << "Resistencia[ohm]";
+        *saida << "Resistencia[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
             for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
@@ -993,7 +993,7 @@ void ExportarCsv::CsvEscreveLTodL1TodL2(QTextStream* saida){
     }
     *saida << Qt::endl;
     if(FiltroLinha::resistencia){
-        *saida << "Resistencia[ohm]";
+        *saida << "Resistencia[pu]";
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             *saida << ","+QString::number(FrameBarras::linhas[i].getResistencia(),'f',5);
         }

@@ -1,6 +1,13 @@
 
 #ifndef STYLE_H
 #define STYLE_H
+
+/**
+ * @class Style
+ * @brief Classe responsável por armazenar as QString dos Qss a serem utilizados nas interfaces
+ * @author João Vitor N. Ramos
+*/
+
 #include<QObject>
 
 class Style{

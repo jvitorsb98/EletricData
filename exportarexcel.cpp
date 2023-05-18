@@ -699,7 +699,7 @@ void ExportarExcel::ExcelEscreveLInterL1InterL2(QXlsx::Document* saida, int* lin
     }
     if(FiltroLinha::resistencia){
         pos =1 ;
-        saida->write("A"+QString::number(*linha),"Resistencia[ohm]");
+        saida->write("A"+QString::number(*linha),"Resistencia[pu]");
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
@@ -854,7 +854,7 @@ void ExportarExcel::ExcelEscreveLInterL1TodL2(QXlsx::Document* saida, int* linha
     }
     if(FiltroLinha::resistencia){
         pos = 1;
-        saida->write("A"+QString::number(*linha),"Resistencia[ohm]");
+        saida->write("A"+QString::number(*linha),"Resistencia[pu]");
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeOrigem = FrameBarras::linhas[i].getOrigem();
             for( int j = 0 ; j < FiltroLinha::indiceOrigensEscolhidas.size() ; j++){
@@ -991,7 +991,7 @@ void ExportarExcel::ExcelEscreveLTodL1InterL2(QXlsx::Document* saida, int* linha
     }
     if(FiltroLinha::resistencia){
         pos = 1;
-        saida->write("A"+QString::number(*linha),"Resistencia[ohm]");
+        saida->write("A"+QString::number(*linha),"Resistencia[pu]");
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             int barraDeDestino = FrameBarras::linhas[i].getDestino();
             for( int k = 0 ; k < FiltroLinha::indiceDestinosEscolhidos.size() ; k++){
@@ -1100,7 +1100,7 @@ void ExportarExcel::ExcelEscreveLTodL1TodL2(QXlsx::Document* saida, int* linha){
     }
     if(FiltroLinha::resistencia){
         pos = 1;
-        saida->write("A"+QString::number(*linha),"Resistencia[ohm]");
+        saida->write("A"+QString::number(*linha),"Resistencia[pu]");
         for( int i = 0 ; i < FrameBarras::numeroDeLinhas ; i++){
             saida->write(QString(numeroParaLetra(pos+1))+QString::number(*linha),QString::number(FrameBarras::linhas[i].getResistencia()));
             pos++;

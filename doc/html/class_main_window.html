@@ -338,9 +338,9 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   67</span>        }</div>
 <div class="line"><span class="lineno">   68</span>    }</div>
 <div class="ttc" id="aclass_main_window_html_a9510ded4a3817b7a3b0b2da822fdd0f4"><div class="ttname"><a href="class_main_window.html#a9510ded4a3817b7a3b0b2da822fdd0f4">MainWindow::frameAtual</a></div><div class="ttdeci">static int frameAtual</div><div class="ttdoc">Variável estática que identifica em que frame a aplicação está rodando. Seu valor inicial é 0....</div><div class="ttdef"><b>Definition:</b> mainwindow.h:90</div></div>
-<div class="ttc" id="aclass_style_html"><div class="ttname"><a href="class_style.html">Style</a></div><div class="ttdef"><b>Definition:</b> style.h:6</div></div>
-<div class="ttc" id="aclass_style_html_a0af2cb4ce1b384201fd88b0b5eedc693"><div class="ttname"><a href="class_style.html#a0af2cb4ce1b384201fd88b0b5eedc693">Style::cssTxt</a></div><div class="ttdeci">QString cssTxt</div><div class="ttdef"><b>Definition:</b> style.h:14</div></div>
-<div class="ttc" id="aclass_style_html_a5c7a13c2c07a921d360aa4491b32ba1a"><div class="ttname"><a href="class_style.html#a5c7a13c2c07a921d360aa4491b32ba1a">Style::cssTxtSelected</a></div><div class="ttdeci">QString cssTxtSelected</div><div class="ttdef"><b>Definition:</b> style.h:19</div></div>
+<div class="ttc" id="aclass_style_html"><div class="ttname"><a href="class_style.html">Style</a></div><div class="ttdoc">Classe responsável por armazenar as QString dos Qss a serem utilizados nas interfaces.</div><div class="ttdef"><b>Definition:</b> style.h:13</div></div>
+<div class="ttc" id="aclass_style_html_a0af2cb4ce1b384201fd88b0b5eedc693"><div class="ttname"><a href="class_style.html#a0af2cb4ce1b384201fd88b0b5eedc693">Style::cssTxt</a></div><div class="ttdeci">QString cssTxt</div><div class="ttdef"><b>Definition:</b> style.h:21</div></div>
+<div class="ttc" id="aclass_style_html_a5c7a13c2c07a921d360aa4491b32ba1a"><div class="ttname"><a href="class_style.html#a5c7a13c2c07a921d360aa4491b32ba1a">Style::cssTxtSelected</a></div><div class="ttdeci">QString cssTxtSelected</div><div class="ttdef"><b>Definition:</b> style.h:26</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -443,7 +443,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  116</span>    ui-&gt;txtExportar-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a0af2cb4ce1b384201fd88b0b5eedc693">cssTxt</a>); <span class="comment">//Insere Qss  no item da barra de Status ( 4. Exportar)</span></div>
 <div class="line"><span class="lineno">  117</span>    ui-&gt;statusFrame-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a673a5021a820c3a116892cb5f863cfa3">cssStatusFrame</a>); <span class="comment">// Insere Qss no Frame da Barra de Status</span></div>
 <div class="line"><span class="lineno">  118</span>}</div>
-<div class="ttc" id="aclass_style_html_a673a5021a820c3a116892cb5f863cfa3"><div class="ttname"><a href="class_style.html#a673a5021a820c3a116892cb5f863cfa3">Style::cssStatusFrame</a></div><div class="ttdeci">QString cssStatusFrame</div><div class="ttdef"><b>Definition:</b> style.h:23</div></div>
+<div class="ttc" id="aclass_style_html_a673a5021a820c3a116892cb5f863cfa3"><div class="ttname"><a href="class_style.html#a673a5021a820c3a116892cb5f863cfa3">Style::cssStatusFrame</a></div><div class="ttdeci">QString cssStatusFrame</div><div class="ttdef"><b>Definition:</b> style.h:30</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -470,7 +470,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  182</span>    ui-&gt;btnIsoln-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>); <span class="comment">//Insere Qss no Botão de busca do arquivo Isoln</span></div>
 <div class="line"><span class="lineno">  183</span>    ui-&gt;btnLdat-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">cssBtn</a>); <span class="comment">//Insere Qss no Botão de busca do arquivo Ldat</span></div>
 <div class="line"><span class="lineno">  184</span>}</div>
-<div class="ttc" id="aclass_style_html_af8e9280cb6fee63da578ae8de656a3a7"><div class="ttname"><a href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">Style::cssBtn</a></div><div class="ttdeci">QString cssBtn</div><div class="ttdef"><b>Definition:</b> style.h:51</div></div>
+<div class="ttc" id="aclass_style_html_af8e9280cb6fee63da578ae8de656a3a7"><div class="ttname"><a href="class_style.html#af8e9280cb6fee63da578ae8de656a3a7">Style::cssBtn</a></div><div class="ttdeci">QString cssBtn</div><div class="ttdef"><b>Definition:</b> style.h:58</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -496,7 +496,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  199</span>    ui-&gt;btnAvancar-&gt;setLayoutDirection(Qt::RightToLeft); <span class="comment">// Icone é inserido a direita do texto</span></div>
 <div class="line"><span class="lineno">  200</span>    ui-&gt;btnAvancar-&gt;setEnabled(<span class="keyword">false</span>); <span class="comment">// Botão inicia desabilitado</span></div>
 <div class="line"><span class="lineno">  201</span>}</div>
-<div class="ttc" id="aclass_style_html_a53aa01cbf685a90075b0b6c3cb3db6c0"><div class="ttname"><a href="class_style.html#a53aa01cbf685a90075b0b6c3cb3db6c0">Style::cssBtnTransition</a></div><div class="ttdeci">QString cssBtnTransition</div><div class="ttdef"><b>Definition:</b> style.h:68</div></div>
+<div class="ttc" id="aclass_style_html_a53aa01cbf685a90075b0b6c3cb3db6c0"><div class="ttname"><a href="class_style.html#a53aa01cbf685a90075b0b6c3cb3db6c0">Style::cssBtnTransition</a></div><div class="ttdeci">QString cssBtnTransition</div><div class="ttdef"><b>Definition:</b> style.h:75</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -538,7 +538,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  231</span>    ui-&gt;btnLixeiraLdat-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a370be53a6fd2cff99fdae67bb73f5e0d">cssBtnLixeira</a>); <span class="comment">// Inserindo Qss no botão</span></div>
 <div class="line"><span class="lineno">  232</span>    ui-&gt;btnLixeiraLdat-&gt;hide();<span class="comment">//O botão inicia escondido, para só ser mostrado após ter algo inserido no LineEdit</span></div>
 <div class="line"><span class="lineno">  233</span>}</div>
-<div class="ttc" id="aclass_style_html_a370be53a6fd2cff99fdae67bb73f5e0d"><div class="ttname"><a href="class_style.html#a370be53a6fd2cff99fdae67bb73f5e0d">Style::cssBtnLixeira</a></div><div class="ttdeci">QString cssBtnLixeira</div><div class="ttdef"><b>Definition:</b> style.h:88</div></div>
+<div class="ttc" id="aclass_style_html_a370be53a6fd2cff99fdae67bb73f5e0d"><div class="ttname"><a href="class_style.html#a370be53a6fd2cff99fdae67bb73f5e0d">Style::cssBtnLixeira</a></div><div class="ttdeci">QString cssBtnLixeira</div><div class="ttdef"><b>Definition:</b> style.h:95</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -594,7 +594,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  152</span>    ui-&gt;lineEditIsoln-&gt;setEnabled(<span class="keyword">false</span>);   <span class="comment">//Desativa alteração no lineEditIsoln para que só possa ser alterado pela inserção de texto no botão buscar</span></div>
 <div class="line"><span class="lineno">  153</span>    ui-&gt;lineEditLdat-&gt;setEnabled(<span class="keyword">false</span>);    <span class="comment">//Desativa alteração no lineEditLdat para que só possa ser alterado pela inserção de texto no botão buscar</span></div>
 <div class="line"><span class="lineno">  154</span>}</div>
-<div class="ttc" id="aclass_style_html_a422d75b8dcf55d91ddb986df588e8a78"><div class="ttname"><a href="class_style.html#a422d75b8dcf55d91ddb986df588e8a78">Style::cssLineEdit</a></div><div class="ttdeci">QString cssLineEdit</div><div class="ttdef"><b>Definition:</b> style.h:32</div></div>
+<div class="ttc" id="aclass_style_html_a422d75b8dcf55d91ddb986df588e8a78"><div class="ttname"><a href="class_style.html#a422d75b8dcf55d91ddb986df588e8a78">Style::cssLineEdit</a></div><div class="ttdeci">QString cssLineEdit</div><div class="ttdef"><b>Definition:</b> style.h:39</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -685,8 +685,8 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  132</span>    ui-&gt;txtLdat-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#ab17dcc60a3768792520e458618dc7ebb">cssTxtArquivos</a>); <span class="comment">// Insere Qss No titulo acima do LineEdit Ldat</span></div>
 <div class="line"><span class="lineno">  133</span>    ui-&gt;frameArquivos-&gt;setStyleSheet(style.<a class="code hl_variable" href="class_style.html#a74674e3d44ba9fd7f5ed98813beeacfa">cssFrameArq</a>); <span class="comment">// Insere Qss no Frame da Barra Arquivos</span></div>
 <div class="line"><span class="lineno">  134</span>}</div>
-<div class="ttc" id="aclass_style_html_a74674e3d44ba9fd7f5ed98813beeacfa"><div class="ttname"><a href="class_style.html#a74674e3d44ba9fd7f5ed98813beeacfa">Style::cssFrameArq</a></div><div class="ttdeci">QString cssFrameArq</div><div class="ttdef"><b>Definition:</b> style.h:30</div></div>
-<div class="ttc" id="aclass_style_html_ab17dcc60a3768792520e458618dc7ebb"><div class="ttname"><a href="class_style.html#ab17dcc60a3768792520e458618dc7ebb">Style::cssTxtArquivos</a></div><div class="ttdeci">QString cssTxtArquivos</div><div class="ttdef"><b>Definition:</b> style.h:24</div></div>
+<div class="ttc" id="aclass_style_html_a74674e3d44ba9fd7f5ed98813beeacfa"><div class="ttname"><a href="class_style.html#a74674e3d44ba9fd7f5ed98813beeacfa">Style::cssFrameArq</a></div><div class="ttdeci">QString cssFrameArq</div><div class="ttdef"><b>Definition:</b> style.h:37</div></div>
+<div class="ttc" id="aclass_style_html_ab17dcc60a3768792520e458618dc7ebb"><div class="ttname"><a href="class_style.html#ab17dcc60a3768792520e458618dc7ebb">Style::cssTxtArquivos</a></div><div class="ttdeci">QString cssTxtArquivos</div><div class="ttdef"><b>Definition:</b> style.h:31</div></div>
 </div><!-- fragment -->
 </div>
 </div>
