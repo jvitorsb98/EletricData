@@ -1,7 +1,7 @@
 /**
  * @class FrameBarras
  * @brief Janela responsável pelo armazenamento dos dados em nos atributos da classes Barra e Linha. Além de etregar ao usúario uma TabWidget amigável, para que possa filtrar os dados que quiser para realizar sua análise.
- * @reentrant Essa janela foi construida com 1 tabWidget e dois TableWidget entro dela, um para as Barras e outro para as linhas, além de botões para filtragem, avanço e voltar.
+ * Essa janela foi construida com 1 tabWidget e dois TableWidget entro dela, um para as Barras e outro para as linhas, além de botões para filtragem, avanço e voltar.
  * @author João Vitor N. Ramos
 */
 

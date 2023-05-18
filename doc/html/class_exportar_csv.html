@@ -853,7 +853,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  642</span>    }</div>
 <div class="line"><span class="lineno">  643</span>    *saida &lt;&lt; Qt::endl;</div>
 <div class="line"><span class="lineno">  644</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a03f7cecc211f6380bbf45ada12d54180">FiltroLinha::resistencia</a>){</div>
-<div class="line"><span class="lineno">  645</span>        *saida &lt;&lt; <span class="stringliteral">&quot;Resistencia[ohm]&quot;</span>;</div>
+<div class="line"><span class="lineno">  645</span>        *saida &lt;&lt; <span class="stringliteral">&quot;Resistencia[pu]&quot;</span>;</div>
 <div class="line"><span class="lineno">  646</span>        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">FrameBarras::numeroDeLinhas</a> ; i++){</div>
 <div class="line"><span class="lineno">  647</span>            <span class="keywordtype">int</span> barraDeOrigem = <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">FrameBarras::linhas</a>[i].getOrigem();</div>
 <div class="line"><span class="lineno">  648</span>            <span class="keywordtype">int</span> barraDeDestino = <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">FrameBarras::linhas</a>[i].getDestino();</div>
@@ -1014,7 +1014,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  779</span>    }</div>
 <div class="line"><span class="lineno">  780</span>    *saida &lt;&lt; Qt::endl;</div>
 <div class="line"><span class="lineno">  781</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a03f7cecc211f6380bbf45ada12d54180">FiltroLinha::resistencia</a>){</div>
-<div class="line"><span class="lineno">  782</span>        *saida &lt;&lt; <span class="stringliteral">&quot;Resistencia[ohm]&quot;</span>;</div>
+<div class="line"><span class="lineno">  782</span>        *saida &lt;&lt; <span class="stringliteral">&quot;Resistencia[pu]&quot;</span>;</div>
 <div class="line"><span class="lineno">  783</span>        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">FrameBarras::numeroDeLinhas</a> ; i++){</div>
 <div class="line"><span class="lineno">  784</span>            <span class="keywordtype">int</span> barraDeOrigem = <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">FrameBarras::linhas</a>[i].getOrigem();</div>
 <div class="line"><span class="lineno">  785</span>            <span class="keywordflow">for</span>( <span class="keywordtype">int</span> j = 0 ; j &lt; <a class="code hl_variable" href="class_filtro_linha.html#aad92e84b094345d123a487629299c0da">FiltroLinha::indiceOrigensEscolhidas</a>.size() ; j++){</div>
@@ -1148,7 +1148,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  901</span>    }</div>
 <div class="line"><span class="lineno">  902</span>    *saida &lt;&lt; Qt::endl;</div>
 <div class="line"><span class="lineno">  903</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a03f7cecc211f6380bbf45ada12d54180">FiltroLinha::resistencia</a>){</div>
-<div class="line"><span class="lineno">  904</span>        *saida &lt;&lt; <span class="stringliteral">&quot;Resistencia[ohm]&quot;</span>;</div>
+<div class="line"><span class="lineno">  904</span>        *saida &lt;&lt; <span class="stringliteral">&quot;Resistencia[pu]&quot;</span>;</div>
 <div class="line"><span class="lineno">  905</span>        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">FrameBarras::numeroDeLinhas</a> ; i++){</div>
 <div class="line"><span class="lineno">  906</span>            <span class="keywordtype">int</span> barraDeDestino = <a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">FrameBarras::linhas</a>[i].getDestino();</div>
 <div class="line"><span class="lineno">  907</span>            <span class="keywordflow">for</span>( <span class="keywordtype">int</span> k = 0 ; k &lt; <a class="code hl_variable" href="class_filtro_linha.html#aa93467590050c52a9a3397dc7628d581">FiltroLinha::indiceDestinosEscolhidos</a>.size() ; k++){</div>
@@ -1252,7 +1252,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  993</span>    }</div>
 <div class="line"><span class="lineno">  994</span>    *saida &lt;&lt; Qt::endl;</div>
 <div class="line"><span class="lineno">  995</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_filtro_linha.html#a03f7cecc211f6380bbf45ada12d54180">FiltroLinha::resistencia</a>){</div>
-<div class="line"><span class="lineno">  996</span>        *saida &lt;&lt; <span class="stringliteral">&quot;Resistencia[ohm]&quot;</span>;</div>
+<div class="line"><span class="lineno">  996</span>        *saida &lt;&lt; <span class="stringliteral">&quot;Resistencia[pu]&quot;</span>;</div>
 <div class="line"><span class="lineno">  997</span>        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code hl_variable" href="class_frame_barras.html#afb47ea5870e412c793ba125ebc432cda">FrameBarras::numeroDeLinhas</a> ; i++){</div>
 <div class="line"><span class="lineno">  998</span>            *saida &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>+QString::number(<a class="code hl_variable" href="class_frame_barras.html#a9d5bc091db2113c8c074ea09b1a96e12">FrameBarras::linhas</a>[i].getResistencia(),<span class="charliteral">&#39;f&#39;</span>,5);</div>
 <div class="line"><span class="lineno">  999</span>        }</div>
