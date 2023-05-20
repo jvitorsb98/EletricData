@@ -72,7 +72,6 @@ public:
     static QFile *arquivoThdi;
     static QFile *arquivoThdv;
     static QFile *arquivoLdat;
-    static QFile *arquivoTensoes;
     static int frameAtual;
 
     void inicializaFrame();

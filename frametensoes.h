@@ -8,6 +8,7 @@
 #include<utility>
 #include <QTableWidgetItem>
 #include <QTableWidget>
+#include<QFile>
 
 
 
@@ -27,8 +28,8 @@ public:
     ~FrameTensoes();
     static QList<double> tensoesNominais;
     static int numeroDeBarras;
+    static QFile *arquivoTensoes;
     void inicializaFrame();
-
 
 
 private slots:

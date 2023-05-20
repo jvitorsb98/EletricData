@@ -28,6 +28,7 @@ public:
     static int indexComboBox;
     static int indexComboBoxEnvio;
     static QStringList indiceBarrasEscolhidas;
+
     void inicializandoFrame();
 
 

@@ -129,7 +129,7 @@ void FrameBarras::inicializaFrame(){
  */
 void FrameBarras::inicializaVariaveisStatic(){
     indiceHarmMax = buscaIndiceHarmMax() ;
-    quantidadeDeComponentesHarm = buscaQtdHarm(indiceHarmMax);
+    quantidadeDeComponentesHarm = buscaQtdHarm();
     numeroDeLinhas = linhasDoSistema().size();
 }
 
@@ -169,7 +169,7 @@ int FrameBarras::buscaIndiceHarmMax() {
  * @param indiceHarmMax
  * @return um inteiro que representa a quantidade de componentes harmônicas as serem análisadas
  */
-inline int FrameBarras::buscaQtdHarm(int indiceHarmMax){
+inline int FrameBarras::buscaQtdHarm(){
     return (indiceHarmMax/2) > 1 ? indiceHarmMax/2 : 0;
 }
 

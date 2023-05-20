@@ -19,11 +19,11 @@
 
 
 /**
- * @variable QFile* MainWindow::arquivoTensoes
+ * @variable QFile* arquivoTensoes
  * @brief Variável estática responsável por apontar para o arquivo que armazenará
  *  os valores das tensões nominais das barras do sistema elétrico
  */
-QFile* MainWindow::arquivoTensoes  = new QFile();
+QFile* FrameTensoes::arquivoTensoes  = new QFile();
 
 /**
  * @variable QList<double> FrameTensoes::tensoesNominais
@@ -257,16 +257,16 @@ void FrameTensoes::on_btnImportar_clicked()
     //Configura-se um filtro para pesquisa do arquivo
     QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
     QString abrirArquivo=QFileDialog::getOpenFileName(this,"Abrir Arquivo","C:://",filtro);  //inicia a procura do arquivo C::
-    MainWindow::arquivoTensoes->setFileName(abrirArquivo); //busca grava o endereço para abertura na variavel estática
+    arquivoTensoes->setFileName(abrirArquivo); //busca grava o endereço para abertura na variavel estática
     //realiza abertura do arquivo
-    if(!MainWindow::arquivoTensoes->open(QFile::ReadOnly|QFile::Text)){  //caso não seja realizada a abertura
-        if(MainWindow::arquivoTensoes->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
+    if(!arquivoTensoes->open(QFile::ReadOnly|QFile::Text)){  //caso não seja realizada a abertura
+        if(arquivoTensoes->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
             return;
         }
         QMessageBox::warning(this,"Erro","Erro ao abrir arquivo"); //caso tenha selecionado e não tenha conseguido abrir é enviado uma messagem de erro
         return;
     }
-    ui->lineEditImportar->setText(MainWindow::arquivoTensoes->fileName());
+    ui->lineEditImportar->setText(arquivoTensoes->fileName());
     ui->lineEditImportar->setEnabled(false);
     ui->btnImportar->hide();
     ui->btnLixeira->show();
@@ -275,7 +275,7 @@ void FrameTensoes::on_btnImportar_clicked()
 
     try {
         for (int i = 0; i < numeroDeBarras; i++) {
-            QString line = MainWindow::arquivoTensoes->readLine();
+            QString line = arquivoTensoes->readLine();
             if (line.isNull()) {
                 throw std::runtime_error("O arquivo possui menos linhas do que o esperado.");
             }
@@ -302,7 +302,7 @@ void FrameTensoes::on_btnImportar_clicked()
         }
 
         // Verifica se existem mais linhas no arquivo além da quantidade de barras esperada
-        QString extraLine = MainWindow::arquivoTensoes->readLine();
+        QString extraLine = arquivoTensoes->readLine();
         if (!extraLine.isNull()) {
             throw std::runtime_error("O arquivo possui mais linhas do que o esperado.");
         }
@@ -352,22 +352,22 @@ void FrameTensoes::on_btnSalvarTabela_clicked()
      //Configura-se um filtro para pesquisa do diretorio
      QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
      QString localSalvamento =QFileDialog::getSaveFileName(this,"Salvar Arquivo",QDir::homePath(),filtro);
-     MainWindow::arquivoTensoes->setFileName(localSalvamento);
-     if(!MainWindow::arquivoTensoes->open(QFile::WriteOnly | QFile::Text)){
-         if(MainWindow::arquivoTensoes->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
+     arquivoTensoes->setFileName(localSalvamento);
+     if(!arquivoTensoes->open(QFile::WriteOnly | QFile::Text)){
+         if(arquivoTensoes->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
             return;
          }
          QMessageBox::warning(this,"Erro","Arquivo não pôde ser savo"); //caso tenha selecionado e não tenha conseguido abrir é enviado uma messagem de erro
          return;
      }
 
-     QTextStream saida(MainWindow::arquivoTensoes);
+     QTextStream saida(arquivoTensoes);
      int numeroDeBarras = quantidadeDeBarras();
      for(int i=0 ; i< numeroDeBarras ; i++){
          saida << ui->tableTensoes->item(i,0)->text()+","+ ((ui->tableTensoes->item(i,1))==nullptr ? " " : ui->tableTensoes->item(i,1)->text()) << Qt::endl;
      }
-     MainWindow::arquivoTensoes->flush();
-     MainWindow::arquivoTensoes->close();
+     arquivoTensoes->flush();
+     arquivoTensoes->close();
 
 }
 
@@ -378,26 +378,26 @@ void FrameTensoes::on_btnSalvarTabela_clicked()
  */
 void FrameTensoes::on_btnAvancar_clicked()
 {
-    if(MainWindow::arquivoTensoes->fileName()==nullptr){
+    if(arquivoTensoes->fileName()==nullptr){
         QMessageBox::StandardButton escolha;
         escolha = QMessageBox::question(this,"Salvar Arquivo","Deseja salvar o arquivo de tensões?",QMessageBox::Yes|QMessageBox::No);
         if(escolha==QMessageBox::Yes){
             QString filtro="Todos Arquivos (*.*) ;; Arquivos separados por virgula (*.csv)";
             QString localSalvamento =QFileDialog::getSaveFileName(this,"Salvar Arquivo",QDir::homePath(),filtro);
-            MainWindow::arquivoTensoes->setFileName(localSalvamento);
-            if(!MainWindow::arquivoTensoes->open(QFile::WriteOnly | QFile::Text)){
-                if(MainWindow::arquivoTensoes->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
+            arquivoTensoes->setFileName(localSalvamento);
+            if(!arquivoTensoes->open(QFile::WriteOnly | QFile::Text)){
+                if(arquivoTensoes->error() == QFile::OpenError){  //verifica se o usuario nao selecionou nenhuma
                     return;
                 }
                 QMessageBox::warning(this,"Erro","Arquivo não pôde ser savo"); //caso tenha selecionado e não tenha conseguido abrir é enviado uma messagem de erro
                 return;
             }
-            QTextStream saida(MainWindow::arquivoTensoes);
+            QTextStream saida(arquivoTensoes);
             for(int i=0 ; i< numeroDeBarras ; i++){
                 saida << ui->tableTensoes->item(i,0)->text()+","+ ((ui->tableTensoes->item(i,1))==nullptr ? " " : ui->tableTensoes->item(i,1)->text()) << Qt::endl;
             }
-            MainWindow::arquivoTensoes->flush();
-            MainWindow::arquivoTensoes->close();
+            arquivoTensoes->flush();
+            arquivoTensoes->close();
         }
     }
 

@@ -19,14 +19,12 @@ class FrameBarras : public QFrame
 public:
     explicit FrameBarras(QWidget *parent = nullptr, Ui::MainWindow *mw=nullptr,Ui::FrameTensoes *ft=nullptr);
     ~FrameBarras();
-    inline int buscaQtdHarm(int );
     static int indexTab;
     static int indiceHarmMax;
     static int numeroDeLinhas;
     static int quantidadeDeComponentesHarm;
     static QList<Barra> barras;
     static QList<Linha> linhas;
-    void inicializaLinha();
     static bool filtroLinhaInserido;
     static bool filtroBarraInserido;
 
@@ -40,9 +38,7 @@ public:
     void inicializaFrame();
 
 
-
 private slots:
-
 
     void on_btnFiltrar_clicked();
 
@@ -56,6 +52,9 @@ private:
     Ui::FrameBarras *ui;
     static std::map<int , std::map<int , double >> limitesDti;
 
+
+    inline int buscaQtdHarm();
+    void inicializaLinha();
     int buscaIndiceHarmMax();
     void inicializaBarra();
     void preencheFrameBarras();
@@ -74,10 +73,8 @@ private:
     void preencheTabelaBarra();
     void preencheTabelaLinha();
     void preencheLimites();
-
     void insereQSSBtnFiltrar();
     void preencheLinha();
-
     void insereBackgroundNasPoluidoras();
     void verificaAvanco();
 
