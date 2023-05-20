@@ -1,7 +1,7 @@
 /**
  * @class FrameTensoes
  * @brief Janela responsável pela aquisição dos dados de tensão nominal do sistema elétrico
- * @reentrant Essa janela foi construida com 1 frame que se posiciona no mesmo local do frame responsável por receber os arquivos no MainWindow,
+ * Essa janela foi construida com 1 frame que se posiciona no mesmo local do frame responsável por receber os arquivos no MainWindow,
  * nele há um QTableWidget para inserção dos valores das tensões, seja por inserção manual ou para importar um arquivo com esses dados. Além de botões de salva, avançar e voltar.
  * @author João Vitor N. Ramos
 */
@@ -15,6 +15,7 @@
 #include<QDebug>
 #include<QTextStream>
 #include "style.h"
+#include "mainwindow.h"
 
 
 /**

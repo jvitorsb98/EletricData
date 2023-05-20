@@ -2,7 +2,6 @@
 #define FRAMETENSOES_H
 
 #include <QFrame>
-#include "mainwindow.h"
 #include "QMainWindow"
 #include<ui_mainwindow.h>
 #include<QObject>
@@ -26,19 +25,11 @@ class FrameTensoes : public QFrame
 public:
     explicit FrameTensoes(QWidget *parent = nullptr, Ui::MainWindow *mw=nullptr);
     ~FrameTensoes();
-    int quantidadeDeBarras();
     static QList<double> tensoesNominais;
-    void insereQssBotaoAvancar();
-    void insereQssImportar();
-    void insereQssBtnVoltar();
-    void insereQssBtnLixeira();
-    void insereQssBtnSalvar();
-    inline void insereQssFrame();
-    void insereTableTensoes();
-    void insereQssFrameTensoes();
     static int numeroDeBarras;
     void inicializaFrame();
-    bool tabelaTensoesPreenchida();
+
+
 
 private slots:
 
@@ -58,6 +49,17 @@ private slots:
 
 private:
     Ui::FrameTensoes *ui;
+
+    int quantidadeDeBarras();
+    void insereQssBotaoAvancar();
+    void insereQssImportar();
+    void insereQssBtnVoltar();
+    void insereQssBtnLixeira();
+    void insereQssBtnSalvar();
+    inline void insereQssFrame();
+    void insereTableTensoes();
+    void insereQssFrameTensoes();
+    bool tabelaTensoesPreenchida();
 
 };
 

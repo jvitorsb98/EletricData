@@ -9,6 +9,7 @@
 #include "filtrolinha.h"
 #include "filtrosbarra.h"
 #include "framebarras.h"
+#include "frametensoes.h"
 #include <QMessageBox>
 #include <QDir>
 #include <QFileDialog>
@@ -757,7 +758,6 @@ void ExportarExcel::ExcelEscreveLInterL1InterL2(QXlsx::Document* saida, int* lin
 
 }
 
-
 /**
  * @name ExportarExcel::ExcelEscreveLInterL1TodL2
  * @brief Método responsável por imprimir em um arquivo pré-preparado : Uma escolha individual de linhas apenas na origem
@@ -1158,7 +1158,6 @@ void ExportarExcel::salvaPlanilha(QXlsx::Document* saida){
     QString localSalvamento =QFileDialog::getSaveFileName(parentExportarExcel,"Salvar Arquivo",QDir::homePath(),filtro);
     saida->saveAs(localSalvamento);
 }
-
 
 /**
  * @name ExportarExcel::numeroParaLetra

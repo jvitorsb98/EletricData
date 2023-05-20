@@ -29,6 +29,7 @@ public:
     void ExcelInfecBarrasTodL1InterL2();
     void ExcelInfecBarrasTodL1TodL2();
 
+private:
 
     //Funções Auxiliares
     QString numeroParaLetra(int numero);

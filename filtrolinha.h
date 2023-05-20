@@ -4,7 +4,7 @@
 #include <QDialog>
 #include "ui_filtrolinha.h"
 #include "ui_framebarras.h"
-#include "mainwindow.h"
+
 namespace Ui {
 class FiltroLinha;
 }
@@ -28,25 +28,13 @@ public:
     static int indexComboBoxDestino;
     static int indexComboBoxOrigemEnvio;
     static int indexComboBoxDestinoEnvio;
-
-    void inserindoQssFiltrosLinha();
-    void inserindoQssCheckBox();
-    void inserindoQssLineEdit();
-    void inserindoQssBtnAplicar();
-    void inserindoQssComboBox();
-    void inserindoQssGroupBox();
-    void inserindoQssJanela();
-    void inicializandoFrame();
     static QStringList indiceOrigensEscolhidas;
     static QStringList indiceDestinosEscolhidos;
 
-    void atualizaVariaveis();
-    void filtrarLinhasTabela();
-    void filtrarColunasTabela();
-    void filtrarColTod1Tod2();
-    void filtrarColTod1Ind2();
-    void filtrarColInd1Tod2();
-    void filtrarColInd1Ind2();
+    void inicializandoFrame();
+
+
+
 
 
 
@@ -60,6 +48,24 @@ private slots:
 
 private:
     Ui::FiltroLinha *ui;
+
+    void inserindoQssFiltrosLinha();
+    void inserindoQssCheckBox();
+    void inserindoQssLineEdit();
+    void inserindoQssBtnAplicar();
+    void inserindoQssComboBox();
+    void inserindoQssGroupBox();
+    void inserindoQssJanela();
+
+    void atualizaVariaveis();
+    void filtrarLinhasTabela();
+    void filtrarColunasTabela();
+    void filtrarColTod1Tod2();
+    void filtrarColTod1Ind2();
+    void filtrarColInd1Tod2();
+    void filtrarColInd1Ind2();
+
+
 };
 
 #endif // FILTROLINHA_H

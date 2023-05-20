@@ -3,7 +3,6 @@
 
 #include <QFrame>
 #include "ui_mainwindow.h"
-#include "mainwindow.h"
 #include "ui_framebarras.h"
 
 
@@ -21,15 +20,9 @@ public:
     explicit FrameExportar(QWidget *parent = nullptr, Ui::MainWindow *mw=nullptr,  Ui::FrameBarras *fb=nullptr);
     ~FrameExportar();
 
-    void inserirQssFrame();
-    void inserirQssImg();
-    void inserirQssRadioButton();
-    void inserirQssBtn();
     void inicializaFrame();
 
-    void ExportacaoParaPdf();
-    void ExportacaoParaExcel();
-    void ExportacaoParaCsv();
+
 
 
 private slots:
@@ -39,6 +32,15 @@ private slots:
 
 private:
     Ui::FrameExportar *ui;
+
+    void inserirQssFrame();
+    void inserirQssImg();
+    void inserirQssRadioButton();
+    void inserirQssBtn();
+
+    void ExportacaoParaPdf();
+    void ExportacaoParaExcel();
+    void ExportacaoParaCsv();
 };
 
 #endif // FRAMEEXPORTAR_H

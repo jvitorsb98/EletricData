@@ -9,6 +9,7 @@
 #include "filtrolinha.h"
 #include "filtrosbarra.h"
 #include "framebarras.h"
+#include "frametensoes.h"
 #include <QFileDialog>
 #include <QMessageBox>
 

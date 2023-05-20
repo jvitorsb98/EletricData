@@ -14,8 +14,11 @@
 #include<QtMath>
 #include "frameexportar.h"
 #include "frametensoes.h"
+#include "filtrosbarra.h"
 #include "Barra.h"
 #include "mainwindow.h"
+#include "filtrolinha.h"
+#include "filtrosbarra.h"
 
 /**
  * @variable int FrameBarras::indexTab

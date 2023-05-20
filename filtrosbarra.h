@@ -4,7 +4,6 @@
 #include <QDialog>
 #include "ui_filtrosbarra.h"
 #include "ui_framebarras.h"
-#include "mainwindow.h"
 
 namespace Ui {
 class FiltrosBarra;
@@ -29,21 +28,9 @@ public:
     static int indexComboBox;
     static int indexComboBoxEnvio;
     static QStringList indiceBarrasEscolhidas;
-    void inserindoQssFiltrosBarra();
-    void inserindoQssCheckBox();
-    void inserindoQssLineEdit();
-    void inserindoQssBtnAplicar();
-    void inserindoQssComboBox();
-    void inserindoQssGroupBox();
-    void inserindoQssJanela();
     void inicializandoFrame();
 
-    void atualizaVariaveis();
-    void filtrarLinhasTabela();
-    void filtrarColunasTabela();
-    void filtrarColunasPorIndices();
-    void filtrarColunasPorFaixa();
-    void filtrarColunasPorMarcadores();
+
 
 private slots:
     void on_comboBoxFBarra_currentIndexChanged(int index);
@@ -52,6 +39,21 @@ private slots:
 
 private:
     Ui::FiltrosBarra *ui;
+
+    void inserindoQssFiltrosBarra();
+    void inserindoQssCheckBox();
+    void inserindoQssLineEdit();
+    void inserindoQssBtnAplicar();
+    void inserindoQssComboBox();
+    void inserindoQssGroupBox();
+    void inserindoQssJanela();
+
+    void atualizaVariaveis();
+    void filtrarLinhasTabela();
+    void filtrarColunasTabela();
+    void filtrarColunasPorIndices();
+    void filtrarColunasPorFaixa();
+    void filtrarColunasPorMarcadores();
 };
 
 #endif // FILTROSBARRA_H

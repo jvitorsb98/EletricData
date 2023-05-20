@@ -27,6 +27,8 @@ public:
     void CsvInfecBarrasTodL1InterL2();
     void CsvInfecBarrasTodL1TodL2();
 
+private:
+
     //Funções Auxiliares
     //Cria arquivo
     QFile* criaArquivo();

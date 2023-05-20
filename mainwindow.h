@@ -67,20 +67,6 @@ public:
         }
     }
 
-    void insereQssMainWindow();
-    void insereIcon();
-    void insereQssBarraDeStatus();
-    void verificarAvanco();
-    void insereQssTitulosLineEdit();
-    void insereQssLineEdit();
-    void insereQssPlaceHolderLineEdit();
-    void insereQssBtnArquivos();
-    void insereQssBtnAvancar();
-    void insereQssBtnLixeira();
-    void insereQssLblVerifica();
-    void setaFileNameNosArq();
-    void inicializaFrame();
-
     static QFile *arquivoVsoln;
     static QFile *arquivoIsoln;
     static QFile *arquivoThdi;
@@ -88,6 +74,10 @@ public:
     static QFile *arquivoLdat;
     static QFile *arquivoTensoes;
     static int frameAtual;
+
+    void inicializaFrame();
+
+
     bool getStatusDePreenchimento(int posicao){
         if(posicao < 5 && posicao >=0){
             return statusDePreenchimento[posicao];
@@ -130,9 +120,20 @@ private:
     Ui::MainWindow *ui;
     bool statusDePreenchimento[5]{0};
 
+    void insereQssMainWindow();
+    void insereIcon();
+    void insereQssBarraDeStatus();
+    void verificarAvanco();
+    void insereQssTitulosLineEdit();
+    void insereQssLineEdit();
+    void insereQssPlaceHolderLineEdit();
+    void insereQssBtnArquivos();
+    void insereQssBtnAvancar();
+    void insereQssBtnLixeira();
+    void insereQssLblVerifica();
+    void setaFileNameNosArq();
 
 
-    //Metodo para atualizar a barra de Status
 
 };
 

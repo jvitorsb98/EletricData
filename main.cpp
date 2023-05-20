@@ -1,7 +1,7 @@
 /**
  * @class Main
  * @brief Classe principal do programa
- * @reentrant Responsável por iniciar o programa, iniciar um spash e o Frame MainWindow
+ * Responsável por iniciar o programa, iniciar um spash e o Frame MainWindow
  * @author João Vitor N. Ramos
 */
 

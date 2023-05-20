@@ -28,6 +28,10 @@ public:
     void PdfInfecBarrasInterL1TodL2();
     void PdfInfecBarrasTodL1InterL2();
     void PdfInfecBarrasTodL1TodL2();
+
+
+private:
+
     //Funções Auxiliares
     //Funções os conteudos com barras em intervalo
     void ContInterBInterL1InterL2(QPrinter* );
@@ -49,6 +53,7 @@ public:
     //cacula quantidade de linhas que uma barra irá ocupar no sistema
     int  QtdLinhasInfoBarra();
     int  QtdLinhasInfoLinha();
+
 };
 
 #endif // EXPORTARPDF_H

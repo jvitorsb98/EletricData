@@ -1,7 +1,7 @@
 /**
  * @class FrameExportar
  * @brief Janela responsável pela exportação dos dados em 3 formatos diferentes ( Pdf , Excel e .csv )
- * @reentrant Essa janela foi construida com 1 tabWidget e dois TableWidget entro dela, um para as Barras e outro para as linhas, além de botões para filtragem, avanço e voltar.
+ * Essa janela foi construida com 1 tabWidget e dois TableWidget entro dela, um para as Barras e outro para as linhas, além de botões para filtragem, avanço e voltar.
  * @author João Vitor N. Ramos
 */
 

@@ -6,6 +6,7 @@
 
 #include "filtrosbarra.h"
 #include "ui_filtrosbarra.h"
+#include "frametensoes.h"
 #include "style.h"
 #include "framebarras.h"
 #include <QMessageBox>

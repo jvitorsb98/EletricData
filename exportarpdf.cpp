@@ -7,6 +7,9 @@
 
 #include "exportarpdf.h"
 #include "framebarras.h"
+#include "frametensoes.h"
+#include "filtrosbarra.h"
+#include "filtrolinha.h"
 #include <QMessageBox>
 #include <QDir>
 #include <QDesktopServices>
@@ -598,7 +601,6 @@ void ExportarPdf::ContInterBInterL1InterL2(QPrinter* printer){
 
     painter.end();
 }
-
 
 /**
  * @name ContInterBInterL1TodL2
@@ -3761,7 +3763,6 @@ void ExportarPdf::ContInfecBarrasTodL1TodL2(QPrinter* printer){
 
     painter.end();
 }
-
 
 /**
  * @name ExportarPdf::QtdLinhasInfoBarra

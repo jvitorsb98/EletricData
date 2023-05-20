@@ -1,8 +1,7 @@
 /**
  * @class MainWindow
  * @brief Janela Principal do Programa
- * @reentrant Essa janela foi construida com 2 frames,
- * um com o intuito de funcionar como uma barra de status do andamento da aplicação(tendo 4 labels como sinalizadores)
+ * Essa janela foi construida com 2 frames, um com o intuito de funcionar como uma barra de status do andamento da aplicação(tendo 4 labels como sinalizadores)
  *  e o outro possui componentes reponsáveis por receber endereço de arquivos que serão utilizados nos proximos frames para trataemnto de dados.
  * @author João Vitor N. Ramos
 */
