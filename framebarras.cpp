@@ -239,13 +239,13 @@ void FrameBarras::preencheLimites(){
 
     limitesDti[2][3] = 5;
     limitesDti[2][5] = 6;
-    limitesDti[2][7] = 5;
+    limitesDti[2][7] = 6;
     limitesDti[2][9] = 1.5;
-    limitesDti[2][11] = 3.5;
-    limitesDti[2][13] = 3;
+    limitesDti[2][11] = 5;
+    limitesDti[2][13] = 3.5;
     limitesDti[2][15] = 0.5;
-    limitesDti[2][17] = 2;
-    limitesDti[2][19] = 1.5;
+    limitesDti[2][17] = 3;
+    limitesDti[2][19] = 2;
     limitesDti[2][21] = 0.5;
     limitesDti[2][23] = 1.5;
     limitesDti[2][25] = 2;
@@ -253,7 +253,7 @@ void FrameBarras::preencheLimites(){
     limitesDti[1][998] = 1; // impar multipla de 3 maior q 21
 
 
-    limitesDti[3][3] = 1;
+    limitesDti[3][3] = 4;
     limitesDti[3][5] = 4.5;
     limitesDti[3][7] = 4;
     limitesDti[3][9] = 1.5;
@@ -268,7 +268,7 @@ void FrameBarras::preencheLimites(){
     limitesDti[3][997] = 1.5; // impar nao multplica de 3 maior q 25
     limitesDti[3][998] = 0.5; // impar multipla de 3 maior q 21
 
-    limitesDti[4][3] = 0.5;
+    limitesDti[4][3] = 2;
     limitesDti[4][5] = 2.5;
     limitesDti[4][7] = 2;
     limitesDti[4][9] = 1;
@@ -388,7 +388,7 @@ void FrameBarras::insereQssTableBarras(){
  * @return QStringList do cabeçalho das linhas
  */
 QStringList FrameBarras::cabecalhoBarras(){
-    QStringList cabecalhos={"Tensão na Barra[pu]","Tensão Nominal[Kv]","TDHV[%]"};
+    QStringList cabecalhos={"Tensão na Barra[pu]","Tensão Nominal[Kv]","THDV[%]"};
                                for(int i = 0 , j = 3; i < quantidadeDeComponentesHarm ; i++ , j+=2){
                                                                                                     QString item = "DIT"+QString::number(j);
     cabecalhos.push_back(item);

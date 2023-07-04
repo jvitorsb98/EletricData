@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>EletricData</DisplayName>
+    <Description>Software para auxiliar na organização e manipulação de dados de saida do PCFLO, com o objetivo de facilitar a analise de um sistema elétrico de potência</Description>
+    <Version>1.0.0-1</Version>
+    <ReleaseDate>2023-06-21</ReleaseDate>
+    <Default>true</Default>
+    <Script>installscript.qs</Script>
+    <property name="locale">
+        <locale language="portuguese" country="Brazil"/>
+    </property>
+    <UserInterfaces>
+        <UserInterface>CustomPage.ui</UserInterface>
+    </UserInterfaces>
+</Package>

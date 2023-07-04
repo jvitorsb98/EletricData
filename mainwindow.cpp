@@ -512,7 +512,7 @@ void MainWindow::on_btnLixeiraLdat_clicked()
     //Caso queira
     if(escolha==QMessageBox::Yes){
         ui->lineEditLdat->clear(); //Exclui o conteudo do lineEdit
-        ui->lineEditIsoln->setStyleSheet(style.cssLineEdit); // Insere o Qss padrão do lineEdit
+        ui->lineEditLdat->setStyleSheet(style.cssLineEdit); // Insere o Qss padrão do lineEdit
         ui->btnLixeiraLdat->hide(); //Esconde o botão de lixeira
         ui->btnLdat->show();  //mostra o botão de pesquisar o arquivo
         this->setStatusDePreenchimento(4,false);  //guarda a informação de que destá parte do frame não foi inserida
